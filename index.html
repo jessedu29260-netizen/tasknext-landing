@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskNext.AI — Your Complete AI Social Media OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & TOKENS ─────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --p:#8b5cf6;--pl:#a78bfa;--pk:#ec4899;--g:#10b981;--y:#f59e0b;
+  --bg:#050507;--sf:#0b0b12;--card:#101018;
+  --bd:rgba(139,92,246,.14);--bd2:rgba(139,92,246,.3);
+  --t:#f1f5f9;--t2:#94a3b8;--t3:#475569;
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--t);
+  font-family:'Inter',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  padding-bottom:58px;
+}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:rgba(139,92,246,.4);border-radius:4px;}
+
+/* ── UTILITIES ──────────────────────────────── */
+.g-text{background:linear-gradient(130deg,#c084fc 0%,#f472b6 55%,#fb923c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.g-text-b{background:linear-gradient(130deg,#60a5fa 0%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.g-btn{background:linear-gradient(135deg,var(--p),var(--pk));color:#fff;border:none;cursor:pointer;font-family:inherit;font-weight:700;transition:transform .2s,box-shadow .2s;}
+.g-btn:hover{transform:translateY(-2px);box-shadow:0 18px 50px rgba(139,92,246,.4);}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:99px;font-size:12px;font-weight:600;border:1px solid;}
+.bp{background:rgba(139,92,246,.1);color:var(--pl);border-color:rgba(139,92,246,.25);}
+.bg2{background:rgba(16,185,129,.1);color:#34d399;border-color:rgba(16,185,129,.25);}
+.bpk{background:rgba(236,72,153,.1);color:#f472b6;border-color:rgba(236,72,153,.25);}
+.by{background:rgba(245,158,11,.1);color:#fbbf24;border-color:rgba(245,158,11,.25);}
+
+/* ── REVEAL ANIMATION ───────────────────────── */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
+.rv.show{opacity:1;transform:none;}
+.rvl{opacity:0;transform:translateX(-36px);transition:opacity .75s ease,transform .75s ease;}
+.rvl.show{opacity:1;transform:none;}
+.rvr{opacity:0;transform:translateX(36px);transition:opacity .75s ease,transform .75s ease;}
+.rvr.show{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
+
+/* ── NAV ────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:0 48px;height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .3s,border-color .3s;
+}
+nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdrop-filter:blur(18px);}
+.nav-logo{font-size:17px;font-weight:900;text-decoration:none;color:#fff;letter-spacing:-.5px;}
+.nav-logo span{color:var(--pl);}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+.nav-links a{color:var(--t2);text-decoration:none;font-size:13.5px;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;}
+
+/* ── HERO ───────────────────────────────────── */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;padding:80px 48px 40px;
+}
+#hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.hero-glow{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 60% at 72% 38%,rgba(139,92,246,.13) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 40% at 22% 75%,rgba(236,72,153,.07) 0%,transparent 60%);
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1240px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:72px;
+}
+.hero-text{padding-top:30px;}
+.h1{font-size:clamp(36px,5.2vw,64px);font-weight:900;line-height:1.06;letter-spacing:-2.5px;margin-bottom:22px;}
+.hero-sub{font-size:17px;color:var(--t2);line-height:1.65;max-width:430px;margin-bottom:34px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:46px;}
+.btn-p{padding:14px 28px;border-radius:10px;font-size:15px;text-decoration:none;display:inline-block;}
+.btn-g{padding:14px 22px;border-radius:10px;font-size:15px;font-weight:600;color:var(--t2);background:transparent;border:1px solid rgba(255,255,255,.1);cursor:pointer;font-family:inherit;transition:all .2s;}
+.btn-g:hover{color:#fff;border-color:rgba(255,255,255,.24);}
+.hero-stats{display:flex;gap:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07);}
+.s-num{display:block;font-size:26px;font-weight:800;letter-spacing:-1px;}
+.s-lbl{font-size:11px;color:var(--t3);margin-top:2px;}
+/* floating mockup */
+.hero-mock-wrap{position:relative;}
+.hero-mock-glow{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:130%;height:130%;pointer-events:none;
+  background:radial-gradient(ellipse,rgba(139,92,246,.18) 0%,transparent 65%);
+}
+.hero-mock{
+  position:relative;z-index:1;
+  transform:perspective(1100px) rotateX(5deg) rotateY(-7deg);
+  animation:float 7s ease-in-out infinite;
+  filter:drop-shadow(0 36px 72px rgba(0,0,0,.7));
+}
+@keyframes float{
+  0%,100%{transform:perspective(1100px) rotateX(5deg) rotateY(-7deg) translateY(0);}
+  50%    {transform:perspective(1100px) rotateX(5deg) rotateY(-7deg) translateY(-15px);}
+}
+
+/* ── FEATURE SECTIONS ───────────────────────── */
+.fsec{
+  min-height:100vh;display:flex;align-items:center;
+  padding:100px 48px;position:relative;overflow:hidden;
+}
+.fsec-inner{
+  max-width:1240px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center;
+}
+.fsec-inner.rev{grid-template-columns:1.15fr 1fr;}
+.fsec-inner.rev .fsec-text{order:2;}
+.fsec-inner.rev .fsec-vis{order:1;}
+.sec-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--pl);margin-bottom:14px;}
+.sec-h2{font-size:clamp(26px,3.6vw,48px);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px;}
+.sec-desc{font-size:15.5px;line-height:1.72;color:var(--t2);margin-bottom:26px;max-width:400px;}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:30px;}
+.feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--t2);}
+.feat-list li::before{
+  content:'✓';min-width:19px;height:19px;background:rgba(139,92,246,.14);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:var(--pl);font-weight:700;flex-shrink:0;margin-top:1px;
+}
+.sec-cta{padding:12px 22px;border-radius:9px;font-size:14px;font-weight:700;text-decoration:none;display:inline-block;}
+
+/* ── APP WINDOW CHROME ──────────────────────── */
+.aw{border-radius:13px;overflow:hidden;border:1px solid rgba(139,92,246,.2);box-shadow:0 28px 70px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.03);background:#080810;}
+.aw-tb{background:#100f18;padding:10px 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.05);}
+.dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.dr{background:#ef4444;}.dy{background:#f59e0b;}.dg{background:#10b981;}
+.tb-lbl{font-size:11px;color:var(--t3);margin-left:8px;font-weight:500;}
+.aw-body{display:flex;height:330px;}
+/* sidebar */
+.asb{width:138px;min-width:138px;background:#07070e;border-right:1px solid rgba(255,255,255,.05);padding:10px 7px;display:flex;flex-direction:column;gap:1px;}
+.sb-logo{padding:5px 9px 11px;font-size:13px;font-weight:900;color:var(--pl);letter-spacing:-.5px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:7px;}
+.si{display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:6px;font-size:11px;color:var(--t3);cursor:pointer;white-space:nowrap;overflow:hidden;}
+.si.on{background:rgba(139,92,246,.16);color:var(--pl);}
+.si em{font-size:12px;font-style:normal;flex-shrink:0;}
+/* content area */
+.ac{flex:1;padding:13px;overflow:hidden;display:flex;flex-direction:column;gap:9px;min-width:0;}
+.ac-head{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.ac-title{font-size:14px;font-weight:700;color:var(--t);}
+.ac-sub{font-size:10.5px;color:var(--t3);}
+/* stat cards */
+.sc-row{display:flex;gap:8px;flex-shrink:0;}
+.sc{flex:1;background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px 11px;}
+.sc .v{font-size:17px;font-weight:800;letter-spacing:-.5px;}
+.sc .l{font-size:8.5px;color:var(--t3);margin-top:2px;text-transform:uppercase;letter-spacing:.06em;}
+.sc .c{font-size:9.5px;font-weight:600;margin-top:2px;}
+.cu{color:#34d399;}.cd2{color:#f87171;}
+/* agent card */
+.agc{background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px 11px;display:flex;align-items:center;gap:9px;}
+.agd{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.agd.run{background:#10b981;box-shadow:0 0 6px #10b981;animation:blink 1.4s infinite;}
+.agd.idle{background:#f59e0b;}
+.agd.done{background:#374151;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.ag-name{font-size:11.5px;font-weight:600;color:var(--t);}
+.ag-desc{font-size:9.5px;color:var(--t3);margin-top:2px;}
+.ag-st{margin-left:auto;font-size:9.5px;font-weight:600;}
+.ag-st.run{color:#34d399;}.ag-st.idle{color:#fbbf24;}.ag-st.done{color:var(--t3);}
+
+/* ── ROADMAP ────────────────────────────────── */
+#roadmap{padding:100px 48px;}
+.rm-inner{max-width:920px;margin:0 auto;}
+.center-hd{text-align:center;margin-bottom:56px;}
+.center-hd p{color:var(--t2);font-size:15.5px;margin-top:10px;}
+.rm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.rmc{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:24px;position:relative;overflow:hidden;}
+.rmc.cur{border-color:rgba(139,92,246,.4);}
+.rm-phase{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:8px;}
+.rm-title{font-size:17px;font-weight:700;margin-bottom:12px;}
+.rm-items{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.rm-items li{font-size:12.5px;color:var(--t2);display:flex;align-items:center;gap:8px;}
+.rid{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.ri-done{background:#10b981;}.ri-act{background:var(--pl);}.ri-soon{background:var(--t3);}
+
+/* ── PRICING TOGGLE ─────────────────────────── */
+.tog-lbl{font-size:14px;font-weight:600;color:var(--t3);cursor:pointer;transition:color .2s;}
+.tog-lbl.tog-active{color:var(--t);}
+.tog-track{width:48px;height:26px;background:rgba(139,92,246,.25);border-radius:99px;cursor:pointer;position:relative;transition:background .2s;border:1px solid rgba(139,92,246,.3);}
+.tog-track.on{background:rgba(139,92,246,.5);}
+.tog-thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#a78bfa;transition:transform .25s;}
+.tog-track.on .tog-thumb{transform:translateX(22px);}
+.save-pill{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.25);border-radius:99px;font-size:10px;font-weight:700;padding:2px 7px;margin-left:4px;vertical-align:middle;}
+
+/* ── PRICING ────────────────────────────────── */
+#pricing{padding:100px 48px;}
+.pr-inner{max-width:1020px;margin:0 auto;}
+.pr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:56px;}
+.prc{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:30px 26px;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.prc:hover{transform:translateY(-5px);box-shadow:0 22px 55px rgba(139,92,246,.14);}
+.prc.pop{border-color:rgba(139,92,246,.45);background:linear-gradient(135deg,rgba(139,92,246,.07),rgba(236,72,153,.03));}
+.pop-tag{position:absolute;top:-1px;right:22px;background:linear-gradient(135deg,var(--p),var(--pk));color:#fff;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:0 0 8px 8px;}
+.pr-plan{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--t3);margin-bottom:8px;}
+.pr-amt{font-size:46px;font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:4px;}
+.pr-amt sup{font-size:20px;font-weight:600;color:var(--t3);vertical-align:super;}
+.pr-per{font-size:12.5px;color:var(--t3);margin-bottom:22px;}
+.pr-feats{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px;}
+.pr-feats li{font-size:13px;color:var(--t2);display:flex;align-items:center;gap:8px;}
+.pr-feats li::before{content:'✓';color:var(--pl);font-weight:700;font-size:12px;}
+.pr-btn{width:100%;padding:12px;border-radius:9px;font-size:14px;font-weight:700;text-align:center;cursor:pointer;}
+
+/* ── FAQ ────────────────────────────────────── */
+#faq{padding:100px 48px;}
+.faq-inner{max-width:700px;margin:0 auto;}
+.faq-list{display:flex;flex-direction:column;gap:9px;margin-top:48px;}
+.faq-item{background:var(--card);border:1px solid var(--bd);border-radius:11px;overflow:hidden;}
+.faq-q{padding:17px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14.5px;font-weight:600;transition:background .2s;gap:12px;}
+.faq-q:hover{background:rgba(255,255,255,.02);}
+.faq-ico{font-size:17px;color:var(--t3);transition:transform .25s;flex-shrink:0;}
+.faq-item.open .faq-ico{transform:rotate(45deg);color:var(--pl);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;font-size:13.5px;color:var(--t2);line-height:1.72;padding:0 20px;}
+.faq-item.open .faq-a{max-height:200px;padding:0 20px 17px;}
+
+/* ── FINAL CTA ──────────────────────────────── */
+#cta{padding:120px 48px 150px;text-align:center;position:relative;overflow:hidden;}
+#cta .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;border-radius:50%;background:radial-gradient(ellipse,rgba(139,92,246,.13) 0%,transparent 65%);pointer-events:none;}
+.cta-h2{font-size:clamp(34px,5vw,62px);font-weight:900;letter-spacing:-2.5px;line-height:1.07;max-width:700px;margin:0 auto 18px;}
+.cta-sub{font-size:17px;color:var(--t2);max-width:480px;margin:0 auto 38px;line-height:1.65;}
+.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+
+/* ── STICKY BAR ─────────────────────────────── */
+#sbar{
+  position:fixed;bottom:0;left:0;right:0;z-index:190;
+  background:rgba(5,5,7,.92);border-top:1px solid var(--bd);
+  backdrop-filter:blur(20px);padding:10px 48px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  height:58px;
+}
+.sbar-l{display:flex;align-items:center;gap:10px;}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 8px #10b981;animation:blink 1.4s infinite;flex-shrink:0;}
+.sbar-txt{font-size:13px;color:var(--t2);}
+.sbar-txt strong{color:#fff;}
+.cd-wrap{display:flex;align-items:center;gap:3px;}
+.cdu{display:flex;flex-direction:column;align-items:center;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.25);border-radius:6px;padding:4px 10px;min-width:42px;}
+.cdn{font-size:17px;font-weight:800;letter-spacing:-1px;line-height:1;}
+.cdl{font-size:7.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--t3);margin-top:2px;}
+.cdsep{font-size:15px;font-weight:700;color:var(--t3);padding-bottom:8px;margin:0 1px;}
+.sbar-btn{padding:9px 22px;border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none;}
+
+/* ── FOOTER ─────────────────────────────────── */
+footer{padding:40px 48px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--t3);}
+footer a{color:var(--t3);text-decoration:none;transition:color .2s;}
+footer a:hover{color:var(--t2);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">TaskNext<span>.AI</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#pricing" class="nav-cta g-btn">Get Early Access</a>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════ -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div style="margin-bottom:20px;" class="rv"><span class="badge bp">🤖 AI-Powered Social OS</span></div>
+      <h1 class="h1 rv d1">
+        The last social media<br>tool you'll
+        <span class="g-text"> ever need.</span>
+      </h1>
+      <p class="hero-sub rv d2">
+        TaskNext.AI replaces 12 separate tools with one local AI platform. Create, schedule, analyse, and automate — powered by Claude, running on your machine.
+      </p>
+      <div class="hero-btns rv d3">
+        <button class="btn-p g-btn" onclick="goCheckout('foundingAnnual')">Claim Founding Spot →</button>
+        <button class="btn-g" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See how it works</button>
+      </div>
+      <div class="hero-stats rv d4">
+        <div><span class="s-num g-text">4K–35K</span><span class="s-lbl">Growth in 8 weeks</span></div>
+        <div><span class="s-num">£2,753</span><span class="s-lbl">Avg saved vs agency</span></div>
+        <div><span class="s-num">100%</span><span class="s-lbl">Agent success rate</span></div>
+        <div><span class="s-num">38</span><span class="s-lbl">Live automations</span></div>
+      </div>
+    </div>
+
+    <div class="hero-mock-wrap rv rvr d2">
+      <div class="hero-mock-glow"></div>
+      <div class="hero-mock">
+        <div class="aw" style="width:min(540px,100%);">
+          <div class="aw-tb">
+            <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+            <span class="tb-lbl">TaskNext.AI — Dashboard</span>
+          </div>
+          <div class="aw-body">
+            <div class="asb">
+              <div class="sb-logo">TaskNext</div>
+              <div class="si on"><em>⚡</em>Dashboard</div>
+              <div class="si"><em>✍️</em>Content Studio</div>
+              <div class="si"><em>📈</em>Growth Center</div>
+              <div class="si"><em>🤖</em>AI Agents</div>
+              <div class="si"><em>📅</em>Schedule</div>
+              <div class="si"><em>⚙️</em>Automations</div>
+              <div class="si"><em>🏆</em>Coach</div>
+              <div class="si"><em>🔍</em>Research</div>
+            </div>
+            <div class="ac">
+              <div class="ac-head">
+                <div><div class="ac-title">Good morning, Jesse 👋</div><div class="ac-sub">Performance overview</div></div>
+                <span class="badge bg2" style="font-size:9px;padding:3px 9px;">All systems active</span>
+              </div>
+              <div class="sc-row">
+                <div class="sc"><div class="v" style="color:#a78bfa;">12,847</div><div class="l">Followers</div><div class="c cu">↑ +18.4%</div></div>
+                <div class="sc"><div class="v" style="color:#f472b6;">4.2%</div><div class="l">Engagement</div><div class="c cu">↑ +0.8%</div></div>
+                <div class="sc"><div class="v" style="color:#34d399;">35</div><div class="l">Languages</div><div class="c" style="color:#94a3b8;">Supported</div></div>
+              </div>
+              <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
+                <div style="font-size:9px;color:#475569;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;">Followers — 30 days</div>
+                <svg width="100%" height="62" viewBox="0 0 320 62" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="gA" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".28"/>
+                      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,58 L20,54 L40,51 L60,46 L80,41 L100,36 L120,30 L140,25 L160,21 L180,17 L200,13 L220,10 L240,7 L260,5 L280,3 L300,2 L320,0 L320,62 L0,62 Z" fill="url(#gA)"/>
+                  <polyline points="0,58 20,54 40,51 60,46 80,41 100,36 120,30 140,25 160,21 180,17 200,13 220,10 240,7 260,5 280,3 300,2 320,0" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="320" cy="0" r="3" fill="#8b5cf6"/>
+                </svg>
+              </div>
+              <div style="display:flex;align-items:center;gap:7px;">
+                <div class="agd run" style="width:6px;height:6px;"></div>
+                <span style="font-size:10.5px;color:#94a3b8;">3 AI agents running</span>
+                <span style="font-size:10.5px;color:#475569;margin-left:auto;">47 posts scheduled</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURE 1: CONTENT STUDIO ══════════════ -->
+<section class="fsec" id="features">
+  <div style="position:absolute;top:20%;right:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(236,72,153,.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="fsec-inner">
+    <div class="fsec-text">
+      <div class="sec-lbl rv">✍️ AI Content Studio</div>
+      <h2 class="sec-h2 rv d1">From blank page to <span class="g-text">viral post</span><br>in 30 seconds.</h2>
+      <p class="sec-desc rv d2">Claude Sonnet writes platform-specific captions, carousels, hooks, and hashtags — while understanding your brand voice, token strategy, and audience.</p>
+      <ul class="feat-list rv d3">
+        <li>Batch-generate 30 days of content in minutes</li>
+        <li>Platform-native formats: IG, X, TikTok, LinkedIn</li>
+        <li>Engagement score prediction before you post</li>
+        <li>Your voice, your tone — never generic AI copy</li>
+      </ul>
+      <a href="#pricing" class="sec-cta g-btn rv d4">Start creating free →</a>
+    </div>
+    <div class="fsec-vis rv rvr d2">
+      <div class="aw">
+        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">Content Studio</span></div>
+        <div class="aw-body">
+          <div class="asb">
+            <div class="sb-logo">TaskNext</div>
+            <div class="si"><em>⚡</em>Dashboard</div>
+            <div class="si on"><em>✍️</em>Content Studio</div>
+            <div class="si"><em>📈</em>Growth Center</div>
+            <div class="si"><em>🤖</em>AI Agents</div>
+            <div class="si"><em>📅</em>Schedule</div>
+          </div>
+          <div class="ac">
+            <div class="ac-head">
+              <div class="ac-title">New Post</div>
+              <span class="badge bp" style="font-size:9px;padding:3px 9px;">✨ AI Generate</span>
+            </div>
+            <!-- Platform tabs -->
+            <div style="display:flex;gap:5px;flex-shrink:0;">
+              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;font-weight:600;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);">📸 Instagram</span>
+              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;color:#475569;border:1px solid rgba(255,255,255,.05);">𝕏 Twitter</span>
+              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;color:#475569;border:1px solid rgba(255,255,255,.05);">🎵 TikTok</span>
+            </div>
+            <!-- Editor -->
+            <div style="background:#100f18;border:1px solid rgba(139,92,246,.22);border-radius:7px;padding:11px;flex:1;min-height:0;">
+              <p style="font-size:10.5px;color:#e2e8f0;line-height:1.65;">Your morning routine isn't just about coffee ☕<br><br>Here's what actually moves the needle...</p>
+              <div style="margin-top:8px;display:flex;gap:5px;flex-wrap:wrap;">
+                <span style="font-size:9.5px;color:#8b5cf6;">#morningroutine</span>
+                <span style="font-size:9.5px;color:#8b5cf6;">#productivity</span>
+                <span style="font-size:9.5px;color:#8b5cf6;">#AI</span>
+              </div>
+            </div>
+            <!-- AI suggestion -->
+            <div style="background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:7px;padding:9px;flex-shrink:0;">
+              <div style="font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:#8b5cf6;margin-bottom:5px;">🤖 AI Suggestion</div>
+              <div style="font-size:10.5px;color:#e2e8f0;">"5 AM habits that 10x'd my revenue..."</div>
+              <div style="display:flex;gap:12px;margin-top:5px;">
+                <span style="font-size:9.5px;color:#34d399;">↑ Engagement: HIGH</span>
+                <span style="font-size:9.5px;color:#94a3b8;">Est. reach: 14.2K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURE 2: GROWTH CENTER ═══════════════ -->
+<section class="fsec">
+  <div style="position:absolute;top:30%;left:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(139,92,246,.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="fsec-inner rev">
+    <div class="fsec-text">
+      <div class="sec-lbl rv">📈 Growth Center</div>
+      <h2 class="sec-h2 rv d1">Watch your audience grow in <span class="g-text">real time.</span></h2>
+      <p class="sec-desc rv d2">Deep analytics across every platform. See what's working, what's flopping, and exactly what to do next — in one clean dashboard.</p>
+      <ul class="feat-list rv d3">
+        <li>Cross-platform follower tracking &amp; projections</li>
+        <li>Best time to post based on your actual audience</li>
+        <li>Competitor benchmarking &amp; gap analysis</li>
+        <li>Revenue attribution: which posts drive sales</li>
+      </ul>
+    </div>
+    <div class="fsec-vis rv rvl d2">
+      <div class="aw">
+        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">Growth Center</span></div>
+        <div class="aw-body">
+          <div class="asb">
+            <div class="sb-logo">TaskNext</div>
+            <div class="si"><em>⚡</em>Dashboard</div>
+            <div class="si"><em>✍️</em>Content Studio</div>
+            <div class="si on"><em>📈</em>Growth Center</div>
+            <div class="si"><em>🤖</em>AI Agents</div>
+            <div class="si"><em>📅</em>Schedule</div>
+          </div>
+          <div class="ac">
+            <div class="ac-head">
+              <div class="ac-title">Growth Analytics</div>
+              <span style="font-size:10px;color:#475569;">Last 30 days</span>
+            </div>
+            <div class="sc-row">
+              <div class="sc"><div class="v" style="color:#a78bfa;">12,847</div><div class="l">Followers</div><div class="c cu">↑ +3,647</div></div>
+              <div class="sc"><div class="v" style="color:#f472b6;">4.2%</div><div class="l">Engagement</div><div class="c cu">↑ Above avg</div></div>
+            </div>
+            <!-- Dual chart -->
+            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
+              <div style="font-size:9px;color:#475569;margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em;">Follower Growth — 4 Weeks</div>
+              <svg width="100%" height="72" viewBox="0 0 260 72" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="gB" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".22"/>
+                    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,68 L37,60 L74,48 L111,34 L148,22 L185,13 L222,6 L260,1 L260,72 L0,72 Z" fill="url(#gB)"/>
+                <polyline points="0,68 37,60 74,48 111,34 148,22 185,13 222,6 260,1" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="0,62 37,57 74,52 111,46 148,40 185,35 222,30 260,26" fill="none" stroke="#ec4899" stroke-width="1.4" stroke-dasharray="4,2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+                <circle cx="260" cy="1" r="3" fill="#8b5cf6"/>
+              </svg>
+              <div style="display:flex;gap:14px;margin-top:5px;">
+                <span style="font-size:8.5px;color:#8b5cf6;display:flex;align-items:center;gap:4px;"><span style="width:10px;height:2px;background:#8b5cf6;display:inline-block;border-radius:1px;"></span>Followers</span>
+                <span style="font-size:8.5px;color:#ec4899;display:flex;align-items:center;gap:4px;"><span style="width:10px;height:0;display:inline-block;border-top:1.5px dashed #ec4899;"></span>Engagement</span>
+              </div>
+            </div>
+            <!-- Top posts -->
+            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex-shrink:0;">
+              <div style="font-size:8.5px;color:#475569;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;">Top Posts This Week</div>
+              <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#94a3b8;padding:2px 0;"><span>Morning habits carousel</span><span style="color:#34d399;">4.2K reach ↑</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#94a3b8;padding:2px 0;"><span>AI tools deep-dive thread</span><span style="color:#34d399;">3.8K reach ↑</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURE 3: AI AGENTS ════════════════════ -->
+<section class="fsec">
+  <div style="position:absolute;bottom:20%;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(16,185,129,.07) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="fsec-inner">
+    <div class="fsec-text">
+      <div class="sec-lbl rv">🤖 AI Agent Hub</div>
+      <h2 class="sec-h2 rv d1">Your AI team works <span class="g-text">while you sleep.</span></h2>
+      <p class="sec-desc rv d2">Deploy autonomous agents that write content, engage with followers, research trends, and optimise your strategy — 24/7, zero supervision needed.</p>
+      <ul class="feat-list rv d3">
+        <li>Content Writer Agent: drafts posts on schedule</li>
+        <li>Engagement Agent: replies and DMs strategically</li>
+        <li>Trend Spotter: finds viral topics before they peak</li>
+        <li>Full logs and override controls — always in charge</li>
+      </ul>
+    </div>
+    <div class="fsec-vis rv rvr d2">
+      <div class="aw">
+        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">AI Agents</span></div>
+        <div class="aw-body">
+          <div class="asb">
+            <div class="sb-logo">TaskNext</div>
+            <div class="si"><em>⚡</em>Dashboard</div>
+            <div class="si"><em>✍️</em>Content Studio</div>
+            <div class="si"><em>📈</em>Growth Center</div>
+            <div class="si on"><em>🤖</em>AI Agents</div>
+            <div class="si"><em>📅</em>Schedule</div>
+          </div>
+          <div class="ac">
+            <div class="ac-head">
+              <div class="ac-title">Active Agents</div>
+              <span class="badge bg2" style="font-size:9px;padding:3px 9px;">3 Running</span>
+            </div>
+            <div class="agc">
+              <div class="agd run"></div>
+              <div><div class="ag-name">Content Writer</div><div class="ag-desc">Generating 3 captions for tomorrow...</div></div>
+              <span class="ag-st run">Running</span>
+            </div>
+            <div class="agc">
+              <div class="agd run"></div>
+              <div><div class="ag-name">Hashtag Optimizer</div><div class="ag-desc">Analysing 47 hashtag opportunities</div></div>
+              <span class="ag-st run">Running</span>
+            </div>
+            <div class="agc">
+              <div class="agd idle"></div>
+              <div><div class="ag-name">Engagement Bot</div><div class="ag-desc">Next run: Today at 2:00 PM</div></div>
+              <span class="ag-st idle">Scheduled</span>
+            </div>
+            <div class="agc">
+              <div class="agd done"></div>
+              <div><div class="ag-name">Trend Spotter</div><div class="ag-desc">Found 8 trending topics ✓</div></div>
+              <span class="ag-st done">Complete</span>
+            </div>
+            <div style="display:flex;gap:7px;flex-shrink:0;">
+              <button style="flex:1;padding:6px;background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.28);border-radius:6px;font-size:10.5px;color:#a78bfa;font-family:inherit;cursor:pointer;font-weight:600;">+ New Agent</button>
+              <button style="flex:1;padding:6px;background:#100f18;border:1px solid rgba(255,255,255,.06);border-radius:6px;font-size:10.5px;color:#94a3b8;font-family:inherit;cursor:pointer;">View Logs</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURE 4: PERFORMANCE COACH ═══════════ -->
+<section class="fsec">
+  <div style="position:absolute;top:20%;left:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(245,158,11,.07) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="fsec-inner rev">
+    <div class="fsec-text">
+      <div class="sec-lbl rv">🏆 Performance Coach</div>
+      <h2 class="sec-h2 rv d1">Know exactly <span class="g-text">what to post next.</span></h2>
+      <p class="sec-desc rv d2">Your AI coach analyses every post, identifies patterns in what works, and gives you a personalised weekly action plan to hit your goals faster.</p>
+      <ul class="feat-list rv d3">
+        <li>Weekly performance score with actionable insights</li>
+        <li>Optimal posting times unique to your audience</li>
+        <li>Format recommendations: reel vs carousel vs text</li>
+        <li>Goal tracking with milestone celebrations</li>
+      </ul>
+    </div>
+    <div class="fsec-vis rv rvl d2">
+      <div class="aw">
+        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">Performance Coach</span></div>
+        <div class="aw-body">
+          <div class="asb">
+            <div class="sb-logo">TaskNext</div>
+            <div class="si"><em>⚡</em>Dashboard</div>
+            <div class="si"><em>✍️</em>Content Studio</div>
+            <div class="si"><em>📈</em>Growth Center</div>
+            <div class="si"><em>🤖</em>AI Agents</div>
+            <div class="si on"><em>🏆</em>Coach</div>
+          </div>
+          <div class="ac">
+            <div class="ac-head">
+              <div class="ac-title">This Week's Score</div>
+              <span style="font-size:10px;color:#94a3b8;">Week of Mar 24</span>
+            </div>
+            <!-- Score -->
+            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:12px;display:flex;align-items:center;gap:14px;flex-shrink:0;">
+              <div style="text-align:center;flex-shrink:0;">
+                <div style="font-size:34px;font-weight:900;line-height:1;background:linear-gradient(130deg,#f59e0b,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">87</div>
+                <div style="font-size:8.5px;color:#475569;text-transform:uppercase;letter-spacing:.06em;">/100</div>
+              </div>
+              <div style="flex:1;">
+                <div style="height:7px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;margin-bottom:7px;">
+                  <div style="width:87%;height:100%;background:linear-gradient(90deg,#f59e0b,#10b981);border-radius:99px;"></div>
+                </div>
+                <div style="font-size:10.5px;color:#94a3b8;">Great week! Consistency ↑, reach ↑</div>
+              </div>
+            </div>
+            <!-- Insights -->
+            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
+              <div style="font-size:8.5px;color:#475569;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Insights</div>
+              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>✅</span>Post consistency: GREAT</div>
+              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>⚡</span>Best time: 7–9am &amp; 6–8pm</div>
+              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>🎯</span>Top format: Carousels</div>
+            </div>
+            <!-- Recommendation -->
+            <div style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.18);border-radius:7px;padding:9px;flex-shrink:0;">
+              <div style="font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:#f59e0b;margin-bottom:4px;">🤖 AI Recommendation</div>
+              <div style="font-size:10.5px;color:#e2e8f0;line-height:1.55;">"Post a reel this Tuesday at 7am — add a CTA to improve saves by 34%"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURE 5: AUTOMATION HUB ══════════════ -->
+<section class="fsec">
+  <div style="position:absolute;top:30%;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(139,92,246,.09) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="fsec-inner">
+    <div class="fsec-text">
+      <div class="sec-lbl rv">⚙️ Automation Hub</div>
+      <h2 class="sec-h2 rv d1">Set it. Forget it.<br><span class="g-text">Go viral.</span></h2>
+      <p class="sec-desc rv d2">Build visual content workflows that run automatically. Connect triggers, actions, and conditions — without a single line of code.</p>
+      <ul class="feat-list rv d3">
+        <li>Drag-and-drop workflow builder</li>
+        <li>Triggers: schedule, trend spike, competitor post</li>
+        <li>47 pre-built automation templates</li>
+        <li>Cross-platform publishing in one workflow</li>
+      </ul>
+    </div>
+    <div class="fsec-vis rv rvr d2">
+      <div class="aw">
+        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">Automation Hub</span></div>
+        <div class="aw-body">
+          <div class="asb">
+            <div class="sb-logo">TaskNext</div>
+            <div class="si"><em>⚡</em>Dashboard</div>
+            <div class="si"><em>✍️</em>Content Studio</div>
+            <div class="si"><em>📈</em>Growth Center</div>
+            <div class="si"><em>🤖</em>AI Agents</div>
+            <div class="si on"><em>⚙️</em>Automations</div>
+          </div>
+          <div class="ac">
+            <div class="ac-head">
+              <div class="ac-title">Daily Content Pipeline</div>
+              <span class="badge bg2" style="font-size:9px;padding:3px 9px;">Active</span>
+            </div>
+            <!-- Workflow visual -->
+            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:12px;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+              <div style="display:flex;align-items:center;gap:0;width:100%;">
+                <div style="flex:1;background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.28);border-radius:7px;padding:7px 4px;text-align:center;">
+                  <div style="font-size:15px;">⏰</div>
+                  <div style="font-size:8.5px;color:#a78bfa;font-weight:600;margin-top:2px;">Trigger</div>
+                  <div style="font-size:7.5px;color:#475569;">7:00 AM</div>
+                </div>
+                <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
+                <div style="flex:1;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.22);border-radius:7px;padding:7px 4px;text-align:center;">
+                  <div style="font-size:15px;">🤖</div>
+                  <div style="font-size:8.5px;color:#f472b6;font-weight:600;margin-top:2px;">AI Write</div>
+                  <div style="font-size:7.5px;color:#475569;">Generate</div>
+                </div>
+                <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
+                <div style="flex:1;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:7px 4px;text-align:center;">
+                  <div style="font-size:15px;">✅</div>
+                  <div style="font-size:8.5px;color:#34d399;font-weight:600;margin-top:2px;">Review</div>
+                  <div style="font-size:7.5px;color:#475569;">Auto-pass</div>
+                </div>
+                <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
+                <div style="flex:1;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.18);border-radius:7px;padding:7px 4px;text-align:center;">
+                  <div style="font-size:15px;">🚀</div>
+                  <div style="font-size:8.5px;color:#fbbf24;font-weight:600;margin-top:2px;">Publish</div>
+                  <div style="font-size:7.5px;color:#475569;">All platforms</div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-around;width:100%;padding-top:8px;border-top:1px solid rgba(255,255,255,.05);">
+                <div style="text-align:center;"><div style="font-size:16px;font-weight:800;color:#34d399;">3</div><div style="font-size:8px;color:#475569;text-transform:uppercase;letter-spacing:.06em;">Running</div></div>
+                <div style="text-align:center;"><div style="font-size:16px;font-weight:800;color:#fbbf24;">1</div><div style="font-size:8px;color:#475569;text-transform:uppercase;letter-spacing:.06em;">Paused</div></div>
+                <div style="text-align:center;"><div style="font-size:16px;font-weight:800;color:#a78bfa;">47</div><div style="font-size:8px;color:#475569;text-transform:uppercase;letter-spacing:.06em;">Completed</div></div>
+              </div>
+            </div>
+            <!-- Active automations list -->
+            <div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 9px;background:#100f18;border-radius:6px;border:1px solid rgba(255,255,255,.05);">
+                <span style="font-size:10.5px;color:#e2e8f0;">Daily Content Pipeline</span>
+                <span style="font-size:9.5px;color:#34d399;">● Active</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 9px;background:#100f18;border-radius:6px;border:1px solid rgba(255,255,255,.05);">
+                <span style="font-size:10.5px;color:#e2e8f0;">Engagement Auto-Reply</span>
+                <span style="font-size:9.5px;color:#34d399;">● Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROADMAP ══════════════════════════════════ -->
+<section id="roadmap">
+  <div class="rm-inner">
+    <div class="center-hd rv">
+      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">🗺️ Roadmap</div>
+      <h2 class="sec-h2">Built in public.<br><span class="g-text">Shipping fast.</span></h2>
+      <p>We move quickly. Founding members shape every feature.</p>
+    </div>
+    <div class="rm-grid rv d1">
+      <div class="rmc cur">
+        <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);pointer-events:none;"></div>
+        <div class="rm-phase">Now Live — V1</div>
+        <div class="rm-title">🚀 Core Platform</div>
+        <ul class="rm-items">
+          <li><span class="rid ri-done"></span>AI Content Studio</li>
+          <li><span class="rid ri-done"></span>Growth Analytics Dashboard</li>
+          <li><span class="rid ri-done"></span>Basic AI Agents</li>
+          <li><span class="rid ri-act"></span>Automation Builder (Beta)</li>
+          <li><span class="rid ri-act"></span>Performance Coach</li>
+        </ul>
+      </div>
+      <div class="rmc">
+        <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(236,72,153,.2) 0%,transparent 70%);pointer-events:none;"></div>
+        <div class="rm-phase">Q2 2026 — V2</div>
+        <div class="rm-title">⚡ Advanced AI</div>
+        <ul class="rm-items">
+          <li><span class="rid ri-soon"></span>Multi-agent workflows</li>
+          <li><span class="rid ri-soon"></span>Video script generator</li>
+          <li><span class="rid ri-soon"></span>AI image creation</li>
+          <li><span class="rid ri-soon"></span>Voice-to-post</li>
+          <li><span class="rid ri-soon"></span>Team collaboration</li>
+        </ul>
+      </div>
+      <div class="rmc">
+        <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(16,185,129,.15) 0%,transparent 70%);pointer-events:none;"></div>
+        <div class="rm-phase">Q3 2026 — V3</div>
+        <div class="rm-title">🌐 Marketplace</div>
+        <ul class="rm-items">
+          <li><span class="rid ri-soon"></span>Agent marketplace</li>
+          <li><span class="rid ri-soon"></span>Custom AI personas</li>
+          <li><span class="rid ri-soon"></span>White-label option</li>
+          <li><span class="rid ri-soon"></span>Agency dashboard</li>
+        </ul>
+      </div>
+      <div class="rmc">
+        <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(245,158,11,.15) 0%,transparent 70%);pointer-events:none;"></div>
+        <div class="rm-phase">Q4 2026 — V4</div>
+        <div class="rm-title">💰 Monetisation Suite</div>
+        <ul class="rm-items">
+          <li><span class="rid ri-soon"></span>Revenue tracking</li>
+          <li><span class="rid ri-soon"></span>Affiliate manager</li>
+          <li><span class="rid ri-soon"></span>Product promoter AI</li>
+          <li><span class="rid ri-soon"></span>Sponsorship finder</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ══════════════════════════════════ -->
+<section id="pricing">
+  <div class="pr-inner">
+    <div class="center-hd rv">
+      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">💳 Founding Pricing</div>
+      <h2 class="sec-h2">One plan. Everything included.<br><span class="g-text">Price locked forever.</span></h2>
+      <p style="color:var(--t2);font-size:15px;max-width:520px;margin:0 auto 10px;">This is not a discount. This is your permanent rate — locked as long as you stay subscribed. After founding closes, the price rises. Founding members are unaffected.</p>
+    </div>
+
+    <!-- Billing toggle -->
+    <div class="pr-toggle rv" style="display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:40px;">
+      <span id="tog-mo" class="tog-lbl tog-active" onclick="setPricing('monthly')">Monthly</span>
+      <div class="tog-track" onclick="toggleBilling()" id="tog-track">
+        <div class="tog-thumb" id="tog-thumb"></div>
+      </div>
+      <span id="tog-yr" class="tog-lbl" onclick="setPricing('annual')">Annual <span class="save-pill">Save £7/mo</span></span>
+    </div>
+
+    <div class="pr-grid" style="max-width:760px;margin:0 auto;grid-template-columns:1fr 1fr;">
+
+      <!-- Founding Monthly -->
+      <div class="prc rv d1 pr-mo" style="display:block;">
+        <div class="pr-plan">Founding Monthly</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
+          <div class="pr-amt"><sup>£</sup>17</div>
+          <div class="pr-per">/mo · locked for life</div>
+        </div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;text-decoration:line-through;">Regular: £47/mo after founding closes</div>
+        <ul class="pr-feats">
+          <li>AI Content Studio (unlimited)</li>
+          <li>6-Platform Scheduling</li>
+          <li>90-Day Content Calendar</li>
+          <li>Built-in Claude AI chat</li>
+          <li>Growth Analytics</li>
+          <li>AI Agents + Automations</li>
+          <li>35-Language Interface</li>
+          <li>Silent auto-updates forever</li>
+        </ul>
+        <button class="pr-btn g-btn" onclick="goCheckout('foundingMonthly')">Lock Monthly Rate →</button>
+      </div>
+
+      <!-- Founding Annual (featured) -->
+      <div class="prc pop rv d2 pr-yr" style="display:none;">
+        <div class="pop-tag">Best Value · Save £7/mo</div>
+        <div class="pr-plan">Founding Annual</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
+          <div class="pr-amt"><sup>£</sup>197</div>
+          <div class="pr-per">/yr · locked for life</div>
+        </div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;text-decoration:line-through;">Regular: £297/yr after founding closes</div>
+        <ul class="pr-feats">
+          <li>Everything in Monthly</li>
+          <li>Priority support lane</li>
+          <li>Early access to new features</li>
+          <li>Founding member badge</li>
+          <li>Lock in £16.42/mo forever</li>
+          <li>No price shock at renewal</li>
+          <li>Cancel anytime, no fees</li>
+          <li>Renews at £197 — always</li>
+        </ul>
+        <button class="pr-btn g-btn" onclick="goCheckout('foundingAnnual')">Lock Annual Rate →</button>
+      </div>
+
+    </div>
+
+    <div class="rv" style="text-align:center;margin-top:28px;color:var(--t3);font-size:13px;">
+      🔒 &nbsp;Price locked permanently at sign-up rate · Cancel anytime · No exit fees
+    </div>
+
+    <!-- After founding comparison -->
+    <div class="rv d2" style="max-width:500px;margin:28px auto 0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px 24px;text-align:center;">
+      <div style="font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">After founding closes — new members pay</div>
+      <div style="display:flex;justify-content:center;gap:32px;">
+        <div><span style="font-size:22px;font-weight:800;color:var(--t2);">£47</span><span style="color:var(--t3);font-size:13px;">/mo</span></div>
+        <div style="border-left:1px solid rgba(255,255,255,.1);padding-left:32px;"><span style="font-size:22px;font-weight:800;color:var(--t2);">£297</span><span style="color:var(--t3);font-size:13px;">/yr</span></div>
+      </div>
+      <div style="font-size:12px;color:var(--t3);margin-top:8px;">Founding members keep £17/mo or £197/yr — forever.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="center-hd rv">
+      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">❓ FAQ</div>
+      <h2 class="sec-h2">Got questions?<br><span class="g-text">We've got answers.</span></h2>
+    </div>
+    <div class="faq-list rv d1">
+      <div class="faq-item">
+        <div class="faq-q">What AI model does TaskNext.AI use?<span class="faq-ico">+</span></div>
+        <div class="faq-a">TaskNext.AI runs on Claude Sonnet by Anthropic — one of the most capable AI models available. It runs locally on your machine, so your data never leaves your computer.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need any tech skills to use it?<span class="faq-ico">+</span></div>
+        <div class="faq-a">None at all. TaskNext.AI is designed for creators and marketers, not developers. Everything works through a clean visual interface — no code, no command lines.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my data private and secure?<span class="faq-ico">+</span></div>
+        <div class="faq-a">100%. Because TaskNext.AI runs locally on your machine, your content, credentials, and data never touch any server we control. It's your data, on your hardware.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What social platforms are supported?<span class="faq-ico">+</span></div>
+        <div class="faq-a">Currently: Instagram, X (Twitter), TikTok, LinkedIn, and YouTube. Pinterest, Threads, and Facebook are coming in V2.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is the founding member price really locked forever?<span class="faq-ico">+</span></div>
+        <div class="faq-a">Yes. Whatever price you sign up at today is your price for as long as you stay subscribed. We will never raise your rate. This is our promise to early supporters.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I cancel anytime?<span class="faq-ico">+</span></div>
+        <div class="faq-a">Absolutely. No contracts, no exit fees. Cancel in one click from your account page. We'd rather earn your loyalty than trap you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═════════════════════════════════ -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="rv" style="margin-bottom:16px;"><span class="badge bp">🔒 Founding Rate Closes Soon</span></div>
+    <h2 class="cta-h2 rv d1">Stop paying £1,500/mo for tools<br>that don't talk to each other.</h2>
+    <p class="cta-sub rv d2">Join 200+ founders who locked in £17/mo before the price rises to £47. Your AI social media OS is waiting.</p>
+    <div class="cta-btns rv d3">
+      <button class="btn-p g-btn" style="padding:16px 32px;border-radius:12px;font-size:16px;" onclick="goCheckout('foundingAnnual')">Lock £197/yr For Life →</button>
+      <button class="btn-g" style="padding:16px 22px;font-size:16px;" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See all features</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <strong style="color:#fff;font-size:14px;">TaskNext<span style="color:#a78bfa;">.AI</span></strong>
+    <span style="margin-left:18px;">© 2026 TaskNext.AI. All rights reserved.</span>
+  </div>
+  <div style="display:flex;gap:22px;">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<!-- ═══ STICKY BAR ═════════════════════════════════ -->
+<div id="sbar">
+  <div class="sbar-l">
+    <div class="live-dot"></div>
+    <span class="sbar-txt"><strong>LIVE</strong> &nbsp; 🔒 Founding Rate Closes In:</span>
+  </div>
+  <div class="cd-wrap">
+    <div class="cdu"><span class="cdn" id="cd-h">71</span><span class="cdl">hrs</span></div>
+    <span class="cdsep">:</span>
+    <div class="cdu"><span class="cdn" id="cd-m">23</span><span class="cdl">min</span></div>
+    <span class="cdsep">:</span>
+    <div class="cdu"><span class="cdn" id="cd-s">44</span><span class="cdl">sec</span></div>
+  </div>
+  <button class="sbar-btn g-btn" onclick="goCheckout('foundingAnnual')">Lock £197/yr For Life</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════ -->
+<script>
+// ── NAV scroll style
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); }, {passive:true});
+
+// ── REVEAL on scroll
+const rvEls = document.querySelectorAll('.rv, .rvl, .rvr');
+const rvObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+rvEls.forEach(el => rvObs.observe(el));
+
+// ── FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ── COUNTDOWN
+const KEY = 'tn_end_v2';
+let end = +sessionStorage.getItem(KEY);
+if (!end || end < Date.now()) {
+  end = Date.now() + (71*3600 + 30*60) * 1000;
+  sessionStorage.setItem(KEY, end);
+}
+const hEl = document.getElementById('cd-h');
+const mEl = document.getElementById('cd-m');
+const sEl = document.getElementById('cd-s');
+function tick() {
+  const d = Math.max(0, end - Date.now());
+  const h = Math.floor(d / 3600000);
+  const m = Math.floor((d % 3600000) / 60000);
+  const s = Math.floor((d % 60000) / 1000);
+  hEl.textContent = String(h).padStart(2,'0');
+  mEl.textContent = String(m).padStart(2,'0');
+  sEl.textContent = String(s).padStart(2,'0');
+}
+tick();
+setInterval(tick, 1000);
+
+// ── CANVAS PARTICLES (hero background)
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resize, {passive:true});
+  resize();
+
+  const COUNT = 80;
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      r: Math.random() * 1.8 + 0.5,
+      a: Math.random() * 0.5 + 0.1,
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i+1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(139,92,246,${0.12 * (1 - dist/130)})`;
+          ctx.lineWidth = 0.7;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    // dots
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(167,139,250,${p.a})`;
+      ctx.fill();
+    });
+  }
+
+  function update() {
+    if (W !== canvas.offsetWidth || H !== canvas.offsetHeight) resize();
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+    });
+    draw();
+    requestAnimationFrame(update);
+  }
+  update();
+})();
+</script>
+
+<!-- ═══ STRIPE PAYMENTS ══════════════════════ -->
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// ─────────────────────────────────────────────────────────────
+// ⚠️  STRIPE PUBLISHABLE KEY — paste your pk_live_... key below
+// Dashboard → Developers → API keys → Publishable key
+// ─────────────────────────────────────────────────────────────
+const STRIPE_PK = 'pk_live_YOUR_PUBLISHABLE_KEY_HERE';
+
+const PRICE_IDS = {
+  foundingMonthly: 'price_1TFCK63gWehifiJ9PFkzPbq5',   // £17/mo — founding
+  foundingAnnual:  'price_1TFCKa3gWehifiJ9XwqVgGOg',   // £197/yr — founding
+  monthly:         'price_1TFCJB3gWehifiJ9W24TVQ7h',   // £47/mo  — regular
+  annual:          'price_1TFCJa3gWehifiJ93xgCoc6i',   // £297/yr — regular
+};
+
+let stripeInstance = null;
+function getStripe() {
+  if (!stripeInstance) {
+    if (STRIPE_PK.includes('YOUR_PUBLISHABLE_KEY')) {
+      alert('⚠️ Add your Stripe publishable key to index.html (search for STRIPE_PK).');
+      return null;
+    }
+    stripeInstance = Stripe(STRIPE_PK);
+  }
+  return stripeInstance;
+}
+
+async function goCheckout(planKey) {
+  const s = getStripe();
+  if (!s) return;
+  const priceId = PRICE_IDS[planKey];
+  if (!priceId) return;
+  try {
+    const result = await s.redirectToCheckout({
+      lineItems: [{ price: priceId, quantity: 1 }],
+      mode: 'subscription',
+      successUrl: window.location.origin + '/?checkout=success',
+      cancelUrl:  window.location.href,
+    });
+    if (result.error) alert(result.error.message);
+  } catch(e) {
+    console.error('Stripe checkout error:', e);
+  }
+}
+
+// ─── Billing toggle (monthly ↔ annual) ────────────────────────
+let billingMode = 'monthly';
+
+function setPricing(mode) {
+  billingMode = mode;
+  const track = document.getElementById('tog-track');
+  const moLbl = document.getElementById('tog-mo');
+  const yrLbl = document.getElementById('tog-yr');
+  const moCards = document.querySelectorAll('.pr-mo');
+  const yrCards = document.querySelectorAll('.pr-yr');
+
+  if (mode === 'annual') {
+    track.classList.add('on');
+    moLbl.classList.remove('tog-active');
+    yrLbl.classList.add('tog-active');
+    moCards.forEach(c => c.style.display = 'none');
+    yrCards.forEach(c => c.style.display = 'block');
+  } else {
+    track.classList.remove('on');
+    moLbl.classList.add('tog-active');
+    yrLbl.classList.remove('tog-active');
+    moCards.forEach(c => c.style.display = 'block');
+    yrCards.forEach(c => c.style.display = 'none');
+  }
+}
+
+function toggleBilling() {
+  setPricing(billingMode === 'monthly' ? 'annual' : 'monthly');
+}
+
+// Default to annual view (best value)
+setPricing('annual');
+</script>
+</body>
+</html>
