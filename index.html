@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TaskNext.AI — Your Complete AI Social Media OS</title>
+<title>TaskNext.AI â€” Your Complete AI Social Media OS</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ── RESET & TOKENS ─────────────────────────── */
+/* â”€â”€ RESET & TOKENS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --p:#8b5cf6;--pl:#a78bfa;--pk:#ec4899;--g:#10b981;--y:#f59e0b;
@@ -24,7 +24,7 @@ body{
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-thumb{background:rgba(139,92,246,.4);border-radius:4px;}
 
-/* ── UTILITIES ──────────────────────────────── */
+/* â”€â”€ UTILITIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .g-text{background:linear-gradient(130deg,#c084fc 0%,#f472b6 55%,#fb923c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .g-text-b{background:linear-gradient(130deg,#60a5fa 0%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .g-btn{background:linear-gradient(135deg,var(--p),var(--pk));color:#fff;border:none;cursor:pointer;font-family:inherit;font-weight:700;transition:transform .2s,box-shadow .2s;}
@@ -35,7 +35,7 @@ body{
 .bpk{background:rgba(236,72,153,.1);color:#f472b6;border-color:rgba(236,72,153,.25);}
 .by{background:rgba(245,158,11,.1);color:#fbbf24;border-color:rgba(245,158,11,.25);}
 
-/* ── REVEAL ANIMATION ───────────────────────── */
+/* â”€â”€ REVEAL ANIMATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rv{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
 .rv.show{opacity:1;transform:none;}
 .rvl{opacity:0;transform:translateX(-36px);transition:opacity .75s ease,transform .75s ease;}
@@ -44,7 +44,7 @@ body{
 .rvr.show{opacity:1;transform:none;}
 .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
 
-/* ── NAV ────────────────────────────────────── */
+/* â”€â”€ NAV â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   padding:0 48px;height:58px;
@@ -59,7 +59,7 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 .nav-links a:hover{color:#fff;}
 .nav-cta{padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;}
 
-/* ── HERO ───────────────────────────────────── */
+/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #hero{
   min-height:100vh;display:flex;align-items:center;
   position:relative;overflow:hidden;padding:80px 48px 40px;
@@ -103,7 +103,7 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
   50%    {transform:perspective(1100px) rotateX(5deg) rotateY(-7deg) translateY(-15px);}
 }
 
-/* ── FEATURE SECTIONS ───────────────────────── */
+/* â”€â”€ FEATURE SECTIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fsec{
   min-height:100vh;display:flex;align-items:center;
   padding:100px 48px;position:relative;overflow:hidden;
@@ -121,13 +121,13 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 .feat-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:30px;}
 .feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--t2);}
 .feat-list li::before{
-  content:'✓';min-width:19px;height:19px;background:rgba(139,92,246,.14);
+  content:'âœ“';min-width:19px;height:19px;background:rgba(139,92,246,.14);
   border-radius:50%;display:flex;align-items:center;justify-content:center;
   font-size:10px;color:var(--pl);font-weight:700;flex-shrink:0;margin-top:1px;
 }
 .sec-cta{padding:12px 22px;border-radius:9px;font-size:14px;font-weight:700;text-decoration:none;display:inline-block;}
 
-/* ── APP WINDOW CHROME ──────────────────────── */
+/* â”€â”€ APP WINDOW CHROME â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .aw{border-radius:13px;overflow:hidden;border:1px solid rgba(139,92,246,.2);box-shadow:0 28px 70px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.03);background:#080810;}
 .aw-tb{background:#100f18;padding:10px 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.05);}
 .dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
@@ -164,7 +164,7 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 .ag-st{margin-left:auto;font-size:9.5px;font-weight:600;}
 .ag-st.run{color:#34d399;}.ag-st.idle{color:#fbbf24;}.ag-st.done{color:var(--t3);}
 
-/* ── ROADMAP ────────────────────────────────── */
+/* â”€â”€ ROADMAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #roadmap{padding:100px 48px;}
 .rm-inner{max-width:920px;margin:0 auto;}
 .center-hd{text-align:center;margin-bottom:56px;}
@@ -179,7 +179,7 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 .rid{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
 .ri-done{background:#10b981;}.ri-act{background:var(--pl);}.ri-soon{background:var(--t3);}
 
-/* ── PRICING TOGGLE ─────────────────────────── */
+/* â”€â”€ PRICING TOGGLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .tog-lbl{font-size:14px;font-weight:600;color:var(--t3);cursor:pointer;transition:color .2s;}
 .tog-lbl.tog-active{color:var(--t);}
 .tog-track{width:48px;height:26px;background:rgba(139,92,246,.25);border-radius:99px;cursor:pointer;position:relative;transition:background .2s;border:1px solid rgba(139,92,246,.3);}
@@ -188,7 +188,7 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 .tog-track.on .tog-thumb{transform:translateX(22px);}
 .save-pill{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.25);border-radius:99px;font-size:10px;font-weight:700;padding:2px 7px;margin-left:4px;vertical-align:middle;}
 
-/* ── PRICING ────────────────────────────────── */
+/* â”€â”€ PRICING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #pricing{padding:100px 48px;}
 .pr-inner{max-width:1020px;margin:0 auto;}
 .pr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:56px;}
@@ -202,10 +202,10 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 .pr-per{font-size:12.5px;color:var(--t3);margin-bottom:22px;}
 .pr-feats{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px;}
 .pr-feats li{font-size:13px;color:var(--t2);display:flex;align-items:center;gap:8px;}
-.pr-feats li::before{content:'✓';color:var(--pl);font-weight:700;font-size:12px;}
+.pr-feats li::before{content:'âœ“';color:var(--pl);font-weight:700;font-size:12px;}
 .pr-btn{width:100%;padding:12px;border-radius:9px;font-size:14px;font-weight:700;text-align:center;cursor:pointer;}
 
-/* ── FAQ ────────────────────────────────────── */
+/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #faq{padding:100px 48px;}
 .faq-inner{max-width:700px;margin:0 auto;}
 .faq-list{display:flex;flex-direction:column;gap:9px;margin-top:48px;}
@@ -217,14 +217,14 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;font-size:13.5px;color:var(--t2);line-height:1.72;padding:0 20px;}
 .faq-item.open .faq-a{max-height:200px;padding:0 20px 17px;}
 
-/* ── FINAL CTA ──────────────────────────────── */
+/* â”€â”€ FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #cta{padding:120px 48px 150px;text-align:center;position:relative;overflow:hidden;}
 #cta .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;border-radius:50%;background:radial-gradient(ellipse,rgba(139,92,246,.13) 0%,transparent 65%);pointer-events:none;}
 .cta-h2{font-size:clamp(34px,5vw,62px);font-weight:900;letter-spacing:-2.5px;line-height:1.07;max-width:700px;margin:0 auto 18px;}
 .cta-sub{font-size:17px;color:var(--t2);max-width:480px;margin:0 auto 38px;line-height:1.65;}
 .cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
 
-/* ── STICKY BAR ─────────────────────────────── */
+/* â”€â”€ STICKY BAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #sbar{
   position:fixed;bottom:0;left:0;right:0;z-index:190;
   background:rgba(5,5,7,.92);border-top:1px solid var(--bd);
@@ -243,7 +243,7 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 .cdsep{font-size:15px;font-weight:700;color:var(--t3);padding-bottom:8px;margin:0 1px;}
 .sbar-btn{padding:9px 22px;border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none;}
 
-/* ── FOOTER ─────────────────────────────────── */
+/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 footer{padding:40px 48px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--t3);}
 footer a{color:var(--t3);text-decoration:none;transition:color .2s;}
 footer a:hover{color:var(--t2);}
@@ -263,27 +263,27 @@ footer a:hover{color:var(--t2);}
   <a href="#pricing" class="nav-cta g-btn">Get Early Access</a>
 </nav>
 
-<!-- ═══ HERO ═══════════════════════════════════ -->
+<!-- â•â•â• HERO â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section id="hero">
   <canvas id="hero-canvas"></canvas>
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div style="margin-bottom:20px;" class="rv"><span class="badge bp">🤖 AI-Powered Social OS</span></div>
+      <div style="margin-bottom:20px;" class="rv"><span class="badge bp">ðŸ¤– AI-Powered Social OS</span></div>
       <h1 class="h1 rv d1">
         The last social media<br>tool you'll
         <span class="g-text"> ever need.</span>
       </h1>
       <p class="hero-sub rv d2">
-        TaskNext.AI replaces 12 separate tools with one local AI platform. Create, schedule, analyse, and automate — powered by Claude, running on your machine.
+        TaskNext.AI replaces 12 separate tools with one local AI platform. Create, schedule, analyse, and automate â€” powered by Claude, running on your machine.
       </p>
       <div class="hero-btns rv d3">
-        <button class="btn-p g-btn" onclick="goCheckout('foundingAnnual')">Claim Founding Spot →</button>
+        <button class="btn-p g-btn" onclick="goCheckout('foundingAnnual')">Claim Founding Spot â†’</button>
         <button class="btn-g" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See how it works</button>
       </div>
       <div class="hero-stats rv d4">
-        <div><span class="s-num g-text">4K–35K</span><span class="s-lbl">Growth in 8 weeks</span></div>
-        <div><span class="s-num">£2,753</span><span class="s-lbl">Avg saved vs agency</span></div>
+        <div><span class="s-num g-text">4Kâ€“35K</span><span class="s-lbl">Growth in 8 weeks</span></div>
+        <div><span class="s-num">Â£2,753</span><span class="s-lbl">Avg saved vs agency</span></div>
         <div><span class="s-num">100%</span><span class="s-lbl">Agent success rate</span></div>
         <div><span class="s-num">38</span><span class="s-lbl">Live automations</span></div>
       </div>
@@ -295,32 +295,32 @@ footer a:hover{color:var(--t2);}
         <div class="aw" style="width:min(540px,100%);">
           <div class="aw-tb">
             <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
-            <span class="tb-lbl">TaskNext.AI — Dashboard</span>
+            <span class="tb-lbl">TaskNext.AI â€” Dashboard</span>
           </div>
           <div class="aw-body">
             <div class="asb">
               <div class="sb-logo">TaskNext</div>
-              <div class="si on"><em>⚡</em>Dashboard</div>
-              <div class="si"><em>✍️</em>Content Studio</div>
-              <div class="si"><em>📈</em>Growth Center</div>
-              <div class="si"><em>🤖</em>AI Agents</div>
-              <div class="si"><em>📅</em>Schedule</div>
-              <div class="si"><em>⚙️</em>Automations</div>
-              <div class="si"><em>🏆</em>Coach</div>
-              <div class="si"><em>🔍</em>Research</div>
+              <div class="si on"><em>âš¡</em>Dashboard</div>
+              <div class="si"><em>âœï¸</em>Content Studio</div>
+              <div class="si"><em>ðŸ“ˆ</em>Growth Center</div>
+              <div class="si"><em>ðŸ¤–</em>AI Agents</div>
+              <div class="si"><em>ðŸ“…</em>Schedule</div>
+              <div class="si"><em>âš™ï¸</em>Automations</div>
+              <div class="si"><em>ðŸ†</em>Coach</div>
+              <div class="si"><em>ðŸ”</em>Research</div>
             </div>
             <div class="ac">
               <div class="ac-head">
-                <div><div class="ac-title">Good morning, Jesse 👋</div><div class="ac-sub">Performance overview</div></div>
+                <div><div class="ac-title">Good morning, Jesse ðŸ‘‹</div><div class="ac-sub">Performance overview</div></div>
                 <span class="badge bg2" style="font-size:9px;padding:3px 9px;">All systems active</span>
               </div>
               <div class="sc-row">
-                <div class="sc"><div class="v" style="color:#a78bfa;">12,847</div><div class="l">Followers</div><div class="c cu">↑ +18.4%</div></div>
-                <div class="sc"><div class="v" style="color:#f472b6;">4.2%</div><div class="l">Engagement</div><div class="c cu">↑ +0.8%</div></div>
+                <div class="sc"><div class="v" style="color:#a78bfa;">12,847</div><div class="l">Followers</div><div class="c cu">â†‘ +18.4%</div></div>
+                <div class="sc"><div class="v" style="color:#f472b6;">4.2%</div><div class="l">Engagement</div><div class="c cu">â†‘ +0.8%</div></div>
                 <div class="sc"><div class="v" style="color:#34d399;">35</div><div class="l">Languages</div><div class="c" style="color:#94a3b8;">Supported</div></div>
               </div>
               <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
-                <div style="font-size:9px;color:#475569;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;">Followers — 30 days</div>
+                <div style="font-size:9px;color:#475569;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;">Followers â€” 30 days</div>
                 <svg width="100%" height="62" viewBox="0 0 320 62" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="gA" x1="0" y1="0" x2="0" y2="1">
@@ -346,21 +346,21 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- ═══ FEATURE 1: CONTENT STUDIO ══════════════ -->
+<!-- â•â•â• FEATURE 1: CONTENT STUDIO â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section class="fsec" id="features">
   <div style="position:absolute;top:20%;right:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(236,72,153,.08) 0%,transparent 70%);pointer-events:none;"></div>
   <div class="fsec-inner">
     <div class="fsec-text">
-      <div class="sec-lbl rv">✍️ AI Content Studio</div>
+      <div class="sec-lbl rv">âœï¸ AI Content Studio</div>
       <h2 class="sec-h2 rv d1">From blank page to <span class="g-text">viral post</span><br>in 30 seconds.</h2>
-      <p class="sec-desc rv d2">Claude Sonnet writes platform-specific captions, carousels, hooks, and hashtags — while understanding your brand voice, token strategy, and audience.</p>
+      <p class="sec-desc rv d2">Claude Sonnet writes platform-specific captions, carousels, hooks, and hashtags â€” while understanding your brand voice, token strategy, and audience.</p>
       <ul class="feat-list rv d3">
         <li>Batch-generate 30 days of content in minutes</li>
         <li>Platform-native formats: IG, X, TikTok, LinkedIn</li>
         <li>Engagement score prediction before you post</li>
-        <li>Your voice, your tone — never generic AI copy</li>
+        <li>Your voice, your tone â€” never generic AI copy</li>
       </ul>
-      <a href="#pricing" class="sec-cta g-btn rv d4">Start creating free →</a>
+      <a href="#pricing" class="sec-cta g-btn rv d4">Start creating free â†’</a>
     </div>
     <div class="fsec-vis rv rvr d2">
       <div class="aw">
@@ -368,26 +368,26 @@ footer a:hover{color:var(--t2);}
         <div class="aw-body">
           <div class="asb">
             <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>⚡</em>Dashboard</div>
-            <div class="si on"><em>✍️</em>Content Studio</div>
-            <div class="si"><em>📈</em>Growth Center</div>
-            <div class="si"><em>🤖</em>AI Agents</div>
-            <div class="si"><em>📅</em>Schedule</div>
+            <div class="si"><em>âš¡</em>Dashboard</div>
+            <div class="si on"><em>âœï¸</em>Content Studio</div>
+            <div class="si"><em>ðŸ“ˆ</em>Growth Center</div>
+            <div class="si"><em>ðŸ¤–</em>AI Agents</div>
+            <div class="si"><em>ðŸ“…</em>Schedule</div>
           </div>
           <div class="ac">
             <div class="ac-head">
               <div class="ac-title">New Post</div>
-              <span class="badge bp" style="font-size:9px;padding:3px 9px;">✨ AI Generate</span>
+              <span class="badge bp" style="font-size:9px;padding:3px 9px;">âœ¨ AI Generate</span>
             </div>
             <!-- Platform tabs -->
             <div style="display:flex;gap:5px;flex-shrink:0;">
-              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;font-weight:600;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);">📸 Instagram</span>
-              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;color:#475569;border:1px solid rgba(255,255,255,.05);">𝕏 Twitter</span>
-              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;color:#475569;border:1px solid rgba(255,255,255,.05);">🎵 TikTok</span>
+              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;font-weight:600;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);">ðŸ“¸ Instagram</span>
+              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;color:#475569;border:1px solid rgba(255,255,255,.05);">ð• Twitter</span>
+              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;color:#475569;border:1px solid rgba(255,255,255,.05);">ðŸŽµ TikTok</span>
             </div>
             <!-- Editor -->
             <div style="background:#100f18;border:1px solid rgba(139,92,246,.22);border-radius:7px;padding:11px;flex:1;min-height:0;">
-              <p style="font-size:10.5px;color:#e2e8f0;line-height:1.65;">Your morning routine isn't just about coffee ☕<br><br>Here's what actually moves the needle...</p>
+              <p style="font-size:10.5px;color:#e2e8f0;line-height:1.65;">Your morning routine isn't just about coffee â˜•<br><br>Here's what actually moves the needle...</p>
               <div style="margin-top:8px;display:flex;gap:5px;flex-wrap:wrap;">
                 <span style="font-size:9.5px;color:#8b5cf6;">#morningroutine</span>
                 <span style="font-size:9.5px;color:#8b5cf6;">#productivity</span>
@@ -396,10 +396,10 @@ footer a:hover{color:var(--t2);}
             </div>
             <!-- AI suggestion -->
             <div style="background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:7px;padding:9px;flex-shrink:0;">
-              <div style="font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:#8b5cf6;margin-bottom:5px;">🤖 AI Suggestion</div>
+              <div style="font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:#8b5cf6;margin-bottom:5px;">ðŸ¤– AI Suggestion</div>
               <div style="font-size:10.5px;color:#e2e8f0;">"5 AM habits that 10x'd my revenue..."</div>
               <div style="display:flex;gap:12px;margin-top:5px;">
-                <span style="font-size:9.5px;color:#34d399;">↑ Engagement: HIGH</span>
+                <span style="font-size:9.5px;color:#34d399;">â†‘ Engagement: HIGH</span>
                 <span style="font-size:9.5px;color:#94a3b8;">Est. reach: 14.2K</span>
               </div>
             </div>
@@ -410,14 +410,14 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- ═══ FEATURE 2: GROWTH CENTER ═══════════════ -->
+<!-- â•â•â• FEATURE 2: GROWTH CENTER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section class="fsec">
   <div style="position:absolute;top:30%;left:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(139,92,246,.08) 0%,transparent 70%);pointer-events:none;"></div>
   <div class="fsec-inner rev">
     <div class="fsec-text">
-      <div class="sec-lbl rv">📈 Growth Center</div>
+      <div class="sec-lbl rv">ðŸ“ˆ Growth Center</div>
       <h2 class="sec-h2 rv d1">Watch your audience grow in <span class="g-text">real time.</span></h2>
-      <p class="sec-desc rv d2">Deep analytics across every platform. See what's working, what's flopping, and exactly what to do next — in one clean dashboard.</p>
+      <p class="sec-desc rv d2">Deep analytics across every platform. See what's working, what's flopping, and exactly what to do next â€” in one clean dashboard.</p>
       <ul class="feat-list rv d3">
         <li>Cross-platform follower tracking &amp; projections</li>
         <li>Best time to post based on your actual audience</li>
@@ -431,11 +431,11 @@ footer a:hover{color:var(--t2);}
         <div class="aw-body">
           <div class="asb">
             <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>⚡</em>Dashboard</div>
-            <div class="si"><em>✍️</em>Content Studio</div>
-            <div class="si on"><em>📈</em>Growth Center</div>
-            <div class="si"><em>🤖</em>AI Agents</div>
-            <div class="si"><em>📅</em>Schedule</div>
+            <div class="si"><em>âš¡</em>Dashboard</div>
+            <div class="si"><em>âœï¸</em>Content Studio</div>
+            <div class="si on"><em>ðŸ“ˆ</em>Growth Center</div>
+            <div class="si"><em>ðŸ¤–</em>AI Agents</div>
+            <div class="si"><em>ðŸ“…</em>Schedule</div>
           </div>
           <div class="ac">
             <div class="ac-head">
@@ -443,12 +443,12 @@ footer a:hover{color:var(--t2);}
               <span style="font-size:10px;color:#475569;">Last 30 days</span>
             </div>
             <div class="sc-row">
-              <div class="sc"><div class="v" style="color:#a78bfa;">12,847</div><div class="l">Followers</div><div class="c cu">↑ +3,647</div></div>
-              <div class="sc"><div class="v" style="color:#f472b6;">4.2%</div><div class="l">Engagement</div><div class="c cu">↑ Above avg</div></div>
+              <div class="sc"><div class="v" style="color:#a78bfa;">12,847</div><div class="l">Followers</div><div class="c cu">â†‘ +3,647</div></div>
+              <div class="sc"><div class="v" style="color:#f472b6;">4.2%</div><div class="l">Engagement</div><div class="c cu">â†‘ Above avg</div></div>
             </div>
             <!-- Dual chart -->
             <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
-              <div style="font-size:9px;color:#475569;margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em;">Follower Growth — 4 Weeks</div>
+              <div style="font-size:9px;color:#475569;margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em;">Follower Growth â€” 4 Weeks</div>
               <svg width="100%" height="72" viewBox="0 0 260 72" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="gB" x1="0" y1="0" x2="0" y2="1">
@@ -469,8 +469,8 @@ footer a:hover{color:var(--t2);}
             <!-- Top posts -->
             <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex-shrink:0;">
               <div style="font-size:8.5px;color:#475569;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;">Top Posts This Week</div>
-              <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#94a3b8;padding:2px 0;"><span>Morning habits carousel</span><span style="color:#34d399;">4.2K reach ↑</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#94a3b8;padding:2px 0;"><span>AI tools deep-dive thread</span><span style="color:#34d399;">3.8K reach ↑</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#94a3b8;padding:2px 0;"><span>Morning habits carousel</span><span style="color:#34d399;">4.2K reach â†‘</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#94a3b8;padding:2px 0;"><span>AI tools deep-dive thread</span><span style="color:#34d399;">3.8K reach â†‘</span></div>
             </div>
           </div>
         </div>
@@ -479,19 +479,19 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- ═══ FEATURE 3: AI AGENTS ════════════════════ -->
+<!-- â•â•â• FEATURE 3: AI AGENTS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section class="fsec">
   <div style="position:absolute;bottom:20%;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(16,185,129,.07) 0%,transparent 70%);pointer-events:none;"></div>
   <div class="fsec-inner">
     <div class="fsec-text">
-      <div class="sec-lbl rv">🤖 AI Agent Hub</div>
+      <div class="sec-lbl rv">ðŸ¤– AI Agent Hub</div>
       <h2 class="sec-h2 rv d1">Your AI team works <span class="g-text">while you sleep.</span></h2>
-      <p class="sec-desc rv d2">Deploy autonomous agents that write content, engage with followers, research trends, and optimise your strategy — 24/7, zero supervision needed.</p>
+      <p class="sec-desc rv d2">Deploy autonomous agents that write content, engage with followers, research trends, and optimise your strategy â€” 24/7, zero supervision needed.</p>
       <ul class="feat-list rv d3">
         <li>Content Writer Agent: drafts posts on schedule</li>
         <li>Engagement Agent: replies and DMs strategically</li>
         <li>Trend Spotter: finds viral topics before they peak</li>
-        <li>Full logs and override controls — always in charge</li>
+        <li>Full logs and override controls â€” always in charge</li>
       </ul>
     </div>
     <div class="fsec-vis rv rvr d2">
@@ -500,11 +500,11 @@ footer a:hover{color:var(--t2);}
         <div class="aw-body">
           <div class="asb">
             <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>⚡</em>Dashboard</div>
-            <div class="si"><em>✍️</em>Content Studio</div>
-            <div class="si"><em>📈</em>Growth Center</div>
-            <div class="si on"><em>🤖</em>AI Agents</div>
-            <div class="si"><em>📅</em>Schedule</div>
+            <div class="si"><em>âš¡</em>Dashboard</div>
+            <div class="si"><em>âœï¸</em>Content Studio</div>
+            <div class="si"><em>ðŸ“ˆ</em>Growth Center</div>
+            <div class="si on"><em>ðŸ¤–</em>AI Agents</div>
+            <div class="si"><em>ðŸ“…</em>Schedule</div>
           </div>
           <div class="ac">
             <div class="ac-head">
@@ -528,7 +528,7 @@ footer a:hover{color:var(--t2);}
             </div>
             <div class="agc">
               <div class="agd done"></div>
-              <div><div class="ag-name">Trend Spotter</div><div class="ag-desc">Found 8 trending topics ✓</div></div>
+              <div><div class="ag-name">Trend Spotter</div><div class="ag-desc">Found 8 trending topics âœ“</div></div>
               <span class="ag-st done">Complete</span>
             </div>
             <div style="display:flex;gap:7px;flex-shrink:0;">
@@ -542,12 +542,12 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- ═══ FEATURE 4: PERFORMANCE COACH ═══════════ -->
+<!-- â•â•â• FEATURE 4: PERFORMANCE COACH â•â•â•â•â•â•â•â•â•â•â• -->
 <section class="fsec">
   <div style="position:absolute;top:20%;left:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(245,158,11,.07) 0%,transparent 70%);pointer-events:none;"></div>
   <div class="fsec-inner rev">
     <div class="fsec-text">
-      <div class="sec-lbl rv">🏆 Performance Coach</div>
+      <div class="sec-lbl rv">ðŸ† Performance Coach</div>
       <h2 class="sec-h2 rv d1">Know exactly <span class="g-text">what to post next.</span></h2>
       <p class="sec-desc rv d2">Your AI coach analyses every post, identifies patterns in what works, and gives you a personalised weekly action plan to hit your goals faster.</p>
       <ul class="feat-list rv d3">
@@ -563,11 +563,11 @@ footer a:hover{color:var(--t2);}
         <div class="aw-body">
           <div class="asb">
             <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>⚡</em>Dashboard</div>
-            <div class="si"><em>✍️</em>Content Studio</div>
-            <div class="si"><em>📈</em>Growth Center</div>
-            <div class="si"><em>🤖</em>AI Agents</div>
-            <div class="si on"><em>🏆</em>Coach</div>
+            <div class="si"><em>âš¡</em>Dashboard</div>
+            <div class="si"><em>âœï¸</em>Content Studio</div>
+            <div class="si"><em>ðŸ“ˆ</em>Growth Center</div>
+            <div class="si"><em>ðŸ¤–</em>AI Agents</div>
+            <div class="si on"><em>ðŸ†</em>Coach</div>
           </div>
           <div class="ac">
             <div class="ac-head">
@@ -584,20 +584,20 @@ footer a:hover{color:var(--t2);}
                 <div style="height:7px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;margin-bottom:7px;">
                   <div style="width:87%;height:100%;background:linear-gradient(90deg,#f59e0b,#10b981);border-radius:99px;"></div>
                 </div>
-                <div style="font-size:10.5px;color:#94a3b8;">Great week! Consistency ↑, reach ↑</div>
+                <div style="font-size:10.5px;color:#94a3b8;">Great week! Consistency â†‘, reach â†‘</div>
               </div>
             </div>
             <!-- Insights -->
             <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
               <div style="font-size:8.5px;color:#475569;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Insights</div>
-              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>✅</span>Post consistency: GREAT</div>
-              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>⚡</span>Best time: 7–9am &amp; 6–8pm</div>
-              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>🎯</span>Top format: Carousels</div>
+              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>âœ…</span>Post consistency: GREAT</div>
+              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>âš¡</span>Best time: 7â€“9am &amp; 6â€“8pm</div>
+              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>ðŸŽ¯</span>Top format: Carousels</div>
             </div>
             <!-- Recommendation -->
             <div style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.18);border-radius:7px;padding:9px;flex-shrink:0;">
-              <div style="font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:#f59e0b;margin-bottom:4px;">🤖 AI Recommendation</div>
-              <div style="font-size:10.5px;color:#e2e8f0;line-height:1.55;">"Post a reel this Tuesday at 7am — add a CTA to improve saves by 34%"</div>
+              <div style="font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:#f59e0b;margin-bottom:4px;">ðŸ¤– AI Recommendation</div>
+              <div style="font-size:10.5px;color:#e2e8f0;line-height:1.55;">"Post a reel this Tuesday at 7am â€” add a CTA to improve saves by 34%"</div>
             </div>
           </div>
         </div>
@@ -606,14 +606,14 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- ═══ FEATURE 5: AUTOMATION HUB ══════════════ -->
+<!-- â•â•â• FEATURE 5: AUTOMATION HUB â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section class="fsec">
   <div style="position:absolute;top:30%;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(139,92,246,.09) 0%,transparent 70%);pointer-events:none;"></div>
   <div class="fsec-inner">
     <div class="fsec-text">
-      <div class="sec-lbl rv">⚙️ Automation Hub</div>
+      <div class="sec-lbl rv">âš™ï¸ Automation Hub</div>
       <h2 class="sec-h2 rv d1">Set it. Forget it.<br><span class="g-text">Go viral.</span></h2>
-      <p class="sec-desc rv d2">Build visual content workflows that run automatically. Connect triggers, actions, and conditions — without a single line of code.</p>
+      <p class="sec-desc rv d2">Build visual content workflows that run automatically. Connect triggers, actions, and conditions â€” without a single line of code.</p>
       <ul class="feat-list rv d3">
         <li>Drag-and-drop workflow builder</li>
         <li>Triggers: schedule, trend spike, competitor post</li>
@@ -627,11 +627,11 @@ footer a:hover{color:var(--t2);}
         <div class="aw-body">
           <div class="asb">
             <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>⚡</em>Dashboard</div>
-            <div class="si"><em>✍️</em>Content Studio</div>
-            <div class="si"><em>📈</em>Growth Center</div>
-            <div class="si"><em>🤖</em>AI Agents</div>
-            <div class="si on"><em>⚙️</em>Automations</div>
+            <div class="si"><em>âš¡</em>Dashboard</div>
+            <div class="si"><em>âœï¸</em>Content Studio</div>
+            <div class="si"><em>ðŸ“ˆ</em>Growth Center</div>
+            <div class="si"><em>ðŸ¤–</em>AI Agents</div>
+            <div class="si on"><em>âš™ï¸</em>Automations</div>
           </div>
           <div class="ac">
             <div class="ac-head">
@@ -642,25 +642,25 @@ footer a:hover{color:var(--t2);}
             <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:12px;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
               <div style="display:flex;align-items:center;gap:0;width:100%;">
                 <div style="flex:1;background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.28);border-radius:7px;padding:7px 4px;text-align:center;">
-                  <div style="font-size:15px;">⏰</div>
+                  <div style="font-size:15px;">â°</div>
                   <div style="font-size:8.5px;color:#a78bfa;font-weight:600;margin-top:2px;">Trigger</div>
                   <div style="font-size:7.5px;color:#475569;">7:00 AM</div>
                 </div>
                 <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
                 <div style="flex:1;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.22);border-radius:7px;padding:7px 4px;text-align:center;">
-                  <div style="font-size:15px;">🤖</div>
+                  <div style="font-size:15px;">ðŸ¤–</div>
                   <div style="font-size:8.5px;color:#f472b6;font-weight:600;margin-top:2px;">AI Write</div>
                   <div style="font-size:7.5px;color:#475569;">Generate</div>
                 </div>
                 <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
                 <div style="flex:1;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:7px 4px;text-align:center;">
-                  <div style="font-size:15px;">✅</div>
+                  <div style="font-size:15px;">âœ…</div>
                   <div style="font-size:8.5px;color:#34d399;font-weight:600;margin-top:2px;">Review</div>
                   <div style="font-size:7.5px;color:#475569;">Auto-pass</div>
                 </div>
                 <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
                 <div style="flex:1;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.18);border-radius:7px;padding:7px 4px;text-align:center;">
-                  <div style="font-size:15px;">🚀</div>
+                  <div style="font-size:15px;">ðŸš€</div>
                   <div style="font-size:8.5px;color:#fbbf24;font-weight:600;margin-top:2px;">Publish</div>
                   <div style="font-size:7.5px;color:#475569;">All platforms</div>
                 </div>
@@ -675,11 +675,11 @@ footer a:hover{color:var(--t2);}
             <div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0;">
               <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 9px;background:#100f18;border-radius:6px;border:1px solid rgba(255,255,255,.05);">
                 <span style="font-size:10.5px;color:#e2e8f0;">Daily Content Pipeline</span>
-                <span style="font-size:9.5px;color:#34d399;">● Active</span>
+                <span style="font-size:9.5px;color:#34d399;">â— Active</span>
               </div>
               <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 9px;background:#100f18;border-radius:6px;border:1px solid rgba(255,255,255,.05);">
                 <span style="font-size:10.5px;color:#e2e8f0;">Engagement Auto-Reply</span>
-                <span style="font-size:9.5px;color:#34d399;">● Active</span>
+                <span style="font-size:9.5px;color:#34d399;">â— Active</span>
               </div>
             </div>
           </div>
@@ -689,19 +689,19 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- ═══ ROADMAP ══════════════════════════════════ -->
+<!-- â•â•â• ROADMAP â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section id="roadmap">
   <div class="rm-inner">
     <div class="center-hd rv">
-      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">🗺️ Roadmap</div>
+      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">ðŸ—ºï¸ Roadmap</div>
       <h2 class="sec-h2">Built in public.<br><span class="g-text">Shipping fast.</span></h2>
       <p>We move quickly. Founding members shape every feature.</p>
     </div>
     <div class="rm-grid rv d1">
       <div class="rmc cur">
         <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);pointer-events:none;"></div>
-        <div class="rm-phase">Now Live — V1</div>
-        <div class="rm-title">🚀 Core Platform</div>
+        <div class="rm-phase">Now Live â€” V1</div>
+        <div class="rm-title">ðŸš€ Core Platform</div>
         <ul class="rm-items">
           <li><span class="rid ri-done"></span>AI Content Studio</li>
           <li><span class="rid ri-done"></span>Growth Analytics Dashboard</li>
@@ -712,8 +712,8 @@ footer a:hover{color:var(--t2);}
       </div>
       <div class="rmc">
         <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(236,72,153,.2) 0%,transparent 70%);pointer-events:none;"></div>
-        <div class="rm-phase">Q2 2026 — V2</div>
-        <div class="rm-title">⚡ Advanced AI</div>
+        <div class="rm-phase">Q2 2026 â€” V2</div>
+        <div class="rm-title">âš¡ Advanced AI</div>
         <ul class="rm-items">
           <li><span class="rid ri-soon"></span>Multi-agent workflows</li>
           <li><span class="rid ri-soon"></span>Video script generator</li>
@@ -724,8 +724,8 @@ footer a:hover{color:var(--t2);}
       </div>
       <div class="rmc">
         <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(16,185,129,.15) 0%,transparent 70%);pointer-events:none;"></div>
-        <div class="rm-phase">Q3 2026 — V3</div>
-        <div class="rm-title">🌐 Marketplace</div>
+        <div class="rm-phase">Q3 2026 â€” V3</div>
+        <div class="rm-title">ðŸŒ Marketplace</div>
         <ul class="rm-items">
           <li><span class="rid ri-soon"></span>Agent marketplace</li>
           <li><span class="rid ri-soon"></span>Custom AI personas</li>
@@ -735,8 +735,8 @@ footer a:hover{color:var(--t2);}
       </div>
       <div class="rmc">
         <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(245,158,11,.15) 0%,transparent 70%);pointer-events:none;"></div>
-        <div class="rm-phase">Q4 2026 — V4</div>
-        <div class="rm-title">💰 Monetisation Suite</div>
+        <div class="rm-phase">Q4 2026 â€” V4</div>
+        <div class="rm-title">ðŸ’° Monetisation Suite</div>
         <ul class="rm-items">
           <li><span class="rid ri-soon"></span>Revenue tracking</li>
           <li><span class="rid ri-soon"></span>Affiliate manager</li>
@@ -748,13 +748,13 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- ═══ PRICING ══════════════════════════════════ -->
+<!-- â•â•â• PRICING â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section id="pricing">
   <div class="pr-inner">
     <div class="center-hd rv">
-      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">💳 Founding Pricing</div>
+      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">ðŸ’³ Founding Pricing</div>
       <h2 class="sec-h2">One plan. Everything included.<br><span class="g-text">Price locked forever.</span></h2>
-      <p style="color:var(--t2);font-size:15px;max-width:520px;margin:0 auto 10px;">This is not a discount. This is your permanent rate — locked as long as you stay subscribed. After founding closes, the price rises. Founding members are unaffected.</p>
+      <p style="color:var(--t2);font-size:15px;max-width:520px;margin:0 auto 10px;">This is not a discount. This is your permanent rate â€” locked as long as you stay subscribed. After founding closes, the price rises. Founding members are unaffected.</p>
     </div>
 
     <!-- Billing toggle -->
@@ -763,7 +763,7 @@ footer a:hover{color:var(--t2);}
       <div class="tog-track" onclick="toggleBilling()" id="tog-track">
         <div class="tog-thumb" id="tog-thumb"></div>
       </div>
-      <span id="tog-yr" class="tog-lbl" onclick="setPricing('annual')">Annual <span class="save-pill">Save £7/mo</span></span>
+      <span id="tog-yr" class="tog-lbl" onclick="setPricing('annual')">Annual <span class="save-pill">Save Â£7/mo</span></span>
     </div>
 
     <div class="pr-grid" style="max-width:760px;margin:0 auto;grid-template-columns:1fr 1fr;">
@@ -772,10 +772,10 @@ footer a:hover{color:var(--t2);}
       <div class="prc rv d1 pr-mo" style="display:block;">
         <div class="pr-plan">Founding Monthly</div>
         <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
-          <div class="pr-amt"><sup>£</sup>17</div>
-          <div class="pr-per">/mo · locked for life</div>
+          <div class="pr-amt"><sup>Â£</sup>17</div>
+          <div class="pr-per">/mo Â· locked for life</div>
         </div>
-        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;text-decoration:line-through;">Regular: £47/mo after founding closes</div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;text-decoration:line-through;">Regular: Â£47/mo after founding closes</div>
         <ul class="pr-feats">
           <li>AI Content Studio (unlimited)</li>
           <li>6-Platform Scheduling</li>
@@ -786,64 +786,64 @@ footer a:hover{color:var(--t2);}
           <li>35-Language Interface</li>
           <li>Silent auto-updates forever</li>
         </ul>
-        <button class="pr-btn g-btn" onclick="goCheckout('foundingMonthly')">Lock Monthly Rate →</button>
+        <button class="pr-btn g-btn" onclick="goCheckout('foundingMonthly')">Lock Monthly Rate â†’</button>
       </div>
 
       <!-- Founding Annual (featured) -->
       <div class="prc pop rv d2 pr-yr" style="display:none;">
-        <div class="pop-tag">Best Value · Save £7/mo</div>
+        <div class="pop-tag">Best Value Â· Save Â£7/mo</div>
         <div class="pr-plan">Founding Annual</div>
         <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
-          <div class="pr-amt"><sup>£</sup>197</div>
-          <div class="pr-per">/yr · locked for life</div>
+          <div class="pr-amt"><sup>Â£</sup>197</div>
+          <div class="pr-per">/yr Â· locked for life</div>
         </div>
-        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;text-decoration:line-through;">Regular: £297/yr after founding closes</div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;text-decoration:line-through;">Regular: Â£297/yr after founding closes</div>
         <ul class="pr-feats">
           <li>Everything in Monthly</li>
           <li>Priority support lane</li>
           <li>Early access to new features</li>
           <li>Founding member badge</li>
-          <li>Lock in £16.42/mo forever</li>
+          <li>Lock in Â£16.42/mo forever</li>
           <li>No price shock at renewal</li>
           <li>Cancel anytime, no fees</li>
-          <li>Renews at £197 — always</li>
+          <li>Renews at Â£197 â€” always</li>
         </ul>
-        <button class="pr-btn g-btn" onclick="goCheckout('foundingAnnual')">Lock Annual Rate →</button>
+        <button class="pr-btn g-btn" onclick="goCheckout('foundingAnnual')">Lock Annual Rate â†’</button>
       </div>
 
     </div>
 
     <div class="rv" style="text-align:center;margin-top:28px;color:var(--t3);font-size:13px;">
-      🔒 &nbsp;Price locked permanently at sign-up rate · Cancel anytime · No exit fees
+      ðŸ”’ &nbsp;Price locked permanently at sign-up rate Â· Cancel anytime Â· No exit fees
     </div>
 
     <!-- After founding comparison -->
     <div class="rv d2" style="max-width:500px;margin:28px auto 0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px 24px;text-align:center;">
-      <div style="font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">After founding closes — new members pay</div>
+      <div style="font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">After founding closes â€” new members pay</div>
       <div style="display:flex;justify-content:center;gap:32px;">
-        <div><span style="font-size:22px;font-weight:800;color:var(--t2);">£47</span><span style="color:var(--t3);font-size:13px;">/mo</span></div>
-        <div style="border-left:1px solid rgba(255,255,255,.1);padding-left:32px;"><span style="font-size:22px;font-weight:800;color:var(--t2);">£297</span><span style="color:var(--t3);font-size:13px;">/yr</span></div>
+        <div><span style="font-size:22px;font-weight:800;color:var(--t2);">Â£47</span><span style="color:var(--t3);font-size:13px;">/mo</span></div>
+        <div style="border-left:1px solid rgba(255,255,255,.1);padding-left:32px;"><span style="font-size:22px;font-weight:800;color:var(--t2);">Â£297</span><span style="color:var(--t3);font-size:13px;">/yr</span></div>
       </div>
-      <div style="font-size:12px;color:var(--t3);margin-top:8px;">Founding members keep £17/mo or £197/yr — forever.</div>
+      <div style="font-size:12px;color:var(--t3);margin-top:8px;">Founding members keep Â£17/mo or Â£197/yr â€” forever.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FAQ ══════════════════════════════════════ -->
+<!-- â•â•â• FAQ â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section id="faq">
   <div class="faq-inner">
     <div class="center-hd rv">
-      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">❓ FAQ</div>
+      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">â“ FAQ</div>
       <h2 class="sec-h2">Got questions?<br><span class="g-text">We've got answers.</span></h2>
     </div>
     <div class="faq-list rv d1">
       <div class="faq-item">
         <div class="faq-q">What AI model does TaskNext.AI use?<span class="faq-ico">+</span></div>
-        <div class="faq-a">TaskNext.AI runs on Claude Sonnet by Anthropic — one of the most capable AI models available. It runs locally on your machine, so your data never leaves your computer.</div>
+        <div class="faq-a">TaskNext.AI runs on Claude Sonnet by Anthropic â€” one of the most capable AI models available. It runs locally on your machine, so your data never leaves your computer.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Do I need any tech skills to use it?<span class="faq-ico">+</span></div>
-        <div class="faq-a">None at all. TaskNext.AI is designed for creators and marketers, not developers. Everything works through a clean visual interface — no code, no command lines.</div>
+        <div class="faq-a">None at all. TaskNext.AI is designed for creators and marketers, not developers. Everything works through a clean visual interface â€” no code, no command lines.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Is my data private and secure?<span class="faq-ico">+</span></div>
@@ -865,15 +865,15 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- ═══ FINAL CTA ═════════════════════════════════ -->
+<!-- â•â•â• FINAL CTA â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section id="cta">
   <div class="cta-glow"></div>
   <div style="position:relative;z-index:1;">
-    <div class="rv" style="margin-bottom:16px;"><span class="badge bp">🔒 Founding Rate Closes Soon</span></div>
-    <h2 class="cta-h2 rv d1">Stop paying £1,500/mo for tools<br>that don't talk to each other.</h2>
-    <p class="cta-sub rv d2">Join 200+ founders who locked in £17/mo before the price rises to £47. Your AI social media OS is waiting.</p>
+    <div class="rv" style="margin-bottom:16px;"><span class="badge bp">ðŸ”’ Founding Rate Closes Soon</span></div>
+    <h2 class="cta-h2 rv d1">Stop paying Â£1,500/mo for tools<br>that don't talk to each other.</h2>
+    <p class="cta-sub rv d2">Join 200+ founders who locked in Â£17/mo before the price rises to Â£47. Your AI social media OS is waiting.</p>
     <div class="cta-btns rv d3">
-      <button class="btn-p g-btn" style="padding:16px 32px;border-radius:12px;font-size:16px;" onclick="goCheckout('foundingAnnual')">Lock £197/yr For Life →</button>
+      <button class="btn-p g-btn" style="padding:16px 32px;border-radius:12px;font-size:16px;" onclick="goCheckout('foundingAnnual')">Lock Â£197/yr For Life â†’</button>
       <button class="btn-g" style="padding:16px 22px;font-size:16px;" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See all features</button>
     </div>
   </div>
@@ -883,7 +883,7 @@ footer a:hover{color:var(--t2);}
 <footer>
   <div>
     <strong style="color:#fff;font-size:14px;">TaskNext<span style="color:#a78bfa;">.AI</span></strong>
-    <span style="margin-left:18px;">© 2026 TaskNext.AI. All rights reserved.</span>
+    <span style="margin-left:18px;">Â© 2026 TaskNext.AI. All rights reserved.</span>
   </div>
   <div style="display:flex;gap:22px;">
     <a href="#">Privacy</a>
@@ -892,11 +892,11 @@ footer a:hover{color:var(--t2);}
   </div>
 </footer>
 
-<!-- ═══ STICKY BAR ═════════════════════════════════ -->
+<!-- â•â•â• STICKY BAR â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div id="sbar">
   <div class="sbar-l">
     <div class="live-dot"></div>
-    <span class="sbar-txt"><strong>LIVE</strong> &nbsp; 🔒 Founding Rate Closes In:</span>
+    <span class="sbar-txt"><strong>LIVE</strong> &nbsp; ðŸ”’ Founding Rate Closes In:</span>
   </div>
   <div class="cd-wrap">
     <div class="cdu"><span class="cdn" id="cd-h">71</span><span class="cdl">hrs</span></div>
@@ -905,25 +905,25 @@ footer a:hover{color:var(--t2);}
     <span class="cdsep">:</span>
     <div class="cdu"><span class="cdn" id="cd-s">44</span><span class="cdl">sec</span></div>
   </div>
-  <button class="sbar-btn g-btn" onclick="goCheckout('foundingAnnual')">Lock £197/yr For Life</button>
+  <button class="sbar-btn g-btn" onclick="goCheckout('foundingAnnual')">Lock Â£197/yr For Life</button>
 </div>
 
-<!-- ═══════════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      SCRIPTS
-═══════════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <script>
-// ── NAV scroll style
+// â”€â”€ NAV scroll style
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); }, {passive:true});
 
-// ── REVEAL on scroll
+// â”€â”€ REVEAL on scroll
 const rvEls = document.querySelectorAll('.rv, .rvl, .rvr');
 const rvObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 rvEls.forEach(el => rvObs.observe(el));
 
-// ── FAQ accordion
+// â”€â”€ FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('click', () => {
     const item = q.closest('.faq-item');
@@ -933,7 +933,7 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 
-// ── COUNTDOWN
+// â”€â”€ COUNTDOWN
 const KEY = 'tn_end_v2';
 let end = +sessionStorage.getItem(KEY);
 if (!end || end < Date.now()) {
@@ -955,7 +955,7 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
-// ── CANVAS PARTICLES (hero background)
+// â”€â”€ CANVAS PARTICLES (hero background)
 (function(){
   const canvas = document.getElementById('hero-canvas');
   const ctx = canvas.getContext('2d');
@@ -1021,27 +1021,27 @@ setInterval(tick, 1000);
 })();
 </script>
 
-<!-- ═══ STRIPE PAYMENTS ══════════════════════ -->
+<!-- â•â•â• STRIPE PAYMENTS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-// ─────────────────────────────────────────────────────────────
-// ⚠️  STRIPE PUBLISHABLE KEY — paste your pk_live_... key below
-// Dashboard → Developers → API keys → Publishable key
-// ─────────────────────────────────────────────────────────────
-const STRIPE_PK = 'pk_live_YOUR_PUBLISHABLE_KEY_HERE';
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// âš ï¸  STRIPE PUBLISHABLE KEY â€” paste your pk_live_... key below
+// Dashboard â†’ Developers â†’ API keys â†’ Publishable key
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+const STRIPE_PK = 'pk_live_51TDuLS3gWehifiJ9OM1bTygzkrSsyNKAwV1yUGiMG9wfmAV3tt2EUiO2PEXKF6VVG9bFYUyAldXcdiFBGwRQWb3q00UzZ0RlQf';
 
 const PRICE_IDS = {
-  foundingMonthly: 'price_1TFCK63gWehifiJ9PFkzPbq5',   // £17/mo — founding
-  foundingAnnual:  'price_1TFCKa3gWehifiJ9XwqVgGOg',   // £197/yr — founding
-  monthly:         'price_1TFCJB3gWehifiJ9W24TVQ7h',   // £47/mo  — regular
-  annual:          'price_1TFCJa3gWehifiJ93xgCoc6i',   // £297/yr — regular
+  foundingMonthly: 'price_1TFCK63gWehifiJ9PFkzPbq5',   // Â£17/mo â€” founding
+  foundingAnnual:  'price_1TFCKa3gWehifiJ9XwqVgGOg',   // Â£197/yr â€” founding
+  monthly:         'price_1TFCJB3gWehifiJ9W24TVQ7h',   // Â£47/mo  â€” regular
+  annual:          'price_1TFCJa3gWehifiJ93xgCoc6i',   // Â£297/yr â€” regular
 };
 
 let stripeInstance = null;
 function getStripe() {
   if (!stripeInstance) {
     if (STRIPE_PK.includes('YOUR_PUBLISHABLE_KEY')) {
-      alert('⚠️ Add your Stripe publishable key to index.html (search for STRIPE_PK).');
+      alert('âš ï¸ Add your Stripe publishable key to index.html (search for STRIPE_PK).');
       return null;
     }
     stripeInstance = Stripe(STRIPE_PK);
@@ -1067,7 +1067,7 @@ async function goCheckout(planKey) {
   }
 }
 
-// ─── Billing toggle (monthly ↔ annual) ────────────────────────
+// â”€â”€â”€ Billing toggle (monthly â†” annual) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let billingMode = 'monthly';
 
 function setPricing(mode) {
