@@ -247,6 +247,14 @@ nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdr
 footer{padding:40px 48px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--t3);}
 footer a{color:var(--t3);text-decoration:none;transition:color .2s;}
 footer a:hover{color:var(--t2);}
+
+/* ── 4-TIER PRICING GRID ─────────────────── */
+@media(max-width:900px){
+  .pr-grid{grid-template-columns:repeat(2,1fr)!important;}
+}
+@media(max-width:540px){
+  .pr-grid{grid-template-columns:1fr!important;}
+}
 </style>
 </head>
 <body>
@@ -278,7 +286,7 @@ footer a:hover{color:var(--t2);}
         TaskNext.AI replaces 12 separate tools with one local AI platform. Create, schedule, analyse, and automate â€” powered by Claude, running on your machine.
       </p>
       <div class="hero-btns rv d3">
-        <button class="btn-p g-btn" onclick="goCheckout('foundingAnnual')">Claim Founding Spot â†’</button>
+        <button class="btn-p g-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">See Plans from £7/mo â†’</button>
         <button class="btn-g" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See how it works</button>
       </div>
       <div class="hero-stats rv d4">
@@ -826,86 +834,117 @@ footer a:hover{color:var(--t2);}
   </div>
 </section>
 
-<!-- â•â•â• PRICING â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- PRICING SECTION -->
 <section id="pricing">
   <div class="pr-inner">
     <div class="center-hd rv">
-      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">ðŸ’³ Founding Pricing</div>
-      <h2 class="sec-h2">One plan. Everything included.<br><span class="g-text">Price locked forever.</span></h2>
-      <p style="color:var(--t2);font-size:15px;max-width:520px;margin:0 auto 10px;">This is not a discount. This is your permanent rate â€” locked as long as you stay subscribed. After founding closes, the price rises. Founding members are unaffected.</p>
+      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">💳 Choose Your Plan</div>
+      <h2 class="sec-h2">4 plans. 3 AI agents. 4 platforms.<br><span class="g-text">Founding price locked forever.</span></h2>
+      <p style="color:var(--t2);font-size:15px;max-width:580px;margin:0 auto 10px;">Only 50 founding spots at these prices. Once they're gone, prices go up. Lock your rate today — it never increases as long as you stay subscribed.</p>
     </div>
 
-    <!-- Billing toggle -->
-    <div class="pr-toggle rv" style="display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:40px;">
-      <span id="tog-mo" class="tog-lbl tog-active" onclick="setPricing('monthly')">Monthly</span>
-      <div class="tog-track" onclick="toggleBilling()" id="tog-track">
-        <div class="tog-thumb" id="tog-thumb"></div>
-      </div>
-      <span id="tog-yr" class="tog-lbl" onclick="setPricing('annual')">Annual <span class="save-pill">Save Â£7/mo</span></span>
-    </div>
+    <div class="pr-grid rv" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
 
-    <div class="pr-grid" style="max-width:760px;margin:0 auto;grid-template-columns:1fr 1fr;">
-
-      <!-- Founding Monthly -->
-      <div class="prc rv d1 pr-mo" style="display:block;">
-        <div class="pr-plan">Founding Monthly</div>
+      <!-- STARTER -->
+      <div class="prc rv d1">
+        <div class="pr-plan">Starter</div>
         <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
-          <div class="pr-amt"><sup>Â£</sup>17</div>
-          <div class="pr-per">/mo Â· locked for life</div>
+          <div class="pr-amt"><sup>£</sup>7</div>
+          <div class="pr-per">/mo</div>
         </div>
-        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;text-decoration:line-through;">Regular: Â£47/mo after founding closes</div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;">1 platform · Chat Box agent</div>
         <ul class="pr-feats">
-          <li>AI Content Studio (unlimited)</li>
-          <li>6-Platform Scheduling</li>
-          <li>90-Day Content Calendar</li>
-          <li>Built-in Claude AI chat</li>
-          <li>Growth Analytics</li>
-          <li>AI Agents + Automations</li>
-          <li>35-Language Interface</li>
-          <li>Silent auto-updates forever</li>
+          <li>AI content generation</li>
+          <li>1 social platform (IG, X, LinkedIn, or TikTok)</li>
+          <li>Chat Box AI agent</li>
+          <li>30-day content calendar</li>
+          <li>Basic analytics</li>
+          <li>35-language support</li>
         </ul>
-        <button class="pr-btn g-btn" onclick="goCheckout('foundingMonthly')">Lock Monthly Rate â†’</button>
+        <button class="pr-btn g-btn" onclick="goCheckout('starter')">Get Starter →</button>
       </div>
 
-      <!-- Founding Annual (featured) -->
-      <div class="prc pop rv d2 pr-yr" style="display:none;">
-        <div class="pop-tag">Best Value Â· Save Â£7/mo</div>
-        <div class="pr-plan">Founding Annual</div>
+      <!-- GROWTH (popular) -->
+      <div class="prc pop rv d2">
+        <div class="pop-tag">Most Popular</div>
+        <div class="pr-plan">Growth</div>
         <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
-          <div class="pr-amt"><sup>Â£</sup>197</div>
-          <div class="pr-per">/yr Â· locked for life</div>
+          <div class="pr-amt"><sup>£</sup>19</div>
+          <div class="pr-per">/mo</div>
         </div>
-        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;text-decoration:line-through;">Regular: Â£297/yr after founding closes</div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;">2 platforms · 2 agents</div>
         <ul class="pr-feats">
-          <li>Everything in Monthly</li>
-          <li>Priority support lane</li>
-          <li>Early access to new features</li>
-          <li>Founding member badge</li>
-          <li>Lock in Â£16.42/mo forever</li>
-          <li>No price shock at renewal</li>
-          <li>Cancel anytime, no fees</li>
-          <li>Renews at Â£197 â€” always</li>
+          <li>Everything in Starter</li>
+          <li>2 social platforms</li>
+          <li>Chat Box + Content agents</li>
+          <li>60-day content calendar</li>
+          <li>AI scheduling</li>
+          <li>Growth analytics</li>
+          <li>Priority support</li>
         </ul>
-        <button class="pr-btn g-btn" onclick="goCheckout('foundingAnnual')">Lock Annual Rate â†’</button>
+        <button class="pr-btn g-btn" onclick="goCheckout('growth')">Get Growth →</button>
+      </div>
+
+      <!-- PRO -->
+      <div class="prc rv d3">
+        <div class="pr-plan">Pro</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
+          <div class="pr-amt"><sup>£</sup>49</div>
+          <div class="pr-per">/mo</div>
+        </div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;">4 platforms · All 3 agents</div>
+        <ul class="pr-feats">
+          <li>Everything in Growth</li>
+          <li>All 4 platforms (IG, X, LinkedIn, TikTok)</li>
+          <li>All 3 agents (Chat, Content, Scheduling)</li>
+          <li>90-day content calendar</li>
+          <li>Full analytics dashboard</li>
+          <li>Brand Brain AI training</li>
+          <li>Auto-update system</li>
+        </ul>
+        <button class="pr-btn g-btn" onclick="goCheckout('pro')">Get Pro →</button>
+      </div>
+
+      <!-- AGENCY -->
+      <div class="prc rv d4">
+        <div class="pr-plan">Agency</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
+          <div class="pr-amt"><sup>£</sup>99</div>
+          <div class="pr-per">/mo</div>
+        </div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;">Unlimited · White-label</div>
+        <ul class="pr-feats">
+          <li>Everything in Pro</li>
+          <li>Unlimited platforms</li>
+          <li>White-label branding</li>
+          <li>Client management dashboard</li>
+          <li>Multi-seat access</li>
+          <li>Competitor spy analytics</li>
+          <li>Dedicated account manager</li>
+          <li>API access</li>
+        </ul>
+        <button class="pr-btn g-btn" onclick="goCheckout('agency')">Get Agency →</button>
       </div>
 
     </div>
 
     <div class="rv" style="text-align:center;margin-top:28px;color:var(--t3);font-size:13px;">
-      ðŸ”’ &nbsp;Price locked permanently at sign-up rate Â· Cancel anytime Â· No exit fees
+      🔒  Founding price locked forever · Cancel anytime · No exit fees
     </div>
 
-    <!-- After founding comparison -->
     <div class="rv d2" style="max-width:500px;margin:28px auto 0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px 24px;text-align:center;">
-      <div style="font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">After founding closes â€” new members pay</div>
-      <div style="display:flex;justify-content:center;gap:32px;">
-        <div><span style="font-size:22px;font-weight:800;color:var(--t2);">Â£47</span><span style="color:var(--t3);font-size:13px;">/mo</span></div>
-        <div style="border-left:1px solid rgba(255,255,255,.1);padding-left:32px;"><span style="font-size:22px;font-weight:800;color:var(--t2);">Â£297</span><span style="color:var(--t3);font-size:13px;">/yr</span></div>
+      <div style="font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Only 50 founding spots — after that, prices increase</div>
+      <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+        <div><span style="font-size:18px;font-weight:800;color:#34d399;">£7</span><span style="color:var(--t3);font-size:12px;"> → £15</span></div>
+        <div><span style="font-size:18px;font-weight:800;color:#34d399;">£19</span><span style="color:var(--t3);font-size:12px;"> → £39</span></div>
+        <div><span style="font-size:18px;font-weight:800;color:#34d399;">£49</span><span style="color:var(--t3);font-size:12px;"> → £79</span></div>
+        <div><span style="font-size:18px;font-weight:800;color:#34d399;">£99</span><span style="color:var(--t3);font-size:12px;"> → £199</span></div>
       </div>
-      <div style="font-size:12px;color:var(--t3);margin-top:8px;">Founding members keep Â£17/mo or Â£197/yr â€” forever.</div>
+      <div style="font-size:12px;color:var(--t3);margin-top:8px;">Founding members keep their rate — forever.</div>
     </div>
   </div>
 </section>
+
 
 <!-- â•â•â• FAQ â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section id="faq">
@@ -929,10 +968,10 @@ footer a:hover{color:var(--t2);}
       </div>
       <div class="faq-item">
         <div class="faq-q">What social platforms are supported?<span class="faq-ico">+</span></div>
-        <div class="faq-a">Currently: Instagram, X (Twitter), TikTok, LinkedIn, and YouTube. Pinterest, Threads, and Facebook are coming in V2.</div>
+        <div class="faq-a">Instagram, X (Twitter), LinkedIn, and TikTok — all four supported from day one. More platforms coming in V2.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Is the founding member price really locked forever?<span class="faq-ico">+</span></div>
+        <div class="faq-q">Are founding member prices really locked forever?<span class="faq-ico">+</span></div>
         <div class="faq-a">Yes. Whatever price you sign up at today is your price for as long as you stay subscribed. We will never raise your rate. This is our promise to early supporters.</div>
       </div>
       <div class="faq-item">
@@ -947,11 +986,11 @@ footer a:hover{color:var(--t2);}
 <section id="cta">
   <div class="cta-glow"></div>
   <div style="position:relative;z-index:1;">
-    <div class="rv" style="margin-bottom:16px;"><span class="badge bp">ðŸ”’ Founding Rate Closes Soon</span></div>
-    <h2 class="cta-h2 rv d1">Stop paying Â£1,500/mo for tools<br>that don't talk to each other.</h2>
-    <p class="cta-sub rv d2">Join 200+ founders who locked in Â£17/mo before the price rises to Â£47. Your AI social media OS is waiting.</p>
+    <div class="rv" style="margin-bottom:16px;"><span class="badge bp">ðŸ”’ 50 Founding Spots Left</span></div>
+    <h2 class="cta-h2 rv d1">Stop juggling 12 separate tools<br>that don't talk to each other.</h2>
+    <p class="cta-sub rv d2">Join the first 50 founding members. Plans start at £7/mo — price locked forever. Your AI social media OS is waiting.</p>
     <div class="cta-btns rv d3">
-      <button class="btn-p g-btn" style="padding:16px 32px;border-radius:12px;font-size:16px;" onclick="goCheckout('foundingAnnual')">Lock Â£197/yr For Life â†’</button>
+      <button class="btn-p g-btn" style="padding:16px 32px;border-radius:12px;font-size:16px;" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">See All Plans from £7/mo →</button>
       <button class="btn-g" style="padding:16px 22px;font-size:16px;" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See all features</button>
     </div>
   </div>
@@ -974,7 +1013,7 @@ footer a:hover{color:var(--t2);}
 <div id="sbar">
   <div class="sbar-l">
     <div class="live-dot"></div>
-    <span class="sbar-txt"><strong>LIVE</strong> &nbsp; ðŸ”’ Founding Rate Closes In:</span>
+    <span class="sbar-txt"><strong>LIVE</strong> &nbsp; ðŸ”’ 50 Founding Spots Left — Closing In:</span>
   </div>
   <div class="cd-wrap">
     <div class="cdu"><span class="cdn" id="cd-h">71</span><span class="cdl">hrs</span></div>
@@ -983,7 +1022,7 @@ footer a:hover{color:var(--t2);}
     <span class="cdsep">:</span>
     <div class="cdu"><span class="cdn" id="cd-s">44</span><span class="cdl">sec</span></div>
   </div>
-  <button class="sbar-btn g-btn" onclick="goCheckout('foundingAnnual')">Lock Â£197/yr For Life</button>
+  <button class="sbar-btn g-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Plans from £7/mo →</button>
 </div>
 
 <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
@@ -1109,10 +1148,10 @@ setInterval(tick, 1000);
 const STRIPE_PK = 'pk_live_51TDuLS3gWehifiJ9OM1bTygzkrSsyNKAwV1yUGiMG9wfmAV3tt2EUiO2PEXKF6VVG9bFYUyAldXcdiFBGwRQWb3q00UzZ0RlQf';
 
 const PRICE_IDS = {
-  foundingMonthly: 'price_1TFCK63gWehifiJ9PFkzPbq5',   // Â£17/mo â€” founding
-  foundingAnnual:  'price_1TFCKa3gWehifiJ9XwqVgGOg',   // Â£197/yr â€” founding
-  monthly:         'price_1TFCJB3gWehifiJ9W24TVQ7h',   // Â£47/mo  â€” regular
-  annual:          'price_1TFCJa3gWehifiJ93xgCoc6i',   // Â£297/yr â€” regular
+  starter: 'price_1TFTEW3gWehifiJ9MjMGEk7h',   // £7/mo  - Starter
+  growth:  'price_1TFTEb3gWehifiJ9Z3CulW2k',   // £19/mo - Growth
+  pro:     'price_1TFTEi3gWehifiJ9aCgWHlpP',   // £49/mo - Pro
+  agency:  'price_1TFTEj3gWehifiJ9zvQaizfG',   // £99/mo - Agency
 };
 
 let stripeInstance = null;
