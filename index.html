@@ -870,7 +870,7 @@ footer a:hover{color:var(--t2);}
     <div class="center-hd rv">
       <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">&#128179; Choose Your Plan</div>
       <h2 class="sec-h2">4 plans. 3 AI agents. 4 platforms.<br><span class="g-text">Founding price locked forever.</span></h2>
-      <p style="color:var(--t2);font-size:15px;max-width:580px;margin:0 auto 10px;">Only 50 founding spots at these prices. Once they're gone, prices go up. Lock your rate today &mdash; it never increases as long as you stay subscribed.</p>
+      <p style="color:var(--t2);font-size:15px;max-width:580px;margin:0 auto 10px;">Only 30 founding spots at these prices. Once they're gone, prices go up. Lock your rate today &mdash; it never increases as long as you stay subscribed.</p>
     </div>
 
     <div class="pr-grid rv" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
@@ -935,26 +935,6 @@ footer a:hover{color:var(--t2);}
         <button class="pr-btn g-btn" onclick="goCheckout('pro')">Get Pro &rarr;</button>
       </div>
 
-      <!-- AGENCY -->
-      <div class="prc rv d4">
-        <div class="pr-plan">Agency</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
-          <div class="pr-amt"><sup>&pound;</sup>99</div>
-          <div class="pr-per">/mo</div>
-        </div>
-        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;">Unlimited &amp;middot; White-label</div>
-        <ul class="pr-feats">
-          <li>Everything in Pro</li>
-          <li>Unlimited platforms</li>
-          <li>White-label branding</li>
-          <li>Client management dashboard</li>
-          <li>Multi-seat access</li>
-          <li>Competitor spy analytics</li>
-          <li>Dedicated account manager</li>
-          <li>API access</li>
-        </ul>
-        <button class="pr-btn g-btn" onclick="goCheckout('agency')">Get Agency &rarr;</button>
-      </div>
 
     </div>
 
@@ -963,12 +943,11 @@ footer a:hover{color:var(--t2);}
     </div>
 
     <div class="rv d2" style="max-width:500px;margin:28px auto 0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px 24px;text-align:center;">
-      <div style="font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Only 50 founding spots &mdash; after that, prices increase</div>
+      <div style="font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Only 30 founding spots &mdash; after that, prices increase</div>
       <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
         <div><span style="font-size:18px;font-weight:800;color:#34d399;">&pound;7</span><span style="color:var(--t3);font-size:12px;"> &rarr; &pound;15</span></div>
         <div><span style="font-size:18px;font-weight:800;color:#34d399;">&pound;19</span><span style="color:var(--t3);font-size:12px;"> &rarr; &pound;39</span></div>
         <div><span style="font-size:18px;font-weight:800;color:#34d399;">&pound;49</span><span style="color:var(--t3);font-size:12px;"> &rarr; &pound;79</span></div>
-        <div><span style="font-size:18px;font-weight:800;color:#34d399;">&pound;99</span><span style="color:var(--t3);font-size:12px;"> &rarr; &pound;199</span></div>
       </div>
       <div style="font-size:12px;color:var(--t3);margin-top:8px;">Founding members keep their rate &mdash; forever.</div>
     </div>
@@ -1029,7 +1008,7 @@ footer a:hover{color:var(--t2);}
 <!-- &#9552;&#9552;&#9552; WAITLIST / FOUNDING MEMBER CAPTURE &#9552;&#9552;&#9552; -->
 <section id="waitlist" style="padding:80px 48px;background:linear-gradient(180deg,rgba(139,92,246,.06) 0%,transparent 100%);">
   <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div class="rv"><span class="badge bg2">&#127775; 50 Founding Member Spots</span></div>
+    <div class="rv"><span class="badge bg2">&#127775; 30 Founding Member Spots</span></div>
     <h2 class="sec-h2 rv d1" style="margin:20px 0 12px;">Lock &pound;7/mo <span class="g-text">forever.</span></h2>
     <p class="rv d2" style="color:var(--t2);font-size:15px;line-height:1.7;margin-bottom:28px;">
       Be one of the first 30 founding members. Your price is locked for life &mdash; it never goes up, even as we add platforms, agents, and features. Drop your email to reserve your spot.
@@ -1234,7 +1213,6 @@ const PRICE_IDS = {
   starter: 'price_1TFTEW3gWehifiJ9MjMGEk7h',   // &pound;7/mo  - Starter
   growth:  'price_1TFTEb3gWehifiJ9Z3CulW2k',   // &pound;19/mo - Growth
   pro:     'price_1TFTEi3gWehifiJ9aCgWHlpP',   // &pound;49/mo - Pro
-  agency:  'price_1TFTEj3gWehifiJ9zvQaizfG',   // &pound;99/mo - Agency
 };
 
 let stripeInstance = null;
