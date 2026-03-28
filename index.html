@@ -1,1298 +1,939 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TaskNext.AI &mdash; Your Complete AI Social Media OS</title>
-<meta name="description" content="TaskNext.AI &mdash; Your AI-powered social media OS. Create, schedule, analyse, and automate across Instagram, X, LinkedIn, and TikTok. Replace 12 tools with one.">
-<meta property="og:title" content="TaskNext.AI &mdash; Your Complete AI Social Media OS">
-<meta property="og:description" content="Replace 12 tools with one. AI content creation, scheduling, growth analytics, and automation &mdash; powered by Claude.">
-<meta property="og:image" content="https://tasknextai.one/og-image.png">
-<meta property="og:url" content="https://tasknextai.one">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TaskNext.AI &mdash; Your Complete AI Social Media OS">
-<meta name="twitter:description" content="Replace 12 tools with one. AI content, scheduling, analytics &amp; automation &mdash; powered by Claude.">
-<meta name="twitter:image" content="https://tasknextai.one/og-image.png">
-<link rel="canonical" href="https://tasknextai.one">
-<link rel="icon" href="https://tasknextai.one/favicon.ico" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; RESET & TOKENS &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --p:#8b5cf6;--pl:#a78bfa;--pk:#ec4899;--g:#10b981;--y:#f59e0b;
-  --bg:#050507;--sf:#0b0b12;--card:#101018;
-  --bd:rgba(139,92,246,.14);--bd2:rgba(139,92,246,.3);
-  --t:#f1f5f9;--t2:#94a3b8;--t3:#475569;
-}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);color:var(--t);
-  font-family:'Inter',system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  padding-bottom:58px;
-}
-::-webkit-scrollbar{width:4px;}
-::-webkit-scrollbar-thumb{background:rgba(139,92,246,.4);border-radius:4px;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskNext.AI — Meet Ory. The AI That Runs Your Social Media While You Sleep.</title>
+  <meta name="description" content="Ory is a living AI organism that breathes, learns, and grows with your brand. Generate content, schedule posts across 6 platforms, and watch your audience explode — all on autopilot." />
+  <meta property="og:title" content="Meet Ory — Your Living AI Social Media Organism" />
+  <meta property="og:description" content="The AI that runs your social media while you sleep. First 200 creators get their price locked forever." />
+  <meta property="og:image" content="https://tasknextai.one/og-ory.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; UTILITIES &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-.g-text{background:linear-gradient(130deg,#c084fc 0%,#f472b6 55%,#fb923c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.g-text-b{background:linear-gradient(130deg,#60a5fa 0%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.g-btn{background:linear-gradient(135deg,var(--p),var(--pk));color:#fff;border:none;cursor:pointer;font-family:inherit;font-weight:700;transition:transform .2s,box-shadow .2s;}
-.g-btn:hover{transform:translateY(-2px);box-shadow:0 18px 50px rgba(139,92,246,.4);}
-.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:99px;font-size:12px;font-weight:600;border:1px solid;}
-.bp{background:rgba(139,92,246,.1);color:var(--pl);border-color:rgba(139,92,246,.25);}
-.bg2{background:rgba(16,185,129,.1);color:#34d399;border-color:rgba(16,185,129,.25);}
-.bpk{background:rgba(236,72,153,.1);color:#f472b6;border-color:rgba(236,72,153,.25);}
-.by{background:rgba(245,158,11,.1);color:#fbbf24;border-color:rgba(245,158,11,.25);}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void: '#050507',
+            surface: '#0a0a0f',
+            glass: 'rgba(255,255,255,0.04)',
+            'glass-edge': 'rgba(255,255,255,0.08)',
+            indigo: { 400: '#818CF8', 500: '#6366F1', 600: '#4F46E5' },
+            orchid: { 400: '#C084FC', 500: '#A855F7' },
+            mint: { 400: '#34D399' },
+            rose: { 400: '#FB7185' },
+            amber: { 400: '#FBBF24' },
+          },
+          fontFamily: {
+            sans: ['-apple-system','SF Pro Display','SF Pro Text','system-ui','Segoe UI','Roboto','Helvetica Neue','sans-serif'],
+          },
+          animation: {
+            'breathe': 'breathe 4s ease-in-out infinite',
+            'breathe-slow': 'breathe 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 3s ease-in-out infinite',
+            'fade-up': 'fadeUp 0.8s ease-out forwards',
+            'slide-in': 'slideIn 0.6s ease-out forwards',
+            'vein-flow': 'veinFlow 8s linear infinite',
+            'thinking': 'thinking 1.5s ease-in-out infinite',
+            'confetti-fall': 'confettiFall 1.2s ease-out forwards',
+            'glow-line': 'glowLine 2s ease-in-out infinite',
+            'typewriter': 'typewriter 2.5s steps(40) forwards',
+            'blink': 'blink 1s step-end infinite',
+            'scale-in': 'scaleIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards',
+            'bounce-in': 'bounceIn 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards',
+          },
+          keyframes: {
+            breathe: { '0%,100%': { opacity:'0.4', transform:'scale(1)' }, '50%': { opacity:'0.8', transform:'scale(1.02)' } },
+            pulseGlow: { '0%,100%': { boxShadow:'0 0 20px rgba(129,140,248,0.15)' }, '50%': { boxShadow:'0 0 40px rgba(129,140,248,0.35), 0 0 80px rgba(192,132,252,0.15)' } },
+            float: { '0%,100%': { transform:'translateY(0)' }, '50%': { transform:'translateY(-12px)' } },
+            shimmer: { '0%': { backgroundPosition:'-200% 0' }, '100%': { backgroundPosition:'200% 0' } },
+            fadeUp: { '0%': { opacity:'0', transform:'translateY(24px)' }, '100%': { opacity:'1', transform:'translateY(0)' } },
+            slideIn: { '0%': { opacity:'0', transform:'translateX(-20px)' }, '100%': { opacity:'1', transform:'translateX(0)' } },
+            veinFlow: { '0%': { strokeDashoffset:'1000' }, '100%': { strokeDashoffset:'0' } },
+            thinking: { '0%,100%': { opacity:'0.3' }, '50%': { opacity:'1' } },
+            confettiFall: { '0%': { transform:'translateY(-20px) rotate(0deg)', opacity:'1' }, '100%': { transform:'translateY(80px) rotate(360deg)', opacity:'0' } },
+            glowLine: { '0%,100%': { opacity:'0.2', transform:'scaleX(0.6)' }, '50%': { opacity:'0.8', transform:'scaleX(1)' } },
+            typewriter: { '0%': { width:'0' }, '100%': { width:'100%' } },
+            blink: { '50%': { borderColor:'transparent' } },
+            scaleIn: { '0%': { opacity:'0', transform:'scale(0.8)' }, '100%': { opacity:'1', transform:'scale(1)' } },
+            bounceIn: { '0%': { opacity:'0', transform:'scale(0.3)' }, '50%': { transform:'scale(1.05)' }, '70%': { transform:'scale(0.95)' }, '100%': { opacity:'1', transform:'scale(1)' } },
+          },
+        },
+      },
+    }
+  </script>
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; REVEAL ANIMATION &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-.rv{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
-.rv.show{opacity:1;transform:none;}
-.rvl{opacity:0;transform:translateX(-36px);transition:opacity .75s ease,transform .75s ease;}
-.rvl.show{opacity:1;transform:none;}
-.rvr{opacity:0;transform:translateX(36px);transition:opacity .75s ease,transform .75s ease;}
-.rvr.show{opacity:1;transform:none;}
-.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
+  <style>
+    *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    html{scroll-behavior:smooth}
+    body{background:#050507;color:#e2e8f0;overflow-x:hidden}
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; NAV &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  padding:0 48px;height:58px;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:background .3s,border-color .3s;
-}
-nav.scrolled{background:rgba(5,5,7,.88);border-bottom:1px solid var(--bd);backdrop-filter:blur(18px);}
-.nav-logo{font-size:17px;font-weight:900;text-decoration:none;color:#fff;letter-spacing:-.5px;}
-.nav-logo span{color:var(--pl);}
-.nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
-.nav-links a{color:var(--t2);text-decoration:none;font-size:13.5px;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:#fff;}
-.nav-cta{padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;z-index:210;}
-.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
-.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.nav-hamburger.open span:nth-child(2){opacity:0;}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-@media(max-width:768px){
-  nav{padding:0 20px;}
-  .nav-hamburger{display:flex;}
-  .nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:rgba(5,5,7,.97);border-bottom:1px solid var(--bd);padding:16px 20px;flex-direction:column;gap:0;backdrop-filter:blur(18px);}
-  .nav-links.open{display:flex;}
-  .nav-links li{border-bottom:1px solid var(--bd);}
-  .nav-links li:last-child{border-bottom:none;}
-  .nav-links a{display:block;padding:14px 0;font-size:15px;color:var(--t);}
-  .nav-cta{display:none;}
-}
+    /* LIQUID GLASS */
+    .liquid-glass{
+      background:linear-gradient(135deg,rgba(255,255,255,0.035) 0%,rgba(255,255,255,0.01) 100%);
+      border:1px solid rgba(255,255,255,0.06);
+      backdrop-filter:blur(40px) saturate(1.4);
+      -webkit-backdrop-filter:blur(40px) saturate(1.4);
+      border-radius:24px;
+      transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .liquid-glass:hover{
+      border-color:rgba(129,140,248,0.2);
+      box-shadow:0 8px 40px rgba(129,140,248,0.08),inset 0 1px 0 rgba(255,255,255,0.05);
+      transform:translateY(-3px);
+    }
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; HERO &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-#hero{
-  min-height:100vh;display:flex;align-items:center;
-  position:relative;overflow:hidden;padding:80px 48px 40px;
-}
-#hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none;}
-.hero-glow{
-  position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:
-    radial-gradient(ellipse 70% 60% at 72% 38%,rgba(139,92,246,.13) 0%,transparent 70%),
-    radial-gradient(ellipse 40% 40% at 22% 75%,rgba(236,72,153,.07) 0%,transparent 60%);
-}
-.hero-inner{
-  position:relative;z-index:2;max-width:1240px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:72px;
-}
-.hero-text{padding-top:30px;}
-.h1{font-size:clamp(36px,5.2vw,64px);font-weight:900;line-height:1.06;letter-spacing:-2.5px;margin-bottom:22px;}
-.hero-sub{font-size:17px;color:var(--t2);line-height:1.65;max-width:430px;margin-bottom:34px;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:46px;}
-.btn-p{padding:14px 28px;border-radius:10px;font-size:15px;text-decoration:none;display:inline-block;}
-.btn-g{padding:14px 22px;border-radius:10px;font-size:15px;font-weight:600;color:var(--t2);background:transparent;border:1px solid rgba(255,255,255,.1);cursor:pointer;font-family:inherit;transition:all .2s;}
-.btn-g:hover{color:#fff;border-color:rgba(255,255,255,.24);}
-.hero-stats{display:flex;gap:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07);}
-.s-num{display:block;font-size:26px;font-weight:800;letter-spacing:-1px;}
-.s-lbl{font-size:11px;color:var(--t3);margin-top:2px;}
-/* floating mockup */
-.hero-mock-wrap{position:relative;}
-.hero-mock-glow{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:130%;height:130%;pointer-events:none;
-  background:radial-gradient(ellipse,rgba(139,92,246,.18) 0%,transparent 65%);
-}
-.hero-mock{
-  position:relative;z-index:1;
-  transform:perspective(1100px) rotateX(5deg) rotateY(-7deg);
-  animation:float 7s ease-in-out infinite;
-  filter:drop-shadow(0 36px 72px rgba(0,0,0,.7));
-}
-@keyframes float{
-  0%,100%{transform:perspective(1100px) rotateX(5deg) rotateY(-7deg) translateY(0);}
-  50%    {transform:perspective(1100px) rotateX(5deg) rotateY(-7deg) translateY(-15px);}
-}
+    /* REFRACTION EDGE */
+    .refract-edge{position:relative}
+    .refract-edge::before{
+      content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;
+      background:linear-gradient(135deg,rgba(129,140,248,0.3),transparent 40%,transparent 60%,rgba(192,132,252,0.2));
+      -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+    }
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; FEATURE SECTIONS &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-.fsec{
-  min-height:100vh;display:flex;align-items:center;
-  padding:100px 48px;position:relative;overflow:hidden;
-}
-.fsec-inner{
-  max-width:1240px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center;
-}
-.fsec-inner.rev{grid-template-columns:1.15fr 1fr;}
-.fsec-inner.rev .fsec-text{order:2;}
-.fsec-inner.rev .fsec-vis{order:1;}
-.sec-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--pl);margin-bottom:14px;}
-.sec-h2{font-size:clamp(26px,3.6vw,48px);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px;}
-.sec-desc{font-size:15.5px;line-height:1.72;color:var(--t2);margin-bottom:26px;max-width:400px;}
-.feat-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:30px;}
-.feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--t2);}
-.feat-list li::before{
-  content:'\2713';min-width:19px;height:19px;background:rgba(139,92,246,.14);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-size:10px;color:var(--pl);font-weight:700;flex-shrink:0;margin-top:1px;
-}
-.sec-cta{padding:12px 22px;border-radius:9px;font-size:14px;font-weight:700;text-decoration:none;display:inline-block;}
+    /* NEURAL VEINS */
+    .neural-bg{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.1}
+    .neural-bg svg{width:100%;height:100%}
+    .neural-vein{stroke:url(#veinGrad);stroke-width:1;fill:none;stroke-dasharray:500 500;animation:veinFlow 8s linear infinite}
+    .neural-vein:nth-child(2){animation-delay:-2s;animation-duration:11s}
+    .neural-vein:nth-child(3){animation-delay:-4s;animation-duration:13s}
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; APP WINDOW CHROME &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-.aw{border-radius:13px;overflow:hidden;border:1px solid rgba(139,92,246,.2);box-shadow:0 28px 70px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.03);background:#080810;}
-.aw-tb{background:#100f18;padding:10px 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.05);}
-.dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
-.dr{background:#ef4444;}.dy{background:#f59e0b;}.dg{background:#10b981;}
-.tb-lbl{font-size:11px;color:var(--t3);margin-left:8px;font-weight:500;}
-.aw-body{display:flex;height:330px;}
-/* sidebar */
-.asb{width:138px;min-width:138px;background:#07070e;border-right:1px solid rgba(255,255,255,.05);padding:10px 7px;display:flex;flex-direction:column;gap:1px;}
-.sb-logo{padding:5px 9px 11px;font-size:13px;font-weight:900;color:var(--pl);letter-spacing:-.5px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:7px;}
-.si{display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:6px;font-size:11px;color:var(--t3);cursor:pointer;white-space:nowrap;overflow:hidden;}
-.si.on{background:rgba(139,92,246,.16);color:var(--pl);}
-.si em{font-size:12px;font-style:normal;flex-shrink:0;}
-/* content area */
-.ac{flex:1;padding:13px;overflow:hidden;display:flex;flex-direction:column;gap:9px;min-width:0;}
-.ac-head{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.ac-title{font-size:14px;font-weight:700;color:var(--t);}
-.ac-sub{font-size:10.5px;color:var(--t3);}
-/* stat cards */
-.sc-row{display:flex;gap:8px;flex-shrink:0;}
-.sc{flex:1;background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px 11px;}
-.sc .v{font-size:17px;font-weight:800;letter-spacing:-.5px;}
-.sc .l{font-size:8.5px;color:var(--t3);margin-top:2px;text-transform:uppercase;letter-spacing:.06em;}
-.sc .c{font-size:9.5px;font-weight:600;margin-top:2px;}
-.cu{color:#34d399;}.cd2{color:#f87171;}
-/* agent card */
-.agc{background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px 11px;display:flex;align-items:center;gap:9px;}
-.agd{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-.agd.run{background:#10b981;box-shadow:0 0 6px #10b981;animation:blink 1.4s infinite;}
-.agd.idle{background:#f59e0b;}
-.agd.done{background:#374151;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
-.ag-name{font-size:11.5px;font-weight:600;color:var(--t);}
-.ag-desc{font-size:9.5px;color:var(--t3);margin-top:2px;}
-.ag-st{margin-left:auto;font-size:9.5px;font-weight:600;}
-.ag-st.run{color:#34d399;}.ag-st.idle{color:#fbbf24;}.ag-st.done{color:var(--t3);}
+    /* ORY PULSE */
+    .ory-pulse{
+      width:12px;height:12px;
+      background:radial-gradient(circle,#818CF8,#C084FC);
+      border-radius:50%;
+      animation:breathe 3s ease-in-out infinite;
+      box-shadow:0 0 12px rgba(129,140,248,0.6);
+    }
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; ROADMAP &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-#roadmap{padding:100px 48px;}
-.rm-inner{max-width:920px;margin:0 auto;}
-.center-hd{text-align:center;margin-bottom:56px;}
-.center-hd p{color:var(--t2);font-size:15.5px;margin-top:10px;}
-.rm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.rmc{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:24px;position:relative;overflow:hidden;}
-.rmc.cur{border-color:rgba(139,92,246,.4);}
-.rm-phase{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:8px;}
-.rm-title{font-size:17px;font-weight:700;margin-bottom:12px;}
-.rm-items{list-style:none;display:flex;flex-direction:column;gap:7px;}
-.rm-items li{font-size:12.5px;color:var(--t2);display:flex;align-items:center;gap:8px;}
-.rid{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
-.ri-done{background:#10b981;}.ri-act{background:var(--pl);}.ri-soon{background:var(--t3);}
+    /* ORBS */
+    .orb{position:absolute;border-radius:50%;filter:blur(80px);animation:breathe 6s ease-in-out infinite;pointer-events:none;will-change:transform}
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; PRICING TOGGLE &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-.tog-lbl{font-size:14px;font-weight:600;color:var(--t3);cursor:pointer;transition:color .2s;}
-.tog-lbl.tog-active{color:var(--t);}
-.tog-track{width:48px;height:26px;background:rgba(139,92,246,.25);border-radius:99px;cursor:pointer;position:relative;transition:background .2s;border:1px solid rgba(139,92,246,.3);}
-.tog-track.on{background:rgba(139,92,246,.5);}
-.tog-thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#a78bfa;transition:transform .25s;}
-.tog-track.on .tog-thumb{transform:translateX(22px);}
-.save-pill{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.25);border-radius:99px;font-size:10px;font-weight:700;padding:2px 7px;margin-left:4px;vertical-align:middle;}
+    /* SCROLL REVEAL */
+    .reveal{opacity:0;transform:translateY(30px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; PRICING &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-#pricing{padding:100px 48px;}
-.pr-inner{max-width:1020px;margin:0 auto;}
-.pr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:56px;}
-.prc{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:30px 26px;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
-.prc:hover{transform:translateY(-5px);box-shadow:0 22px 55px rgba(139,92,246,.14);}
-.prc.pop{border-color:rgba(139,92,246,.45);background:linear-gradient(135deg,rgba(139,92,246,.07),rgba(236,72,153,.03));}
-.pop-tag{position:absolute;top:-1px;right:22px;background:linear-gradient(135deg,var(--p),var(--pk));color:#fff;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:0 0 8px 8px;}
-.pr-plan{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--t3);margin-bottom:8px;}
-.pr-amt{font-size:46px;font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:4px;}
-.pr-amt sup{font-size:20px;font-weight:600;color:var(--t3);vertical-align:super;}
-.pr-per{font-size:12.5px;color:var(--t3);margin-bottom:22px;}
-.pr-feats{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px;}
-.pr-feats li{font-size:13px;color:var(--t2);display:flex;align-items:center;gap:8px;}
-.pr-feats li::before{content:'\2713';color:var(--pl);font-weight:700;font-size:12px;}
-.pr-btn{width:100%;padding:12px;border-radius:9px;font-size:14px;font-weight:700;text-align:center;cursor:pointer;}
+    /* CTA SHIMMER */
+    .cta-shimmer{
+      background:linear-gradient(90deg,#818CF8,#C084FC,#818CF8);
+      background-size:200% 100%;
+      animation:shimmer 3s ease-in-out infinite;
+    }
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; FAQ &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-#faq{padding:100px 48px;}
-.faq-inner{max-width:700px;margin:0 auto;}
-.faq-list{display:flex;flex-direction:column;gap:9px;margin-top:48px;}
-.faq-item{background:var(--card);border:1px solid var(--bd);border-radius:11px;overflow:hidden;}
-.faq-q{padding:17px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14.5px;font-weight:600;transition:background .2s;gap:12px;}
-.faq-q:hover{background:rgba(255,255,255,.02);}
-.faq-ico{font-size:17px;color:var(--t3);transition:transform .25s;flex-shrink:0;}
-.faq-item.open .faq-ico{transform:rotate(45deg);color:var(--pl);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;font-size:13.5px;color:var(--t2);line-height:1.72;padding:0 20px;}
-.faq-item.open .faq-a{max-height:200px;padding:0 20px 17px;}
+    /* PRICE GLOW */
+    .price-popular{
+      border:1px solid rgba(129,140,248,0.4);
+      box-shadow:0 0 60px rgba(129,140,248,0.12),0 0 120px rgba(192,132,252,0.06);
+    }
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; FINAL CTA &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-#cta{padding:120px 48px 150px;text-align:center;position:relative;overflow:hidden;}
-#cta .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;border-radius:50%;background:radial-gradient(ellipse,rgba(139,92,246,.13) 0%,transparent 65%);pointer-events:none;}
-.cta-h2{font-size:clamp(34px,5vw,62px);font-weight:900;letter-spacing:-2.5px;line-height:1.07;max-width:700px;margin:0 auto 18px;}
-.cta-sub{font-size:17px;color:var(--t2);max-width:480px;margin:0 auto 38px;line-height:1.65;}
-.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+    /* FOUNDING BADGE */
+    .founding-badge{
+      background:linear-gradient(135deg,rgba(129,140,248,0.2),rgba(192,132,252,0.2));
+      border:1px solid rgba(129,140,248,0.3);
+      animation:pulseGlow 3s ease-in-out infinite;
+    }
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; STICKY BAR &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-#sbar{
-  position:fixed;bottom:0;left:0;right:0;z-index:190;
-  background:rgba(5,5,7,.92);border-top:1px solid var(--bd);
-  backdrop-filter:blur(20px);padding:10px 48px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  height:58px;
-}
-.sbar-l{display:flex;align-items:center;gap:10px;}
-.live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 8px #10b981;animation:blink 1.4s infinite;flex-shrink:0;}
-.sbar-txt{font-size:13px;color:var(--t2);}
-.sbar-txt strong{color:#fff;}
-.cd-wrap{display:flex;align-items:center;gap:3px;}
-.cdu{display:flex;flex-direction:column;align-items:center;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.25);border-radius:6px;padding:4px 10px;min-width:42px;}
-.cdn{font-size:17px;font-weight:800;letter-spacing:-1px;line-height:1;}
-.cdl{font-size:7.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--t3);margin-top:2px;}
-.cdsep{font-size:15px;font-weight:700;color:var(--t3);padding-bottom:8px;margin:0 1px;}
-.sbar-btn{padding:9px 22px;border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none;}
+    /* IQ CARD */
+    .iq-card-preview{
+      background:linear-gradient(145deg,#0f0f1a 0%,#1a1a2e 50%,#0f0f1a 100%);
+      border:1px solid rgba(129,140,248,0.3);
+      border-radius:20px;overflow:hidden;
+      transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .iq-card-preview:hover{box-shadow:0 0 60px rgba(129,140,248,0.2);transform:translateY(-4px)}
 
-/* &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; FOOTER &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; */
-footer{padding:40px 48px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--t3);}
-footer a{color:var(--t3);text-decoration:none;transition:color .2s;}
-footer a:hover{color:var(--t2);}
+    /* WATERMARK */
+    .watermark-demo{position:relative}
+    .watermark-demo::after{
+      content:'Made with Ory \2197';position:absolute;bottom:12px;right:16px;
+      font-size:11px;color:rgba(129,140,248,0.5);font-weight:500;letter-spacing:0.5px;
+    }
 
-/* &#9472;&#9472; 4-TIER PRICING GRID &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; */
-@media(max-width:900px){
-  .pr-grid{grid-template-columns:repeat(2,1fr)!important;}
-}
-@media(max-width:540px){
-  .pr-grid{grid-template-columns:1fr!important;}
-}
-</style>
+    /* TYPOGRAPHY */
+    .text-hero{font-size:clamp(2.4rem,5.2vw,4.5rem);line-height:1.08;letter-spacing:-0.035em;font-weight:700}
+    .text-sub{font-size:clamp(1rem,1.8vw,1.3rem);line-height:1.65}
+    .text-section{font-size:clamp(1.6rem,3.5vw,2.8rem);line-height:1.12;letter-spacing:-0.025em;font-weight:700}
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:#050507}
+    ::-webkit-scrollbar-thumb{background:rgba(129,140,248,0.25);border-radius:3px}
+    :focus-visible{outline:2px solid #818CF8;outline-offset:2px;border-radius:8px}
+
+    /* COUNTER PULSE */
+    @keyframes countPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    .count-pulse{animation:countPulse 2s ease-in-out infinite}
+
+    /* TESTIMONIAL */
+    .testimonial-card{
+      background:linear-gradient(135deg,rgba(255,255,255,0.025),rgba(255,255,255,0.005));
+      border:1px solid rgba(255,255,255,0.05);
+      backdrop-filter:blur(20px);border-radius:20px;
+      transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .testimonial-card:hover{transform:translateY(-4px);border-color:rgba(129,140,248,0.15)}
+
+    /* THINKING SHIMMER */
+    .thinking-dots span{display:inline-block;width:6px;height:6px;background:#818CF8;border-radius:50%;margin:0 2px;animation:thinking 1.5s ease-in-out infinite}
+    .thinking-dots span:nth-child(2){animation-delay:0.2s}
+    .thinking-dots span:nth-child(3){animation-delay:0.4s}
+
+    /* CONFETTI */
+    .confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall 1.2s ease-out forwards;pointer-events:none}
+
+    /* FLOATING SHARE BTN */
+    .floating-share{
+      position:fixed;bottom:24px;right:24px;z-index:50;
+      transform:translateY(80px);opacity:0;
+      transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .floating-share.visible{transform:translateY(0);opacity:1}
+
+    /* GUARANTEE BADGE */
+    .guarantee-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.15);
+      border-radius:100px;padding:4px 12px;font-size:11px;color:rgba(52,211,153,0.8);font-weight:500;
+    }
+
+    /* GLOW LINE CONNECTOR */
+    .glow-connector{height:2px;background:linear-gradient(90deg,transparent,#818CF8,transparent);animation:glowLine 2s ease-in-out infinite;border-radius:1px}
+
+    /* HUB PULSE DOTS */
+    .hub-dot{width:6px;height:6px;border-radius:50%;animation:thinking 2s ease-in-out infinite}
+
+    /* MOBILE: reduce vein complexity */
+    @media(max-width:768px){
+      .neural-bg{opacity:0.05}
+      .neural-vein:nth-child(3){display:none}
+      .orb{filter:blur(60px);opacity:0.5}
+    }
+  </style>
 </head>
-<body>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="#hero" class="nav-logo">TaskNext<span>.AI</span></a>
-  <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <a href="#pricing" class="nav-cta g-btn">Get Early Access</a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<body class="font-sans antialiased">
 
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; HERO &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div style="margin-bottom:20px;" class="rv"><span class="badge bp">&#x1F916; AI-Powered Social OS</span></div>
-      <h1 class="h1 rv d1">
-        The last social media<br>tool you'll
-        <span class="g-text"> ever need.</span>
+  <!-- NEURAL VEINS (simplified for perf) -->
+  <div class="neural-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="veinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#818CF8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#C084FC" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#818CF8" stop-opacity="0.15"/>
+        </linearGradient>
+      </defs>
+      <path class="neural-vein" d="M0,250 C300,220 500,340 750,280 S1100,180 1440,260"/>
+      <path class="neural-vein" d="M0,550 C200,520 400,600 700,540 S1050,460 1440,520"/>
+      <path class="neural-vein" d="M0,750 C350,720 550,790 800,740 S1100,700 1440,730"/>
+    </svg>
+  </div>
+
+  <!-- ORBS -->
+  <div class="orb w-[450px] h-[450px] bg-indigo-500/10 top-[-80px] left-[-80px]" style="animation-delay:-1s" aria-hidden="true"></div>
+  <div class="orb w-[350px] h-[350px] bg-orchid-500/8 top-[35%] right-[-60px]" style="animation-delay:-3s" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- NAV -->
+  <!-- ═══════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 py-3" id="main-nav" style="transition:padding 0.3s ease">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="liquid-glass px-5 py-2.5 flex items-center justify-between" style="border-radius:14px">
+        <div class="flex items-center gap-3">
+          <div class="ory-pulse"></div>
+          <span class="text-white font-semibold text-lg tracking-tight">TaskNext<span class="text-indigo-400">.AI</span></span>
+          <span class="text-[10px] font-medium text-indigo-400/70 bg-indigo-400/10 px-2 py-0.5 rounded-full uppercase tracking-widest">Ory</span>
+        </div>
+        <div class="hidden md:flex items-center gap-7">
+          <a href="#story" class="text-[13px] text-white/45 hover:text-white transition-colors">Story</a>
+          <a href="#viral" class="text-[13px] text-white/45 hover:text-white transition-colors">Share</a>
+          <a href="#pricing" class="text-[13px] text-white/45 hover:text-white transition-colors">Pricing</a>
+          <a href="#faq" class="text-[13px] text-white/45 hover:text-white transition-colors">FAQ</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="hidden sm:flex items-center gap-2 founding-badge px-3 py-1.5 rounded-full">
+            <span class="text-[11px] text-indigo-300 font-medium">Founding:</span>
+            <span id="spots-nav" class="text-[13px] text-white font-bold count-pulse">200</span>
+            <span class="text-[11px] text-white/40">left</span>
+          </div>
+          <a href="#pricing" class="cta-shimmer text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity">
+            Lock my price
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- HERO -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="relative min-h-[92vh] flex items-center justify-center px-4 pt-24 pb-14">
+    <div class="max-w-[1280px] mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 liquid-glass px-4 py-2 mb-7" style="border-radius:100px">
+        <div class="ory-pulse" style="width:8px;height:8px"></div>
+        <span class="text-xs text-indigo-300/80 font-medium tracking-wide">MEET ORY — YOUR LIVING AI ORGANISM</span>
+      </div>
+
+      <h1 class="text-hero text-white max-w-4xl mx-auto mb-5">
+        Once upon a time, your social media was
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-orchid-400 to-indigo-400">chaos.</span>
+        <br/>
+        <span class="text-white/35 text-[0.6em] font-normal" id="hero-subtitle"></span>
       </h1>
-      <p class="hero-sub rv d2">
-        TaskNext.AI replaces 12 separate tools with one local AI platform. Create, schedule, analyse, and automate &mdash; powered by Claude, running on your machine.
+
+      <p class="text-sub text-white/45 max-w-2xl mx-auto mb-9">
+        A living AI that breathes inside your brand, creates content across 6 platforms,
+        schedules everything while you sleep — and gets smarter every single month.
       </p>
-      <div class="hero-btns rv d3">
-        <button class="btn-p g-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">See Plans from &pound;7/mo &#x2192;</button>
-        <button class="btn-g" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See how it works</button>
-      </div>
-      <div class="hero-stats rv d4">
-        <div><span class="s-num g-text">4K&ndash;35K</span><span class="s-lbl">Growth in 8 weeks</span></div>
-        <div><span class="s-num">&pound;2,753</span><span class="s-lbl">Avg saved vs agency</span></div>
-        <div><span class="s-num">100%</span><span class="s-lbl">Agent success rate</span></div>
-        <div><span class="s-num">38</span><span class="s-lbl">Live automations</span></div>
-      </div>
-    </div>
 
-    <div class="hero-mock-wrap rv rvr d2">
-      <div class="hero-mock-glow"></div>
-      <div class="hero-mock">
-        <div class="aw" style="width:min(540px,100%);">
-          <div class="aw-tb">
-            <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
-            <span class="tb-lbl">TaskNext.AI &mdash; Dashboard</span>
-          </div>
-          <div class="aw-body">
-            <div class="asb">
-              <div class="sb-logo">TaskNext</div>
-              <div class="si on"><em>&#x26A1;</em>Dashboard</div>
-              <div class="si"><em>&#x270D;&#xFE0F;</em>Content Studio</div>
-              <div class="si"><em>&#x1F4C8;</em>Growth Center</div>
-              <div class="si"><em>&#x1F916;</em>AI Agents</div>
-              <div class="si"><em>&#x1F4C5;</em>Schedule</div>
-              <div class="si"><em>&#x2699;&#xFE0F;</em>Automations</div>
-              <div class="si"><em>&#x1F3C6;</em>Coach</div>
-              <div class="si"><em>&#x1F50D;</em>Research</div>
-            </div>
-            <div class="ac">
-              <div class="ac-head">
-                <div><div class="ac-title">Good morning, Jesse &#x1F44B;</div><div class="ac-sub">Performance overview</div></div>
-                <span class="badge bg2" style="font-size:9px;padding:3px 9px;">All systems active</span>
-              </div>
-              <div class="sc-row">
-                <div class="sc"><div class="v" style="color:#a78bfa;">12,847</div><div class="l">Followers</div><div class="c cu">&#x2191; +18.4%</div></div>
-                <div class="sc"><div class="v" style="color:#f472b6;">4.2%</div><div class="l">Engagement</div><div class="c cu">&#x2191; +0.8%</div></div>
-                <div class="sc"><div class="v" style="color:#34d399;">35</div><div class="l">Languages</div><div class="c" style="color:#94a3b8;">Supported</div></div>
-              </div>
-              <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
-                <div style="font-size:9px;color:#475569;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;">Followers &mdash; 30 days</div>
-                <svg width="100%" height="62" viewBox="0 0 320 62" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="gA" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".28"/>
-                      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M0,58 L20,54 L40,51 L60,46 L80,41 L100,36 L120,30 L140,25 L160,21 L180,17 L200,13 L220,10 L240,7 L260,5 L280,3 L300,2 L320,0 L320,62 L0,62 Z" fill="url(#gA)"/>
-                  <polyline points="0,58 20,54 40,51 60,46 80,41 100,36 120,30 140,25 160,21 180,17 200,13 220,10 240,7 260,5 280,3 300,2 320,0" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="320" cy="0" r="3" fill="#8b5cf6"/>
-                </svg>
-              </div>
-              <div style="display:flex;align-items:center;gap:7px;">
-                <div class="agd run" style="width:6px;height:6px;"></div>
-                <span style="font-size:10.5px;color:#94a3b8;">3 AI agents running</span>
-                <span style="font-size:10.5px;color:#475569;margin-left:auto;">47 posts scheduled</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
+        <a href="#pricing" class="group relative cta-shimmer text-white font-semibold text-base px-8 py-4 rounded-full hover:opacity-90 transition-all hover:scale-[1.02]">
+          Lock my founding price — from £7/mo forever
+          <span class="absolute -top-3 -right-2 bg-rose-400 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-bounce-in">200 spots</span>
+        </a>
+        <a href="#demo" class="liquid-glass text-white/60 hover:text-white font-medium text-sm px-6 py-3 flex items-center gap-2 transition-all" style="border-radius:100px">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.344-5.891a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+          47-second demo
+        </a>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; FEATURE 1: CONTENT STUDIO &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section class="fsec" id="features">
-<!-- BUILT-IN AI POWER V1.8 -->
-<section id="builtin">
-  <div class="bip-inner">
-    <div class="bip-hd rv">
-      <div class="bip-tag">&#9889; V1.8 Features</div>
-      <h2 class="bip-title">Everything <span class="g-text">Built-In.</span> Nothing Bolted On.</h2>
-      <p class="bip-sub">No plugins. No add-ons. No third-party tools. Every AI feature runs inside TaskNext.AI, powered by Claude Sonnet AI.</p>
-    </div>
-    <div class="bip-grid rv d1">
-      <div class="bip-card">
-        <div class="bip-card-preview">
-          <span class="bip-badge bip-badge-p">Core</span>
-          <div style="width:82%;background:#100f1e;border:1px solid rgba(139,92,246,.22);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:10px;font-weight:700;color:#a78bfa;">Content Studio</span><span style="font-size:9px;padding:2px 8px;background:rgba(139,92,246,.2);color:#a78bfa;border-radius:99px;border:1px solid rgba(139,92,246,.3);">AI Generate</span></div>
-            <div style="background:#0a0917;border:1px solid rgba(139,92,246,.15);border-radius:7px;padding:9px;"><p style="font-size:9.5px;color:#e2e8f0;line-height:1.5;">Your morning routine isn't just about coffee<br>Here's what moves the needle...</p><div style="margin-top:6px;display:flex;gap:4px;"><span style="font-size:8.5px;color:#8b5cf6;">#growth</span><span style="font-size:8.5px;color:#8b5cf6;">#AI</span></div></div>
-            <div style="display:flex;justify-content:space-between;font-size:9px;"><span style="color:#34d399;">Engagement: HIGH</span><span style="color:#475569;">Est. reach: 14.2K</span></div>
-          </div>
-        </div>
-        <div class="bip-card-body">
-          <div class="bip-card-icon">&#9999;&#65039;</div>
-          <div class="bip-card-title">AI Content Studio</div>
-          <p class="bip-card-desc">Generate captions, carousels, and strategies powered by Claude Sonnet. Built into every screen. Token-aware.</p>
-        </div>
+      <div class="guarantee-badge mx-auto mb-10">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+        14-day money-back guarantee
       </div>
-      <div class="bip-card">
-        <div class="bip-card-preview">
-          <span class="bip-badge bip-badge-pk">V1.8 NEW</span>
-          <div style="width:82%;display:flex;flex-direction:column;gap:7px;">
-            <div style="background:#100f1e;border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px;"><p style="font-size:9.5px;color:#94a3b8;line-height:1.55;">Your top-performing content has a <span style="background:rgba(236,72,153,.25);color:#f9a8d4;border-radius:3px;padding:1px 4px;">strong save rate</span>. This format resonates with your audience.</p></div>
-            <div style="background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.25);border-radius:8px;padding:10px;"><div style="font-size:8.5px;color:#f472b6;font-weight:700;margin-bottom:5px;">AI Highlight</div><div style="display:flex;gap:5px;flex-wrap:wrap;"><span style="font-size:8.5px;padding:2px 7px;background:rgba(236,72,153,.15);color:#f472b6;border-radius:99px;border:1px solid rgba(236,72,153,.2);">Explain</span><span style="font-size:8.5px;padding:2px 7px;background:rgba(139,92,246,.12);color:#a78bfa;border-radius:99px;border:1px solid rgba(139,92,246,.2);">Expand</span><span style="font-size:8.5px;padding:2px 7px;background:rgba(16,185,129,.1);color:#34d399;border-radius:99px;border:1px solid rgba(16,185,129,.18);">Rewrite</span></div></div>
-          </div>
-        </div>
-        <div class="bip-card-body">
-          <div class="bip-card-icon">&#10024;</div>
-          <div class="bip-card-title">AI Highlight</div>
-          <p class="bip-card-desc">Select any text. Get instant analysis, summaries, expansions, and rewrites &mdash; right inside the app.</p>
-        </div>
-      </div>
-      <div class="bip-card">
-        <div class="bip-card-preview">
-          <span class="bip-badge bip-badge-y">V1.8 NEW</span>
-          <div style="width:82%;background:#100f1e;border:1px solid rgba(245,158,11,.18);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:7px;">
-            <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:10px;color:#fbbf24;font-weight:700;">Real-Time Search</span><span style="font-size:8.5px;color:#475569;">Perplexity</span></div>
-            <div style="display:flex;flex-direction:column;gap:5px;">
-              <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.15);border-radius:6px;padding:7px 9px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:9px;color:#e2e8f0;">#AItools trending +340%</span><span style="font-size:8.5px;color:#fbbf24;">Hot</span></div>
-              <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.1);border-radius:6px;padding:7px 9px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:9px;color:#94a3b8;">Source: TechCrunch</span><span style="font-size:8.5px;color:#34d399;">Verified</span></div>
-              <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.1);border-radius:6px;padding:7px 9px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:9px;color:#94a3b8;">Source: Reuters</span><span style="font-size:8.5px;color:#34d399;">Verified</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="bip-card-body">
-          <div class="bip-card-icon">&#128269;</div>
-          <div class="bip-card-title">Real-Time Intelligence</div>
-          <p class="bip-card-desc">Live web search with citations powered by Perplexity. Know what is trending before you post. Sources verified.</p>
-        </div>
-      </div>
-      <div class="bip-card">
-        <div class="bip-card-preview">
-          <span class="bip-badge bip-badge-g">V1.8 NEW</span>
-          <div style="width:82%;background:#100f1e;border:1px solid rgba(16,185,129,.18);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:10px;font-weight:700;color:#34d399;">AI Image Gen</span><span style="font-size:8.5px;color:#475569;">Flux 2 Pro</span></div>
-            <div style="background:#0a0917;border:1px solid rgba(16,185,129,.12);border-radius:7px;height:65px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(139,92,246,.08));"></div><div style="text-align:center;position:relative;"><div style="font-size:18px;">&#127749;</div><div style="font-size:8px;color:#34d399;margin-top:3px;">Generated in 4.2s</div></div></div>
-            <div style="font-size:8.5px;color:#94a3b8;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.1);border-radius:5px;padding:5px 8px;">"Luxury morning lifestyle, golden hour, minimal..."</div>
-          </div>
-        </div>
-        <div class="bip-card-body">
-          <div class="bip-card-icon">&#128444;&#65039;</div>
-          <div class="bip-card-title">AI Image Generation</div>
-          <p class="bip-card-desc">Create stunning visuals from text prompts via Flux 2 Pro. No Canva. No Midjourney. Just type and post.</p>
-        </div>
-      </div>
-    </div>
-    <div class="bip-footer rv d3">
-      <p>&#128274;&nbsp;&nbsp;<span>Secure Cloud AI</span>&nbsp;&#183;&nbsp;Claude Sonnet + Perplexity + Flux 2 Pro&nbsp;&#183;&nbsp;All inside one subscription</p>
-    </div>
-  </div>
-</section>
 
-  <div style="position:absolute;top:20%;right:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(236,72,153,.08) 0%,transparent 70%);pointer-events:none;"></div>
-  <div class="fsec-inner">
-    <div class="fsec-text">
-      <div class="sec-lbl rv">&#x270D;&#xFE0F; AI Content Studio</div>
-      <h2 class="sec-h2 rv d1">From blank page to <span class="g-text">viral post</span><br>in 30 seconds.</h2>
-      <p class="sec-desc rv d2">Claude Sonnet writes platform-specific captions, carousels, hooks, and hashtags &mdash; while understanding your brand voice, token strategy, and audience.</p>
-      <ul class="feat-list rv d3">
-        <li>Batch-generate 30 days of content in minutes</li>
-        <li>Platform-native formats: IG, X, TikTok, LinkedIn</li>
-        <li>Engagement score prediction before you post</li>
-        <li>Your voice, your tone &mdash; never generic AI copy</li>
-      </ul>
-      <a href="#pricing" class="sec-cta g-btn rv d4">Start creating free &#x2192;</a>
+      <div class="flex flex-wrap items-center justify-center gap-5 text-xs text-white/28">
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>No credit card required</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>AI included free</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>35 languages</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>6 platforms</span>
+      </div>
     </div>
-    <div class="fsec-vis rv rvr d2">
-      <div class="aw">
-        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">Content Studio</span></div>
-        <div class="aw-body">
-          <div class="asb">
-            <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>&#x26A1;</em>Dashboard</div>
-            <div class="si on"><em>&#x270D;&#xFE0F;</em>Content Studio</div>
-            <div class="si"><em>&#x1F4C8;</em>Growth Center</div>
-            <div class="si"><em>&#x1F916;</em>AI Agents</div>
-            <div class="si"><em>&#x1F4C5;</em>Schedule</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- STORY — Compressed 4 cards -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="story" class="relative py-20 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="text-center mb-14 reveal">
+        <span class="text-indigo-400 text-xs font-medium tracking-widest uppercase mb-3 block">The Organism</span>
+        <h2 class="text-section text-white mb-3">Ory isn't software. It's alive.</h2>
+        <p class="text-sub text-white/35 max-w-lg mx-auto">A living intelligence that moves into your brand and never stops working.</p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="liquid-glass refract-edge p-6 reveal" style="transition-delay:0.05s">
+          <div class="w-11 h-11 rounded-xl bg-indigo-400/10 flex items-center justify-center mb-4 animate-breathe">
+            <svg class="w-5.5 h-5.5 text-indigo-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
-          <div class="ac">
-            <div class="ac-head">
-              <div class="ac-title">New Post</div>
-              <span class="badge bp" style="font-size:9px;padding:3px 9px;">&#x2728; AI Generate</span>
+          <h3 class="text-white font-semibold text-[15px] mb-1.5">Breathes</h3>
+          <p class="text-white/35 text-xs leading-relaxed">Auto-updates silently. New features appear like magic.</p>
+        </div>
+        <div class="liquid-glass refract-edge p-6 reveal" style="transition-delay:0.1s">
+          <div class="w-11 h-11 rounded-xl bg-orchid-400/10 flex items-center justify-center mb-4 animate-breathe" style="animation-delay:-1s">
+            <svg class="w-5.5 h-5.5 text-orchid-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
+          </div>
+          <h3 class="text-white font-semibold text-[15px] mb-1.5">Learns</h3>
+          <p class="text-white/35 text-xs leading-relaxed">Brand Brain absorbs your tone. Every post sounds more like you.</p>
+        </div>
+        <div class="liquid-glass refract-edge p-6 reveal" style="transition-delay:0.15s">
+          <div class="w-11 h-11 rounded-xl bg-mint-400/10 flex items-center justify-center mb-4 animate-breathe" style="animation-delay:-2s">
+            <svg class="w-5.5 h-5.5 text-mint-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <h3 class="text-white font-semibold text-[15px] mb-1.5">Heals</h3>
+          <p class="text-white/35 text-xs leading-relaxed">Error recovery, self-repair, automatic rollback. It just works.</p>
+        </div>
+        <div class="liquid-glass refract-edge p-6 reveal" style="transition-delay:0.2s">
+          <div class="w-11 h-11 rounded-xl bg-rose-400/10 flex items-center justify-center mb-4 animate-breathe" style="animation-delay:-3s">
+            <svg class="w-5.5 h-5.5 text-rose-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+          </div>
+          <h3 class="text-white font-semibold text-[15px] mb-1.5">Grows</h3>
+          <p class="text-white/35 text-xs leading-relaxed">Monthly intelligence unlocks. Your Organism IQ rises every month.</p>
+        </div>
+      </div>
+
+      <!-- Glow connector line -->
+      <div class="hidden lg:block max-w-3xl mx-auto mt-6"><div class="glow-connector"></div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- VIRAL ENGINE — MOVED UP (was section 6) -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="viral" class="relative py-20 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="text-indigo-400 text-xs font-medium tracking-widest uppercase mb-3 block">Built to spread</span>
+        <h2 class="text-section text-white mb-3">Your content markets itself</h2>
+        <p class="text-sub text-white/35 max-w-lg mx-auto">Two viral engines. Zero ad spend.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-6">
+
+        <!-- IQ CARD GENERATOR — LARGE (3 cols) -->
+        <div class="lg:col-span-3 liquid-glass refract-edge p-8 reveal">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="ory-pulse" style="width:8px;height:8px"></div>
+            <span class="text-indigo-400 text-sm font-semibold">Organism IQ Card</span>
+            <span class="text-[10px] text-white/20 ml-auto">Try it now — it's free</span>
+          </div>
+          <p class="text-white/35 text-xs mb-5 leading-relaxed max-w-md">
+            Every month your Ory gets smarter. Share your IQ score with a beautiful social card.
+            Friends see it, want one, sign up. That's the loop.
+          </p>
+
+          <!-- Input row -->
+          <div class="flex gap-3 mb-5">
+            <input id="iq-input" type="text" placeholder="@yourhandle" class="flex-1 bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-indigo-400/40 transition-colors" />
+            <button id="iq-generate-btn" onclick="generateIQCard()" class="cta-shimmer text-white font-semibold text-sm px-6 py-3 rounded-xl hover:opacity-90 transition-all flex items-center gap-2">
+              <span id="iq-btn-text">Create my card</span>
+              <div id="iq-thinking" class="thinking-dots hidden"><span></span><span></span><span></span></div>
+            </button>
+          </div>
+
+          <!-- IQ Card Preview -->
+          <div id="iq-card" class="iq-card-preview p-6 relative overflow-hidden">
+            <div id="confetti-container" class="absolute inset-0 pointer-events-none z-10"></div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="ory-pulse" style="width:8px;height:8px"></div>
+                <span class="text-white text-xs font-medium">TaskNext.AI</span>
+              </div>
+              <span class="text-[10px] text-white/30">@<span id="iq-handle">yourhandle</span></span>
             </div>
-            <!-- Platform tabs -->
-            <div style="display:flex;gap:5px;flex-shrink:0;">
-              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;font-weight:600;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);">&#x1F4F8; Instagram</span>
-              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;color:#475569;border:1px solid rgba(255,255,255,.05);">&#x1D54F; Twitter</span>
-              <span style="padding:4px 9px;border-radius:5px;font-size:9.5px;color:#475569;border:1px solid rgba(255,255,255,.05);">&#x1F3B5; TikTok</span>
+            <div class="text-center py-5">
+              <div class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-orchid-400 mb-1.5 transition-all duration-500" id="iq-score">847</div>
+              <div class="text-white/45 text-sm font-medium">Organism IQ</div>
+              <div id="iq-rank" class="text-indigo-400/60 text-xs mt-1">Top 3% of creators</div>
             </div>
-            <!-- Editor -->
-            <div style="background:#100f18;border:1px solid rgba(139,92,246,.22);border-radius:7px;padding:11px;flex:1;min-height:0;">
-              <p style="font-size:10.5px;color:#e2e8f0;line-height:1.65;">Your morning routine isn't just about coffee &#x2615;<br><br>Here's what actually moves the needle...</p>
-              <div style="margin-top:8px;display:flex;gap:5px;flex-wrap:wrap;">
-                <span style="font-size:9.5px;color:#8b5cf6;">#morningroutine</span>
-                <span style="font-size:9.5px;color:#8b5cf6;">#productivity</span>
-                <span style="font-size:9.5px;color:#8b5cf6;">#AI</span>
+            <div class="grid grid-cols-3 gap-2 mb-4">
+              <div class="bg-white/[0.03] rounded-lg p-2 text-center">
+                <div class="text-xs text-white/65 font-medium" id="iq-posts">2,340</div>
+                <div class="text-[9px] text-white/25 mt-0.5">Posts</div>
+              </div>
+              <div class="bg-white/[0.03] rounded-lg p-2 text-center">
+                <div class="text-xs text-mint-400 font-medium" id="iq-growth">+287%</div>
+                <div class="text-[9px] text-white/25 mt-0.5">Growth</div>
+              </div>
+              <div class="bg-white/[0.03] rounded-lg p-2 text-center">
+                <div class="text-xs text-white/65 font-medium" id="iq-streak">89 days</div>
+                <div class="text-[9px] text-white/25 mt-0.5">Streak</div>
               </div>
             </div>
-            <!-- AI suggestion -->
-            <div style="background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:7px;padding:9px;flex-shrink:0;">
-              <div style="font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:#8b5cf6;margin-bottom:5px;">&#x1F916; AI Suggestion</div>
-              <div style="font-size:10.5px;color:#e2e8f0;">"5 AM habits that 10x'd my revenue..."</div>
-              <div style="display:flex;gap:12px;margin-top:5px;">
-                <span style="font-size:9.5px;color:#34d399;">&#x2191; Engagement: HIGH</span>
-                <span style="font-size:9.5px;color:#94a3b8;">Est. reach: 14.2K</span>
+            <p class="text-center text-white/25 text-[10px] italic" id="iq-message">"Your organism is evolving fast. Keep feeding it!" — Ory</p>
+          </div>
+
+          <!-- Share buttons -->
+          <div class="flex gap-3 mt-4">
+            <button onclick="shareIQCard()" class="flex-1 liquid-glass text-white/55 hover:text-white text-sm py-2.5 flex items-center justify-center gap-2 transition-all" style="border-radius:12px">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/></svg>
+              Share to Stories
+            </button>
+            <button onclick="copyIQText()" class="flex-1 liquid-glass text-white/55 hover:text-white text-sm py-2.5 flex items-center justify-center gap-2 transition-all" style="border-radius:12px">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
+              Copy text
+            </button>
+          </div>
+        </div>
+
+        <!-- WATERMARK TEASE (2 cols) -->
+        <div class="lg:col-span-2 liquid-glass refract-edge p-7 reveal" style="transition-delay:0.1s">
+          <div class="flex items-center gap-2 mb-4">
+            <svg class="w-4 h-4 text-orchid-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clip-rule="evenodd"/></svg>
+            <span class="text-orchid-400 text-sm font-semibold">Watermark Engine</span>
+          </div>
+          <p class="text-white/35 text-xs mb-5 leading-relaxed">
+            Every caption carries a subtle "Made with Ory" signature. People see great content, trace the source, and sign up.
+          </p>
+
+          <div class="space-y-3">
+            <div class="watermark-demo bg-white/[0.02] border border-white/[0.04] rounded-xl p-4">
+              <div class="text-[10px] text-white/40 mb-1.5 font-medium flex items-center gap-1.5">
+                <div class="hub-dot bg-gradient-to-r from-pink-500 to-purple-500"></div>Instagram
               </div>
+              <p class="text-white/60 text-xs leading-relaxed">5 things I learned posting every day for 90 days. Number 3 changed everything... <span class="text-indigo-400/30">#creatortips</span></p>
+            </div>
+            <div class="watermark-demo bg-white/[0.02] border border-white/[0.04] rounded-xl p-4">
+              <div class="text-[10px] text-white/40 mb-1.5 font-medium flex items-center gap-1.5">
+                <div class="hub-dot bg-blue-500"></div>LinkedIn
+              </div>
+              <p class="text-white/60 text-xs leading-relaxed">I used to spend 3 hours on content daily. Now? 12 minutes. Here's the system...</p>
+            </div>
+            <div class="watermark-demo bg-white/[0.02] border border-white/[0.04] rounded-xl p-4">
+              <div class="text-[10px] text-white/40 mb-1.5 font-medium flex items-center gap-1.5">
+                <div class="hub-dot bg-white"></div>X / Twitter
+              </div>
+              <p class="text-white/60 text-xs leading-relaxed">Thread: why your engagement dropped 40% this month (and exactly how to fix it in 7 days)</p>
+            </div>
+          </div>
+
+          <div class="mt-4 bg-orchid-400/5 border border-orchid-400/10 rounded-xl p-3 text-center">
+            <p class="text-white/35 text-[10px]"><span class="text-orchid-400 font-medium">Pro users</span> can remove the watermark — or keep it to flex.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFERRAL — Inline compact -->
+      <div class="mt-8 liquid-glass refract-edge p-7 text-center reveal animate-pulse-glow max-w-2xl mx-auto">
+        <h3 class="text-lg font-bold text-white mb-2">Invite a friend. Both get 1 month free.</h3>
+        <p class="text-white/35 text-xs mb-4 max-w-md mx-auto">Share your link. When they subscribe, you both win. No limits, no catches.</p>
+        <div class="flex items-center justify-center gap-3">
+          <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-2 text-sm text-white/25">
+            tasknextai.one/ref/<span class="text-indigo-400">your-code</span>
+          </div>
+          <button onclick="copyRef(this)" class="cta-shimmer text-white font-medium text-sm px-5 py-2 rounded-xl hover:opacity-90 transition-all">Copy link</button>
+        </div>
+        <div class="text-[10px] text-white/18 mt-4">4,200+ creators joined via referral &middot; 12,600 free months awarded</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SOCIAL HUB TEASE — Condensed -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="hub" class="relative py-20 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="text-indigo-400 text-xs font-medium tracking-widest uppercase mb-3 block">Ory Social Hub</span>
+          <h2 class="text-section text-white mb-4">Every platform.<br/>One living feed.</h2>
+          <p class="text-sub text-white/35 mb-6">
+            Instagram, TikTok, LinkedIn, X, Pinterest, Facebook — unified. Ory speaks plain English, suggests next posts, and knows your audience's pulse.
+          </p>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-indigo-400/10 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-indigo-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6z"/></svg></div>
+              <div><span class="text-white text-xs font-medium">AI Commentary</span><p class="text-white/25 text-[11px] mt-0.5">"Tuesday Reels outperform by 340% — 3 follow-up hooks drafted."</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-orchid-400/10 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-orchid-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg></div>
+              <div><span class="text-white text-xs font-medium">90-Day Calendar</span><p class="text-white/25 text-[11px] mt-0.5">AI fills your calendar in seconds. Approve or let Ory handle it.</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-mint-400/10 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd"/></svg></div>
+              <div><span class="text-white text-xs font-medium">Brand Brain</span><p class="text-white/25 text-[11px] mt-0.5">The longer you use Ory, the more it sounds exactly like you.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mock dashboard -->
+        <div class="reveal" style="transition-delay:0.15s">
+          <div class="liquid-glass refract-edge p-5 animate-pulse-glow">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2"><div class="ory-pulse" style="width:7px;height:7px"></div><span class="text-white text-xs font-medium">Ory Social Hub</span></div>
+              <div class="flex gap-1.5">
+                <span class="text-[9px] bg-indigo-400/10 text-indigo-400 px-2 py-0.5 rounded-md flex items-center gap-1"><div class="hub-dot bg-gradient-to-r from-pink-500 to-purple-500" style="width:4px;height:4px"></div>IG</span>
+                <span class="text-[9px] bg-orchid-400/10 text-orchid-400 px-2 py-0.5 rounded-md flex items-center gap-1"><div class="hub-dot bg-black" style="width:4px;height:4px"></div>TT</span>
+                <span class="text-[9px] bg-white/5 text-white/35 px-2 py-0.5 rounded-md flex items-center gap-1"><div class="hub-dot bg-blue-500" style="width:4px;height:4px"></div>LI</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-2.5 mb-4">
+              <div class="bg-white/[0.02] rounded-xl p-2.5 text-center"><div class="text-base font-bold text-white">24.3K</div><div class="text-[9px] text-white/25">Followers</div><div class="text-[9px] text-mint-400">+12.4%</div></div>
+              <div class="bg-white/[0.02] rounded-xl p-2.5 text-center"><div class="text-base font-bold text-white">8.7%</div><div class="text-[9px] text-white/25">Engagement</div><div class="text-[9px] text-mint-400">+3.2%</div></div>
+              <div class="bg-white/[0.02] rounded-xl p-2.5 text-center"><div class="text-base font-bold text-white">147</div><div class="text-[9px] text-white/25">Scheduled</div><div class="text-[9px] text-indigo-400">90 days</div></div>
+            </div>
+            <div class="bg-indigo-400/5 border border-indigo-400/10 rounded-xl p-3.5">
+              <div class="flex items-center gap-2 mb-1.5"><div class="ory-pulse" style="width:5px;height:5px"></div><span class="text-[10px] text-indigo-400 font-medium">Ory says</span></div>
+              <p class="text-white/50 text-[11px] leading-relaxed" id="hub-typing">"Your '5 productivity myths' carousel crushed it — 340% above average. I've drafted 3 follow-up hooks for Tuesday 9am."</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; FEATURE 2: GROWTH CENTER &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section class="fsec">
-  <div style="position:absolute;top:30%;left:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(139,92,246,.08) 0%,transparent 70%);pointer-events:none;"></div>
-  <div class="fsec-inner rev">
-    <div class="fsec-text">
-      <div class="sec-lbl rv">&#x1F4C8; Growth Center</div>
-      <h2 class="sec-h2 rv d1">Watch your audience grow in <span class="g-text">real time.</span></h2>
-      <p class="sec-desc rv d2">Deep analytics across every platform. See what's working, what's flopping, and exactly what to do next &mdash; in one clean dashboard.</p>
-      <ul class="feat-list rv d3">
-        <li>Cross-platform follower tracking &amp; projections</li>
-        <li>Best time to post based on your actual audience</li>
-        <li>Competitor benchmarking &amp; gap analysis</li>
-        <li>Revenue attribution: which posts drive sales</li>
-      </ul>
-    </div>
-    <div class="fsec-vis rv rvl d2">
-      <div class="aw">
-        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">Growth Center</span></div>
-        <div class="aw-body">
-          <div class="asb">
-            <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>&#x26A1;</em>Dashboard</div>
-            <div class="si"><em>&#x270D;&#xFE0F;</em>Content Studio</div>
-            <div class="si on"><em>&#x1F4C8;</em>Growth Center</div>
-            <div class="si"><em>&#x1F916;</em>AI Agents</div>
-            <div class="si"><em>&#x1F4C5;</em>Schedule</div>
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SOCIAL PROOF — Compact -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="relative py-16 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-xl font-bold text-white mb-2">Real creators. Real growth. Zero ad spend.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="testimonial-card p-6 reveal" style="transition-delay:0.05s">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center text-white text-xs font-bold">S</div>
+            <div><div class="text-white text-xs font-medium">Sarah M.</div><div class="text-white/20 text-[10px]">Fitness &middot; 23K followers</div></div>
+            <div class="ml-auto text-mint-400 text-[10px] font-semibold">4.2K &rarr; 23K</div>
           </div>
-          <div class="ac">
-            <div class="ac-head">
-              <div class="ac-title">Growth Analytics</div>
-              <span style="font-size:10px;color:#475569;">Last 30 days</span>
-            </div>
-            <div class="sc-row">
-              <div class="sc"><div class="v" style="color:#a78bfa;">12,847</div><div class="l">Followers</div><div class="c cu">&#x2191; +3,647</div></div>
-              <div class="sc"><div class="v" style="color:#f472b6;">4.2%</div><div class="l">Engagement</div><div class="c cu">&#x2191; Above avg</div></div>
-            </div>
-            <!-- Dual chart -->
-            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
-              <div style="font-size:9px;color:#475569;margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em;">Follower Growth &mdash; 4 Weeks</div>
-              <svg width="100%" height="72" viewBox="0 0 260 72" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="gB" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".22"/>
-                    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,68 L37,60 L74,48 L111,34 L148,22 L185,13 L222,6 L260,1 L260,72 L0,72 Z" fill="url(#gB)"/>
-                <polyline points="0,68 37,60 74,48 111,34 148,22 185,13 222,6 260,1" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="0,62 37,57 74,52 111,46 148,40 185,35 222,30 260,26" fill="none" stroke="#ec4899" stroke-width="1.4" stroke-dasharray="4,2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
-                <circle cx="260" cy="1" r="3" fill="#8b5cf6"/>
-              </svg>
-              <div style="display:flex;gap:14px;margin-top:5px;">
-                <span style="font-size:8.5px;color:#8b5cf6;display:flex;align-items:center;gap:4px;"><span style="width:10px;height:2px;background:#8b5cf6;display:inline-block;border-radius:1px;"></span>Followers</span>
-                <span style="font-size:8.5px;color:#ec4899;display:flex;align-items:center;gap:4px;"><span style="width:10px;height:0;display:inline-block;border-top:1.5px dashed #ec4899;"></span>Engagement</span>
-              </div>
-            </div>
-            <!-- Top posts -->
-            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex-shrink:0;">
-              <div style="font-size:8.5px;color:#475569;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;">Top Posts This Week</div>
-              <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#94a3b8;padding:2px 0;"><span>Morning habits carousel</span><span style="color:#34d399;">4.2K reach &#x2191;</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#94a3b8;padding:2px 0;"><span>AI tools deep-dive thread</span><span style="color:#34d399;">3.8K reach &#x2191;</span></div>
-            </div>
+          <p class="text-white/40 text-xs leading-relaxed">"From 4 hours a day to 15 minutes. Ory <em class="text-indigo-400/60">thinks</em> about what to post. Engagement tripled in 6 weeks."</p>
+        </div>
+        <div class="testimonial-card p-6 reveal" style="transition-delay:0.1s">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-orchid-400 to-rose-400 flex items-center justify-center text-white text-xs font-bold">M</div>
+            <div><div class="text-white text-xs font-medium">Marcus T.</div><div class="text-white/20 text-[10px]">SaaS founder &middot; 35K</div></div>
+            <div class="ml-auto text-mint-400 text-[10px] font-semibold">8K &rarr; 35K</div>
           </div>
+          <p class="text-white/40 text-xs leading-relaxed">"Brand Brain is scary good. After two weeks, Ory's captions sounded more like me than my own drafts."</p>
+        </div>
+        <div class="testimonial-card p-6 reveal" style="transition-delay:0.15s">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-mint-400 to-indigo-400 flex items-center justify-center text-white text-xs font-bold">A</div>
+            <div><div class="text-white text-xs font-medium">Amira K.</div><div class="text-white/20 text-[10px]">Travel &middot; 18K</div></div>
+            <div class="ml-auto text-mint-400 text-[10px] font-semibold">6K &rarr; 18K</div>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed">"90 days of content ready. I approve from my phone. Like having a social media team in my pocket."</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; FEATURE 3: AI AGENTS &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section class="fsec">
-  <div style="position:absolute;bottom:20%;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(16,185,129,.07) 0%,transparent 70%);pointer-events:none;"></div>
-  <div class="fsec-inner">
-    <div class="fsec-text">
-      <div class="sec-lbl rv">&#x1F916; AI Agent Hub</div>
-      <h2 class="sec-h2 rv d1">Your AI team works <span class="g-text">while you sleep.</span></h2>
-      <p class="sec-desc rv d2">Deploy autonomous agents that write content, engage with followers, research trends, and optimise your strategy &mdash; 24/7, zero supervision needed.</p>
-      <ul class="feat-list rv d3">
-        <li>Content Writer Agent: drafts posts on schedule</li>
-        <li>Engagement Agent: replies and DMs strategically</li>
-        <li>Trend Spotter: finds viral topics before they peak</li>
-        <li>Full logs and override controls &mdash; always in charge</li>
-      </ul>
+  <!-- ═══════════════════════════════════════ -->
+  <!-- PRICING -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="pricing" class="relative py-20 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="text-center mb-10 reveal">
+        <span class="text-indigo-400 text-xs font-medium tracking-widest uppercase mb-3 block">Honest pricing</span>
+        <h2 class="text-section text-white mb-3">Pick your organism tier</h2>
+        <p class="text-sub text-white/35 max-w-md mx-auto">
+          Full AI included. No hidden costs. <span class="text-indigo-400 font-medium">Founders lock prices forever.</span>
+        </p>
+      </div>
+
+      <!-- Urgency bar -->
+      <div class="max-w-sm mx-auto mb-10 reveal">
+        <div class="liquid-glass founding-badge px-5 py-3 text-center" style="border-radius:14px">
+          <div class="flex items-center justify-center gap-2">
+            <div class="ory-pulse" style="width:7px;height:7px"></div>
+            <span class="text-white font-semibold text-sm">Only <span id="spots-pricing" class="text-indigo-400">200</span> founding spots</span>
+          </div>
+          <p class="text-white/25 text-[10px] mt-1">When gone, prices go up permanently.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        <!-- Starter -->
+        <div class="liquid-glass refract-edge p-7 reveal flex flex-col" style="transition-delay:0.05s">
+          <h3 class="text-white font-semibold text-base mb-0.5">Starter</h3>
+          <p class="text-white/25 text-[10px] mb-4">Solo creators</p>
+          <div class="mb-5">
+            <div class="flex items-baseline gap-1"><span class="text-3xl font-bold text-white">£9</span><span class="text-white/25 text-sm">/mo</span></div>
+            <div class="text-xs text-indigo-400 mt-1">Founding: £7/mo forever</div>
+          </div>
+          <ul class="space-y-2.5 mb-6 flex-1 text-xs text-white/45">
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>1 platform</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>30 posts/month</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>AI Chat Box</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Analytics</li>
+          </ul>
+          <a href="#" class="block text-center liquid-glass text-white/70 font-medium text-sm py-2.5 hover:bg-white/[0.04] transition-all" style="border-radius:12px">Get Starter</a>
+          <div class="guarantee-badge mx-auto mt-3"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>14-day guarantee</div>
+        </div>
+
+        <!-- Growth (POPULAR) -->
+        <div class="price-popular liquid-glass refract-edge p-7 reveal flex flex-col relative" style="transition-delay:0.1s">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2"><span class="cta-shimmer text-white text-[9px] font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</span></div>
+          <div class="flex items-center gap-2 mb-0.5">
+            <h3 class="text-white font-semibold text-base">Growth</h3>
+            <span class="text-[9px] text-indigo-400/60 bg-indigo-400/10 px-2 py-0.5 rounded-full">Ory recommends</span>
+          </div>
+          <p class="text-white/25 text-[10px] mb-4">Serious creators & businesses</p>
+          <div class="mb-5">
+            <div class="flex items-baseline gap-1"><span class="text-3xl font-bold text-white">£19</span><span class="text-white/25 text-sm">/mo</span></div>
+            <div class="text-xs text-indigo-400 mt-1">Founding: £15/mo forever</div>
+          </div>
+          <ul class="space-y-2.5 mb-6 flex-1 text-xs text-white/45">
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><strong class="text-white/60">2 platforms</strong></li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><strong class="text-white/60">90 posts/month</strong></li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Chat + Content agents</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Brand Brain</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>90-day AI calendar</li>
+          </ul>
+          <a href="#" class="block text-center cta-shimmer text-white font-semibold text-sm py-2.5 rounded-xl hover:opacity-90 transition-all">Lock Growth forever</a>
+          <div class="guarantee-badge mx-auto mt-3"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>14-day guarantee</div>
+        </div>
+
+        <!-- Pro -->
+        <div class="liquid-glass refract-edge p-7 reveal flex flex-col" style="transition-delay:0.15s">
+          <h3 class="text-white font-semibold text-base mb-0.5">Pro</h3>
+          <p class="text-white/25 text-[10px] mb-4">Teams & agencies</p>
+          <div class="mb-5">
+            <div class="flex items-baseline gap-1"><span class="text-3xl font-bold text-white">£49</span><span class="text-white/25 text-sm">/mo</span></div>
+            <div class="text-xs text-indigo-400 mt-1">Founding: £39/mo forever</div>
+          </div>
+          <ul class="space-y-2.5 mb-6 flex-1 text-xs text-white/45">
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><strong class="text-white/60">All 6 platforms</strong></li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><strong class="text-white/60">Unlimited posts</strong></li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>All 3 AI agents</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Competitor Spy</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>White-label (no watermark)</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Priority support</li>
+          </ul>
+          <a href="#" class="block text-center liquid-glass text-white/70 font-medium text-sm py-2.5 hover:bg-white/[0.04] transition-all" style="border-radius:12px">Lock Pro forever</a>
+          <div class="guarantee-badge mx-auto mt-3"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>14-day guarantee</div>
+        </div>
+      </div>
+
+      <p class="text-center text-white/18 text-[10px] mt-6 reveal">Cancel anytime. Founding price stays locked even if you pause and return.</p>
     </div>
-    <div class="fsec-vis rv rvr d2">
-      <div class="aw">
-        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">AI Agents</span></div>
-        <div class="aw-body">
-          <div class="asb">
-            <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>&#x26A1;</em>Dashboard</div>
-            <div class="si"><em>&#x270D;&#xFE0F;</em>Content Studio</div>
-            <div class="si"><em>&#x1F4C8;</em>Growth Center</div>
-            <div class="si on"><em>&#x1F916;</em>AI Agents</div>
-            <div class="si"><em>&#x1F4C5;</em>Schedule</div>
-          </div>
-          <div class="ac">
-            <div class="ac-head">
-              <div class="ac-title">Active Agents</div>
-              <span class="badge bg2" style="font-size:9px;padding:3px 9px;">3 Running</span>
-            </div>
-            <div class="agc">
-              <div class="agd run"></div>
-              <div><div class="ag-name">Content Writer</div><div class="ag-desc">Generating 3 captions for tomorrow...</div></div>
-              <span class="ag-st run">Running</span>
-            </div>
-            <div class="agc">
-              <div class="agd run"></div>
-              <div><div class="ag-name">Hashtag Optimizer</div><div class="ag-desc">Analysing 47 hashtag opportunities</div></div>
-              <span class="ag-st run">Running</span>
-            </div>
-            <div class="agc">
-              <div class="agd idle"></div>
-              <div><div class="ag-name">Engagement Bot</div><div class="ag-desc">Next run: Today at 2:00 PM</div></div>
-              <span class="ag-st idle">Scheduled</span>
-            </div>
-            <div class="agc">
-              <div class="agd done"></div>
-              <div><div class="ag-name">Trend Spotter</div><div class="ag-desc">Found 8 trending topics \2713</div></div>
-              <span class="ag-st done">Complete</span>
-            </div>
-            <div style="display:flex;gap:7px;flex-shrink:0;">
-              <button style="flex:1;padding:6px;background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.28);border-radius:6px;font-size:10.5px;color:#a78bfa;font-family:inherit;cursor:pointer;font-weight:600;">+ New Agent</button>
-              <button style="flex:1;padding:6px;background:#100f18;border:1px solid rgba(255,255,255,.06);border-radius:6px;font-size:10.5px;color:#94a3b8;font-family:inherit;cursor:pointer;">View Logs</button>
-            </div>
-          </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FAQ — Compact -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="faq" class="relative py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-xl font-bold text-white">Questions? We got you.</h2>
+      </div>
+      <div class="space-y-2.5">
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">How does Ory actually post to my accounts?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">Ory connects through Publer, trusted by 100K+ creators. Rock-solid scheduling across Instagram, TikTok, LinkedIn, Pinterest, X, and Facebook. Direct API connections are being built for even deeper integration.</p></div>
+        </div>
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px;transition-delay:0.03s">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">Do I need a separate AI subscription?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">Nope! Ory includes its own AI brain. Your plan covers all generation, chat, and analysis. No ChatGPT or Claude subscription needed.</p></div>
+        </div>
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px;transition-delay:0.06s">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">What does "founding price locked forever" mean?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">The first 200 people pay a lower price that never goes up — even as features multiply and prices rise. Pause and return? Still locked. Ory keeps getting smarter. Your price stays frozen.</p></div>
+        </div>
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px;transition-delay:0.09s">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">What's the "Made with Ory" watermark?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">Starter and Growth plans show a tiny "Made with Ory" tag on AI-generated content. It's a flex — shows you use smart tools, and drives organic discovery. Pro users can remove it.</p></div>
+        </div>
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px;transition-delay:0.12s">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">What if I want to cancel?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">One click. No emails, no guilt trips. Data stays for 30 days. Come back later? Founding price still locked.</p></div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FINAL CTA -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="relative py-20 px-4">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <div class="inline-flex items-center gap-2 founding-badge px-4 py-2 rounded-full mb-6">
+        <div class="ory-pulse" style="width:7px;height:7px"></div>
+        <span class="text-sm text-indigo-300 font-medium"><span id="spots-footer" class="text-white font-bold">200</span> founding spots remaining</span>
+      </div>
+      <h2 class="text-section text-white mb-3">Your social media deserves<br/>an organism, not another tool.</h2>
+      <p class="text-sub text-white/35 max-w-md mx-auto mb-7">Lock your founding price today. Ory is already learning.</p>
+      <a href="#pricing" class="inline-block cta-shimmer text-white font-semibold text-base px-10 py-4 rounded-full hover:opacity-90 transition-all hover:scale-[1.02]">Lock my founding price forever</a>
+      <div class="guarantee-badge mx-auto mt-4"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>14-day money-back guarantee &middot; AI included &middot; No credit card to browse</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/[0.03] py-8 px-4">
+    <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2"><div class="ory-pulse" style="width:7px;height:7px"></div><span class="text-white/35 text-sm">TaskNext<span class="text-indigo-400/50">.AI</span></span><span class="text-white/12 text-xs">&copy; 2026</span></div>
+      <div class="flex items-center gap-5 text-[11px] text-white/20">
+        <a href="/privacy.html" class="hover:text-white/40 transition-colors">Privacy</a>
+        <a href="/terms.html" class="hover:text-white/40 transition-colors">Terms</a>
+        <a href="mailto:hello@tasknextai.one" class="hover:text-white/40 transition-colors">hello@tasknextai.one</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FLOATING SHARE BUTTON -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="floating-share" class="floating-share">
+    <button onclick="document.getElementById('viral').scrollIntoView({behavior:'smooth'})" class="cta-shimmer text-white font-semibold text-sm px-5 py-3 rounded-full flex items-center gap-2 shadow-lg shadow-indigo-500/20 hover:scale-105 transition-transform">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/></svg>
+      Share your Ory story
+    </button>
   </div>
-</section>
 
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; FEATURE 4: PERFORMANCE COACH &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section class="fsec">
-  <div style="position:absolute;top:20%;left:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(245,158,11,.07) 0%,transparent 70%);pointer-events:none;"></div>
-  <div class="fsec-inner rev">
-    <div class="fsec-text">
-      <div class="sec-lbl rv">&#x1F3C6; Performance Coach</div>
-      <h2 class="sec-h2 rv d1">Know exactly <span class="g-text">what to post next.</span></h2>
-      <p class="sec-desc rv d2">Your AI coach analyses every post, identifies patterns in what works, and gives you a personalised weekly action plan to hit your goals faster.</p>
-      <ul class="feat-list rv d3">
-        <li>Weekly performance score with actionable insights</li>
-        <li>Optimal posting times unique to your audience</li>
-        <li>Format recommendations: reel vs carousel vs text</li>
-        <li>Goal tracking with milestone celebrations</li>
-      </ul>
-    </div>
-    <div class="fsec-vis rv rvl d2">
-      <div class="aw">
-        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">Performance Coach</span></div>
-        <div class="aw-body">
-          <div class="asb">
-            <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>&#x26A1;</em>Dashboard</div>
-            <div class="si"><em>&#x270D;&#xFE0F;</em>Content Studio</div>
-            <div class="si"><em>&#x1F4C8;</em>Growth Center</div>
-            <div class="si"><em>&#x1F916;</em>AI Agents</div>
-            <div class="si on"><em>&#x1F3C6;</em>Coach</div>
-          </div>
-          <div class="ac">
-            <div class="ac-head">
-              <div class="ac-title">This Week's Score</div>
-              <span style="font-size:10px;color:#94a3b8;">Week of Mar 24</span>
-            </div>
-            <!-- Score -->
-            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:12px;display:flex;align-items:center;gap:14px;flex-shrink:0;">
-              <div style="text-align:center;flex-shrink:0;">
-                <div style="font-size:34px;font-weight:900;line-height:1;background:linear-gradient(130deg,#f59e0b,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">87</div>
-                <div style="font-size:8.5px;color:#475569;text-transform:uppercase;letter-spacing:.06em;">/100</div>
-              </div>
-              <div style="flex:1;">
-                <div style="height:7px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;margin-bottom:7px;">
-                  <div style="width:87%;height:100%;background:linear-gradient(90deg,#f59e0b,#10b981);border-radius:99px;"></div>
-                </div>
-                <div style="font-size:10.5px;color:#94a3b8;">Great week! Consistency &#x2191;, reach &#x2191;</div>
-              </div>
-            </div>
-            <!-- Insights -->
-            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:9px;flex:1;min-height:0;">
-              <div style="font-size:8.5px;color:#475569;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Insights</div>
-              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>&#x2705;</span>Post consistency: GREAT</div>
-              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>&#x26A1;</span>Best time: 7&ndash;9am &amp; 6&ndash;8pm</div>
-              <div style="font-size:10.5px;color:#e2e8f0;padding:3px 0;display:flex;align-items:center;gap:7px;"><span>&#x1F3AF;</span>Top format: Carousels</div>
-            </div>
-            <!-- Recommendation -->
-            <div style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.18);border-radius:7px;padding:9px;flex-shrink:0;">
-              <div style="font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:#f59e0b;margin-bottom:4px;">&#x1F916; AI Recommendation</div>
-              <div style="font-size:10.5px;color:#e2e8f0;line-height:1.55;">"Post a reel this Tuesday at 7am &mdash; add a CTA to improve saves by 34%"</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SCRIPTS -->
+  <!-- ═══════════════════════════════════════ -->
+  <script>
+    // === SCROLL REVEAL (throttled) ===
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; FEATURE 5: AUTOMATION HUB &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section class="fsec">
-  <div style="position:absolute;top:30%;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(139,92,246,.09) 0%,transparent 70%);pointer-events:none;"></div>
-  <div class="fsec-inner">
-    <div class="fsec-text">
-      <div class="sec-lbl rv">&#x2699;&#xFE0F; Automation Hub</div>
-      <h2 class="sec-h2 rv d1">Set it. Forget it.<br><span class="g-text">Go viral.</span></h2>
-      <p class="sec-desc rv d2">Build visual content workflows that run automatically. Connect triggers, actions, and conditions &mdash; without a single line of code.</p>
-      <ul class="feat-list rv d3">
-        <li>Drag-and-drop workflow builder</li>
-        <li>Triggers: schedule, trend spike, competitor post</li>
-        <li>47 pre-built automation templates</li>
-        <li>Cross-platform publishing in one workflow</li>
-      </ul>
-    </div>
-    <div class="fsec-vis rv rvr d2">
-      <div class="aw">
-        <div class="aw-tb"><span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span><span class="tb-lbl">Automation Hub</span></div>
-        <div class="aw-body">
-          <div class="asb">
-            <div class="sb-logo">TaskNext</div>
-            <div class="si"><em>&#x26A1;</em>Dashboard</div>
-            <div class="si"><em>&#x270D;&#xFE0F;</em>Content Studio</div>
-            <div class="si"><em>&#x1F4C8;</em>Growth Center</div>
-            <div class="si"><em>&#x1F916;</em>AI Agents</div>
-            <div class="si on"><em>&#x2699;&#xFE0F;</em>Automations</div>
-          </div>
-          <div class="ac">
-            <div class="ac-head">
-              <div class="ac-title">Daily Content Pipeline</div>
-              <span class="badge bg2" style="font-size:9px;padding:3px 9px;">Active</span>
-            </div>
-            <!-- Workflow visual -->
-            <div style="background:#100f18;border:1px solid rgba(255,255,255,.05);border-radius:7px;padding:12px;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
-              <div style="display:flex;align-items:center;gap:0;width:100%;">
-                <div style="flex:1;background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.28);border-radius:7px;padding:7px 4px;text-align:center;">
-                  <div style="font-size:15px;">&#x23F0;</div>
-                  <div style="font-size:8.5px;color:#a78bfa;font-weight:600;margin-top:2px;">Trigger</div>
-                  <div style="font-size:7.5px;color:#475569;">7:00 AM</div>
-                </div>
-                <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
-                <div style="flex:1;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.22);border-radius:7px;padding:7px 4px;text-align:center;">
-                  <div style="font-size:15px;">&#x1F916;</div>
-                  <div style="font-size:8.5px;color:#f472b6;font-weight:600;margin-top:2px;">AI Write</div>
-                  <div style="font-size:7.5px;color:#475569;">Generate</div>
-                </div>
-                <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
-                <div style="flex:1;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:7px 4px;text-align:center;">
-                  <div style="font-size:15px;">&#x2705;</div>
-                  <div style="font-size:8.5px;color:#34d399;font-weight:600;margin-top:2px;">Review</div>
-                  <div style="font-size:7.5px;color:#475569;">Auto-pass</div>
-                </div>
-                <div style="width:14px;height:1px;background:rgba(139,92,246,.3);flex-shrink:0;"></div>
-                <div style="flex:1;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.18);border-radius:7px;padding:7px 4px;text-align:center;">
-                  <div style="font-size:15px;">&#x1F680;</div>
-                  <div style="font-size:8.5px;color:#fbbf24;font-weight:600;margin-top:2px;">Publish</div>
-                  <div style="font-size:7.5px;color:#475569;">All platforms</div>
-                </div>
-              </div>
-              <div style="display:flex;justify-content:space-around;width:100%;padding-top:8px;border-top:1px solid rgba(255,255,255,.05);">
-                <div style="text-align:center;"><div style="font-size:16px;font-weight:800;color:#34d399;">3</div><div style="font-size:8px;color:#475569;text-transform:uppercase;letter-spacing:.06em;">Running</div></div>
-                <div style="text-align:center;"><div style="font-size:16px;font-weight:800;color:#fbbf24;">1</div><div style="font-size:8px;color:#475569;text-transform:uppercase;letter-spacing:.06em;">Paused</div></div>
-                <div style="text-align:center;"><div style="font-size:16px;font-weight:800;color:#a78bfa;">47</div><div style="font-size:8px;color:#475569;text-transform:uppercase;letter-spacing:.06em;">Completed</div></div>
-              </div>
-            </div>
-            <!-- Active automations list -->
-            <div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0;">
-              <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 9px;background:#100f18;border-radius:6px;border:1px solid rgba(255,255,255,.05);">
-                <span style="font-size:10.5px;color:#e2e8f0;">Daily Content Pipeline</span>
-                <span style="font-size:9.5px;color:#34d399;">&#x25CF; Active</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 9px;background:#100f18;border-radius:6px;border:1px solid rgba(255,255,255,.05);">
-                <span style="font-size:10.5px;color:#e2e8f0;">Engagement Auto-Reply</span>
-                <span style="font-size:9.5px;color:#34d399;">&#x25CF; Active</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; ROADMAP &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section id="roadmap">
-  <div class="rm-inner">
-    <div class="center-hd rv">
-      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">&#x1F5FA;&#xFE0F; Roadmap</div>
-      <h2 class="sec-h2">Built in public.<br><span class="g-text">Shipping fast.</span></h2>
-      <p>We move quickly. Founding members shape every feature.</p>
-    </div>
-    <div class="rm-grid rv d1">
-      <div class="rmc cur">
-        <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);pointer-events:none;"></div>
-        <div class="rm-phase">Now Live &mdash; V1</div>
-        <div class="rm-title">&#x1F680; Core Platform</div>
-        <ul class="rm-items">
-          <li><span class="rid ri-done"></span>AI Content Studio</li>
-          <li><span class="rid ri-done"></span>Growth Analytics Dashboard</li>
-          <li><span class="rid ri-done"></span>Basic AI Agents</li>
-          <li><span class="rid ri-act"></span>Automation Builder (Beta)</li>
-          <li><span class="rid ri-act"></span>Performance Coach</li>
-        </ul>
-      </div>
-      <div class="rmc">
-        <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(236,72,153,.2) 0%,transparent 70%);pointer-events:none;"></div>
-        <div class="rm-phase">Q2 2026 &mdash; V2</div>
-        <div class="rm-title">&#x26A1; Advanced AI</div>
-        <ul class="rm-items">
-          <li><span class="rid ri-soon"></span>Multi-agent workflows</li>
-          <li><span class="rid ri-soon"></span>Video script generator</li>
-          <li><span class="rid ri-soon"></span>AI image creation</li>
-          <li><span class="rid ri-soon"></span>Voice-to-post</li>
-          <li><span class="rid ri-soon"></span>Team collaboration</li>
-        </ul>
-      </div>
-      <div class="rmc">
-        <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(16,185,129,.15) 0%,transparent 70%);pointer-events:none;"></div>
-        <div class="rm-phase">Q3 2026 &mdash; V3</div>
-        <div class="rm-title">&#x1F310; Marketplace</div>
-        <ul class="rm-items">
-          <li><span class="rid ri-soon"></span>Agent marketplace</li>
-          <li><span class="rid ri-soon"></span>Custom AI personas</li>
-          <li><span class="rid ri-soon"></span>White-label option</li>
-          <li><span class="rid ri-soon"></span>Agency dashboard</li>
-        </ul>
-      </div>
-      <div class="rmc">
-        <div style="position:absolute;top:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(245,158,11,.15) 0%,transparent 70%);pointer-events:none;"></div>
-        <div class="rm-phase">Q4 2026 &mdash; V4</div>
-        <div class="rm-title">&#x1F4B0; Monetisation Suite</div>
-        <ul class="rm-items">
-          <li><span class="rid ri-soon"></span>Revenue tracking</li>
-          <li><span class="rid ri-soon"></span>Affiliate manager</li>
-          <li><span class="rid ri-soon"></span>Product promoter AI</li>
-          <li><span class="rid ri-soon"></span>Sponsorship finder</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING SECTION -->
-<section id="pricing">
-  <div class="pr-inner">
-    <div class="center-hd rv">
-      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">&#128179; Choose Your Plan</div>
-      <h2 class="sec-h2">4 plans. 3 AI agents. 4 platforms.<br><span class="g-text">Founding price locked forever.</span></h2>
-      <p style="color:var(--t2);font-size:15px;max-width:580px;margin:0 auto 10px;">Only 30 founding spots at these prices. Once they're gone, prices go up. Lock your rate today &mdash; it never increases as long as you stay subscribed.</p>
-    </div>
-
-    <div class="pr-grid rv" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
-
-      <!-- STARTER -->
-      <div class="prc rv d1">
-        <div class="pr-plan">Starter</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
-          <div class="pr-amt"><sup>&pound;</sup>7</div>
-          <div class="pr-per">/mo</div>
-        </div>
-        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;">1 platform &amp;middot; Chat Box agent</div>
-        <ul class="pr-feats">
-          <li>AI content generation</li>
-          <li>1 social platform (IG, X, LinkedIn, or TikTok)</li>
-          <li>Chat Box AI agent</li>
-          <li>30-day content calendar</li>
-          <li>Basic analytics</li>
-          <li>35-language support</li>
-        </ul>
-        <button class="pr-btn g-btn" onclick="goCheckout('starter')">Get Starter &rarr;</button>
-      </div>
-
-      <!-- GROWTH (popular) -->
-      <div class="prc pop rv d2">
-        <div class="pop-tag">Most Popular</div>
-        <div class="pr-plan">Growth</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
-          <div class="pr-amt"><sup>&pound;</sup>19</div>
-          <div class="pr-per">/mo</div>
-        </div>
-        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;">2 platforms &amp;middot; 2 agents</div>
-        <ul class="pr-feats">
-          <li>Everything in Starter</li>
-          <li>2 social platforms</li>
-          <li>Chat Box + Content agents</li>
-          <li>60-day content calendar</li>
-          <li>AI scheduling</li>
-          <li>Growth analytics</li>
-          <li>Priority support</li>
-        </ul>
-        <button class="pr-btn g-btn" onclick="goCheckout('growth')">Get Growth &rarr;</button>
-      </div>
-
-      <!-- PRO -->
-      <div class="prc rv d3">
-        <div class="pr-plan">Pro</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin:14px 0 4px;">
-          <div class="pr-amt"><sup>&pound;</sup>49</div>
-          <div class="pr-per">/mo</div>
-        </div>
-        <div style="font-size:12px;color:var(--t3);margin-bottom:18px;">4 platforms &amp;middot; All 3 agents</div>
-        <ul class="pr-feats">
-          <li>Everything in Growth</li>
-          <li>All 4 platforms (IG, X, LinkedIn, TikTok)</li>
-          <li>All 3 agents (Chat, Content, Scheduling)</li>
-          <li>90-day content calendar</li>
-          <li>Full analytics dashboard</li>
-          <li>Brand Brain AI training</li>
-          <li>Auto-update system</li>
-        </ul>
-        <button class="pr-btn g-btn" onclick="goCheckout('pro')">Get Pro &rarr;</button>
-      </div>
-
-
-    </div>
-
-    <div class="rv" style="text-align:center;margin-top:28px;color:var(--t3);font-size:13px;">
-      &#128274; &nbsp;Founding price locked forever &amp;middot; Cancel anytime &amp;middot; No exit fees
-    </div>
-
-    <div class="rv d2" style="max-width:500px;margin:28px auto 0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px 24px;text-align:center;">
-      <div style="font-size:12px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Only 30 founding spots &mdash; after that, prices increase</div>
-      <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
-        <div><span style="font-size:18px;font-weight:800;color:#34d399;">&pound;7</span><span style="color:var(--t3);font-size:12px;"> &rarr; &pound;15</span></div>
-        <div><span style="font-size:18px;font-weight:800;color:#34d399;">&pound;19</span><span style="color:var(--t3);font-size:12px;"> &rarr; &pound;39</span></div>
-        <div><span style="font-size:18px;font-weight:800;color:#34d399;">&pound;49</span><span style="color:var(--t3);font-size:12px;"> &rarr; &pound;79</span></div>
-      </div>
-      <div style="font-size:12px;color:var(--t3);margin-top:8px;">Founding members keep their rate &mdash; forever.</div>
-    </div>
-  </div>
-</section>
-
-
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; FAQ &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section id="faq">
-  <div class="faq-inner">
-    <div class="center-hd rv">
-      <div class="sec-lbl" style="display:inline-block;margin-bottom:12px;">&#x2753; FAQ</div>
-      <h2 class="sec-h2">Got questions?<br><span class="g-text">We've got answers.</span></h2>
-    </div>
-    <div class="faq-list rv d1">
-      <div class="faq-item">
-        <div class="faq-q">What AI model does TaskNext.AI use?<span class="faq-ico">+</span></div>
-        <div class="faq-a">TaskNext.AI runs on Claude Sonnet by Anthropic &mdash; one of the most capable AI models available. It runs locally on your machine, so your data never leaves your computer.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do I need any tech skills to use it?<span class="faq-ico">+</span></div>
-        <div class="faq-a">None at all. TaskNext.AI is designed for creators and marketers, not developers. Everything works through a clean visual interface &mdash; no code, no command lines.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is my data private and secure?<span class="faq-ico">+</span></div>
-        <div class="faq-a">100%. Because TaskNext.AI runs locally on your machine, your content, credentials, and data never touch any server we control. It's your data, on your hardware.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What social platforms are supported?<span class="faq-ico">+</span></div>
-        <div class="faq-a">Instagram, X (Twitter), LinkedIn, and TikTok &mdash; all four supported from day one. More platforms coming in V2.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Are founding member prices really locked forever?<span class="faq-ico">+</span></div>
-        <div class="faq-a">Yes. Whatever price you sign up at today is your price for as long as you stay subscribed. We will never raise your rate. This is our promise to early supporters.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I cancel anytime?<span class="faq-ico">+</span></div>
-        <div class="faq-a">Absolutely. No contracts, no exit fees. Cancel in one click from your account page. We'd rather earn your loyalty than trap you.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; FINAL CTA &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<section id="cta">
-  <div class="cta-glow"></div>
-  <div style="position:relative;z-index:1;">
-    <div class="rv" style="margin-bottom:16px;"><span class="badge bp">&#x1F512; 30 Founding Spots Left</span></div>
-    <h2 class="cta-h2 rv d1">Stop juggling 12 separate tools<br>that don't talk to each other.</h2>
-    <p class="cta-sub rv d2">Join the first 30 founding members. Plans start at &pound;7/mo &mdash; price locked forever. Your AI social media OS is waiting.</p>
-    <div class="cta-btns rv d3">
-      <button class="btn-p g-btn" style="padding:16px 32px;border-radius:12px;font-size:16px;" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">See All Plans from &pound;7/mo &rarr;</button>
-      <button class="btn-g" style="padding:16px 22px;font-size:16px;" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See all features</button>
-    </div>
-  </div>
-</section>
-
-<!-- &#9552;&#9552;&#9552; WAITLIST / FOUNDING MEMBER CAPTURE &#9552;&#9552;&#9552; -->
-<section id="waitlist" style="padding:80px 48px;background:linear-gradient(180deg,rgba(139,92,246,.06) 0%,transparent 100%);">
-  <div style="max-width:600px;margin:0 auto;text-align:center;">
-    <div class="rv"><span class="badge bg2">&#127775; 30 Founding Member Spots</span></div>
-    <h2 class="sec-h2 rv d1" style="margin:20px 0 12px;">Lock &pound;7/mo <span class="g-text">forever.</span></h2>
-    <p class="rv d2" style="color:var(--t2);font-size:15px;line-height:1.7;margin-bottom:28px;">
-      Be one of the first 30 founding members. Your price is locked for life &mdash; it never goes up, even as we add platforms, agents, and features. Drop your email to reserve your spot.
-    </p>
-    <form id="waitlist-form" class="rv d3" style="display:flex;gap:10px;max-width:480px;margin:0 auto;" onsubmit="handleWaitlist(event)">
-      <input type="email" id="wl-email" placeholder="your@email.com" required
-        style="flex:1;padding:14px 18px;border-radius:10px;border:1px solid rgba(139,92,246,.3);background:rgba(11,11,18,.8);color:#f1f5f9;font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;"
-        onfocus="this.style.borderColor='rgba(139,92,246,.6)'" onblur="this.style.borderColor='rgba(139,92,246,.3)'" />
-      <button type="submit" class="g-btn" style="padding:14px 24px;border-radius:10px;font-size:15px;white-space:nowrap;">Reserve My Spot &rarr;</button>
-    </form>
-    <div id="wl-success" style="display:none;margin-top:18px;padding:14px 20px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);border-radius:10px;color:#34d399;font-weight:600;">
-      &#9989; You\'re on the list! We\'ll email you when founding spots open.
-    </div>
-    <div class="rv d4" style="margin-top:22px;display:flex;justify-content:center;gap:28px;color:var(--t3);font-size:12px;">
-      <span>&#128274; No spam, ever</span>
-      <span>&#128231; Instant confirmation</span>
-      <span>&#9889; First access when we launch</span>
-    </div>
-    <div class="rv d5" style="margin-top:32px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;">
-      <div style="font-size:13px;color:var(--t2);font-weight:600;margin-bottom:6px;">Founding members get:</div>
-      <div style="font-size:12px;color:var(--t3);line-height:1.8;">
-        Price locked forever at &pound;7/mo &amp;middot; Priority support &amp;middot; Every future feature included &amp;middot; Founding member badge &amp;middot; Shape the product roadmap
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div>
-    <strong style="color:#fff;font-size:14px;">TaskNext<span style="color:#a78bfa;">.AI</span></strong>
-    <span style="margin-left:18px;">&amp;copy; 2026 TaskNext.AI. All rights reserved.</span>
-  </div>
-  <div style="display:flex;gap:22px;">
-    <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms</a>
-    <a href="mailto:hello@tasknextai.one">Contact</a>
-  </div>
-</footer>
-
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; STICKY BAR &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<div id="sbar">
-  <div class="sbar-l">
-    <div class="live-dot"></div>
-    <span class="sbar-txt"><strong>LIVE</strong> &nbsp; &#x1F512; 30 Founding Spots Left &mdash; Closing In:</span>
-  </div>
-  <div class="cd-wrap">
-    <div class="cdu"><span class="cdn" id="cd-h">71</span><span class="cdl">hrs</span></div>
-    <span class="cdsep">:</span>
-    <div class="cdu"><span class="cdn" id="cd-m">23</span><span class="cdl">min</span></div>
-    <span class="cdsep">:</span>
-    <div class="cdu"><span class="cdn" id="cd-s">44</span><span class="cdl">sec</span></div>
-  </div>
-  <button class="sbar-btn g-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Plans from &pound;7/mo &rarr;</button>
-</div>
-
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;
-     SCRIPTS
-&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<script>
-// &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; NAV scroll style
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); }, {passive:true});
-
-// Hamburger menu toggle
-const hamburger = document.getElementById('nav-hamburger');
-const navLinks = document.querySelector('.nav-links');
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', open);
-  });
-  // Close menu when a nav link is clicked
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', false);
-  }));
-}
-
-// &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; REVEAL on scroll
-const rvEls = document.querySelectorAll('.rv, .rvl, .rvr');
-const rvObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-rvEls.forEach(el => rvObs.observe(el));
-// Immediately reveal elements already in viewport on load (e.g. hero)
-rvEls.forEach(el => {
-  const r = el.getBoundingClientRect();
-  if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('show');
-});
-
-// &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; FAQ accordion
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.closest('.faq-item');
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
-  });
-});
-
-// &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; COUNTDOWN
-const KEY = 'tn_end_v2';
-let end = +sessionStorage.getItem(KEY);
-if (!end || end < Date.now()) {
-  end = Date.now() + (71*3600 + 30*60) * 1000;
-  sessionStorage.setItem(KEY, end);
-}
-const hEl = document.getElementById('cd-h');
-const mEl = document.getElementById('cd-m');
-const sEl = document.getElementById('cd-s');
-function tick() {
-  const d = Math.max(0, end - Date.now());
-  const h = Math.floor(d / 3600000);
-  const m = Math.floor((d % 3600000) / 60000);
-  const s = Math.floor((d % 60000) / 1000);
-  hEl.textContent = String(h).padStart(2,'0');
-  mEl.textContent = String(m).padStart(2,'0');
-  sEl.textContent = String(s).padStart(2,'0');
-}
-tick();
-setInterval(tick, 1000);
-
-// &#226;&rdquo;&#8364;&#226;&rdquo;&#8364; CANVAS PARTICLES (hero background)
-(function(){
-  const canvas = document.getElementById('hero-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-  window.addEventListener('resize', resize, {passive:true});
-  resize();
-
-  const COUNT = 80;
-  for (let i = 0; i < COUNT; i++) {
-    particles.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      r: Math.random() * 1.8 + 0.5,
-      a: Math.random() * 0.5 + 0.1,
-    });
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    // connections
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i+1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 130) {
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(139,92,246,${0.12 * (1 - dist/130)})`;
-          ctx.lineWidth = 0.7;
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
+    // === HERO TYPEWRITER ===
+    const subtitle = document.getElementById('hero-subtitle');
+    const subtitleText = 'Then Ory arrived.';
+    let charIdx = 0;
+    function typeHero() {
+      if (charIdx <= subtitleText.length) {
+        subtitle.textContent = subtitleText.slice(0, charIdx);
+        charIdx++;
+        setTimeout(typeHero, charIdx === 1 ? 600 : 70);
       }
     }
-    // dots
-    particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(167,139,250,${p.a})`;
-      ctx.fill();
-    });
-  }
+    setTimeout(typeHero, 800);
 
-  function update() {
-    if (W !== canvas.offsetWidth || H !== canvas.offsetHeight) resize();
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0 || p.x > W) p.vx *= -1;
-      if (p.y < 0 || p.y > H) p.vy *= -1;
-    });
-    draw();
-    requestAnimationFrame(update);
-  }
-  update();
-})();
-</script>
+    // === FLOATING SHARE BUTTON ===
+    const floatingShare = document.getElementById('floating-share');
+    let lastScrollY = 0;
+    const heroHeight = window.innerHeight;
+    window.addEventListener('scroll', () => {
+      // Show floating share after hero
+      if (window.scrollY > heroHeight * 0.7) {
+        floatingShare.classList.add('visible');
+      } else {
+        floatingShare.classList.remove('visible');
+      }
+      // Nav shrink
+      const nav = document.getElementById('main-nav');
+      nav.style.padding = window.scrollY > 80 ? '0.35rem 1rem' : '0.75rem 1rem';
+    }, { passive: true });
 
-<!-- &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; STRIPE PAYMENTS &#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144;&#226;&#8226;&#144; -->
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-// &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;
-// &#x26A0;&#xFE0F;  STRIPE PUBLISHABLE KEY &mdash; paste your pk_live_... key below
-// Dashboard &#x2192; Developers &#x2192; API keys &#x2192; Publishable key
-// &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;
-const STRIPE_PK = 'pk_live_51TDuLS3gWehifiJ9OM1bTygzkrSsyNKAwV1yUGiMG9wfmAV3tt2EUiO2PEXKF6VVG9bFYUyAldXcdiFBGwRQWb3q00UzZ0RlQf';
-
-const PRICE_IDS = {
-  starter: 'price_1TFTEW3gWehifiJ9MjMGEk7h',   // &pound;7/mo  - Starter
-  growth:  'price_1TFTEb3gWehifiJ9Z3CulW2k',   // &pound;19/mo - Growth
-  pro:     'price_1TFTEi3gWehifiJ9aCgWHlpP',   // &pound;49/mo - Pro
-};
-
-let stripeInstance = null;
-function getStripe() {
-  if (!stripeInstance) {
-    if (STRIPE_PK.includes('YOUR_PUBLISHABLE_KEY')) {
-      alert('&#x26A0;&#xFE0F; Add your Stripe publishable key to index.html (search for STRIPE_PK).');
-      return null;
+    // === FAQ ===
+    function toggleFAQ(btn) {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const arrow = item.querySelector('.faq-arrow');
+      const isOpen = !answer.classList.contains('hidden');
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-arrow').forEach(a => a.style.transform = '');
+      if (!isOpen) { answer.classList.remove('hidden'); arrow.style.transform = 'rotate(180deg)'; }
     }
-    stripeInstance = Stripe(STRIPE_PK);
-  }
-  return stripeInstance;
-}
 
-async function goCheckout(planKey) {
-  const s = getStripe();
-  if (!s) return;
-  const priceId = PRICE_IDS[planKey];
-  if (!priceId) return;
-  try {
-    const result = await s.redirectToCheckout({
-      lineItems: [{ price: priceId, quantity: 1 }],
-      mode: 'subscription',
-      successUrl: window.location.origin + '/?checkout=success',
-      cancelUrl:  window.location.href,
+    // === IQ CARD GENERATOR (with thinking + confetti) ===
+    const oryMessages = [
+      '"Your organism is evolving fast. Keep feeding it!" — Ory',
+      '"You\'re in the top tier. Most creators never get here." — Ory',
+      '"I\'m getting smarter because of you. Let\'s keep going." — Ory',
+      '"Your content game? Chef\'s kiss. Seriously." — Ory',
+      '"The algorithm loves you right now. Let\'s ride this wave." — Ory',
+      '"You\'re growing faster than 97% of creators I\'ve seen." — Ory',
+    ];
+
+    function generateIQCard() {
+      const handle = document.getElementById('iq-input').value.trim().replace('@','');
+      if (!handle) { document.getElementById('iq-input').focus(); return; }
+
+      // Show thinking state
+      document.getElementById('iq-btn-text').classList.add('hidden');
+      document.getElementById('iq-thinking').classList.remove('hidden');
+
+      setTimeout(() => {
+        // Update card
+        document.getElementById('iq-handle').textContent = handle;
+        const score = Math.floor(Math.random() * 200) + 780;
+        document.getElementById('iq-score').textContent = score;
+        const rank = score > 900 ? 'Top 1%' : score > 850 ? 'Top 3%' : 'Top 5%';
+        document.getElementById('iq-rank').textContent = rank + ' of creators';
+        document.getElementById('iq-posts').textContent = (Math.floor(Math.random() * 3000) + 800).toLocaleString();
+        document.getElementById('iq-growth').textContent = '+' + (Math.floor(Math.random() * 400) + 120) + '%';
+        document.getElementById('iq-streak').textContent = (Math.floor(Math.random() * 120) + 30) + ' days';
+        document.getElementById('iq-message').textContent = oryMessages[Math.floor(Math.random() * oryMessages.length)];
+
+        // Animate score
+        const scoreEl = document.getElementById('iq-score');
+        scoreEl.style.transform = 'scale(1.25)';
+        setTimeout(() => { scoreEl.style.transform = 'scale(1)'; }, 300);
+
+        // Reset button
+        document.getElementById('iq-btn-text').classList.remove('hidden');
+        document.getElementById('iq-thinking').classList.add('hidden');
+        document.getElementById('iq-btn-text').textContent = 'Regenerate';
+
+        // Confetti burst
+        spawnConfetti();
+      }, 1200);
+    }
+
+    function spawnConfetti() {
+      const container = document.getElementById('confetti-container');
+      container.innerHTML = '';
+      const colors = ['#818CF8','#C084FC','#34D399','#FB7185','#FBBF24','#60A5FA'];
+      for (let i = 0; i < 24; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.top = Math.random() * 40 + '%';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 0.4 + 's';
+        piece.style.animationDuration = (0.8 + Math.random() * 0.8) + 's';
+        piece.style.width = (4 + Math.random() * 6) + 'px';
+        piece.style.height = (4 + Math.random() * 6) + 'px';
+        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        container.appendChild(piece);
+      }
+      setTimeout(() => { container.innerHTML = ''; }, 2000);
+    }
+
+    function shareIQCard() {
+      const handle = document.getElementById('iq-handle').textContent;
+      const score = document.getElementById('iq-score').textContent;
+      const text = 'My Organism IQ is ' + score + '! \uD83E\uDDEC ' + document.getElementById('iq-rank').textContent + '.\n\nFind out yours \u2192 tasknextai.one\n\n#TaskNextAI #OryIQ #AICreator @' + handle;
+      if (navigator.share) {
+        navigator.share({ title: 'My Ory IQ Score', text: text, url: 'https://tasknextai.one' });
+      } else {
+        navigator.clipboard.writeText(text);
+        showCopied(event.target.closest('button'));
+      }
+    }
+
+    function copyIQText() {
+      const score = document.getElementById('iq-score').textContent;
+      const text = 'My Organism IQ is ' + score + '! \uD83E\uDDEC Find yours at tasknextai.one #TaskNextAI #OryIQ';
+      navigator.clipboard.writeText(text);
+      showCopied(event.target.closest('button'));
+    }
+
+    function copyRef(btn) {
+      navigator.clipboard.writeText('https://tasknextai.one/ref/your-code');
+      showCopied(btn);
+    }
+
+    function showCopied(btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<svg class="w-4 h-4 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> Copied!';
+      setTimeout(() => { btn.innerHTML = orig; }, 1800);
+    }
+
+    // === SPOTS ===
+    ['spots-nav','spots-pricing','spots-footer'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = '200';
     });
-    if (result.error) alert(result.error.message);
-  } catch(e) {
-    console.error('Stripe checkout error:', e);
-  }
-}
 
-// &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364; Billing toggle (monthly &#x2194; annual) &#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;&#226;&rdquo;&#8364;
-let billingMode = 'monthly';
+    // === PARALLAX ORBS (requestAnimationFrame) ===
+    let mouseX = 0, mouseY = 0, orbX = 0, orbY = 0;
+    document.addEventListener('mousemove', e => { mouseX = (e.clientX / window.innerWidth - 0.5) * 16; mouseY = (e.clientY / window.innerHeight - 0.5) * 16; }, { passive: true });
+    const orbs = document.querySelectorAll('.orb');
+    function animateOrbs() {
+      orbX += (mouseX - orbX) * 0.04;
+      orbY += (mouseY - orbY) * 0.04;
+      orbs.forEach((orb, i) => {
+        const f = (i + 1) * 0.6;
+        orb.style.transform = 'translate(' + (orbX * f) + 'px,' + (orbY * f) + 'px)';
+      });
+      requestAnimationFrame(animateOrbs);
+    }
+    animateOrbs();
 
-function setPricing(mode) {
-  billingMode = mode;
-  const track = document.getElementById('tog-track');
-  const moLbl = document.getElementById('tog-mo');
-  const yrLbl = document.getElementById('tog-yr');
-  // Toggle UI elements are optional — skip if not present in DOM
-  if (!track || !moLbl || !yrLbl) return;
-  const moCards = document.querySelectorAll('.pr-mo');
-  const yrCards = document.querySelectorAll('.pr-yr');
+    // === ENTER KEY ===
+    document.getElementById('iq-input').addEventListener('keypress', e => { if (e.key === 'Enter') generateIQCard(); });
+  </script>
 
-  if (mode === 'annual') {
-    track.classList.add('on');
-    moLbl.classList.remove('tog-active');
-    yrLbl.classList.add('tog-active');
-    moCards.forEach(c => c.style.display = 'none');
-    yrCards.forEach(c => c.style.display = 'block');
-  } else {
-    track.classList.remove('on');
-    moLbl.classList.add('tog-active');
-    yrLbl.classList.remove('tog-active');
-    moCards.forEach(c => c.style.display = 'block');
-    yrCards.forEach(c => c.style.display = 'none');
-  }
-}
-
-function toggleBilling() {
-  setPricing(billingMode === 'monthly' ? 'annual' : 'monthly');
-}
-
-// Default to annual view (best value)
-setPricing('annual');
-</script>
-<script>
-function handleWaitlist(e) {
-  e.preventDefault();
-  const email = document.getElementById('wl-email').value;
-  // Store locally + show success (replace with real endpoint later)
-  const existing = JSON.parse(localStorage.getItem('tn_waitlist') || '[]');
-  existing.push({ email, ts: new Date().toISOString() });
-  localStorage.setItem('tn_waitlist', JSON.stringify(existing));
-  document.getElementById('waitlist-form').style.display = 'none';
-  document.getElementById('wl-success').style.display = 'block';
-  // TODO: Connect to email service (Mailchimp/ConvertKit/Resend)
-  console.log('Waitlist signup:', email);
-}
-</script>
 </body>
 </html>
