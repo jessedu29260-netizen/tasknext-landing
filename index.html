@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TaskNext.AI â Meet Ory, Your Living AI Social Media Organism</title>
-  <meta name="description" content="Ory is a living AI that breathes inside your brand, creates content across 6 platforms, schedules everything while you sleep â and gets smarter every month. From Â£7/mo." />
-  <meta name="theme-color" content="#050507" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23818CF8'/%3E%3Cstop offset='100%25' style='stop-color:%23C084FC'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='34' r='20' stroke='url(%23g)' stroke-width='1.5' fill='rgba(129,140,248,0.1)'/%3E%3Cellipse cx='26' cy='31' rx='3.5' ry='4' fill='%23FFF'/%3E%3Ccircle cx='27' cy='30' r='1.8' fill='%23050507'/%3E%3Cellipse cx='38' cy='31' rx='3.5' ry='4' fill='%23FFF'/%3E%3Ccircle cx='39' cy='30' r='1.8' fill='%23050507'/%3E%3Cpath d='M28 38Q32 42 36 38' stroke='%23FFF' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
-
+  <title>TaskNext.AI — Complete Brand System & Marketing Kit</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -15,55 +11,40 @@
         extend: {
           colors: {
             void: '#050507',
-            surface: '#0a0a0f',
             glass: 'rgba(255,255,255,0.03)',
             'glass-border': 'rgba(255,255,255,0.08)',
             indigo: { 400: '#818CF8', 500: '#6366F1', 600: '#4F46E5' },
             orchid: { 400: '#C084FC', 500: '#A855F7' },
-            mint: { 400: '#34D399' },
-            rose: { 400: '#FB7185' },
-            amber: { 400: '#FBBF24' },
           },
           fontFamily: {
             display: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Inter', 'system-ui', 'sans-serif'],
             body: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            breathe: 'breathe 4s ease-in-out infinite',
+            'breathe-slow': 'breathe 6s ease-in-out infinite',
+            shimmer: 'shimmer 3s linear infinite',
+            float: 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
           },
         }
       }
     }
   </script>
   <style>
-    /* === KEYFRAMES === */
     @keyframes breathe { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.06); opacity: 0.9; } }
-    @keyframes breatheSlow { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: 0.85; } }
     @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 20px rgba(129,140,248,0.1); } 50% { box-shadow: 0 0 40px rgba(129,140,248,0.25); } }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes veinFlow { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
-    @keyframes thinking { 0%,80%,100% { opacity: 0.2; } 40% { opacity: 1; } }
-    @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(120px) rotate(720deg); opacity: 0; } }
-    @keyframes glowLine { 0%,100% { opacity: 0.3; transform: scaleX(0.8); } 50% { opacity: 1; transform: scaleX(1); } }
-    @keyframes typewriter { from { width: 0; } to { width: 100%; } }
-    @keyframes counterPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
-    /* === BASE === */
     body { background: #050507; }
-    ::selection { background: rgba(129,140,248,0.3); }
 
-    /* === LIQUID GLASS === */
     .liquid-glass {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(40px) saturate(1.4);
-      -webkit-backdrop-filter: blur(40px) saturate(1.4);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
       border-radius: 24px;
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
-    }
-    .liquid-glass:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 40px rgba(129,140,248,0.08);
     }
     .liquid-glass-sm {
       background: rgba(255,255,255,0.03);
@@ -71,1347 +52,1073 @@
       backdrop-filter: blur(20px);
       border-radius: 16px;
     }
-
-    /* === REFRACTION EDGE === */
-    .refract-edge {
-      position: relative;
-    }
-    .refract-edge::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(129,140,248,0.25), transparent 40%, transparent 60%, rgba(192,132,252,0.2));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    /* === GRADIENT TEXT === */
     .gradient-text {
       background: linear-gradient(135deg, #818CF8, #C084FC);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
-    /* === ORY GLOW === */
     .ory-glow {
       box-shadow: 0 0 60px rgba(129,140,248,0.15), 0 0 120px rgba(192,132,252,0.08);
     }
-
-    /* === NEURAL BACKGROUND === */
-    .neural-bg {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.08;
-    }
-    .neural-vein {
-      stroke-dasharray: 1000;
-      animation: veinFlow 8s linear infinite;
-    }
-
-    /* === ANIMATIONS === */
-    .animate-breathe { animation: breathe 4s ease-in-out infinite; }
-    .animate-breathe-slow { animation: breatheSlow 6s ease-in-out infinite; }
-    .animate-shimmer {
-      background-size: 200% 100%;
-      animation: shimmer 3s linear infinite;
-    }
-    .animate-float { animation: float 6s ease-in-out infinite; }
-    .animate-pulse-glow { animation: pulseGlow 3s ease-in-out infinite; }
-    .animate-glow-line { animation: glowLine 2s ease-in-out infinite; }
-
-    /* === SCORLL REVEAL === */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* === TYPOGRAPHY === */
-    .text-hero {
-      font-size: clamp(2.4rem, 5.2vw, 4.5rem);
-      letter-spacing: -0.035em;
-      line-height: 1.08;
-    }
-    .text-sub {
-      font-size: clamp(1rem, 1.8vw, 1.3rem);
-      line-height: 1.65;
-    }
-    .text-section {
-      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-      letter-spacing: -0.025em;
-      line-height: 1.15;
-    }
-
-    /* === ORY PULSE DOT === */
-    .ory-pulse {
-      width: 12px; height: 12px;
-      background: radial-gradient(circle, #818CF8 30%, transparent 70%);
-      border-radius: 50%;
-      animation: breathe 4s ease-in-out infinite;
-    }
-
-    /* === ORB (parallax) === */
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-      will-change: transform;
-    }
-
-    /* === SECTION DIVIDER === */
     .section-divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(129,140,248,0.3), transparent);
     }
-
-    /* === PRICING === */
-    .price-popular {
-      box-shadow: 0 0 60px rgba(129,140,248,0.15), 0 0 120px rgba(192,132,252,0.06);
-    }
-    .founding-badge {
-      animation: pulseGlow 3s ease-in-out infinite;
-    }
-    .guarantee-badge {
-      background: rgba(52,211,153,0.08);
-      border: 1px solid rgba(52,211,153,0.2);
+    .color-swatch {
+      width: 80px; height: 80px; border-radius: 16px;
+      display: inline-flex; align-items: flex-end; padding: 8px;
+      font-size: 10px; color: white; font-family: monospace;
     }
 
-    /* === TESTIMONIAL === */
-    .testimonial-card {
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
-    }
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 48px rgba(129,140,248,0.12);
-    }
+    /* Social template frames */
+    .ig-post { width: 340px; height: 340px; }
+    .ig-story { width: 270px; height: 480px; }
+    .x-post { width: 500px; min-height: 200px; }
+    .linkedin-post { width: 500px; min-height: 260px; }
+    .tiktok-thumb { width: 270px; height: 480px; }
 
-    /* === IQ CARD === */
-    .iq-card-preview {
-      background: linear-gradient(135deg, rgba(129,140,248,0.08), rgba(192,132,252,0.06));
-      transition: box-shadow 0.4s ease;
-    }
-    .iq-card-preview:hover {
-      box-shadow: 0 0 48px rgba(129,140,248,0.15);
-    }
-
-    /* === WATERMARK DEMO === */
-    .watermark-demo {
+    .template-frame {
+      background: #050507;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
       position: relative;
     }
-    .watermark-demo::after {
-      content: 'Made with Ory â';
-      position: absolute;
-      bottom: 12px;
-      right: 14px;
-      font-size: 10px;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.05em;
-    }
 
-    /* === THINKING DOTS === */
-    .thinking-dots span {
-      display: inline-block;
-      width: 6px; height: 6px;
-      margin: 0 2px;
-      background: #818CF8;
-      border-radius: 50%;
-      animation: thinking 1.5s infinite;
-    }
-    .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-    /* === CONFETTI === */
-    .confetti-piece {
-      position: absolute;
-      width: 8px; height: 8px;
-      border-radius: 2px;
-      animation: confettiFall 1.2s ease-out forwards;
-    }
-
-    /* === FLOATING SHARE === */
-    .floating-share {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 40;
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      pointer-events: none;
-    }
-    .floating-share.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    /* === COUNTER BADGE === */
-    .counter-badge {
-      animation: counterPulse 3s ease-in-out infinite;
-    }
-
-    /* === FAQ === */
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), padding 0.3s ease;
-    }
-    .faq-answer.open {
-      max-height: 300px;
-    }
-    .faq-arrow {
-      transition: transform 0.3s ease;
-    }
-    .faq-arrow.rotated {
-      transform: rotate(180deg);
-    }
-
-    /* === MODAL === */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      background: rgba(5,5,7,0.85);
-      backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .modal-overlay.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .modal-content {
-      max-width: 720px;
-      max-height: 80vh;
-      overflow-y: auto;
-      width: 90%;
-    }
-
-    /* === FOUNDER SECTION === */
-    .founder-photo {
-      width: 96px; height: 96px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #818CF8, #C084FC);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.2rem;
-      animation: breathe 4s ease-in-out infinite;
-    }
-
-    /* === SCROLLBAR === */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #050507; }
-    ::-webkit-scrollbar-thumb { background: rgba(129,140,248,0.3); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(129,140,248,0.5); }
-
-    /* === PRINT === */
+    /* Print styles */
     @media print {
       body { background: white; color: black; }
       .liquid-glass { border: 1px solid #ddd; background: #f9f9f9; }
     }
   </style>
 </head>
-<body class="text-white font-body antialiased overflow-x-hidden">
-
-  <!-- ===== NEURAL VEINS BG ===== -->
-  <svg class="neural-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="vg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#818CF8"/>
-        <stop offset="100%" style="stop-color:#C084FC"/>
-      </linearGradient>
-    </defs>
-    <path class="neural-vein" d="M0 450Q360 320 720 450T1440 380" fill="none" stroke="url(#vg)" stroke-width="1.5"/>
-    <path class="neural-vein" d="M0 300Q400 420 800 280T1440 450" fill="none" stroke="url(#vg)" stroke-width="1" style="animation-delay:-3s"/>
-    <path class="neural-vein" d="M0 600Q320 500 700 620T1440 540" fill="none" stroke="url(#vg)" stroke-width="0.8" style="animation-delay:-5s"/>
-  </svg>
-
-  <!-- ===== PARALLAX ORBS ===== -->
-  <div class="orb" data-depth="0.3" style="width:500px;height:500px;background:rgba(129,140,248,0.06);top:10%;left:-10%;"></div>
-  <div class="orb" data-depth="0.5" style="width:400px;height:400px;background:rgba(192,132,252,0.05);top:50%;right:-8%;"></div>
-  <div class="orb" data-depth="0.2" style="width:350px;height:350px;background:rgba(129,140,248,0.04);bottom:20%;left:30%;"></div>
+<body class="text-white font-body antialiased">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-3" style="background:rgba(5,5,7,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center animate-breathe">
-          <svg width="20" height="20" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="34" r="20" stroke="white" stroke-width="1.5" fill="none"/><ellipse cx="26" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="27" cy="30" r="1.8" fill="#050507"/><ellipse cx="38" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="39" cy="30" r="1.8" fill="#050507"/><path d="M28 38Q32 42 36 38" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><path d="M32 14Q30 8 26 5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="26" cy="5" r="1.5" fill="white"/></svg>
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4" style="background: rgba(5,5,7,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center animate-breathe">
+          <svg width="18" height="18" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="34" r="20" stroke="white" stroke-width="1.5" fill="none"/><ellipse cx="26" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="27" cy="30" r="1.8" fill="#050507"/><ellipse cx="38" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="39" cy="30" r="1.8" fill="#050507"/><path d="M28 38Q32 42 36 38" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><path d="M32 14Q30 8 26 5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="26" cy="5" r="1.5" fill="white"/></svg>
         </div>
-        <span class="text-lg font-semibold font-display">TaskNext<span class="gradient-text">.AI</span></span>
-      </a>
-      <div class="hidden md:flex items-center gap-7 text-sm text-white/50">
-        <a href="#story" class="hover:text-white transition-colors">Story</a>
-        <a href="#features" class="hover:text-white transition-colors">Features</a>
-        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
-        <a href="#our-story" class="hover:text-white transition-colors">About</a>
-        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <span class="text-lg font-semibold font-display">TaskNext.AI Brand System</span>
       </div>
-      <div class="flex items-center gap-4">
-        <div class="hidden sm:flex items-center gap-2 text-xs text-orchid-400">
-          <span class="w-1.5 h-1.5 bg-orchid-400 rounded-full animate-pulse"></span>
-          <span id="spots-nav">187</span> founding spots left
-        </div>
-        <a href="#pricing" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">Lock my price</a>
+      <div class="hidden md:flex items-center gap-6 text-sm text-white/60">
+        <a href="#brand-bible" class="hover:text-white transition">Brand Bible</a>
+        <a href="#logos" class="hover:text-white transition">Logos</a>
+        <a href="#templates" class="hover:text-white transition">Templates</a>
+        <a href="#viral" class="hover:text-white transition">Viral Assets</a>
+        <a href="#copy" class="hover:text-white transition">Copy Pack</a>
+        <a href="#guidelines" class="hover:text-white transition">Guidelines</a>
       </div>
     </div>
   </nav>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section id="hero" class="min-h-screen flex items-center justify-center px-6 pt-20 pb-12 relative overflow-hidden">
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+  <!-- ===== COVER ===== -->
+  <section class="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
+    <!-- Background glow -->
+    <div class="absolute inset-0 flex items-center justify-center">
       <div class="w-[600px] h-[600px] bg-indigo-400/10 rounded-full blur-[120px] animate-breathe-slow"></div>
       <div class="w-[400px] h-[400px] bg-orchid-400/8 rounded-full blur-[100px] animate-breathe absolute translate-x-32"></div>
     </div>
-
-    <div class="text-center relative z-10 max-w-3xl">
-      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm text-white/60 mb-8">
-        <span class="w-2 h-2 bg-mint-400 rounded-full animate-pulse"></span>
-        Early access â founding member spots open
+    <div class="text-center relative z-10 max-w-4xl">
+      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm text-white/70 mb-8">
+        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+        MASTERPLAN V10.3 — Brand System
       </div>
-
-      <h1 class="text-hero font-bold font-display mb-6">
-        Once upon a time, your social media was <span class="gradient-text">chaos</span>
+      <h1 class="text-6xl md:text-8xl font-bold font-display leading-[0.95] mb-6">
+        The Complete<br>
+        <span class="gradient-text">Brand System</span>
       </h1>
-
-      <div class="h-12 mb-8 flex items-center justify-center">
-        <p id="hero-subtitle" class="text-2xl md:text-3xl font-display text-white/80 font-light"></p>
-      </div>
-
-      <p class="text-sub text-white/50 max-w-2xl mx-auto mb-4">
-        Ory is a living AI that learns your brand voice, creates content across 6 platforms, schedules everything while you sleep â and gets smarter every month you use it.
+      <p class="text-xl text-white/50 max-w-2xl mx-auto mb-12">
+        Brand Bible &middot; Logo System &middot; Social Templates &middot; Viral Assets &middot; Marketing Copy &middot; Visual Guidelines
       </p>
-
-      <p class="text-sm text-white/30 mb-10 max-w-lg mx-auto">
-        We launched in March 2026 and we're growing every week. Real creators are already using Ory daily. Join early and help shape what it becomes.
-      </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-        <a href="#pricing" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20">
-          Claim your founding price â from Â£7/mo forever
-        </a>
-        <a href="#demo" class="text-white/50 hover:text-white text-sm transition-colors flex items-center gap-2">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          47-second demo
-        </a>
-      </div>
-
-      <div class="flex items-center justify-center gap-6 text-xs text-white/30 flex-wrap">
-        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>14-day money-back guarantee</span>
-        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>No credit card required</span>
-        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>AI included free</span>
-        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>35 languages</span>
+      <div class="flex items-center justify-center gap-4 text-sm text-white/40">
+        <span>TaskNext.AI</span>
+        <span>&middot;</span>
+        <span>Meet Ory</span>
+        <span>&middot;</span>
+        <span>March 2026</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== SOCIAL PROOF BAR ===== -->
-  <section class="py-8 px-6 reveal">
-    <div class="max-w-4xl mx-auto">
-      <div class="liquid-glass-sm px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-4">
-          <div class="flex -space-x-3">
-            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-rose-400 to-orchid-400 border-2 border-void flex items-center justify-center text-xs font-bold">S</div>
-            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-400 to-mint-400 border-2 border-void flex items-center justify-center text-xs font-bold">M</div>
-            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-400 to-rose-400 border-2 border-void flex items-center justify-center text-xs font-bold">A</div>
-            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-orchid-400 to-indigo-400 border-2 border-void flex items-center justify-center text-xs font-bold">J</div>
-            <div class="w-9 h-9 rounded-full bg-white/10 border-2 border-void flex items-center justify-center text-[10px] text-white/60">+</div>
+  <!-- ============================================================ -->
+  <!-- 1. BRAND BIBLE -->
+  <!-- ============================================================ -->
+  <section id="brand-bible" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Section 01</p>
+        <h2 class="text-5xl font-bold font-display">Brand Bible</h2>
+        <p class="text-white/50 mt-4 max-w-xl mx-auto">The single-page truth for how TaskNext.AI looks, sounds, and feels.</p>
+      </div>
+
+      <!-- Core Values -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-2xl font-semibold mb-6 gradient-text">Core Values</h3>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="space-y-2">
+            <div class="text-3xl">🧬</div>
+            <h4 class="font-semibold">Living Intelligence</h4>
+            <p class="text-sm text-white/60">We build systems that breathe, learn, heal, and grow. Not static software — living organisms.</p>
+          </div>
+          <div class="space-y-2">
+            <div class="text-3xl">🤝</div>
+            <h4 class="font-semibold">Human First</h4>
+            <p class="text-sm text-white/60">Technology should feel like a friend, not a tool. Ory is warm, encouraging, and always on your side.</p>
+          </div>
+          <div class="space-y-2">
+            <div class="text-3xl">🎯</div>
+            <h4 class="font-semibold">Radical Simplicity</h4>
+            <p class="text-sm text-white/60">Complex power, simple surface. One subscription, one companion, infinite results.</p>
+          </div>
+          <div class="space-y-2">
+            <div class="text-3xl">🌍</div>
+            <h4 class="font-semibold">Accessible to All</h4>
+            <p class="text-sm text-white/60">35 languages. Starting at £9/month. Built for every creator on the planet.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personality -->
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="liquid-glass p-10">
+          <h3 class="text-2xl font-semibold mb-6 gradient-text">Personality Adjectives</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-indigo-400/10 border border-indigo-400/20 px-4 py-2 rounded-full text-sm">Witty</span>
+            <span class="bg-indigo-400/10 border border-indigo-400/20 px-4 py-2 rounded-full text-sm">Encouraging</span>
+            <span class="bg-orchid-400/10 border border-orchid-400/20 px-4 py-2 rounded-full text-sm">Warm</span>
+            <span class="bg-orchid-400/10 border border-orchid-400/20 px-4 py-2 rounded-full text-sm">Playful</span>
+            <span class="bg-indigo-400/10 border border-indigo-400/20 px-4 py-2 rounded-full text-sm">Cheeky</span>
+            <span class="bg-orchid-400/10 border border-orchid-400/20 px-4 py-2 rounded-full text-sm">Confident</span>
+            <span class="bg-indigo-400/10 border border-indigo-400/20 px-4 py-2 rounded-full text-sm">Alive</span>
+            <span class="bg-orchid-400/10 border border-orchid-400/20 px-4 py-2 rounded-full text-sm">Premium</span>
+          </div>
+          <p class="text-sm text-white/50 mt-6">Ory is the friend who happens to be brilliant at social media. Never robotic, never corporate, always encouraging.</p>
+        </div>
+
+        <div class="liquid-glass p-10">
+          <h3 class="text-2xl font-semibold mb-6 gradient-text">Tone of Voice — Sample Messages</h3>
+          <div class="space-y-4">
+            <div class="bg-white/5 rounded-2xl p-4">
+              <p class="text-sm text-white/40 mb-1">Loading state</p>
+              <p class="text-white">"Ory is stretching its neurons... almost ready! 🧠"</p>
+            </div>
+            <div class="bg-white/5 rounded-2xl p-4">
+              <p class="text-sm text-white/40 mb-1">Success celebration</p>
+              <p class="text-white">"Boom! Your content just went live across 4 platforms. High five! ✋"</p>
+            </div>
+            <div class="bg-white/5 rounded-2xl p-4">
+              <p class="text-sm text-white/40 mb-1">Upgrade nudge</p>
+              <p class="text-white">"You've used 80% of your tokens this month — you're on fire! Upgrade to Growth for 5x more power."</p>
+            </div>
+            <div class="bg-white/5 rounded-2xl p-4">
+              <p class="text-sm text-white/40 mb-1">Onboarding story</p>
+              <p class="text-white">"Once upon a time your social media was chaos... then Ory arrived, and everything changed."</p>
+            </div>
+            <div class="bg-white/5 rounded-2xl p-4">
+              <p class="text-sm text-white/40 mb-1">Error recovery</p>
+              <p class="text-white">"Tiny hiccup — Ory already fixed it. Your LinkedIn token was refreshed silently. Carry on! 💪"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Palette -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-2xl font-semibold mb-6 gradient-text">Colour Palette</h3>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+          <div>
+            <div class="color-swatch" style="background:#050507; border: 1px solid rgba(255,255,255,0.1);">#050507</div>
+            <p class="text-xs text-white/50 mt-2">Void (Background)</p>
           </div>
           <div>
-            <p class="text-sm font-medium">Founding members joining every week</p>
-            <p class="text-xs text-white/40">Creators, agencies & indie brands â since March 2026</p>
+            <div class="color-swatch" style="background:#818CF8;">#818CF8</div>
+            <p class="text-xs text-white/50 mt-2">Indigo (Primary)</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background:#C084FC;">#C084FC</div>
+            <p class="text-xs text-white/50 mt-2">Orchid (Accent)</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background:#FFFFFF;">#FFFFFF</div>
+            <p class="text-xs text-white/50 mt-2">White (Text)</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background:rgba(255,255,255,0.5);">50% White</div>
+            <p class="text-xs text-white/50 mt-2">Muted (Secondary)</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: linear-gradient(135deg, #818CF8, #C084FC);">Gradient</div>
+            <p class="text-xs text-white/50 mt-2">Ory Gradient</p>
           </div>
         </div>
-        <div class="flex items-center gap-2 counter-badge">
-          <span class="w-2 h-2 bg-mint-400 rounded-full animate-pulse"></span>
-          <span class="text-sm text-mint-400 font-medium">Hundreds of posts</span>
-          <span class="text-xs text-white/40">created by early creators this month</span>
+        <div class="mt-8 text-sm text-white/50">
+          <p><strong class="text-white">Usage rules:</strong> Indigo is the primary action colour (buttons, links, active states). Orchid is used sparingly for organism glows and accents. The gradient is reserved for Ory-specific elements (logo, IQ score, premium badges). Background is always #050507 — never pure black.</p>
         </div>
       </div>
+
+      <!-- Typography -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-2xl font-semibold mb-6 gradient-text">Typography</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <p class="text-sm text-white/40 mb-4">PRIMARY FONT STACK</p>
+            <p class="text-4xl font-bold font-display mb-2">SF Pro Display</p>
+            <p class="text-lg font-display text-white/60">-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif</p>
+            <div class="mt-6 space-y-3">
+              <p class="text-5xl font-bold font-display">Aa Bb Cc 123</p>
+              <p class="text-3xl font-semibold font-display">Headlines — 600/700 weight</p>
+              <p class="text-lg font-display">Body text — 400 weight, 1.6 line-height</p>
+              <p class="text-sm font-display text-white/60">Captions — 400 weight, 1.5 line-height</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm text-white/40 mb-4">RULES</p>
+            <div class="space-y-4 text-sm text-white/70">
+              <p>Use <code class="bg-white/10 px-2 py-0.5 rounded">clamp()</code> for fluid sizing: <code class="bg-white/10 px-2 py-0.5 rounded">clamp(2rem, 5vw, 4rem)</code> for hero headings.</p>
+              <p>Line-height: 1.5 for body, 1.1–1.2 for large headings.</p>
+              <p>Max content width: 1280px with auto margins.</p>
+              <p>Letter-spacing: -0.02em on headings, 0 on body.</p>
+              <p>Never use more than 3 font sizes on a single screen.</p>
+              <p>British English throughout all user-facing text.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo Usage Rules -->
+      <div class="liquid-glass p-10">
+        <h3 class="text-2xl font-semibold mb-6 gradient-text">Logo Usage Rules</h3>
+        <div class="grid md:grid-cols-3 gap-6 text-sm text-white/70">
+          <div>
+            <h4 class="text-white font-semibold mb-2">Clear Space</h4>
+            <p>Minimum clear space around the logo equals the height of the "T" in TaskNext. Never crowd the logo.</p>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-2">Minimum Size</h4>
+            <p>Digital: 32px height minimum. Print: 15mm minimum. Below this, use the icon-only mark.</p>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-2">Don'ts</h4>
+            <p>Never rotate. Never stretch. Never place on busy backgrounds without a glass container. Never change the gradient colours.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <div class="section-divider max-w-6xl mx-auto"></div>
+  <div class="section-divider max-w-7xl mx-auto"></div>
 
-  <!-- ===== THE ORGANISM â STORY + FEATURES ===== -->
-  <section id="story" class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-20 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Meet Ory</p>
-        <h2 class="text-section font-bold font-display mb-4">Not a tool. <span class="gradient-text">A living organism.</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto text-sub">Ory isn't another content scheduler with a fancy coat of paint. It's a living AI that grows with your brand â every day, every post, every insight.</p>
+  <!-- ============================================================ -->
+  <!-- 2. LOGO SYSTEM -->
+  <!-- ============================================================ -->
+  <section id="logos" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Section 02</p>
+        <h2 class="text-5xl font-bold font-display">Logo System</h2>
+        <p class="text-white/50 mt-4 max-w-xl mx-auto">Main logo, Ory mascot, wordmark combinations, and lockups.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="liquid-glass p-8 reveal refract-edge">
-          <div class="w-12 h-12 rounded-2xl bg-indigo-400/10 flex items-center justify-center mb-5 animate-breathe">
-            <svg width="24" height="24" fill="none" stroke="#818CF8" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.5-3 9-7.5 9-12a9 9 0 00-18 0c0 4.5 3.5 9 9 12z"/></svg>
+      <!-- Main Logo -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-xl font-semibold mb-8">Main Logo — TaskNext.AI</h3>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="flex items-center justify-center p-12 bg-[#050507] rounded-2xl border border-white/5">
+            <svg viewBox="0 0 400 80" width="360" height="72" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#818CF8"/>
+                  <stop offset="100%" style="stop-color:#C084FC"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5,5)">
+                <circle cx="35" cy="35" r="28" fill="none" stroke="url(#lg1)" stroke-width="2" opacity="0.9"/>
+                <circle cx="35" cy="35" r="16" fill="url(#lg1)" opacity="0.15"/>
+                <circle cx="35" cy="35" r="8" fill="url(#lg1)" opacity="0.3"/>
+                <circle cx="35" cy="35" r="3.5" fill="url(#lg1)"/>
+                <line x1="35" y1="7" x2="35" y2="18" stroke="url(#lg1)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="35" y1="52" x2="35" y2="63" stroke="url(#lg1)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="7" y1="35" x2="18" y2="35" stroke="url(#lg1)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="52" y1="35" x2="63" y2="35" stroke="url(#lg1)" stroke-width="1.5" stroke-linecap="round"/>
+              </g>
+              <text x="85" y="38" font-family="-apple-system, 'SF Pro Display', 'Inter', sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" letter-spacing="-0.5">TaskNext</text>
+              <text x="267" y="38" font-family="-apple-system, 'SF Pro Display', 'Inter', sans-serif" font-size="28" font-weight="300" fill="url(#lg1)" letter-spacing="-0.5">.AI</text>
+              <text x="85" y="58" font-family="-apple-system, 'SF Pro Display', 'Inter', sans-serif" font-size="9.5" font-weight="400" fill="#818CF8" letter-spacing="2.5" opacity="0.6">THE LIVING AI ORGANISM</text>
+            </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Breathes</h3>
-          <p class="text-sm text-white/50">Auto-updates silently. New features roll out like magic â you just wake up to more power.</p>
-        </div>
-        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.1s">
-          <div class="w-12 h-12 rounded-2xl bg-orchid-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-1s">
-            <svg width="24" height="24" fill="none" stroke="#C084FC" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 11-7 11S5 14 5 9a7 7 0 017-7z"/><circle cx="12" cy="9" r="2"/></svg>
+          <div class="text-sm text-white/60 space-y-3">
+            <p><strong class="text-white">Concept:</strong> The organism symbol represents a neural network core with radiating connections — a living system that grows outward. The gradient flows from Indigo to Orchid, representing intelligence evolving into creativity.</p>
+            <p><strong class="text-white">".AI" treatment:</strong> Always lighter weight (300) and in gradient. This creates visual separation between the brand name and the technology marker.</p>
+            <p><strong class="text-white">Tagline:</strong> "THE LIVING AI ORGANISM" appears in spaced Indigo caps below the wordmark when space allows.</p>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Learns</h3>
-          <p class="text-sm text-white/50">Brand Brain absorbs your tone. Every post sounds more like you â not a generic bot.</p>
-        </div>
-        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.2s">
-          <div class="w-12 h-12 rounded-2xl bg-mint-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-2s">
-            <svg width="24" height="24" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.65.77 1.1 1.45 1.12H21a2 2 0 010 4h-.09c-.68.02-1.25.47-1.45 1.12z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold mb-2">Heals</h3>
-          <p class="text-sm text-white/50">Token expired? Connection dropped? Ory fixes it silently. You never see a broken post.</p>
-        </div>
-        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.3s">
-          <div class="w-12 h-12 rounded-2xl bg-amber-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-3s">
-            <svg width="24" height="24" fill="none" stroke="#FBBF24" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold mb-2">Grows</h3>
-          <p class="text-sm text-white/50">Monthly intelligence unlocks. Your Ory IQ rises â not because of updates, but because it learns <em>you</em>.</p>
         </div>
       </div>
+
+      <!-- Ory Mascot -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-xl font-semibold mb-8">Ory Mascot — The Friendly Organism</h3>
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Full Colour -->
+          <div class="text-center">
+            <div class="flex items-center justify-center p-8 bg-[#050507] rounded-2xl border border-white/5 mb-4 ory-glow">
+              <svg viewBox="0 0 200 200" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#818CF8"/><stop offset="50%" style="stop-color:#A78BFA"/><stop offset="100%" style="stop-color:#C084FC"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="88" fill="none" stroke="url(#bg1)" stroke-width="1" opacity="0.15"/>
+                <ellipse cx="100" cy="105" rx="55" ry="53" fill="url(#bg1)" opacity="0.2"/>
+                <ellipse cx="100" cy="105" rx="48" ry="46" fill="rgba(255,255,255,0.02)" stroke="url(#bg1)" stroke-width="2"/>
+                <ellipse cx="82" cy="95" rx="9" ry="10" fill="#FFF" opacity="0.95"/>
+                <circle cx="84" cy="93" r="4.5" fill="#050507"/><circle cx="86" cy="91" r="1.8" fill="#FFF"/>
+                <ellipse cx="118" cy="95" rx="9" ry="10" fill="#FFF" opacity="0.95"/>
+                <circle cx="120" cy="93" r="4.5" fill="#050507"/><circle cx="122" cy="91" r="1.8" fill="#FFF"/>
+                <path d="M88 112 Q100 123 112 112" fill="none" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+                <circle cx="73" cy="108" r="5" fill="#C084FC" opacity="0.2"/>
+                <circle cx="127" cy="108" r="5" fill="#818CF8" opacity="0.2"/>
+                <path d="M100 57 Q95 40 88 32" fill="none" stroke="url(#bg1)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                <circle cx="88" cy="32" r="3" fill="url(#bg1)" opacity="0.8"/>
+                <path d="M100 57 Q108 38 115 30" fill="none" stroke="url(#bg1)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <circle cx="115" cy="30" r="2.5" fill="url(#bg1)" opacity="0.6"/>
+              </svg>
+            </div>
+            <p class="text-sm font-semibold">Full Colour</p>
+            <p class="text-xs text-white/40">Primary usage</p>
+          </div>
+
+          <!-- Icon Only -->
+          <div class="text-center">
+            <div class="flex items-center justify-center p-8 bg-[#050507] rounded-2xl border border-white/5 mb-4">
+              <svg viewBox="0 0 64 64" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="ig1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#818CF8"/><stop offset="100%" style="stop-color:#C084FC"/></linearGradient></defs>
+                <circle cx="32" cy="34" r="20" stroke="url(#ig1)" stroke-width="1.5" fill="rgba(129,140,248,0.1)"/>
+                <ellipse cx="26" cy="31" rx="3.5" ry="4" fill="#FFF" opacity="0.95"/>
+                <circle cx="27" cy="30" r="1.8" fill="#050507"/><circle cx="28" cy="29" r="0.7" fill="#FFF"/>
+                <ellipse cx="38" cy="31" rx="3.5" ry="4" fill="#FFF" opacity="0.95"/>
+                <circle cx="39" cy="30" r="1.8" fill="#050507"/><circle cx="40" cy="29" r="0.7" fill="#FFF"/>
+                <path d="M28 38 Q32 42 36 38" fill="none" stroke="#FFF" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M32 14 Q30 8 26 5" fill="none" stroke="url(#ig1)" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                <circle cx="26" cy="5" r="1.5" fill="url(#ig1)" opacity="0.8"/>
+              </svg>
+            </div>
+            <p class="text-sm font-semibold">Icon Only</p>
+            <p class="text-xs text-white/40">App icons, favicons</p>
+          </div>
+
+          <!-- Monochrome White -->
+          <div class="text-center">
+            <div class="flex items-center justify-center p-8 bg-[#050507] rounded-2xl border border-white/5 mb-4">
+              <svg viewBox="0 0 64 64" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="34" r="20" stroke="white" stroke-width="1.5" fill="none" opacity="0.3"/>
+                <ellipse cx="26" cy="31" rx="3.5" ry="4" fill="white" opacity="0.9"/>
+                <circle cx="27" cy="30" r="1.8" fill="#050507"/>
+                <ellipse cx="38" cy="31" rx="3.5" ry="4" fill="white" opacity="0.9"/>
+                <circle cx="39" cy="30" r="1.8" fill="#050507"/>
+                <path d="M28 38 Q32 42 36 38" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+                <path d="M32 14 Q30 8 26 5" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+                <circle cx="26" cy="5" r="1.5" fill="white" opacity="0.5"/>
+              </svg>
+            </div>
+            <p class="text-sm font-semibold">Monochrome</p>
+            <p class="text-xs text-white/40">Watermarks, overlays</p>
+          </div>
+
+          <!-- On Light BG -->
+          <div class="text-center">
+            <div class="flex items-center justify-center p-8 bg-white rounded-2xl mb-4">
+              <svg viewBox="0 0 64 64" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="ig2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#818CF8"/><stop offset="100%" style="stop-color:#C084FC"/></linearGradient></defs>
+                <circle cx="32" cy="34" r="20" stroke="url(#ig2)" stroke-width="1.5" fill="rgba(129,140,248,0.08)"/>
+                <ellipse cx="26" cy="31" rx="3.5" ry="4" fill="#1a1a2e" opacity="0.9"/>
+                <circle cx="27" cy="30" r="1.8" fill="white"/>
+                <ellipse cx="38" cy="31" rx="3.5" ry="4" fill="#1a1a2e" opacity="0.9"/>
+                <circle cx="39" cy="30" r="1.8" fill="white"/>
+                <path d="M28 38 Q32 42 36 38" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+                <path d="M32 14 Q30 8 26 5" fill="none" stroke="url(#ig2)" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                <circle cx="26" cy="5" r="1.5" fill="url(#ig2)" opacity="0.8"/>
+              </svg>
+            </div>
+            <p class="text-sm font-semibold">Light Background</p>
+            <p class="text-xs text-white/40">Rare use cases</p>
+          </div>
+        </div>
+
+        <div class="mt-8 text-sm text-white/60">
+          <p><strong class="text-white">Ory Design Principles:</strong> Ory is a friendly, cute-but-premium organism. Big expressive eyes with light reflections convey warmth. The subtle blush circles add approachability. Antenna/tendrils represent neural connections and the living organism metaphor. The body is translucent (Liquid Glass) — never solid or flat.</p>
+        </div>
+      </div>
+
+      <!-- Lockups -->
+      <div class="liquid-glass p-10">
+        <h3 class="text-xl font-semibold mb-8">Wordmark + Symbol Lockups</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Horizontal -->
+          <div class="text-center">
+            <div class="flex items-center justify-center gap-4 p-8 bg-[#050507] rounded-2xl border border-white/5 mb-4">
+              <svg viewBox="0 0 48 48" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="lk1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#818CF8"/><stop offset="100%" style="stop-color:#C084FC"/></linearGradient></defs>
+                <circle cx="24" cy="26" r="16" stroke="url(#lk1)" stroke-width="1.5" fill="rgba(129,140,248,0.1)"/>
+                <ellipse cx="20" cy="24" rx="3" ry="3.2" fill="#FFF"/><circle cx="21" cy="23" r="1.5" fill="#050507"/>
+                <ellipse cx="28" cy="24" rx="3" ry="3.2" fill="#FFF"/><circle cx="29" cy="23" r="1.5" fill="#050507"/>
+                <path d="M22 30 Q24 33 26 30" fill="none" stroke="#FFF" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <div class="text-left">
+                <p class="text-xl font-semibold font-display">TaskNext<span class="gradient-text">.AI</span></p>
+                <p class="text-[10px] text-indigo-400/60 tracking-[0.15em] uppercase">Meet Ory</p>
+              </div>
+            </div>
+            <p class="text-sm font-semibold">Horizontal Lockup</p>
+          </div>
+          <!-- Vertical -->
+          <div class="text-center">
+            <div class="flex flex-col items-center justify-center p-8 bg-[#050507] rounded-2xl border border-white/5 mb-4">
+              <svg viewBox="0 0 64 64" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="lk2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#818CF8"/><stop offset="100%" style="stop-color:#C084FC"/></linearGradient></defs>
+                <circle cx="32" cy="34" r="20" stroke="url(#lk2)" stroke-width="1.5" fill="rgba(129,140,248,0.1)"/>
+                <ellipse cx="26" cy="31" rx="3.5" ry="4" fill="#FFF"/><circle cx="27" cy="30" r="1.8" fill="#050507"/>
+                <ellipse cx="38" cy="31" rx="3.5" ry="4" fill="#FFF"/><circle cx="39" cy="30" r="1.8" fill="#050507"/>
+                <path d="M28 38 Q32 42 36 38" fill="none" stroke="#FFF" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <p class="text-lg font-semibold font-display mt-3">TaskNext<span class="gradient-text">.AI</span></p>
+            </div>
+            <p class="text-sm font-semibold">Vertical Lockup</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <div class="section-divider max-w-6xl mx-auto"></div>
+  <div class="section-divider max-w-7xl mx-auto"></div>
 
-  <!-- ===== FEATURES â BUILT TO SPREAD ===== -->
-  <section id="features" class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-20 reveal">
-        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4">Built to spread</p>
-        <h2 class="text-section font-bold font-display mb-4">Made to be <span class="gradient-text">shared</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">Ory doesn't just create content â it helps you build a presence people actually notice.</p>
+  <!-- ============================================================ -->
+  <!-- 3. SOCIAL MEDIA TEMPLATE KIT -->
+  <!-- ============================================================ -->
+  <section id="templates" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Section 03</p>
+        <h2 class="text-5xl font-bold font-display">Social Media Templates</h2>
+        <p class="text-white/50 mt-4 max-w-xl mx-auto">Ready-to-use designs for Instagram, X, LinkedIn, and TikTok — all showing Ory's personality.</p>
+      </div>
+
+      <!-- INSTAGRAM -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-semibold mb-8 flex items-center gap-3">
+          <span class="w-8 h-8 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-lg"></span>
+          Instagram Posts (1080×1080)
+        </h3>
+        <div class="flex flex-wrap gap-6">
+
+          <!-- IG Post 1 -->
+          <div class="template-frame ig-post p-6 flex flex-col justify-between" style="background: linear-gradient(160deg, #050507 0%, #0f0f1a 100%);">
+            <div>
+              <div class="flex items-center gap-2 mb-6">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400"></div>
+                <span class="text-xs text-white/60">@tasknextai</span>
+              </div>
+              <p class="text-2xl font-bold leading-tight">Stop spending <br>5 hours on content.<br><span class="gradient-text">Ory does it in 5 minutes.</span></p>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs bg-indigo-400/20 text-indigo-400 px-3 py-1 rounded-full">Try Ory free</span>
+              <span class="text-[10px] text-white/30">Made with Ory</span>
+            </div>
+          </div>
+
+          <!-- IG Post 2 -->
+          <div class="template-frame ig-post p-6 flex flex-col justify-between" style="background: linear-gradient(160deg, #0a0a15 0%, #1a0a20 100%);">
+            <div>
+              <p class="text-6xl mb-4">🧠</p>
+              <p class="text-xl font-bold">Your Organism IQ</p>
+              <p class="text-5xl font-bold gradient-text mt-2">87.3</p>
+              <p class="text-sm text-white/50 mt-2">Ory learned 12 new patterns this week</p>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-white/40">Share your IQ score</span>
+              <span class="text-[10px] text-white/30">Made with Ory</span>
+            </div>
+          </div>
+
+          <!-- IG Post 3 -->
+          <div class="template-frame ig-post p-6 flex flex-col justify-between" style="background: #050507;">
+            <div>
+              <p class="text-sm text-indigo-400 mb-4">BEHIND THE SCENES</p>
+              <p class="text-xl font-bold leading-tight">"I used to dread Mondays because of content planning.<br><br>Now Ory has my whole week ready before I wake up."</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400"></div>
+              <div>
+                <p class="text-xs font-semibold">Sarah K.</p>
+                <p class="text-[10px] text-white/40">Founding member</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSTAGRAM STORIES -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-semibold mb-8">Instagram Stories (1080×1920)</h3>
+        <div class="flex flex-wrap gap-6">
+
+          <div class="template-frame ig-story p-6 flex flex-col justify-between" style="background: linear-gradient(180deg, #050507 0%, #0f0a1f 50%, #050507 100%);">
+            <div class="text-center pt-8">
+              <p class="text-sm text-indigo-400 mb-4">SWIPE UP</p>
+              <p class="text-3xl font-bold">Once upon a time...</p>
+              <p class="text-lg text-white/60 mt-4">your social media was chaos.</p>
+            </div>
+            <div class="text-center pb-8">
+              <p class="text-2xl font-bold gradient-text">Then Ory arrived.</p>
+              <div class="mt-6 bg-white/10 rounded-full px-6 py-3 inline-block">
+                <span class="text-sm">Lock your founding price &uarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="template-frame ig-story p-6 flex flex-col justify-center items-center" style="background: radial-gradient(circle at 50% 40%, rgba(129,140,248,0.15) 0%, #050507 70%);">
+            <p class="text-7xl mb-6">🐙</p>
+            <p class="text-2xl font-bold text-center">Ory just saved me<br><span class="gradient-text">£2,753</span><br>this month</p>
+            <p class="text-sm text-white/40 mt-4">vs hiring a social media agency</p>
+            <div class="mt-8 bg-gradient-to-r from-indigo-400 to-orchid-400 rounded-full px-8 py-3">
+              <span class="text-sm font-semibold text-white">Meet Ory</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- X/TWITTER -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-semibold mb-8 flex items-center gap-3">
+          <span class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold">𝕏</span>
+          X/Twitter Posts
+        </h3>
+        <div class="flex flex-wrap gap-6">
+
+          <div class="template-frame x-post p-6" style="background: #050507;">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400"></div>
+              <div>
+                <p class="text-sm font-semibold">TaskNext.AI <span class="text-white/40">@tasknextai</span></p>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed">My AI organism just wrote 30 days of Instagram content in 47 seconds.<br><br>Not prompts. Not drafts.<br><br>30 ready-to-post, on-brand captions with hashtags, scheduled across 4 platforms.<br><br>The future isn't tools. It's <span class="text-indigo-400">organisms</span>. 🧬<br><br>Lock your founding price: tasknextai.one</p>
+          </div>
+
+          <div class="template-frame x-post p-6" style="background: #050507;">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400"></div>
+              <div>
+                <p class="text-sm font-semibold">TaskNext.AI <span class="text-white/40">@tasknextai</span></p>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed">Ory update: Your organism IQ just hit 87.3 🧠<br><br>This week it:<br>→ Learned your posting cadence<br>→ Identified your top-performing format<br>→ Auto-healed a LinkedIn token refresh<br>→ Scheduled 12 posts while you slept<br><br>It keeps getting smarter. <span class="text-indigo-400">#MeetOry</span></p>
+          </div>
+
+          <div class="template-frame x-post p-6" style="background: #050507;">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400"></div>
+              <div>
+                <p class="text-sm font-semibold">TaskNext.AI <span class="text-white/40">@tasknextai</span></p>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed">Hot take: You don't need 12 social media tools.<br><br>You need one organism.<br><br>Ory replaces your:<br>→ Content writer<br>→ Scheduler<br>→ Analytics dashboard<br>→ Image generator<br>→ Engagement coach<br><br>Starting at £9/mo. Founding price locked forever.<br><br>tasknextai.one 🐙</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LINKEDIN -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-semibold mb-8 flex items-center gap-3">
+          <span class="w-8 h-8 bg-[#0A66C2] rounded-lg flex items-center justify-center text-white text-sm font-bold">in</span>
+          LinkedIn Posts
+        </h3>
+        <div class="flex flex-wrap gap-6">
+
+          <div class="template-frame linkedin-post p-6" style="background: #050507;">
+            <p class="text-lg leading-relaxed mb-4">I replaced my entire social media workflow with an AI organism called Ory.<br><br>The result after 8 weeks:<br><br>→ 4K to 35K followers across 4 platforms<br>→ 90 days of content planned automatically<br>→ £2,753 saved vs hiring an agency<br>→ 15 hours/week reclaimed<br><br>The future of social media isn't more tools. It's a living system that learns your brand and gets smarter every month.<br><br>If you're still switching between 12 different apps to manage your social presence, there's a better way.<br><br>🔗 tasknextai.one — founding spots are limited.<br><br><span class="text-indigo-400">#AIMarketing #SocialMediaOS #MeetOry</span></p>
+          </div>
+
+          <div class="template-frame linkedin-post p-6" style="background: #050507;">
+            <p class="text-lg leading-relaxed mb-4">Unpopular opinion: Social media managers don't need better tools.<br><br>They need an organism.<br><br>Here's the difference:<br><br>🔧 Tool = You tell it what to do, every time.<br>🧬 Organism = It learns your brand, generates content, schedules posts, and heals its own mistakes — while you sleep.<br><br>That's what we built with Ory at TaskNext.AI.<br><br>It breathes (auto-updates silently).<br>It learns (your brand voice, your audience).<br>It heals (error recovery, token refreshes).<br>It grows (smarter every single month).<br><br>Starting at £9/mo. No agency fees. No tool fatigue.<br><br>The organism era has arrived. 🐙</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIKTOK -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-8 flex items-center gap-3">
+          <span class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white text-xs font-bold">TT</span>
+          TikTok Thumbnails &amp; Overlays
+        </h3>
+        <div class="flex flex-wrap gap-6">
+
+          <div class="template-frame tiktok-thumb p-6 flex flex-col justify-between" style="background: linear-gradient(180deg, #050507, #0a0a18);">
+            <div class="pt-6">
+              <p class="text-3xl font-bold leading-tight">POV: Your AI<br>just generated<br>30 days of content<br><span class="gradient-text">in 47 seconds</span></p>
+            </div>
+            <div class="pb-6 flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400"></div>
+              <span class="text-sm">@tasknextai</span>
+              <span class="text-[10px] text-white/30 ml-auto">Made with Ory</span>
+            </div>
+          </div>
+
+          <div class="template-frame tiktok-thumb p-6 flex flex-col justify-center items-center text-center" style="background: radial-gradient(circle at 50% 30%, rgba(192,132,252,0.12), #050507 60%);">
+            <p class="text-5xl mb-4">🐙</p>
+            <p class="text-3xl font-bold">Meet Ory</p>
+            <p class="text-lg text-white/60 mt-2">The AI organism that<br>runs your social media</p>
+            <div class="mt-6 bg-white/10 rounded-full px-6 py-2">
+              <span class="text-sm">Link in bio</span>
+            </div>
+          </div>
+
+          <div class="template-frame tiktok-thumb p-6 flex flex-col justify-between" style="background: #050507;">
+            <div class="pt-6">
+              <p class="text-xs text-orchid-400 mb-2">STORYTIME</p>
+              <p class="text-2xl font-bold leading-tight">I saved £2,753 this month by replacing my social media agency with an AI organism</p>
+            </div>
+            <div class="pb-6">
+              <p class="text-sm text-white/50">The full breakdown... 👇</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-7xl mx-auto"></div>
+
+  <!-- ============================================================ -->
+  <!-- 4. VIRAL ASSETS -->
+  <!-- ============================================================ -->
+  <section id="viral" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Section 04</p>
+        <h2 class="text-5xl font-bold font-display">Viral Assets</h2>
+        <p class="text-white/50 mt-4 max-w-xl mx-auto">Shareable IQ cards, watermark examples, and referral graphics.</p>
       </div>
 
       <!-- IQ Card Generator -->
-      <div class="liquid-glass p-8 md:p-12 mb-8 reveal refract-edge" id="demo">
-        <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-xl font-semibold mb-8 gradient-text">Ory IQ Card Generator</h3>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h3 class="text-2xl font-bold font-display mb-4">Your Organism IQ Card</h3>
-            <p class="text-white/50 mb-6">See how your brand's AI organism is evolving. Generate your unique Ory IQ card â then share it everywhere.</p>
-            <div class="flex gap-3 mb-4">
-              <input id="iq-input" type="text" placeholder="@yourusername" class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-indigo-400/50 transition-colors placeholder:text-white/25" />
-              <button onclick="generateIQCard()" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-opacity text-sm" id="iq-btn">Generate</button>
+            <p class="text-white/60 mb-6">A beautiful, shareable card users can generate in-app. It shows their Organism IQ score, a fun Ory message, and drives traffic via the "Made with Ory" watermark.</p>
+            <div class="space-y-3 text-sm text-white/50">
+              <p>→ One-click generation inside the dashboard</p>
+              <p>→ Animated score reveal with soft confetti</p>
+              <p>→ Pre-filled share buttons for X, Instagram, LinkedIn</p>
+              <p>→ Custom background based on IQ tier</p>
             </div>
-            <p class="text-xs text-white/25">Preview data while we're in early access â real insights unlock after you sign up</p>
           </div>
-          <div>
-            <div class="iq-card-preview liquid-glass-sm p-6 relative overflow-hidden">
-              <div id="confetti-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
-              <div class="flex items-center gap-3 mb-5">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center animate-breathe">
-                  <svg width="18" height="18" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="34" r="20" stroke="white" stroke-width="1.5" fill="none"/><ellipse cx="26" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="27" cy="30" r="1.8" fill="#050507"/><ellipse cx="38" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="39" cy="30" r="1.8" fill="#050507"/><path d="M28 38Q32 42 36 38" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-                </div>
-                <div>
-                  <p class="text-xs text-white/40">Organism IQ Card</p>
-                  <p class="text-sm font-semibold" id="iq-username">@yourusername</p>
-                </div>
+          <!-- IQ Card Example -->
+          <div id="iq-card" class="mx-auto ory-glow" style="width: 360px; height: 480px; background: linear-gradient(160deg, #0a0a18 0%, #050507 40%, #0f0a1f 100%); border-radius: 24px; border: 1px solid rgba(129,140,248,0.2); padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <svg viewBox="0 0 24 24" width="20" height="20"><defs><linearGradient id="iqg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#818CF8"/><stop offset="100%" style="stop-color:#C084FC"/></linearGradient></defs><circle cx="12" cy="13" r="8" stroke="url(#iqg)" stroke-width="1" fill="rgba(129,140,248,0.1)"/><circle cx="10" cy="12" r="1.5" fill="white"/><circle cx="14" cy="12" r="1.5" fill="white"/><path d="M10 15 Q12 17 14 15" fill="none" stroke="white" stroke-width="1" stroke-linecap="round"/></svg>
+                <span class="text-sm text-white/60">My Ory IQ</span>
               </div>
-              <div class="text-center my-6">
-                <div id="thinking-state" class="hidden">
-                  <div class="thinking-dots my-8"><span></span><span></span><span></span></div>
-                  <p class="text-xs text-white/30">Ory is analysing your content style...</p>
-                </div>
-                <div id="iq-result">
-                  <p class="text-6xl font-bold font-display gradient-text mb-1 transition-transform" id="iq-score">â</p>
-                  <p class="text-xs text-white/40 uppercase tracking-widest">Organism IQ</p>
-                </div>
+            </div>
+            <div class="text-center py-8">
+              <p class="text-8xl font-bold gradient-text">87.3</p>
+              <p class="text-sm text-white/40 mt-2">ORGANISM INTELLIGENCE</p>
+            </div>
+            <div>
+              <div class="bg-white/5 rounded-2xl p-4 mb-6">
+                <p class="text-sm text-white/80">"Your organism learned 12 new patterns this week. You're in the top 8% of all creators. Keep feeding it! 🧠"</p>
+                <p class="text-xs text-indigo-400 mt-2">— Ory</p>
               </div>
-              <div class="grid grid-cols-3 gap-3 text-center">
-                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold" id="iq-posts">â</p><p class="text-[10px] text-white/30">Posts</p></div>
-                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold text-mint-400" id="iq-growth">â</p><p class="text-[10px] text-white/30">Growth</p></div>
-                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold text-orchid-400" id="iq-streak">â</p><p class="text-[10px] text-white/30">Day Streak</p></div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="13" r="6" stroke="white" stroke-width="0.8" fill="none" opacity="0.3"/><circle cx="10" cy="12" r="1" fill="white" opacity="0.5"/><circle cx="14" cy="12" r="1" fill="white" opacity="0.5"/></svg>
+                  <span class="text-xs text-white/30">Made with Ory</span>
+                </div>
+                <span class="text-xs text-white/20">tasknextai.one</span>
               </div>
-              <p class="text-xs text-white/30 text-center mt-4 italic" id="iq-message">"Your organism is ready to evolve."</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Watermark Engine -->
-      <div class="grid md:grid-cols-3 gap-6 mb-8">
-        <div class="liquid-glass p-8 reveal watermark-demo">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-400 to-orchid-400 flex items-center justify-center">
-              <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="#050507" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#050507"/></svg>
-            </div>
-            <span class="text-sm font-semibold">Instagram</span>
+      <!-- Watermark Examples -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-xl font-semibold mb-8 gradient-text">Watermark — "Made with Ory"</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-[#050507] rounded-2xl border border-white/5 p-6">
+            <p class="text-sm text-white/40 mb-4">Caption watermark</p>
+            <p class="text-white/80 text-sm">"Your Monday motivation, served by AI. Never stop creating. 🌱"</p>
+            <p class="text-xs text-white/20 mt-3">— Made with Ory &middot; tasknextai.one</p>
           </div>
-          <div class="bg-white/5 rounded-xl p-4 h-32 flex items-end"><p class="text-xs text-white/30">Carousel / Reel / Story â auto-adapted</p></div>
+          <div class="bg-[#050507] rounded-2xl border border-white/5 p-6">
+            <p class="text-sm text-white/40 mb-4">Image overlay (bottom-right)</p>
+            <div class="h-32 bg-gradient-to-br from-indigo-400/10 to-orchid-400/5 rounded-xl relative">
+              <div class="absolute bottom-2 right-2 flex items-center gap-1 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1">
+                <svg viewBox="0 0 16 16" width="12" height="12"><circle cx="8" cy="9" r="5" stroke="white" stroke-width="0.8" fill="none" opacity="0.5"/><circle cx="7" cy="8.5" r="0.8" fill="white" opacity="0.7"/><circle cx="9" cy="8.5" r="0.8" fill="white" opacity="0.7"/></svg>
+                <span class="text-[9px] text-white/50">Made with Ory</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#050507] rounded-2xl border border-white/5 p-6">
+            <p class="text-sm text-white/40 mb-4">Video end-frame</p>
+            <div class="h-32 bg-gradient-to-b from-transparent to-black/80 rounded-xl flex items-end justify-center pb-4">
+              <div class="text-center">
+                <p class="text-xs text-white/40">Created with</p>
+                <p class="text-sm font-semibold gradient-text">Ory by TaskNext.AI</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="liquid-glass p-8 reveal watermark-demo" style="transition-delay:0.1s">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-              <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <p class="text-sm text-white/50 mt-6">The watermark is the primary viral engine (£0 CAC). It is tasteful, never obtrusive, and removable on Pro/Agency tiers.</p>
+      </div>
+
+      <!-- Referral Graphic -->
+      <div class="liquid-glass p-10">
+        <h3 class="text-xl font-semibold mb-8 gradient-text">Referral Graphic</h3>
+        <div class="max-w-lg mx-auto">
+          <div class="bg-[#050507] rounded-3xl border border-indigo-400/20 p-8 text-center ory-glow">
+            <p class="text-4xl mb-4">🐙 + 🐙</p>
+            <p class="text-2xl font-bold mb-2">Invite a friend</p>
+            <p class="text-lg text-white/60 mb-6">Both of you get <span class="gradient-text font-semibold">1 month free</span></p>
+            <div class="bg-gradient-to-r from-indigo-400 to-orchid-400 rounded-2xl px-8 py-4 inline-block">
+              <span class="font-semibold text-white">Share your invite link</span>
             </div>
-            <span class="text-sm font-semibold">X (Twitter)</span>
+            <p class="text-xs text-white/30 mt-4">tasknextai.one/invite/[your-code]</p>
           </div>
-          <div class="bg-white/5 rounded-xl p-4 h-32 flex items-end"><p class="text-xs text-white/30">Threads / polls / media â auto-formatted</p></div>
-        </div>
-        <div class="liquid-glass p-8 reveal watermark-demo" style="transition-delay:0.2s">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
-              <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            </div>
-            <span class="text-sm font-semibold">LinkedIn</span>
-          </div>
-          <div class="bg-white/5 rounded-xl p-4 h-32 flex items-end"><p class="text-xs text-white/30">Posts / articles / newsletters â professional tone</p></div>
         </div>
       </div>
 
-      <!-- Referral Engine -->
-      <div class="liquid-glass p-8 md:p-12 reveal refract-edge">
-        <div class="grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <p class="text-sm text-orchid-400 uppercase tracking-widest mb-3">Referral Engine</p>
-            <h3 class="text-2xl font-bold font-display mb-4">Share Ory. Earn free months.</h3>
-            <p class="text-white/50 mb-6">Every friend who joins through your link earns you both a free month. Simple as that. No complicated tiers â just honest sharing between creators.</p>
-            <div class="flex items-center gap-3">
-              <div class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white/40 truncate">tasknextai.one/ref/<span class="text-white/60">your-code</span></div>
-              <button onclick="copyRef(this)" class="bg-white/10 hover:bg-white/15 px-4 py-3 rounded-xl text-sm transition-colors">Copy</button>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-4 text-center">
-            <div class="bg-white/5 rounded-2xl p-6">
-              <p class="text-3xl font-bold gradient-text">3 months</p>
-              <p class="text-xs text-white/40 mt-1">avg. free time earned per referrer</p>
-            </div>
-            <div class="bg-white/5 rounded-2xl p-6">
-              <p class="text-3xl font-bold gradient-text">Growing</p>
-              <p class="text-xs text-white/40 mt-1">daily â our fastest growth channel</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <div class="section-divider max-w-6xl mx-auto"></div>
+  <div class="section-divider max-w-7xl mx-auto"></div>
 
-  <!-- ===== SECURITY & PRIVACY ===== -->
-  <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 reveal">
-        <p class="text-sm text-mint-400 uppercase tracking-widest mb-4">Your content, your rules</p>
-        <h2 class="text-section font-bold font-display mb-4">Your content stays <span class="gradient-text">yours. Always.</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">We take this seriously. Here's exactly how we handle your data, your content, and your privacy.</p>
+  <!-- ============================================================ -->
+  <!-- 5. MARKETING COPY PACK -->
+  <!-- ============================================================ -->
+  <section id="copy" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Section 05</p>
+        <h2 class="text-5xl font-bold font-display">Marketing Copy Pack</h2>
+        <p class="text-white/50 mt-4 max-w-xl mx-auto">Hero headlines, social captions, and email snippets — all in Ory's voice.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="liquid-glass p-7 reveal">
-          <div class="w-10 h-10 rounded-xl bg-mint-400/10 flex items-center justify-center mb-4">
-            <svg width="20" height="20" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <!-- Headlines -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-xl font-semibold mb-6 gradient-text">Hero Headlines &amp; Sub-Headlines</h3>
+        <div class="space-y-6">
+          <div class="bg-white/5 rounded-2xl p-6">
+            <p class="text-3xl font-bold">Once upon a time your social media was chaos. <span class="gradient-text">Then Ory arrived.</span></p>
+            <p class="text-white/50 mt-2">Sub: A friendly AI organism that learns your brand, generates content, and grows smarter every month — while you live your life.</p>
           </div>
-          <h3 class="text-sm font-semibold mb-2">We never train on your content</h3>
-          <p class="text-xs text-white/40">Your posts, your brand voice, your data â it's all yours. We don't use it to train models. Period.</p>
-        </div>
-        <div class="liquid-glass p-7 reveal" style="transition-delay:0.1s">
-          <div class="w-10 h-10 rounded-xl bg-indigo-400/10 flex items-center justify-center mb-4">
-            <svg width="20" height="20" fill="none" stroke="#818CF8" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <div class="bg-white/5 rounded-2xl p-6">
+            <p class="text-3xl font-bold">The AI organism that <span class="gradient-text">runs your social media while you sleep.</span></p>
+            <p class="text-white/50 mt-2">Sub: One subscription. Four platforms. Infinite growth.</p>
           </div>
-          <h3 class="text-sm font-semibold mb-2">You own 100% of everything</h3>
-          <p class="text-xs text-white/40">Every caption, image, and strategy Ory creates â it's all yours, forever. Full commercial rights, no strings.</p>
-        </div>
-        <div class="liquid-glass p-7 reveal" style="transition-delay:0.2s">
-          <div class="w-10 h-10 rounded-xl bg-orchid-400/10 flex items-center justify-center mb-4">
-            <svg width="20" height="20" fill="none" stroke="#C084FC" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <div class="bg-white/5 rounded-2xl p-6">
+            <p class="text-3xl font-bold">You don't need 12 tools. <span class="gradient-text">You need one organism.</span></p>
+            <p class="text-white/50 mt-2">Sub: Meet Ory — the living AI that replaces your content writer, scheduler, analyst, and coach. Starting at £9/month.</p>
           </div>
-          <h3 class="text-sm font-semibold mb-2">GDPR compliant</h3>
-          <p class="text-xs text-white/40">Built in London, GDPR-ready from day one. Data encryption at rest and in transit. SOC 2 certification in progress.</p>
-        </div>
-        <div class="liquid-glass p-7 reveal" style="transition-delay:0.3s">
-          <div class="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center mb-4">
-            <svg width="20" height="20" fill="none" stroke="#FBBF24" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
+          <div class="bg-white/5 rounded-2xl p-6">
+            <p class="text-3xl font-bold">Your brand's AI. <span class="gradient-text">Always learning, never sleeping.</span></p>
+            <p class="text-white/50 mt-2">Sub: Generate, schedule, analyse, and grow — all from one beautiful companion.</p>
           </div>
-          <h3 class="text-sm font-semibold mb-2">OAuth only â no passwords stored</h3>
-          <p class="text-xs text-white/40">Connect your social accounts via official OAuth. We never see or store your passwords.</p>
         </div>
       </div>
+
+      <!-- Social Captions in Ory's voice -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-xl font-semibold mb-6 gradient-text">5 Social Captions — Ory Speaking</h3>
+        <div class="space-y-4">
+          <div class="bg-white/5 rounded-2xl p-5">
+            <p class="text-sm text-indigo-400 mb-1">Caption 1</p>
+            <p>"Hey, it's Ory 🐙 I just scheduled 30 days of content for my human while they were sleeping. That's not a flex — that's just what organisms do. Try me: tasknextai.one"</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-5">
+            <p class="text-sm text-indigo-400 mb-1">Caption 2</p>
+            <p>"My human asked me to write one caption. I wrote 90 across 4 platforms, suggested the best posting times, and generated 5 images. Overachiever? Guilty. 🧬 #MeetOry"</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-5">
+            <p class="text-sm text-indigo-400 mb-1">Caption 3</p>
+            <p>"Plot twist: The best social media manager isn't a person. It's a living AI organism that gets smarter every week. (Also I have cute eyes.) 👀 tasknextai.one"</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-5">
+            <p class="text-sm text-indigo-400 mb-1">Caption 4</p>
+            <p>"Week 1: My human was sceptical. Week 4: They gave me access to all 4 platforms. Week 8: They told their friends. That's the Ory effect. 🐙✨"</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-5">
+            <p class="text-sm text-indigo-400 mb-1">Caption 5</p>
+            <p>"Every month I learn something new about your brand. Every month your content gets better. Every month you save more time. That's not a subscription — that's a relationship. 💜 #OryGrows"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Copy -->
+      <div class="liquid-glass p-10">
+        <h3 class="text-xl font-semibold mb-6 gradient-text">Email Launch Announcement</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <p class="text-sm text-white/40 mb-4">SUBJECT LINE OPTIONS</p>
+            <div class="space-y-3">
+              <div class="bg-white/5 rounded-xl p-4">
+                <p>"Your social media just got a best friend 🐙"</p>
+              </div>
+              <div class="bg-white/5 rounded-xl p-4">
+                <p>"Ory is alive. Your founding price won't be forever."</p>
+              </div>
+              <div class="bg-white/5 rounded-xl p-4">
+                <p>"£9/month. 4 platforms. One living organism."</p>
+              </div>
+              <div class="bg-white/5 rounded-xl p-4">
+                <p>"You + Ory = social media domination 🧬"</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm text-white/40 mb-4">BODY SNIPPET</p>
+            <div class="bg-white/5 rounded-xl p-6 text-sm text-white/80 leading-relaxed">
+              <p>Hey [First Name],</p>
+              <br>
+              <p>We've been building something different. Not another tool. A living AI organism called <strong>Ory</strong>.</p>
+              <br>
+              <p>Ory learns your brand voice. Generates your content. Schedules your posts. Analyses your growth. And gets smarter every single month — without you lifting a finger.</p>
+              <br>
+              <p>For the first 200 creators, the founding price is <strong>locked forever</strong>. Starting at just £9/month.</p>
+              <br>
+              <p>Once the 200 spots are gone, they're gone. Your price stays — even as Ory keeps getting smarter and the regular price goes up.</p>
+              <br>
+              <p><strong>[Lock my founding price &rarr;]</strong></p>
+              <br>
+              <p>Welcome to the organism era. 🐙</p>
+              <br>
+              <p>— The TaskNext.AI Team</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <div class="section-divider max-w-6xl mx-auto"></div>
+  <div class="section-divider max-w-7xl mx-auto"></div>
 
-  <!-- ===== PRODUCT PROOF â DASHBOARD + BEFORE/AFTER ===== -->
-  <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">See it in action</p>
-        <h2 class="text-section font-bold font-display mb-4">Here's what it <span class="gradient-text">actually looks like</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">No mockups, no vaporware. This is the real product, in early access right now.</p>
+  <!-- ============================================================ -->
+  <!-- 6. VISUAL IDENTITY GUIDELINES -->
+  <!-- ============================================================ -->
+  <section id="guidelines" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Section 06</p>
+        <h2 class="text-5xl font-bold font-display">Visual Identity Guidelines</h2>
+        <p class="text-white/50 mt-4 max-w-xl mx-auto">Colour usage, motion principles, and storytelling voice rules.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Dashboard Preview -->
-        <div class="liquid-glass p-6 reveal refract-edge">
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-3 h-3 rounded-full bg-rose-400/60"></div>
-            <div class="w-3 h-3 rounded-full bg-amber-400/60"></div>
-            <div class="w-3 h-3 rounded-full bg-mint-400/60"></div>
-            <span class="text-[10px] text-white/25 ml-2">Ory Dashboard â Content Calendar</span>
-          </div>
-          <div class="bg-white/[0.02] border border-white/5 rounded-xl p-5 space-y-3">
-            <!-- Mini calendar row -->
-            <div class="flex items-center justify-between text-[10px] text-white/30 mb-2">
-              <span>March 2026</span>
-              <span class="text-indigo-400">Week view</span>
-            </div>
-            <div class="grid grid-cols-7 gap-1.5">
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Mon</p><div class="h-14 bg-indigo-400/8 border border-indigo-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-indigo-400/40 rounded-full"></div><div class="w-4 h-1 bg-orchid-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Tue</p><div class="h-14 bg-orchid-400/8 border border-orchid-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-orchid-400/40 rounded-full"></div><p class="text-[8px] text-white/20">1 post</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Wed</p><div class="h-14 bg-mint-400/8 border border-mint-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-mint-400/40 rounded-full"></div><div class="w-4 h-1 bg-indigo-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Thu</p><div class="h-14 bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center"><p class="text-[8px] text-white/15">Rest day</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Fri</p><div class="h-14 bg-indigo-400/8 border border-indigo-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-indigo-400/40 rounded-full"></div><div class="w-3 h-1 bg-rose-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Sat</p><div class="h-14 bg-orchid-400/8 border border-orchid-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-orchid-400/40 rounded-full"></div><p class="text-[8px] text-white/20">1 post</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Sun</p><div class="h-14 bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center"><p class="text-[8px] text-white/15">Rest day</p></div></div>
-            </div>
-            <!-- Status bar -->
-            <div class="flex items-center justify-between pt-2 border-t border-white/5">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-mint-400 rounded-full"></span>
-                <span class="text-[10px] text-white/30">8 posts scheduled this week</span>
-              </div>
-              <span class="text-[10px] text-indigo-400">Approve all â</span>
-            </div>
-          </div>
-          <p class="text-xs text-white/25 text-center mt-4">Your content calendar â auto-populated by Ory, approved by you</p>
-        </div>
-
-        <!-- Before / After -->
-        <div class="liquid-glass p-6 reveal refract-edge" style="transition-delay:0.15s">
-          <p class="text-xs text-white/30 uppercase tracking-widest mb-5">Before & After â Brand Brain</p>
+      <!-- Colour Rules -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-xl font-semibold mb-6 gradient-text">Full Colour Usage Rules</h3>
+        <div class="grid md:grid-cols-2 gap-8 text-sm text-white/70">
           <div class="space-y-4">
-            <!-- Before -->
-            <div class="bg-white/[0.02] border border-white/5 rounded-xl p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-[10px] bg-rose-400/10 text-rose-400 px-2 py-0.5 rounded-full">Before Ory</span>
-                <span class="text-[10px] text-white/20">Generic AI output</span>
-              </div>
-              <p class="text-sm text-white/40 leading-relaxed">"Excited to share our latest product update! We've been working hard on new features that will help you grow your business. Check it out! #business #growth #AI"</p>
-            </div>
-            <!-- Arrow -->
-            <div class="flex items-center justify-center gap-2 text-white/15">
-              <div class="h-px w-8 bg-gradient-to-r from-transparent to-indigo-400/30"></div>
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-              <div class="h-px w-8 bg-gradient-to-l from-transparent to-orchid-400/30"></div>
-            </div>
-            <!-- After -->
-            <div class="bg-indigo-400/[0.04] border border-indigo-400/10 rounded-xl p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-[10px] bg-mint-400/10 text-mint-400 px-2 py-0.5 rounded-full">After 2 weeks with Ory</span>
-                <span class="text-[10px] text-white/20">Brand Brain adapted</span>
-              </div>
-              <p class="text-sm text-white/60 leading-relaxed">"okay so we quietly shipped something this week and I'm trying not to lose it ð â the new calendar view basically reads your mind? Like, it pre-fills your whole month based on what's actually working. No more staring at blank screens on Monday morning. Link in bio if you're curious."</p>
-            </div>
+            <p><strong class="text-white">#050507 Void:</strong> Always the background. Never pure black (#000). The extra warmth creates depth.</p>
+            <p><strong class="text-white">#818CF8 Indigo:</strong> Primary action colour. Buttons, links, active nav states, progress bars. Use at full opacity for CTAs, 20% opacity for subtle tints.</p>
+            <p><strong class="text-white">#C084FC Orchid:</strong> Accent-only. Organism glows, Ory's antenna tips, hover states on premium elements. Never use for primary text or large backgrounds.</p>
           </div>
-          <p class="text-xs text-white/25 text-center mt-4">Same creator, same topic â Ory learns <em>your</em> voice over time</p>
+          <div class="space-y-4">
+            <p><strong class="text-white">Indigo→Orchid Gradient:</strong> Reserved for Ory-specific elements: the Ory logo, IQ score numbers, premium badges, and the ".AI" in the wordmark. Never apply to generic UI elements.</p>
+            <p><strong class="text-white">White at 50%:</strong> Secondary text, descriptions, timestamps. White at 30%: Tertiary (hints, watermarks). White at 100%: Headlines and primary content only.</p>
+            <p><strong class="text-white">Glass surfaces:</strong> Always <code>rgba(255,255,255,0.03)</code> fill with <code>rgba(255,255,255,0.08)</code> border and 40px backdrop-blur.</p>
+          </div>
         </div>
       </div>
+
+      <!-- Motion Principles -->
+      <div class="liquid-glass p-10 mb-8">
+        <h3 class="text-xl font-semibold mb-6 gradient-text">Motion Principles</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white/5 rounded-2xl p-6">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400 mb-4 animate-breathe"></div>
+            <h4 class="font-semibold mb-2">Breathing Pulses</h4>
+            <p class="text-sm text-white/60">4-second ease-in-out scale (1.0→1.06→1.0) on all organism elements. This is the heartbeat of the brand. Applied to: Ory icon, IQ gauge, agent nodes.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-r from-indigo-400/20 to-orchid-400/20 mb-4" style="background-size: 200% 100%; animation: shimmer 2.5s linear infinite; background-image: linear-gradient(90deg, rgba(129,140,248,0.1), rgba(192,132,252,0.2), rgba(129,140,248,0.1));"></div>
+            <h4 class="font-semibold mb-2">Thinking Shimmers</h4>
+            <p class="text-sm text-white/60">Horizontal shimmer effect during AI generation. Use on loading bars, content preview placeholders, and the "Ory is thinking..." state.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 mb-4 hover:translate-y-[-2px] hover:shadow-lg transition-all duration-300 cursor-pointer"></div>
+            <h4 class="font-semibold mb-2">Celebratory Effects</h4>
+            <p class="text-sm text-white/60">Soft confetti burst on milestones (IQ score increase, first post scheduled, founding member badge). Always subtle and brief (1.5 seconds max). Never loud or distracting.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Storytelling Voice -->
+      <div class="liquid-glass p-10">
+        <h3 class="text-xl font-semibold mb-6 gradient-text">Storytelling Voice in Copy</h3>
+        <div class="grid md:grid-cols-2 gap-8 text-sm">
+          <div>
+            <h4 class="text-white font-semibold mb-4">DO</h4>
+            <div class="space-y-3 text-white/70">
+              <p>✓ Use "Ory" as a character — it speaks, acts, and has personality.</p>
+              <p>✓ Tell stories: "Once upon a time...", "Plot twist:", "Week 1 → Week 8"</p>
+              <p>✓ Be warm and encouraging: "You're crushing it!", "Keep feeding Ory!"</p>
+              <p>✓ Use the organism metaphor naturally: breathes, learns, heals, grows.</p>
+              <p>✓ Make the user the hero: Ory is the sidekick, not the star.</p>
+              <p>✓ Use British English throughout.</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">DON'T</h4>
+            <div class="space-y-3 text-white/70">
+              <p>✗ Use corporate language: "leverage", "synergy", "streamline".</p>
+              <p>✗ Be robotic or cold: "Process complete. Action required."</p>
+              <p>✗ Over-promise: "100% success rate", "guaranteed results".</p>
+              <p>✗ Use more than one exclamation mark per message.</p>
+              <p>✗ Make Ory sound desperate or salesy.</p>
+              <p>✗ Forget the fun: every interaction should have a tiny spark of warmth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <div class="section-divider max-w-6xl mx-auto"></div>
+  <div class="section-divider max-w-7xl mx-auto"></div>
 
-  <!-- ===== TESTIMONIALS ===== -->
+  <!-- ============================================================ -->
+  <!-- 10 READY-TO-POST EXAMPLES -->
+  <!-- ============================================================ -->
   <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">From real creators</p>
-        <h2 class="text-section font-bold font-display mb-4">Early creators, <span class="gradient-text">honest words</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">We launched weeks ago. These are real founding members sharing their early experience â the good stuff and the honest caveats.</p>
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Bonus</p>
+        <h2 class="text-5xl font-bold font-display">10 Ready-to-Post Examples</h2>
+        <p class="text-white/50 mt-4 max-w-xl mx-auto">Copy, paste, and post. All in Ory's voice, optimised for each platform.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Testimonial 1 -->
-        <div class="liquid-glass p-7 testimonial-card reveal">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-rose-400 to-orchid-400 flex items-center justify-center text-sm font-bold">SM</div>
-            <div>
-              <p class="text-sm font-semibold">Sarah M.</p>
-              <p class="text-xs text-white/40">Fitness creator Â· Instagram</p>
-            </div>
+      <div class="space-y-4">
+        <!-- Post 1 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-pink-500/20 text-pink-400 px-3 py-1 rounded-full">Instagram</span>
+            <span class="text-xs text-white/30">Carousel first slide</span>
           </div>
-          <div class="inline-flex items-center gap-1.5 bg-indigo-400/10 border border-indigo-400/20 px-2.5 py-1 rounded-full text-[10px] text-indigo-400 mb-4">
-            <span class="w-1 h-1 bg-indigo-400 rounded-full"></span>Founding member since March 2026
-          </div>
-          <p class="text-sm text-white/60 leading-relaxed mb-4">"I used to spend hours every day just on captions alone. Now I batch-approve in the morning and I'm done. My engagement has noticeably improved â followers are actually responding to stories again."</p>
-          <p class="text-[10px] text-white/25 italic">Using Ory Growth plan Â· 3 weeks in</p>
+          <p class="text-white/90">Stop doom-scrolling through 12 tools. Start creating with one organism. Slide → to see how Ory changed my entire workflow. 🧬</p>
+          <p class="text-xs text-white/30 mt-2">#MeetOry #AIMarketing #SocialMediaOS #ContentCreator</p>
         </div>
 
-        <!-- Testimonial 2 -->
-        <div class="liquid-glass p-7 testimonial-card reveal" style="transition-delay:0.1s">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-indigo-400 to-mint-400 flex items-center justify-center text-sm font-bold">MT</div>
-            <div>
-              <p class="text-sm font-semibold">Marcus T.</p>
-              <p class="text-xs text-white/40">SaaS founder Â· LinkedIn + X</p>
-            </div>
+        <!-- Post 2 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">X / Twitter</span>
+            <span class="text-xs text-white/30">Thread opener</span>
           </div>
-          <div class="inline-flex items-center gap-1.5 bg-indigo-400/10 border border-indigo-400/20 px-2.5 py-1 rounded-full text-[10px] text-indigo-400 mb-4">
-            <span class="w-1 h-1 bg-indigo-400 rounded-full"></span>Founding member since March 2026
-          </div>
-          <p class="text-sm text-white/60 leading-relaxed mb-4">"The Brand Brain thing genuinely surprised me. After about two weeks of feeding it my existing posts, the tone match was really close. Not perfect â but way better than anything else I've tried."</p>
-          <p class="text-[10px] text-white/25 italic">Using Ory Growth plan Â· 4 weeks in</p>
+          <p class="text-white/90">I replaced Buffer + Canva + ChatGPT + Later + Hootsuite with one £9/month AI organism. Here's what happened in 8 weeks: 🧵👇</p>
         </div>
 
-        <!-- Testimonial 3 -->
-        <div class="liquid-glass p-7 testimonial-card reveal" style="transition-delay:0.2s">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-amber-400 to-rose-400 flex items-center justify-center text-sm font-bold">AK</div>
-            <div>
-              <p class="text-sm font-semibold">Amira K.</p>
-              <p class="text-xs text-white/40">Travel blogger Â· Instagram</p>
-            </div>
+        <!-- Post 3 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full">LinkedIn</span>
+            <span class="text-xs text-white/30">Thought leadership</span>
           </div>
-          <div class="inline-flex items-center gap-1.5 bg-indigo-400/10 border border-indigo-400/20 px-2.5 py-1 rounded-full text-[10px] text-indigo-400 mb-4">
-            <span class="w-1 h-1 bg-indigo-400 rounded-full"></span>Founding member since March 2026
-          </div>
-          <p class="text-sm text-white/60 leading-relaxed mb-4">"I had Ory generate a month of content drafts before a trip to Morocco. Approved them from my phone each morning. It's not magic â you still review everything â but it saved me so much stress."</p>
-          <p class="text-[10px] text-white/25 italic">Using Ory Starter plan Â· 2 weeks in</p>
+          <p class="text-white/90">The creator economy has a burnout problem. We're spending more time managing social media than actually creating. What if your social media could manage itself? Not with another tool. With a living AI organism that learns, adapts, and grows with your brand. We built that. It's called Ory.</p>
         </div>
 
-        <!-- Testimonial 4 -->
-        <div class="liquid-glass p-7 testimonial-card reveal" style="transition-delay:0.3s">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-orchid-400 to-indigo-400 flex items-center justify-center text-sm font-bold">JL</div>
-            <div>
-              <p class="text-sm font-semibold">James L.</p>
-              <p class="text-xs text-white/40">Marketing agency Â· All platforms</p>
-            </div>
+        <!-- Post 4 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-black text-white px-3 py-1 rounded-full">TikTok</span>
+            <span class="text-xs text-white/30">Hook for short-form video</span>
           </div>
-          <div class="inline-flex items-center gap-1.5 bg-orchid-400/10 border border-orchid-400/20 px-2.5 py-1 rounded-full text-[10px] text-orchid-400 mb-4">
-            <span class="w-1 h-1 bg-orchid-400 rounded-full"></span>Founding member Â· Pro plan
-          </div>
-          <p class="text-sm text-white/60 leading-relaxed mb-4">"We're testing Ory Pro for 3 client accounts so far. The multi-platform adaptation is the real win â it rewrites for LinkedIn vs Instagram automatically. Still early but promising for scaling."</p>
-          <p class="text-[10px] text-white/25 italic">Using Ory Pro plan Â· 2 weeks in</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-6xl mx-auto"></div>
-
-  <!-- ===== PRICING ===== -->
-  <section id="pricing" class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Simple, honest pricing</p>
-        <h2 class="text-section font-bold font-display mb-4">Lock your founding <span class="gradient-text">price forever</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto mb-3">No hidden fees. No surprise charges. Cancel anytime. Your founding price stays locked even if you pause and come back.</p>
-        <p class="text-xs text-white/25">Only <span class="text-orchid-400 font-medium" id="spots-pricing">187</span> founding spots remaining</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <!-- Starter -->
-        <div class="liquid-glass p-8 reveal refract-edge">
-          <div class="mb-8">
-            <p class="text-sm text-white/40 mb-1">Starter</p>
-            <h3 class="text-xl font-bold font-display">Solo creators</h3>
-          </div>
-          <div class="mb-8">
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold">Â£7</span>
-              <span class="text-white/40 text-sm">/mo forever</span>
-            </div>
-            <p class="text-xs text-white/25 line-through mt-1">Regular Â£9/mo</p>
-          </div>
-          <ul class="space-y-3 mb-8 text-sm text-white/60">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>1 platform</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>30 posts per month</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>AI Chat Box</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Basic analytics</li>
-          </ul>
-          <a href="#" class="block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm">Start creating</a>
+          <p class="text-white/90">"I let an AI organism run my social media for 30 days. The results were insane." [Cut to screen recording showing Ory generating content] [End: "Link in bio — founding price locks forever"]</p>
         </div>
 
-        <!-- Growth (Popular) -->
-        <div class="liquid-glass p-8 reveal price-popular refract-edge relative" style="transition-delay:0.1s">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-            <span class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-xs font-semibold px-4 py-1.5 rounded-full founding-badge">Most popular</span>
+        <!-- Post 5 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-pink-500/20 text-pink-400 px-3 py-1 rounded-full">Instagram</span>
+            <span class="text-xs text-white/30">Reel caption</span>
           </div>
-          <div class="mb-8">
-            <p class="text-sm text-white/40 mb-1">Growth</p>
-            <h3 class="text-xl font-bold font-display">Serious creators & businesses</h3>
-          </div>
-          <div class="mb-8">
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold gradient-text">Â£15</span>
-              <span class="text-white/40 text-sm">/mo forever</span>
-            </div>
-            <p class="text-xs text-white/25 line-through mt-1">Regular Â£19/mo</p>
-          </div>
-          <ul class="space-y-3 mb-8 text-sm text-white/60">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>2 platforms</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>90 posts per month</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Chat + Content agents</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Brand Brain</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>90-day content calendar</li>
-          </ul>
-          <a href="#" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity text-sm">Lock this price</a>
+          <p class="text-white/90">POV: Your AI organism just scheduled 30 days of content across 4 platforms while you were making coffee. ☕ That's not a feature. That's a lifestyle upgrade. Meet Ory → link in bio</p>
         </div>
 
-        <!-- Pro -->
-        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.2s">
-          <div class="mb-8">
-            <p class="text-sm text-white/40 mb-1">Pro</p>
-            <h3 class="text-xl font-bold font-display">Teams & agencies</h3>
+        <!-- Post 6 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">X / Twitter</span>
+            <span class="text-xs text-white/30">Engagement post</span>
           </div>
-          <div class="mb-8">
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold">Â£39</span>
-              <span class="text-white/40 text-sm">/mo forever</span>
-            </div>
-            <p class="text-xs text-white/25 line-through mt-1">Regular Â£49/mo</p>
+          <p class="text-white/90">Creators, honest question: How many hours per week do you spend on social media management? 🐙 Reply and Ory will calculate how much time (and money) you could save.</p>
+        </div>
+
+        <!-- Post 7 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full">LinkedIn</span>
+            <span class="text-xs text-white/30">Product announcement</span>
           </div>
-          <ul class="space-y-3 mb-8 text-sm text-white/60">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>All 6 platforms</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Unlimited posts</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>All 3 AI agents</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Competitor Spy</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>White-label + priority support</li>
-          </ul>
-          <a href="#" class="block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm">Go Pro</a>
+          <p class="text-white/90">After 6 months of building in public, TaskNext.AI is live. We didn't build another social media tool. We built a living AI organism called Ory that breathes, learns, heals, and grows — so your social media doesn't just get managed. It evolves. Founding member spots are limited. Details: tasknextai.one</p>
+        </div>
+
+        <!-- Post 8 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-pink-500/20 text-pink-400 px-3 py-1 rounded-full">Instagram</span>
+            <span class="text-xs text-white/30">Story poll</span>
+          </div>
+          <p class="text-white/90">[Story with two buttons] "How do you create content?" → "5+ hours manually 😩" vs "Ory does it for me 🐙" [Link sticker: tasknextai.one]</p>
+        </div>
+
+        <!-- Post 9 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-black text-white px-3 py-1 rounded-full">TikTok</span>
+            <span class="text-xs text-white/30">Before/After</span>
+          </div>
+          <p class="text-white/90">"Before Ory: 15 hours/week on content. After Ory: 15 minutes reviewing what it generated." [Show side-by-side: stressed creator vs relaxed creator with Ory dashboard] [Text overlay: "The organism era is here"]</p>
+        </div>
+
+        <!-- Post 10 -->
+        <div class="liquid-glass-sm p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">X / Twitter</span>
+            <span class="text-xs text-white/30">Referral post</span>
+          </div>
+          <p class="text-white/90">Hey friends — if you try Ory with my link, we both get a free month. It's the AI organism that runs your social media while you sleep. Not exaggerating. tasknextai.one/invite/jesse 🐙🐙</p>
         </div>
       </div>
 
-      <!-- Guarantee -->
-      <div class="max-w-2xl mx-auto mt-10 reveal">
-        <div class="guarantee-badge rounded-2xl px-8 py-5 flex items-center gap-4">
-          <svg width="28" height="28" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          <div>
-            <p class="text-sm font-semibold text-mint-400">14-day money-back guarantee</p>
-            <p class="text-xs text-white/40">Try Ory risk-free. If it's not for you, email us and we'll refund every penny. No questions, no drama.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-6xl mx-auto"></div>
-
-  <!-- ===== MEET THE FOUNDER ===== -->
-  <section id="our-story" class="py-24 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="liquid-glass p-8 md:p-12 reveal refract-edge">
-        <div class="flex flex-col md:flex-row items-start gap-8 md:gap-12">
-          <div class="shrink-0 text-center">
-            <div class="founder-photo">
-              <span>J</span>
-            </div>
-            <p class="text-xs text-white/30 mt-3">Jesse Â· Founder</p>
-            <div class="flex items-center justify-center gap-3 mt-3">
-              <a href="https://x.com/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Follow on X">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <a href="https://linkedin.com/company/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Connect on LinkedIn">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-center gap-3 mb-3">
-              <p class="text-sm text-indigo-400 uppercase tracking-widest">Our story</p>
-              <span class="inline-flex items-center gap-1.5 bg-mint-400/8 border border-mint-400/15 px-2.5 py-0.5 rounded-full text-[10px] text-mint-400">
-                <span class="w-1 h-1 bg-mint-400 rounded-full animate-pulse"></span>Building in public
-              </span>
-            </div>
-            <h2 class="text-2xl font-bold font-display mb-4">Hi, I'm Jesse. I built this because I needed it.</h2>
-            <p class="text-sm text-white/50 leading-relaxed mb-4">
-              Real talk: I was terrible at keeping up with social media. Not because I didn't care â I just couldn't keep up. Writing captions at midnight, forgetting to post on LinkedIn for three weeks straight, copying the same thing across five apps. I hated every minute of it.
-            </p>
-            <p class="text-sm text-white/50 leading-relaxed mb-4">
-              So I started building something. First it was a script. Then a prototype. Then it got a personality (that's Ory). Now it's a real product â still early, still rough around some edges, but genuinely useful. The founding members who've joined are helping me figure out what matters most, and every week Ory gets a little smarter.
-            </p>
-            <p class="text-sm text-white/50 leading-relaxed mb-4">
-              I'm not a big company. It's me, a small team in London, and a lot of late nights. No investors telling us to move fast and break things. If something's broken, you can literally email me and I'll fix it the same day. That's the deal.
-            </p>
-            <p class="text-sm text-white/40 italic mb-5">
-              "You're not late. You're exactly early enough." â Jesse
-            </p>
-            <div class="flex items-center gap-4 text-xs text-white/25 flex-wrap">
-              <span>TaskNext AI Ltd</span>
-              <span>Â·</span>
-              <span>London, England</span>
-              <span>Â·</span>
-              <span>Launched March 2026</span>
-              <span>Â·</span>
-              <a href="mailto:jesse@tasknextai.one" class="text-indigo-400/50 hover:text-indigo-400 transition-colors">jesse@tasknextai.one</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-6xl mx-auto"></div>
-
-  <!-- ===== FAQ ===== -->
-  <section id="faq" class="py-24 px-6">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-16 reveal">
-        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4">Questions?</p>
-        <h2 class="text-section font-bold font-display mb-4">Ory has <span class="gradient-text">answers</span></h2>
-      </div>
-
-      <div class="space-y-3">
-        <!-- FAQ 1 -->
-        <div class="liquid-glass-sm reveal">
-          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">What exactly is Ory?</span>
-            <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Ory is your AI social media companion â not a tool, not a scheduler, not a chatbot. It's a living AI organism that learns your brand voice, creates content across up to 6 platforms, schedules everything automatically, and gets smarter every month. Think of it as having a brilliant friend who also happens to be incredible at social media.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="liquid-glass-sm reveal" style="transition-delay:0.05s">
-          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">What does "founding price forever" actually mean?</span>
-            <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Exactly what it says. The price you lock in now (Â£7, Â£15, or Â£39/mo) stays yours forever â even if we raise prices later. Even if you cancel and come back months later, your founding rate is waiting for you. It's our thank-you for believing in us early.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="liquid-glass-sm reveal" style="transition-delay:0.1s">
-          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Will Ory's content actually sound like me?</span>
-            <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Yes â and it gets better over time. Brand Brain analyses your existing content, your tone, your vocabulary, and your style. After about 10â15 posts, most creators say the content is nearly indistinguishable from what they'd write themselves. You always have final approval before anything goes live.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="liquid-glass-sm reveal" style="transition-delay:0.15s">
-          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Is my data safe? Who owns what Ory creates?</span>
-            <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">You own 100% of everything Ory creates â full commercial rights, no strings. We never train our models on your content. We use OAuth for social connections (never storing your passwords), encrypt all data at rest and in transit, and we're GDPR compliant from day one. We're also pursuing SOC 2 certification.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 5 -->
-        <div class="liquid-glass-sm reveal" style="transition-delay:0.2s">
-          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Can I cancel anytime?</span>
-            <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Absolutely. Cancel in one click from your dashboard â no phone calls, no guilt trips. Plus, you get a full 14-day money-back guarantee. If Ory isn't right for you, just email us and we'll refund every penny.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 6 -->
-        <div class="liquid-glass-sm reveal" style="transition-delay:0.25s">
-          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Which platforms does Ory support?</span>
-            <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Instagram, X (Twitter), LinkedIn, TikTok, Facebook, and Threads. Each platform gets content adapted to its unique format, tone, and audience expectations â not just copy-pasted across. More platforms are on our roadmap based on founding member requests.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 7 -->
-        <div class="liquid-glass-sm reveal" style="transition-delay:0.3s">
-          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Who is behind TaskNext.AI?</span>
-            <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">TaskNext AI Ltd is a registered company in London, England, founded by Jesse. We're a small, independent team building Ory the honest way â no VC pressure, no growth-at-all-costs. Just a group of creators building the tool we always wished existed. You can reach us anytime at hello@tasknextai.one.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-6xl mx-auto"></div>
-
-  <!-- ===== FINAL CTA ===== -->
-  <section class="py-24 px-6 relative overflow-hidden">
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div class="w-[500px] h-[500px] bg-indigo-400/8 rounded-full blur-[120px] animate-breathe-slow"></div>
-    </div>
-    <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
-      <div class="inline-block mb-6 animate-float">
-        <svg viewBox="0 0 200 200" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="ctaG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#818CF8"/><stop offset="50%" style="stop-color:#A78BFA"/><stop offset="100%" style="stop-color:#C084FC"/></linearGradient></defs>
-          <ellipse cx="100" cy="105" rx="48" ry="46" fill="rgba(255,255,255,0.02)" stroke="url(#ctaG)" stroke-width="2"/>
-          <ellipse cx="82" cy="95" rx="9" ry="10" fill="#FFF" opacity="0.95"/><circle cx="84" cy="93" r="4.5" fill="#050507"/><circle cx="86" cy="91" r="1.8" fill="#FFF"/>
-          <ellipse cx="118" cy="95" rx="9" ry="10" fill="#FFF" opacity="0.95"/><circle cx="120" cy="93" r="4.5" fill="#050507"/><circle cx="122" cy="91" r="1.8" fill="#FFF"/>
-          <path d="M88 112 Q100 123 112 112" fill="none" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-          <circle cx="73" cy="108" r="5" fill="#C084FC" opacity="0.2"/><circle cx="127" cy="108" r="5" fill="#818CF8" opacity="0.2"/>
-          <path d="M100 57 Q95 40 88 32" fill="none" stroke="url(#ctaG)" stroke-width="2" stroke-linecap="round" opacity="0.7"/><circle cx="88" cy="32" r="3" fill="url(#ctaG)" opacity="0.8"/>
-        </svg>
-      </div>
-      <h2 class="text-section font-bold font-display mb-4">Your social media deserves an <span class="gradient-text">organism</span>, not another tool</h2>
-      <p class="text-white/40 max-w-lg mx-auto mb-8">Founding members get locked pricing, direct access to the team, and a voice in what we build next. Come build with us.</p>
-      <a href="#pricing" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20 mb-4">Claim your founding spot</a>
-      <p class="text-xs text-white/25"><span id="spots-footer">187</span> spots remaining Â· 14-day guarantee Â· Cancel anytime</p>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="border-t border-white/5 py-12 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-10 mb-10">
-        <!-- Brand -->
-        <div class="md:col-span-2">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center animate-breathe">
-              <svg width="16" height="16" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="34" r="20" stroke="white" stroke-width="1.5" fill="none"/><ellipse cx="26" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="27" cy="30" r="1.8" fill="#050507"/><ellipse cx="38" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="39" cy="30" r="1.8" fill="#050507"/><path d="M28 38Q32 42 36 38" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-            </div>
-            <span class="font-semibold font-display">TaskNext<span class="gradient-text">.AI</span></span>
-          </div>
-          <p class="text-sm text-white/40 max-w-sm mb-4">The living AI organism for creators who'd rather create than schedule. Built with love in London.</p>
-          <div class="flex items-center gap-2 text-xs text-white/25 mb-4">
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>GDPR compliant Â· SOC 2 in progress Â· OAuth only</span>
-          </div>
-          <div class="flex items-center gap-4">
-            <a href="https://x.com/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Follow on X">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://linkedin.com/company/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Connect on LinkedIn">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="https://instagram.com/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Follow on Instagram">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Links -->
-        <div>
-          <p class="text-sm font-semibold mb-4">Product</p>
-          <ul class="space-y-2 text-sm text-white/40">
-            <li><a href="#story" class="hover:text-white transition-colors">Features</a></li>
-            <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
-            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="#our-story" class="hover:text-white transition-colors">Our Story</a></li>
-          </ul>
-        </div>
-
-        <!-- Legal & Contact -->
-        <div>
-          <p class="text-sm font-semibold mb-4">Company</p>
-          <ul class="space-y-2 text-sm text-white/40">
-            <li><a href="#" onclick="openModal('privacy');return false;" class="hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="#" onclick="openModal('terms');return false;" class="hover:text-white transition-colors">Terms & Conditions</a></li>
-            <li><a href="mailto:hello@tasknextai.one" class="hover:text-white transition-colors">hello@tasknextai.one</a></li>
-            <li><a href="mailto:support@tasknextai.one" class="hover:text-white transition-colors">support@tasknextai.one</a></li>
-            <li><a href="mailto:jesse@tasknextai.one" class="hover:text-white transition-colors">jesse@tasknextai.one <span class="text-white/20">(founder)</span></a></li>
-          </ul>
-        </div>
+  <footer class="py-16 px-6 border-t border-white/5">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-orchid-400 animate-breathe"></div>
+        <span class="text-lg font-semibold">TaskNext.AI</span>
       </div>
-
-      <!-- Bottom bar -->
-      <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-white/25">&copy; 2026 TaskNext AI Ltd. All rights reserved. Company registered in England.</p>
-        <div class="flex items-center gap-4 text-xs text-white/25">
-          <span class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 bg-mint-400 rounded-full"></span>
-            All systems operational
-          </span>
-          <span>Built with love in London</span>
-        </div>
-      </div>
+      <p class="text-sm text-white/30">Complete Brand System — MASTERPLAN V10.3</p>
+      <p class="text-xs text-white/20 mt-2">March 2026 &middot; All rights reserved</p>
     </div>
   </footer>
-
-  <!-- ===== FLOATING SHARE BUTTON ===== -->
-  <div id="floating-share" class="floating-share">
-    <button onclick="shareIQCard()" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-medium px-5 py-3 rounded-full shadow-lg shadow-indigo-400/20 flex items-center gap-2 hover:opacity-90 transition-opacity">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-      Share
-    </button>
-  </div>
-
-  <!-- ===== PRIVACY POLICY MODAL ===== -->
-  <div id="privacy-modal" class="modal-overlay" onclick="if(event.target===this)closeModal('privacy')">
-    <div class="modal-content liquid-glass p-8 md:p-10">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xl font-bold font-display">Privacy Policy</h2>
-        <button onclick="closeModal('privacy')" class="text-white/40 hover:text-white transition-colors">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="text-sm text-white/50 space-y-4 leading-relaxed">
-        <p><strong class="text-white/70">Effective Date:</strong> 1 March 2026</p>
-        <p><strong class="text-white/70">Company:</strong> TaskNext AI Ltd, registered in England and Wales.</p>
-
-        <p><strong class="text-white/70">What we collect:</strong> When you create an account, we collect your email address and the social media tokens you grant via OAuth. We also collect basic usage analytics (pages visited, features used) to improve the product. We do not collect or store your social media passwords.</p>
-
-        <p><strong class="text-white/70">How we use your data:</strong> Your data is used solely to power your Ory experience â generating content, scheduling posts, and improving your Brand Brain. We never sell your data to third parties, and we never use your content to train our AI models.</p>
-
-        <p><strong class="text-white/70">Data storage & security:</strong> All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We use SOC 2-ready infrastructure hosted in EU data centres. OAuth tokens are stored in encrypted vaults with automatic rotation.</p>
-
-        <p><strong class="text-white/70">Your rights (GDPR):</strong> You have the right to access, correct, export, or delete your personal data at any time. To exercise these rights, email privacy@tasknextai.one. We will respond within 30 days.</p>
-
-        <p><strong class="text-white/70">Cookies:</strong> We use essential cookies only (session management, authentication). No tracking cookies, no ad cookies. We do not use third-party trackers.</p>
-
-        <p><strong class="text-white/70">Content ownership:</strong> You own 100% of all content generated by Ory on your behalf. We claim no rights to your posts, images, captions, or strategy data.</p>
-
-        <p><strong class="text-white/70">Changes:</strong> We'll notify you by email before any material changes to this policy. Continued use after notification constitutes acceptance.</p>
-
-        <p><strong class="text-white/70">Contact:</strong> privacy@tasknextai.one</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== TERMS & CONDITIONS MODAL ===== -->
-  <div id="terms-modal" class="modal-overlay" onclick="if(event.target===this)closeModal('terms')">
-    <div class="modal-content liquid-glass p-8 md:p-10">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xl font-bold font-display">Terms & Conditions</h2>
-        <button onclick="closeModal('terms')" class="text-white/40 hover:text-white transition-colors">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="text-sm text-white/50 space-y-4 leading-relaxed">
-        <p><strong class="text-white/70">Effective Date:</strong> 1 March 2026</p>
-        <p><strong class="text-white/70">Company:</strong> TaskNext AI Ltd, registered in England and Wales.</p>
-
-        <p><strong class="text-white/70">1. Service Description:</strong> TaskNext.AI ("the Service") provides AI-powered social media content creation, scheduling, and analytics through our platform and its companion AI, Ory. By using the Service, you agree to these terms.</p>
-
-        <p><strong class="text-white/70">2. Eligibility:</strong> You must be at least 18 years old to use the Service. By creating an account, you confirm you meet this requirement.</p>
-
-        <p><strong class="text-white/70">3. Accounts:</strong> You are responsible for maintaining the security of your account and all activity under it. Notify us immediately at support@tasknextai.one if you suspect unauthorised access.</p>
-
-        <p><strong class="text-white/70">4. Founding Member Pricing:</strong> If you subscribe during our founding member period, your monthly rate is locked at the founding price for the lifetime of your subscription, even through future price increases. This guarantee survives pauses of up to 12 months.</p>
-
-        <p><strong class="text-white/70">5. Payments & Refunds:</strong> All prices are in GBP (Â£). Subscriptions are billed monthly via Stripe. You may cancel at any time from your dashboard. Within the first 14 days, you are entitled to a full refund â email support@tasknextai.one.</p>
-
-        <p><strong class="text-white/70">6. Content Ownership:</strong> You retain full ownership and commercial rights to all content generated by Ory on your behalf. We do not claim any intellectual property rights over your generated content.</p>
-
-        <p><strong class="text-white/70">7. Acceptable Use:</strong> You agree not to use the Service to generate content that is illegal, hateful, deceptive, or infringes third-party rights. We reserve the right to suspend accounts that violate these guidelines.</p>
-
-        <p><strong class="text-white/70">8. AI-Generated Content:</strong> Content created by Ory is AI-assisted. While we strive for quality, you are responsible for beviewing and approving all content before publication. We recommend reviewing all posts before they go live.</p>
-
-        <p><strong class="text-white/70">9. Availability:</strong> We aim for 99.9% uptime but do not guarantee uninterrupted service. We will notify users of planned maintenance in advance.</p>
-
-        <p><strong class="text-white/70">10. Limitation of Liability:</strong> To the maximum extent permitted by law, TaskNext AI Ltd's total liability shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
-
-        <p><strong class="text-white/70">11. Governing Law:</strong> These terms are governed by the laws of England and Wales. Disputes shall be resolved in the courts of England.</p>
-
-        <p><strong class="text-white/70">12. Changes:</strong> We may update these terms with 30 days' notice via email. Continued use after the notice period constitutes acceptance.</p>
-
-        <p><strong class="text-white/70">Contact:</strong> legal@tasknextai.one</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== JAVASCRIPT ===== -->
-  <script>
-    // === SCROLL REVEAL ===
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // === HERO TYPEWRITER ===
-    (function() {
-      const el = document.getElementById('hero-subtitle');
-      const text = 'Then Ory arrived.';
-      let i = 0;
-      setTimeout(() => {
-        function type() {
-          if (i < text.length) {
-            el.textContent += text[i];
-            i++;
-            setTimeout(type, i === 1 ? 600 : 70);
-          }
-        }
-        type();
-      }, 800);
-    })();
-
-    // === FLOATING SHARE ===
-    window.addEventListener('scroll', () => {
-      const hero = document.getElementById('hero');
-      const share = document.getElementById('floating-share');
-      if (window.scrollY > hero.offsetHeight * 0.7) {
-        share.classList.add('visible');
-      } else {
-        share.classList.remove('visible');
-      }
-      // Navbar shrink
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 80) {
-        nav.style.padding = '0.35rem 1.5rem';
-      } else {
-        nav.style.padding = '0.75rem 1.5rem';
-      }
-    }, { passive: true });
-
-    // === FAQ TOGGLE ===
-    function toggleFAQ(btn) {
-      const answer = btn.nextElementSibling;
-      const arrow = btn.querySelector('.faq-arrow');
-      const isOpen = answer.classList.contains('open');
-
-      // Close all
-      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-      document.querySelectorAll('.faq-arrow').forEach(a => a.classList.remove('rotated'));
-
-      if (!isOpen) {
-        answer.classList.add('open');
-        arrow.classList.add('rotated');
-      }
-    }
-
-    // === IQ CARD GENERATOR ===
-    const oryMessages = [
-      "Ory is learning your style. The more you use it, the better it gets.",
-      "Solid consistency â that's what the algorithms reward most.",
-      "Your Brand Brain is getting better at matching your tone each week.",
-      "Nice posting rhythm. Ory will keep optimising your schedule.",
-      "Early days, strong foundation. Let's keep building.",
-      "Your content style is unique â Ory's adapting to match it."
-    ];
-
-    function generateIQCard() {
-      const input = document.getElementById('iq-input');
-      const username = input.value.replace(/^@/, '').trim();
-      if (!username) { input.focus(); return; }
-
-      document.getElementById('iq-username').textContent = '@' + username;
-      document.getElementById('thinking-state').classList.remove('hidden');
-      document.getElementById('iq-result').style.opacity = '0.3';
-      document.getElementById('iq-btn').textContent = 'Thinking...';
-
-      setTimeout(() => {
-        const score = Math.floor(Math.random() * 200) + 780;
-        const posts = Math.floor(Math.random() * 3000) + 800;
-        const growth = Math.floor(Math.random() * 400) + 120;
-        const streak = Math.floor(Math.random() * 120) + 30;
-
-        document.getElementById('thinking-state').classList.add('hidden');
-        document.getElementById('iq-result').style.opacity = '1';
-        document.getElementById('iq-score').textContent = score;
-        document.getElementById('iq-posts').textContent = posts.toLocaleString();
-        document.getElementById('iq-growth').textContent = '+' + growth + '%';
-        document.getElementById('iq-streak').textContent = streak;
-        document.getElementById('iq-message').textContent = '"' + oryMessages[Math.floor(Math.random() * oryMessages.length)].replace(/[""]/g, '') + '"';
-        document.getElementById('iq-btn').textContent = 'Regenerate';
-
-        // Scale pulse
-        const scoreEl = document.getElementById('iq-score');
-        scoreEl.style.transform = 'scale(1.25)';
-        setTimeout(() => { scoreEl.style.transform = 'scale(1)'; }, 300);
-
-        spawnConfetti();
-      }, 1200);
-    }
-
-    // Enter key
-    document.getElementById('iq-input').addEventListener('keydown', e => { if (e.key === 'Enter') generateIQCard(); });
-
-    // === CONFETTI ===
-    function spawnConfetti() {
-      const container = document.getElementById('confetti-container');
-      container.innerHTML = '';
-      const colors = ['#818CF8', '#C084FC', '#34D399', '#FB7185', '#FBBF24', '#A78BFA'];
-      for (let i = 0; i < 24; i++) {
-        const piece = document.createElement('div');
-        piece.className = 'confetti-piece';
-        piece.style.left = Math.random() * 100 + '%';
-        piece.style.top = Math.random() * 30 + '%';
-        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-        piece.style.animationDelay = Math.random() * 0.3 + 's';
-        piece.style.animationDuration = (0.8 + Math.random() * 0.8) + 's';
-        container.appendChild(piece);
-      }
-      setTimeout(() => { container.innerHTML = ''; }, 2000);
-    }
-
-    // === SHARING ===
-    function shareIQCard() {
-      const text = "Just checked my Organism IQ on TaskNext.AI â¨ â my AI social media companion is evolving! Check yours at tasknextai.one";
-      if (navigator.share) {
-        navigator.share({ title: 'My Organism IQ', text, url: 'https://tasknextai.one' }).catch(() => {});
-      } else {
-        navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard!'));
-      }
-    }
-
-    function copyRef(btn) {
-      navigator.clipboard.writeText('https://tasknextai.one/ref/your-code').then(() => {
-        const original = btn.innerHTML;
-        btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>';
-        setTimeout(() => { btn.innerHTML = original; }, 1800);
-      });
-    }
-
-    // === PARALLAX ORBS ===
-    let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
-    document.addEventListener('mousemove', e => {
-      mouseX = (e.clientX / window.innerWidth - 0.5) * 16;
-      mouseY = (e.clientY / window.innerHeight - 0.5) * 16;
-    }, { passive: true });
-
-    function animateOrbs() {
-      currentX += (mouseX - currentX) * 0.04;
-      currentY += (mouseY - currentY) * 0.04;
-      document.querySelectorAll('.orb').forEach(orb => {
-        const depth = parseFloat(orb.dataset.depth) || 0.3;
-        orb.style.transform = `translate(${currentX * depth}px, ${currentY * depth}px)`;
-      });
-      requestAnimationFrame(animateOrbs);
-    }
-    animateOrbs();
-
-    // === MODALS ===
-    function openModal(type) {
-      document.getElementById(type + '-modal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal(type) {
-      document.getElementById(type + '-modal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        closeModal('privacy');
-        closeModal('terms');
-      }
-    });
-
-    // === SPOT COUNTER (simulated decay) ===
-    const spotsBase = 187;
-    ['spots-nav', 'spots-pricing', 'spots-footer'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = spotsBase;
-    });
-  </script>
 
 </body>
 </html>
