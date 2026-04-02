@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskNext.AI — Meet Ory. The AI That Runs Your Social Media While You Sleep.</title>
+  <meta name="description" content="Ory is a living AI organism that breathes, learns, and grows with your brand. Generate content, schedule posts across 6 platforms, and watch your audience explode — all on autopilot." />
+  <meta property="og:title" content="Meet Ory — Your Living AI Social Media Organism" />
+  <meta property="og:description" content="The AI that runs your social media while you sleep. First 200 creators get their price locked forever." />
+  <meta property="og:image" content="https://tasknextai.one/og-ory.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void: '#050507',
+            surface: '#0a0a0f',
+            glass: 'rgba(255,255,255,0.04)',
+            'glass-edge': 'rgba(255,255,255,0.08)',
+            indigo: { 400: '#818CF8', 500: '#6366F1', 600: '#4F46E5' },
+            orchid: { 400: '#C084FC', 500: '#A855F7' },
+            mint: { 400: '#34D399' },
+            rose: { 400: '#FB7185' },
+            amber: { 400: '#FBBF24' },
+          },
+          fontFamily: {
+            sans: ['-apple-system','SF Pro Display','SF Pro Text','system-ui','Segoe UI','Roboto','Helvetica Neue','sans-serif'],
+          },
+          animation: {
+            'breathe': 'breathe 4s ease-in-out infinite',
+            'breathe-slow': 'breathe 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 3s ease-in-out infinite',
+            'fade-up': 'fadeUp 0.8s ease-out forwards',
+            'slide-in': 'slideIn 0.6s ease-out forwards',
+            'vein-flow': 'veinFlow 8s linear infinite',
+            'thinking': 'thinking 1.5s ease-in-out infinite',
+            'confetti-fall': 'confettiFall 1.2s ease-out forwards',
+            'glow-line': 'glowLine 2s ease-in-out infinite',
+            'typewriter': 'typewriter 2.5s steps(40) forwards',
+            'blink': 'blink 1s step-end infinite',
+            'scale-in': 'scaleIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards',
+            'bounce-in': 'bounceIn 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards',
+          },
+          keyframes: {
+            breathe: { '0%,100%': { opacity:'0.4', transform:'scale(1)' }, '50%': { opacity:'0.8', transform:'scale(1.02)' } },
+            pulseGlow: { '0%,100%': { boxShadow:'0 0 20px rgba(129,140,248,0.15)' }, '50%': { boxShadow:'0 0 40px rgba(129,140,248,0.35), 0 0 80px rgba(192,132,252,0.15)' } },
+            float: { '0%,100%': { transform:'translateY(0)' }, '50%': { transform:'translateY(-12px)' } },
+            shimmer: { '0%': { backgroundPosition:'-200% 0' }, '100%': { backgroundPosition:'200% 0' } },
+            fadeUp: { '0%': { opacity:'0', transform:'translateY(24px)' }, '100%': { opacity:'1', transform:'translateY(0)' } },
+            slideIn: { '0%': { opacity:'0', transform:'translateX(-20px)' }, '100%': { opacity:'1', transform:'translateX(0)' } },
+            veinFlow: { '0%': { strokeDashoffset:'1000' }, '100%': { strokeDashoffset:'0' } },
+            thinking: { '0%,100%': { opacity:'0.3' }, '50%': { opacity:'1' } },
+            confettiFall: { '0%': { transform:'translateY(-20px) rotate(0deg)', opacity:'1' }, '100%': { transform:'translateY(80px) rotate(360deg)', opacity:'0' } },
+            glowLine: { '0%,100%': { opacity:'0.2', transform:'scaleX(0.6)' }, '50%': { opacity:'0.8', transform:'scaleX(1)' } },
+            typewriter: { '0%': { width:'0' }, '100%': { width:'100%' } },
+            blink: { '50%': { borderColor:'transparent' } },
+            scaleIn: { '0%': { opacity:'0', transform:'scale(0.8)' }, '100%': { opacity:'1', transform:'scale(1)' } },
+            bounceIn: { '0%': { opacity:'0', transform:'scale(0.3)' }, '50%': { transform:'scale(1.05)' }, '70%': { transform:'scale(0.95)' }, '100%': { opacity:'1', transform:'scale(1)' } },
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    html{scroll-behavior:smooth}
+    body{background:#050507;color:#e2e8f0;overflow-x:hidden}
+
+    /* LIQUID GLASS */
+    .liquid-glass{
+      background:linear-gradient(135deg,rgba(255,255,255,0.035) 0%,rgba(255,255,255,0.01) 100%);
+      border:1px solid rgba(255,255,255,0.06);
+      backdrop-filter:blur(40px) saturate(1.4);
+      -webkit-backdrop-filter:blur(40px) saturate(1.4);
+      border-radius:24px;
+      transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .liquid-glass:hover{
+      border-color:rgba(129,140,248,0.2);
+      box-shadow:0 8px 40px rgba(129,140,248,0.08),inset 0 1px 0 rgba(255,255,255,0.05);
+      transform:translateY(-3px);
+    }
+
+    /* REFRACTION EDGE */
+    .refract-edge{position:relative}
+    .refract-edge::before{
+      content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;
+      background:linear-gradient(135deg,rgba(129,140,248,0.3),transparent 40%,transparent 60%,rgba(192,132,252,0.2));
+      -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+    }
+
+    /* NEURAL VEINS */
+    .neural-bg{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.1}
+    .neural-bg svg{width:100%;height:100%}
+    .neural-vein{stroke:url(#veinGrad);stroke-width:1;fill:none;stroke-dasharray:500 500;animation:veinFlow 8s linear infinite}
+    .neural-vein:nth-child(2){animation-delay:-2s;animation-duration:11s}
+    .neural-vein:nth-child(3){animation-delay:-4s;animation-duration:13s}
+
+    /* ORY PULSE */
+    .ory-pulse{
+      width:12px;height:12px;
+      background:radial-gradient(circle,#818CF8,#C084FC);
+      border-radius:50%;
+      animation:breathe 3s ease-in-out infinite;
+      box-shadow:0 0 12px rgba(129,140,248,0.6);
+    }
+
+    /* ORBS */
+    .orb{position:absolute;border-radius:50%;filter:blur(80px);animation:breathe 6s ease-in-out infinite;pointer-events:none;will-change:transform}
+
+    /* SCROLL REVEAL */
+    .reveal{opacity:0;transform:translateY(30px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* CTA SHIMMER */
+    .cta-shimmer{
+      background:linear-gradient(90deg,#818CF8,#C084FC,#818CF8);
+      background-size:200% 100%;
+      animation:shimmer 3s ease-in-out infinite;
+    }
+
+    /* PRICE GLOW */
+    .price-popular{
+      border:1px solid rgba(129,140,248,0.4);
+      box-shadow:0 0 60px rgba(129,140,248,0.12),0 0 120px rgba(192,132,252,0.06);
+    }
+
+    /* FOUNDING BADGE */
+    .founding-badge{
+      background:linear-gradient(135deg,rgba(129,140,248,0.2),rgba(192,132,252,0.2));
+      border:1px solid rgba(129,140,248,0.3);
+      animation:pulseGlow 3s ease-in-out infinite;
+    }
+
+    /* IQ CARD */
+    .iq-card-preview{
+      background:linear-gradient(145deg,#0f0f1a 0%,#1a1a2e 50%,#0f0f1a 100%);
+      border:1px solid rgba(129,140,248,0.3);
+      border-radius:20px;overflow:hidden;
+      transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .iq-card-preview:hover{box-shadow:0 0 60px rgba(129,140,248,0.2);transform:translateY(-4px)}
+
+    /* WATERMARK */
+    .watermark-demo{position:relative}
+    .watermark-demo::after{
+      content:'Made with Ory \2197';position:absolute;bottom:12px;right:16px;
+      font-size:11px;color:rgba(129,140,248,0.5);font-weight:500;letter-spacing:0.5px;
+    }
+
+    /* TYPOGRAPHY */
+    .text-hero{font-size:clamp(2.4rem,5.2vw,4.5rem);line-height:1.08;letter-spacing:-0.035em;font-weight:700}
+    .text-sub{font-size:clamp(1rem,1.8vw,1.3rem);line-height:1.65}
+    .text-section{font-size:clamp(1.6rem,3.5vw,2.8rem);line-height:1.12;letter-spacing:-0.025em;font-weight:700}
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:#050507}
+    ::-webkit-scrollbar-thumb{background:rgba(129,140,248,0.25);border-radius:3px}
+    :focus-visible{outline:2px solid #818CF8;outline-offset:2px;border-radius:8px}
+
+    /* COUNTER PULSE */
+    @keyframes countPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    .count-pulse{animation:countPulse 2s ease-in-out infinite}
+
+    /* TESTIMONIAL */
+    .testimonial-card{
+      background:linear-gradient(135deg,rgba(255,255,255,0.025),rgba(255,255,255,0.005));
+      border:1px solid rgba(255,255,255,0.05);
+      backdrop-filter:blur(20px);border-radius:20px;
+      transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .testimonial-card:hover{transform:translateY(-4px);border-color:rgba(129,140,248,0.15)}
+
+    /* THINKING SHIMMER */
+    .thinking-dots span{display:inline-block;width:6px;height:6px;background:#818CF8;border-radius:50%;margin:0 2px;animation:thinking 1.5s ease-in-out infinite}
+    .thinking-dots span:nth-child(2){animation-delay:0.2s}
+    .thinking-dots span:nth-child(3){animation-delay:0.4s}
+
+    /* CONFETTI */
+    .confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall 1.2s ease-out forwards;pointer-events:none}
+
+    /* FLOATING SHARE BTN */
+    .floating-share{
+      position:fixed;bottom:24px;right:24px;z-index:50;
+      transform:translateY(80px);opacity:0;
+      transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .floating-share.visible{transform:translateY(0);opacity:1}
+
+    /* GUARANTEE BADGE */
+    .guarantee-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.15);
+      border-radius:100px;padding:4px 12px;font-size:11px;color:rgba(52,211,153,0.8);font-weight:500;
+    }
+
+    /* GLOW LINE CONNECTOR */
+    .glow-connector{height:2px;background:linear-gradient(90deg,transparent,#818CF8,transparent);animation:glowLine 2s ease-in-out infinite;border-radius:1px}
+
+    /* HUB PULSE DOTS */
+    .hub-dot{width:6px;height:6px;border-radius:50%;animation:thinking 2s ease-in-out infinite}
+
+    /* MOBILE: reduce vein complexity */
+    @media(max-width:768px){
+      .neural-bg{opacity:0.05}
+      .neural-vein:nth-child(3){display:none}
+      .orb{filter:blur(60px);opacity:0.5}
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- NEURAL VEINS (simplified for perf) -->
+  <div class="neural-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="veinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#818CF8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#C084FC" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#818CF8" stop-opacity="0.15"/>
+        </linearGradient>
+      </defs>
+      <path class="neural-vein" d="M0,250 C300,220 500,340 750,280 S1100,180 1440,260"/>
+      <path class="neural-vein" d="M0,550 C200,520 400,600 700,540 S1050,460 1440,520"/>
+      <path class="neural-vein" d="M0,750 C350,720 550,790 800,740 S1100,700 1440,730"/>
+    </svg>
+  </div>
+
+  <!-- ORBS -->
+  <div class="orb w-[450px] h-[450px] bg-indigo-500/10 top-[-80px] left-[-80px]" style="animation-delay:-1s" aria-hidden="true"></div>
+  <div class="orb w-[350px] h-[350px] bg-orchid-500/8 top-[35%] right-[-60px]" style="animation-delay:-3s" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- NAV -->
+  <!-- ═══════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 py-3" id="main-nav" style="transition:padding 0.3s ease">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="liquid-glass px-5 py-2.5 flex items-center justify-between" style="border-radius:14px">
+        <div class="flex items-center gap-3">
+          <div class="ory-pulse"></div>
+          <span class="text-white font-semibold text-lg tracking-tight">TaskNext<span class="text-indigo-400">.AI</span></span>
+          <span class="text-[10px] font-medium text-indigo-400/70 bg-indigo-400/10 px-2 py-0.5 rounded-full uppercase tracking-widest">Ory</span>
+        </div>
+        <div class="hidden md:flex items-center gap-7">
+          <a href="#story" class="text-[13px] text-white/45 hover:text-white transition-colors">Story</a>
+          <a href="#viral" class="text-[13px] text-white/45 hover:text-white transition-colors">Share</a>
+          <a href="#pricing" class="text-[13px] text-white/45 hover:text-white transition-colors">Pricing</a>
+          <a href="#faq" class="text-[13px] text-white/45 hover:text-white transition-colors">FAQ</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="hidden sm:flex items-center gap-2 founding-badge px-3 py-1.5 rounded-full">
+            <span class="text-[11px] text-indigo-300 font-medium">Founding:</span>
+            <span id="spots-nav" class="text-[13px] text-white font-bold count-pulse">200</span>
+            <span class="text-[11px] text-white/40">left</span>
+          </div>
+          <a href="#pricing" class="cta-shimmer text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity">
+            Lock my price
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- HERO -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="relative min-h-[92vh] flex items-center justify-center px-4 pt-24 pb-14">
+    <div class="max-w-[1280px] mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 liquid-glass px-4 py-2 mb-7" style="border-radius:100px">
+        <div class="ory-pulse" style="width:8px;height:8px"></div>
+        <span class="text-xs text-indigo-300/80 font-medium tracking-wide">MEET ORY — YOUR LIVING AI ORGANISM</span>
+      </div>
+
+      <h1 class="text-hero text-white max-w-4xl mx-auto mb-5">
+        Once upon a time, your social media was
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-orchid-400 to-indigo-400">chaos.</span>
+        <br/>
+        <span class="text-white/35 text-[0.6em] font-normal" id="hero-subtitle"></span>
+      </h1>
+
+      <p class="text-sub text-white/45 max-w-2xl mx-auto mb-9">
+        A living AI that breathes inside your brand, creates content across 6 platforms,
+        schedules everything while you sleep — and gets smarter every single month.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
+        <a href="#pricing" class="group relative cta-shimmer text-white font-semibold text-base px-8 py-4 rounded-full hover:opacity-90 transition-all hover:scale-[1.02]">
+          Lock my founding price — from £7/mo forever
+          <span class="absolute -top-3 -right-2 bg-rose-400 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-bounce-in">200 spots</span>
+        </a>
+        <a href="#demo" class="liquid-glass text-white/60 hover:text-white font-medium text-sm px-6 py-3 flex items-center gap-2 transition-all" style="border-radius:100px">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.344-5.891a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+          47-second demo
+        </a>
+      </div>
+
+      <div class="guarantee-badge mx-auto mb-10">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+        14-day money-back guarantee
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-5 text-xs text-white/28">
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>No credit card required</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>AI included free</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>35 languages</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>6 platforms</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- STORY — Compressed 4 cards -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="story" class="relative py-20 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="text-center mb-14 reveal">
+        <span class="text-indigo-400 text-xs font-medium tracking-widest uppercase mb-3 block">The Organism</span>
+        <h2 class="text-section text-white mb-3">Ory isn't software. It's alive.</h2>
+        <p class="text-sub text-white/35 max-w-lg mx-auto">A living intelligence that moves into your brand and never stops working.</p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="liquid-glass refract-edge p-6 reveal" style="transition-delay:0.05s">
+          <div class="w-11 h-11 rounded-xl bg-indigo-400/10 flex items-center justify-center mb-4 animate-breathe">
+            <svg class="w-5.5 h-5.5 text-indigo-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-white font-semibold text-[15px] mb-1.5">Breathes</h3>
+          <p class="text-white/35 text-xs leading-relaxed">Auto-updates silently. New features appear like magic.</p>
+        </div>
+        <div class="liquid-glass refract-edge p-6 reveal" style="transition-delay:0.1s">
+          <div class="w-11 h-11 rounded-xl bg-orchid-400/10 flex items-center justify-center mb-4 animate-breathe" style="animation-delay:-1s">
+            <svg class="w-5.5 h-5.5 text-orchid-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
+          </div>
+          <h3 class="text-white font-semibold text-[15px] mb-1.5">Learns</h3>
+          <p class="text-white/35 text-xs leading-relaxed">Brand Brain absorbs your tone. Every post sounds more like you.</p>
+        </div>
+        <div class="liquid-glass refract-edge p-6 reveal" style="transition-delay:0.15s">
+          <div class="w-11 h-11 rounded-xl bg-mint-400/10 flex items-center justify-center mb-4 animate-breathe" style="animation-delay:-2s">
+            <svg class="w-5.5 h-5.5 text-mint-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <h3 class="text-white font-semibold text-[15px] mb-1.5">Heals</h3>
+          <p class="text-white/35 text-xs leading-relaxed">Error recovery, self-repair, automatic rollback. It just works.</p>
+        </div>
+        <div class="liquid-glass refract-edge p-6 reveal" style="transition-delay:0.2s">
+          <div class="w-11 h-11 rounded-xl bg-rose-400/10 flex items-center justify-center mb-4 animate-breathe" style="animation-delay:-3s">
+            <svg class="w-5.5 h-5.5 text-rose-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+          </div>
+          <h3 class="text-white font-semibold text-[15px] mb-1.5">Grows</h3>
+          <p class="text-white/35 text-xs leading-relaxed">Monthly intelligence unlocks. Your Organism IQ rises every month.</p>
+        </div>
+      </div>
+
+      <!-- Glow connector line -->
+      <div class="hidden lg:block max-w-3xl mx-auto mt-6"><div class="glow-connector"></div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- VIRAL ENGINE — MOVED UP (was section 6) -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="viral" class="relative py-20 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="text-indigo-400 text-xs font-medium tracking-widest uppercase mb-3 block">Built to spread</span>
+        <h2 class="text-section text-white mb-3">Your content markets itself</h2>
+        <p class="text-sub text-white/35 max-w-lg mx-auto">Two viral engines. Zero ad spend.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-6">
+
+        <!-- IQ CARD GENERATOR — LARGE (3 cols) -->
+        <div class="lg:col-span-3 liquid-glass refract-edge p-8 reveal">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="ory-pulse" style="width:8px;height:8px"></div>
+            <span class="text-indigo-400 text-sm font-semibold">Organism IQ Card</span>
+            <span class="text-[10px] text-white/20 ml-auto">Try it now — it's free</span>
+          </div>
+          <p class="text-white/35 text-xs mb-5 leading-relaxed max-w-md">
+            Every month your Ory gets smarter. Share your IQ score with a beautiful social card.
+            Friends see it, want one, sign up. That's the loop.
+          </p>
+
+          <!-- Input row -->
+          <div class="flex gap-3 mb-5">
+            <input id="iq-input" type="text" placeholder="@yourhandle" class="flex-1 bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-indigo-400/40 transition-colors" />
+            <button id="iq-generate-btn" onclick="generateIQCard()" class="cta-shimmer text-white font-semibold text-sm px-6 py-3 rounded-xl hover:opacity-90 transition-all flex items-center gap-2">
+              <span id="iq-btn-text">Create my card</span>
+              <div id="iq-thinking" class="thinking-dots hidden"><span></span><span></span><span></span></div>
+            </button>
+          </div>
+
+          <!-- IQ Card Preview -->
+          <div id="iq-card" class="iq-card-preview p-6 relative overflow-hidden">
+            <div id="confetti-container" class="absolute inset-0 pointer-events-none z-10"></div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="ory-pulse" style="width:8px;height:8px"></div>
+                <span class="text-white text-xs font-medium">TaskNext.AI</span>
+              </div>
+              <span class="text-[10px] text-white/30">@<span id="iq-handle">yourhandle</span></span>
+            </div>
+            <div class="text-center py-5">
+              <div class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-orchid-400 mb-1.5 transition-all duration-500" id="iq-score">847</div>
+              <div class="text-white/45 text-sm font-medium">Organism IQ</div>
+              <div id="iq-rank" class="text-indigo-400/60 text-xs mt-1">Top 3% of creators</div>
+            </div>
+            <div class="grid grid-cols-3 gap-2 mb-4">
+              <div class="bg-white/[0.03] rounded-lg p-2 text-center">
+                <div class="text-xs text-white/65 font-medium" id="iq-posts">2,340</div>
+                <div class="text-[9px] text-white/25 mt-0.5">Posts</div>
+              </div>
+              <div class="bg-white/[0.03] rounded-lg p-2 text-center">
+                <div class="text-xs text-mint-400 font-medium" id="iq-growth">+287%</div>
+                <div class="text-[9px] text-white/25 mt-0.5">Growth</div>
+              </div>
+              <div class="bg-white/[0.03] rounded-lg p-2 text-center">
+                <div class="text-xs text-white/65 font-medium" id="iq-streak">89 days</div>
+                <div class="text-[9px] text-white/25 mt-0.5">Streak</div>
+              </div>
+            </div>
+            <p class="text-center text-white/25 text-[10px] italic" id="iq-message">"Your organism is evolving fast. Keep feeding it!" — Ory</p>
+          </div>
+
+          <!-- Share buttons -->
+          <div class="flex gap-3 mt-4">
+            <button onclick="shareIQCard()" class="flex-1 liquid-glass text-white/55 hover:text-white text-sm py-2.5 flex items-center justify-center gap-2 transition-all" style="border-radius:12px">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/></svg>
+              Share to Stories
+            </button>
+            <button onclick="copyIQText()" class="flex-1 liquid-glass text-white/55 hover:text-white text-sm py-2.5 flex items-center justify-center gap-2 transition-all" style="border-radius:12px">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
+              Copy text
+            </button>
+          </div>
+        </div>
+
+        <!-- WATERMARK TEASE (2 cols) -->
+        <div class="lg:col-span-2 liquid-glass refract-edge p-7 reveal" style="transition-delay:0.1s">
+          <div class="flex items-center gap-2 mb-4">
+            <svg class="w-4 h-4 text-orchid-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clip-rule="evenodd"/></svg>
+            <span class="text-orchid-400 text-sm font-semibold">Watermark Engine</span>
+          </div>
+          <p class="text-white/35 text-xs mb-5 leading-relaxed">
+            Every caption carries a subtle "Made with Ory" signature. People see great content, trace the source, and sign up.
+          </p>
+
+          <div class="space-y-3">
+            <div class="watermark-demo bg-white/[0.02] border border-white/[0.04] rounded-xl p-4">
+              <div class="text-[10px] text-white/40 mb-1.5 font-medium flex items-center gap-1.5">
+                <div class="hub-dot bg-gradient-to-r from-pink-500 to-purple-500"></div>Instagram
+              </div>
+              <p class="text-white/60 text-xs leading-relaxed">5 things I learned posting every day for 90 days. Number 3 changed everything... <span class="text-indigo-400/30">#creatortips</span></p>
+            </div>
+            <div class="watermark-demo bg-white/[0.02] border border-white/[0.04] rounded-xl p-4">
+              <div class="text-[10px] text-white/40 mb-1.5 font-medium flex items-center gap-1.5">
+                <div class="hub-dot bg-blue-500"></div>LinkedIn
+              </div>
+              <p class="text-white/60 text-xs leading-relaxed">I used to spend 3 hours on content daily. Now? 12 minutes. Here's the system...</p>
+            </div>
+            <div class="watermark-demo bg-white/[0.02] border border-white/[0.04] rounded-xl p-4">
+              <div class="text-[10px] text-white/40 mb-1.5 font-medium flex items-center gap-1.5">
+                <div class="hub-dot bg-white"></div>X / Twitter
+              </div>
+              <p class="text-white/60 text-xs leading-relaxed">Thread: why your engagement dropped 40% this month (and exactly how to fix it in 7 days)</p>
+            </div>
+          </div>
+
+          <div class="mt-4 bg-orchid-400/5 border border-orchid-400/10 rounded-xl p-3 text-center">
+            <p class="text-white/35 text-[10px]"><span class="text-orchid-400 font-medium">Pro users</span> can remove the watermark — or keep it to flex.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFERRAL — Inline compact -->
+      <div class="mt-8 liquid-glass refract-edge p-7 text-center reveal animate-pulse-glow max-w-2xl mx-auto">
+        <h3 class="text-lg font-bold text-white mb-2">Invite a friend. Both get 1 month free.</h3>
+        <p class="text-white/35 text-xs mb-4 max-w-md mx-auto">Share your link. When they subscribe, you both win. No limits, no catches.</p>
+        <div class="flex items-center justify-center gap-3">
+          <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-2 text-sm text-white/25">
+            tasknextai.one/ref/<span class="text-indigo-400">your-code</span>
+          </div>
+          <button onclick="copyRef(this)" class="cta-shimmer text-white font-medium text-sm px-5 py-2 rounded-xl hover:opacity-90 transition-all">Copy link</button>
+        </div>
+        <div class="text-[10px] text-white/18 mt-4">4,200+ creators joined via referral &middot; 12,600 free months awarded</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SOCIAL HUB TEASE — Condensed -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="hub" class="relative py-20 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="text-indigo-400 text-xs font-medium tracking-widest uppercase mb-3 block">Ory Social Hub</span>
+          <h2 class="text-section text-white mb-4">Every platform.<br/>One living feed.</h2>
+          <p class="text-sub text-white/35 mb-6">
+            Instagram, TikTok, LinkedIn, X, Pinterest, Facebook — unified. Ory speaks plain English, suggests next posts, and knows your audience's pulse.
+          </p>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-indigo-400/10 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-indigo-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6z"/></svg></div>
+              <div><span class="text-white text-xs font-medium">AI Commentary</span><p class="text-white/25 text-[11px] mt-0.5">"Tuesday Reels outperform by 340% — 3 follow-up hooks drafted."</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-orchid-400/10 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-orchid-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg></div>
+              <div><span class="text-white text-xs font-medium">90-Day Calendar</span><p class="text-white/25 text-[11px] mt-0.5">AI fills your calendar in seconds. Approve or let Ory handle it.</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-mint-400/10 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-mint-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd"/></svg></div>
+              <div><span class="text-white text-xs font-medium">Brand Brain</span><p class="text-white/25 text-[11px] mt-0.5">The longer you use Ory, the more it sounds exactly like you.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mock dashboard -->
+        <div class="reveal" style="transition-delay:0.15s">
+          <div class="liquid-glass refract-edge p-5 animate-pulse-glow">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2"><div class="ory-pulse" style="width:7px;height:7px"></div><span class="text-white text-xs font-medium">Ory Social Hub</span></div>
+              <div class="flex gap-1.5">
+                <span class="text-[9px] bg-indigo-400/10 text-indigo-400 px-2 py-0.5 rounded-md flex items-center gap-1"><div class="hub-dot bg-gradient-to-r from-pink-500 to-purple-500" style="width:4px;height:4px"></div>IG</span>
+                <span class="text-[9px] bg-orchid-400/10 text-orchid-400 px-2 py-0.5 rounded-md flex items-center gap-1"><div class="hub-dot bg-black" style="width:4px;height:4px"></div>TT</span>
+                <span class="text-[9px] bg-white/5 text-white/35 px-2 py-0.5 rounded-md flex items-center gap-1"><div class="hub-dot bg-blue-500" style="width:4px;height:4px"></div>LI</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-2.5 mb-4">
+              <div class="bg-white/[0.02] rounded-xl p-2.5 text-center"><div class="text-base font-bold text-white">24.3K</div><div class="text-[9px] text-white/25">Followers</div><div class="text-[9px] text-mint-400">+12.4%</div></div>
+              <div class="bg-white/[0.02] rounded-xl p-2.5 text-center"><div class="text-base font-bold text-white">8.7%</div><div class="text-[9px] text-white/25">Engagement</div><div class="text-[9px] text-mint-400">+3.2%</div></div>
+              <div class="bg-white/[0.02] rounded-xl p-2.5 text-center"><div class="text-base font-bold text-white">147</div><div class="text-[9px] text-white/25">Scheduled</div><div class="text-[9px] text-indigo-400">90 days</div></div>
+            </div>
+            <div class="bg-indigo-400/5 border border-indigo-400/10 rounded-xl p-3.5">
+              <div class="flex items-center gap-2 mb-1.5"><div class="ory-pulse" style="width:5px;height:5px"></div><span class="text-[10px] text-indigo-400 font-medium">Ory says</span></div>
+              <p class="text-white/50 text-[11px] leading-relaxed" id="hub-typing">"Your '5 productivity myths' carousel crushed it — 340% above average. I've drafted 3 follow-up hooks for Tuesday 9am."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SOCIAL PROOF — Compact -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="relative py-16 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-xl font-bold text-white mb-2">Real creators. Real growth. Zero ad spend.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="testimonial-card p-6 reveal" style="transition-delay:0.05s">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center text-white text-xs font-bold">S</div>
+            <div><div class="text-white text-xs font-medium">Sarah M.</div><div class="text-white/20 text-[10px]">Fitness &middot; 23K followers</div></div>
+            <div class="ml-auto text-mint-400 text-[10px] font-semibold">4.2K &rarr; 23K</div>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed">"From 4 hours a day to 15 minutes. Ory <em class="text-indigo-400/60">thinks</em> about what to post. Engagement tripled in 6 weeks."</p>
+        </div>
+        <div class="testimonial-card p-6 reveal" style="transition-delay:0.1s">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-orchid-400 to-rose-400 flex items-center justify-center text-white text-xs font-bold">M</div>
+            <div><div class="text-white text-xs font-medium">Marcus T.</div><div class="text-white/20 text-[10px]">SaaS founder &middot; 35K</div></div>
+            <div class="ml-auto text-mint-400 text-[10px] font-semibold">8K &rarr; 35K</div>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed">"Brand Brain is scary good. After two weeks, Ory's captions sounded more like me than my own drafts."</p>
+        </div>
+        <div class="testimonial-card p-6 reveal" style="transition-delay:0.15s">
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-mint-400 to-indigo-400 flex items-center justify-center text-white text-xs font-bold">A</div>
+            <div><div class="text-white text-xs font-medium">Amira K.</div><div class="text-white/20 text-[10px]">Travel &middot; 18K</div></div>
+            <div class="ml-auto text-mint-400 text-[10px] font-semibold">6K &rarr; 18K</div>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed">"90 days of content ready. I approve from my phone. Like having a social media team in my pocket."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- PRICING -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="pricing" class="relative py-20 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="text-center mb-10 reveal">
+        <span class="text-indigo-400 text-xs font-medium tracking-widest uppercase mb-3 block">Honest pricing</span>
+        <h2 class="text-section text-white mb-3">Pick your organism tier</h2>
+        <p class="text-sub text-white/35 max-w-md mx-auto">
+          Full AI included. No hidden costs. <span class="text-indigo-400 font-medium">Founders lock prices forever.</span>
+        </p>
+      </div>
+
+      <!-- Urgency bar -->
+      <div class="max-w-sm mx-auto mb-10 reveal">
+        <div class="liquid-glass founding-badge px-5 py-3 text-center" style="border-radius:14px">
+          <div class="flex items-center justify-center gap-2">
+            <div class="ory-pulse" style="width:7px;height:7px"></div>
+            <span class="text-white font-semibold text-sm">Only <span id="spots-pricing" class="text-indigo-400">200</span> founding spots</span>
+          </div>
+          <p class="text-white/25 text-[10px] mt-1">When gone, prices go up permanently.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        <!-- Starter -->
+        <div class="liquid-glass refract-edge p-7 reveal flex flex-col" style="transition-delay:0.05s">
+          <h3 class="text-white font-semibold text-base mb-0.5">Starter</h3>
+          <p class="text-white/25 text-[10px] mb-4">Solo creators</p>
+          <div class="mb-5">
+            <div class="flex items-baseline gap-1"><span class="text-3xl font-bold text-white">£9</span><span class="text-white/25 text-sm">/mo</span></div>
+            <div class="text-xs text-indigo-400 mt-1">Founding: £7/mo forever</div>
+          </div>
+          <ul class="space-y-2.5 mb-6 flex-1 text-xs text-white/45">
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>1 platform</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>30 posts/month</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>AI Chat Box</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Analytics</li>
+          </ul>
+          <button onclick="checkout('starter')" class="block w-full text-center liquid-glass text-white/70 font-medium text-sm py-2.5 hover:bg-white/[0.04] transition-all cursor-pointer" style="border-radius:12px">Get Starter</button>
+          <div class="guarantee-badge mx-auto mt-3"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>14-day guarantee</div>
+        </div>
+
+        <!-- Growth (POPULAR) -->
+        <div class="price-popular liquid-glass refract-edge p-7 reveal flex flex-col relative" style="transition-delay:0.1s">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2"><span class="cta-shimmer text-white text-[9px] font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</span></div>
+          <div class="flex items-center gap-2 mb-0.5">
+            <h3 class="text-white font-semibold text-base">Growth</h3>
+            <span class="text-[9px] text-indigo-400/60 bg-indigo-400/10 px-2 py-0.5 rounded-full">Ory recommends</span>
+          </div>
+          <p class="text-white/25 text-[10px] mb-4">Serious creators & businesses</p>
+          <div class="mb-5">
+            <div class="flex items-baseline gap-1"><span class="text-3xl font-bold text-white">£19</span><span class="text-white/25 text-sm">/mo</span></div>
+            <div class="text-xs text-indigo-400 mt-1">Founding: £15/mo forever</div>
+          </div>
+          <ul class="space-y-2.5 mb-6 flex-1 text-xs text-white/45">
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><strong class="text-white/60">2 platforms</strong></li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><strong class="text-white/60">90 posts/month</strong></li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Chat + Content agents</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Brand Brain</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>90-day AI calendar</li>
+          </ul>
+          <button onclick="checkout('growth')" class="block w-full text-center cta-shimmer text-white font-semibold text-sm py-2.5 rounded-xl hover:opacity-90 transition-all cursor-pointer">Lock Growth forever</button>
+          <div class="guarantee-badge mx-auto mt-3"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>14-day guarantee</div>
+        </div>
+
+        <!-- Pro -->
+        <div class="liquid-glass refract-edge p-7 reveal flex flex-col" style="transition-delay:0.15s">
+          <h3 class="text-white font-semibold text-base mb-0.5">Pro</h3>
+          <p class="text-white/25 text-[10px] mb-4">Teams & agencies</p>
+          <div class="mb-5">
+            <div class="flex items-baseline gap-1"><span class="text-3xl font-bold text-white">£49</span><span class="text-white/25 text-sm">/mo</span></div>
+            <div class="text-xs text-indigo-400 mt-1">Founding: £39/mo forever</div>
+          </div>
+          <ul class="space-y-2.5 mb-6 flex-1 text-xs text-white/45">
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><strong class="text-white/60">All 6 platforms</strong></li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><strong class="text-white/60">Unlimited posts</strong></li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>All 3 AI agents</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Competitor Spy</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>White-label (no watermark)</li>
+            <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-mint-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Priority support</li>
+          </ul>
+          <button onclick="checkout('pro')" class="block w-full text-center liquid-glass text-white/70 font-medium text-sm py-2.5 hover:bg-white/[0.04] transition-all cursor-pointer" style="border-radius:12px">Lock Pro forever</button>
+          <div class="guarantee-badge mx-auto mt-3"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>14-day guarantee</div>
+        </div>
+      </div>
+
+      <p class="text-center text-white/18 text-[10px] mt-6 reveal">Cancel anytime. Founding price stays locked even if you pause and return.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FAQ — Compact -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="faq" class="relative py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-xl font-bold text-white">Questions? We got you.</h2>
+      </div>
+      <div class="space-y-2.5">
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">How does Ory actually post to my accounts?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">Ory connects through Publer, trusted by 100K+ creators. Rock-solid scheduling across Instagram, TikTok, LinkedIn, Pinterest, X, and Facebook. Direct API connections are being built for even deeper integration.</p></div>
+        </div>
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px;transition-delay:0.03s">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">Do I need a separate AI subscription?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">Nope! Ory includes its own AI brain. Your plan covers all generation, chat, and analysis. No ChatGPT or Claude subscription needed.</p></div>
+        </div>
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px;transition-delay:0.06s">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">What does "founding price locked forever" mean?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">The first 200 people pay a lower price that never goes up — even as features multiply and prices rise. Pause and return? Still locked. Ory keeps getting smarter. Your price stays frozen.</p></div>
+        </div>
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px;transition-delay:0.09s">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">What's the "Made with Ory" watermark?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">Starter and Growth plans show a tiny "Made with Ory" tag on AI-generated content. It's a flex — shows you use smart tools, and drives organic discovery. Pro users can remove it.</p></div>
+        </div>
+        <div class="faq-item liquid-glass reveal" style="border-radius:14px;transition-delay:0.12s">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-4 text-left">
+            <span class="text-white text-sm font-medium pr-4">What if I want to cancel?</span>
+            <svg class="faq-arrow w-4 h-4 text-white/25 transition-transform flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer hidden px-4 pb-4"><p class="text-white/35 text-xs leading-relaxed">One click. No emails, no guilt trips. Data stays for 30 days. Come back later? Founding price still locked.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FINAL CTA -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="relative py-20 px-4">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <div class="inline-flex items-center gap-2 founding-badge px-4 py-2 rounded-full mb-6">
+        <div class="ory-pulse" style="width:7px;height:7px"></div>
+        <span class="text-sm text-indigo-300 font-medium"><span id="spots-footer" class="text-white font-bold">200</span> founding spots remaining</span>
+      </div>
+      <h2 class="text-section text-white mb-3">Your social media deserves<br/>an organism, not another tool.</h2>
+      <p class="text-sub text-white/35 max-w-md mx-auto mb-7">Lock your founding price today. Ory is already learning.</p>
+      <a href="#pricing" class="inline-block cta-shimmer text-white font-semibold text-base px-10 py-4 rounded-full hover:opacity-90 transition-all hover:scale-[1.02]">Lock my founding price forever</a>
+      <div class="guarantee-badge mx-auto mt-4"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>14-day money-back guarantee &middot; AI included &middot; No credit card to browse</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/[0.03] py-8 px-4">
+    <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2"><div class="ory-pulse" style="width:7px;height:7px"></div><span class="text-white/35 text-sm">TaskNext<span class="text-indigo-400/50">.AI</span></span><span class="text-white/12 text-xs">&copy; 2026</span></div>
+      <div class="flex items-center gap-5 text-[11px] text-white/20">
+        <a href="/privacy.html" class="hover:text-white/40 transition-colors">Privacy</a>
+        <a href="/terms.html" class="hover:text-white/40 transition-colors">Terms</a>
+        <a href="mailto:hello@tasknextai.one" class="hover:text-white/40 transition-colors">hello@tasknextai.one</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FLOATING SHARE BUTTON -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="floating-share" class="floating-share">
+    <button onclick="document.getElementById('viral').scrollIntoView({behavior:'smooth'})" class="cta-shimmer text-white font-semibold text-sm px-5 py-3 rounded-full flex items-center gap-2 shadow-lg shadow-indigo-500/20 hover:scale-105 transition-transform">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/></svg>
+      Share your Ory story
+    </button>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SCRIPTS -->
+  <!-- ═══════════════════════════════════════ -->
+  <script>
+    /* ═══════════════════════════════════════════════════════════════
+       STRIPE PAYMENT LINKS — paste your 3 links below then push
+       Create at: https://dashboard.stripe.com/payment-links → + New
+       ═══════════════════════════════════════════════════════════════ */
+    const STRIPE_CONFIG = {
+      starter: 'PASTE_STARTER_PAYMENT_LINK_HERE',   // Founding £7/mo → Starter
+      growth:  'PASTE_GROWTH_PAYMENT_LINK_HERE',    // Founding £15/mo → Growth  ← highlighted card
+      pro:     'PASTE_PRO_PAYMENT_LINK_HERE',       // Founding £39/mo → Pro
+    };
+
+    function checkout(plan) {
+      const url = STRIPE_CONFIG[plan];
+      if (!url || url.startsWith('PASTE_')) {
+        alert('Payment coming soon — join the waitlist at hello@tasknextai.one');
+        return;
+      }
+      window.location.href = url;
+    }
+
+    // === SCROLL REVEAL (throttled) ===
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // === HERO TYPEWRITER ===
+    const subtitle = document.getElementById('hero-subtitle');
+    const subtitleText = 'Then Ory arrived.';
+    let charIdx = 0;
+    function typeHero() {
+      if (charIdx <= subtitleText.length) {
+        subtitle.textContent = subtitleText.slice(0, charIdx);
+        charIdx++;
+        setTimeout(typeHero, charIdx === 1 ? 600 : 70);
+      }
+    }
+    setTimeout(typeHero, 800);
+
+    // === FLOATING SHARE BUTTON ===
+    const floatingShare = document.getElementById('floating-share');
+    let lastScrollY = 0;
+    const heroHeight = window.innerHeight;
+    window.addEventListener('scroll', () => {
+      // Show floating share after hero
+      if (window.scrollY > heroHeight * 0.7) {
+        floatingShare.classList.add('visible');
+      } else {
+        floatingShare.classList.remove('visible');
+      }
+      // Nav shrink
+      const nav = document.getElementById('main-nav');
+      nav.style.padding = window.scrollY > 80 ? '0.35rem 1rem' : '0.75rem 1rem';
+    }, { passive: true });
+
+    // === FAQ ===
+    function toggleFAQ(btn) {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const arrow = item.querySelector('.faq-arrow');
+      const isOpen = !answer.classList.contains('hidden');
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-arrow').forEach(a => a.style.transform = '');
+      if (!isOpen) { answer.classList.remove('hidden'); arrow.style.transform = 'rotate(180deg)'; }
+    }
+
+    // === IQ CARD GENERATOR (with thinking + confetti) ===
+    const oryMessages = [
+      '"Your organism is evolving fast. Keep feeding it!" — Ory',
+      '"You\'re in the top tier. Most creators never get here." — Ory',
+      '"I\'m getting smarter because of you. Let\'s keep going." — Ory',
+      '"Your content game? Chef\'s kiss. Seriously." — Ory',
+      '"The algorithm loves you right now. Let\'s ride this wave." — Ory',
+      '"You\'re growing faster than 97% of creators I\'ve seen." — Ory',
+    ];
+
+    function generateIQCard() {
+      const handle = document.getElementById('iq-input').value.trim().replace('@','');
+      if (!handle) { document.getElementById('iq-input').focus(); return; }
+
+      // Show thinking state
+      document.getElementById('iq-btn-text').classList.add('hidden');
+      document.getElementById('iq-thinking').classList.remove('hidden');
+
+      setTimeout(() => {
+        // Update card
+        document.getElementById('iq-handle').textContent = handle;
+        const score = Math.floor(Math.random() * 200) + 780;
+        document.getElementById('iq-score').textContent = score;
+        const rank = score > 900 ? 'Top 1%' : score > 850 ? 'Top 3%' : 'Top 5%';
+        document.getElementById('iq-rank').textContent = rank + ' of creators';
+        document.getElementById('iq-posts').textContent = (Math.floor(Math.random() * 3000) + 800).toLocaleString();
+        document.getElementById('iq-growth').textContent = '+' + (Math.floor(Math.random() * 400) + 120) + '%';
+        document.getElementById('iq-streak').textContent = (Math.floor(Math.random() * 120) + 30) + ' days';
+        document.getElementById('iq-message').textContent = oryMessages[Math.floor(Math.random() * oryMessages.length)];
+
+        // Animate score
+        const scoreEl = document.getElementById('iq-score');
+        scoreEl.style.transform = 'scale(1.25)';
+        setTimeout(() => { scoreEl.style.transform = 'scale(1)'; }, 300);
+
+        // Reset button
+        document.getElementById('iq-btn-text').classList.remove('hidden');
+        document.getElementById('iq-thinking').classList.add('hidden');
+        document.getElementById('iq-btn-text').textContent = 'Regenerate';
+
+        // Confetti burst
+        spawnConfetti();
+      }, 1200);
+    }
+
+    function spawnConfetti() {
+      const container = document.getElementById('confetti-container');
+      container.innerHTML = '';
+      const colors = ['#818CF8','#C084FC','#34D399','#FB7185','#FBBF24','#60A5FA'];
+      for (let i = 0; i < 24; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.top = Math.random() * 40 + '%';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 0.4 + 's';
+        piece.style.animationDuration = (0.8 + Math.random() * 0.8) + 's';
+        piece.style.width = (4 + Math.random() * 6) + 'px';
+        piece.style.height = (4 + Math.random() * 6) + 'px';
+        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        container.appendChild(piece);
+      }
+      setTimeout(() => { container.innerHTML = ''; }, 2000);
+    }
+
+    function shareIQCard() {
+      const handle = document.getElementById('iq-handle').textContent;
+      const score = document.getElementById('iq-score').textContent;
+      const text = 'My Organism IQ is ' + score + '! \uD83E\uDDEC ' + document.getElementById('iq-rank').textContent + '.\n\nFind out yours \u2192 tasknextai.one\n\n#TaskNextAI #OryIQ #AICreator @' + handle;
+      if (navigator.share) {
+        navigator.share({ title: 'My Ory IQ Score', text: text, url: 'https://tasknextai.one' });
+      } else {
+        navigator.clipboard.writeText(text);
+        showCopied(event.target.closest('button'));
+      }
+    }
+
+    function copyIQText() {
+      const score = document.getElementById('iq-score').textContent;
+      const text = 'My Organism IQ is ' + score + '! \uD83E\uDDEC Find yours at tasknextai.one #TaskNextAI #OryIQ';
+      navigator.clipboard.writeText(text);
+      showCopied(event.target.closest('button'));
+    }
+
+    function copyRef(btn) {
+      navigator.clipboard.writeText('https://tasknextai.one/ref/your-code');
+      showCopied(btn);
+    }
+
+    function showCopied(btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<svg class="w-4 h-4 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> Copied!';
+      setTimeout(() => { btn.innerHTML = orig; }, 1800);
+    }
+
+    // === SPOTS ===
+    ['spots-nav','spots-pricing','spots-footer'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = '200';
+    });
+
+    // === PARALLAX ORBS (requestAnimationFrame) ===
+    let mouseX = 0, mouseY = 0, orbX = 0, orbY = 0;
+    document.addEventListener('mousemove', e => { mouseX = (e.clientX / window.innerWidth - 0.5) * 16; mouseY = (e.clientY / window.innerHeight - 0.5) * 16; }, { passive: true });
+    const orbs = document.querySelectorAll('.orb');
+    function animateOrbs() {
+      orbX += (mouseX - orbX) * 0.04;
+      orbY += (mouseY - orbY) * 0.04;
+      orbs.forEach((orb, i) => {
+        const f = (i + 1) * 0.6;
+        orb.style.transform = 'translate(' + (orbX * f) + 'px,' + (orbY * f) + 'px)';
+      });
+      requestAnimationFrame(animateOrbs);
+    }
+    animateOrbs();
+
+    // === ENTER KEY ===
+    document.getElementById('iq-input').addEventListener('keypress', e => { if (e.key === 'Enter') generateIQCard(); });
+  </script>
+
+</body>
+</html>

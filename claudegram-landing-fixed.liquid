@@ -1,0 +1,848 @@
+﻿{% comment %} TaskNext.AI / ClaudeGram Pro — Landing Section v2 — 2026-03-26 {% endcomment %}
+
+<style>
+/* ═══ SHOPIFY SCOPE OVERRIDES ═══ */
+body,html{background:#050507!important;}
+main,#MainContent,.main-content,.shopify-section-group--header-group+*{background:#050507!important;}
+.shopify-section{background:transparent!important;}
+/* Force dark on entire page canvas */
+body::before{content:'';position:fixed;inset:0;background:#050507;z-index:-1;pointer-events:none;}
+
+/* ═══ RESET & BASE ═══ */
+#cgp{font-family:'Inter',system-ui,sans-serif;background:#050507;color:#F1F5F9;line-height:1.6;overflow-x:hidden;padding-bottom:72px}
+#cgp *{box-sizing:border-box;margin:0;padding:0}
+#cgp a{text-decoration:none}
+
+/* ═══ UTILITIES ═══ */
+#cgp .c{max-width:1100px;margin:0 auto;padding:0 24px}
+#cgp .gt{background:linear-gradient(135deg,#818CF8 0%,#C084FC 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#cgp .pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+#cgp .pi{background:rgba(129,140,248,.12);color:#818CF8;border:1px solid rgba(129,140,248,.25)}
+#cgp .pg{background:rgba(16,185,129,.12);color:#10B981;border:1px solid rgba(16,185,129,.25)}
+#cgp .pp{background:rgba(192,132,252,.12);color:#C084FC;border:1px solid rgba(192,132,252,.25)}
+#cgp .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:12px;font-weight:700;font-size:14px;border:none;cursor:pointer;transition:all .25s;letter-spacing:-.01em;font-family:inherit}
+#cgp .bp{background:#818CF8;color:#050507;box-shadow:0 0 32px rgba(129,140,248,.35)}
+#cgp .bp:hover{background:#9BA3FF;box-shadow:0 0 56px rgba(129,140,248,.55);transform:translateY(-1px);color:#050507}
+#cgp .bgh{background:transparent;color:#818CF8;border:1px solid rgba(129,140,248,.4)}
+#cgp .bgh:hover{background:rgba(129,140,248,.08);border-color:#818CF8;color:#818CF8}
+
+/* ═══ SCROLL REVEAL ═══ */
+#cgp .r{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+#cgp .r.v{opacity:1;transform:none}
+#cgp .rl{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
+#cgp .rl.v{opacity:1;transform:none}
+#cgp .rr{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease}
+#cgp .rr.v{opacity:1;transform:none}
+
+/* ═══ LIVE DOT ═══ */
+#cgp .ldot{width:7px;height:7px;border-radius:50%;background:#10B981;display:inline-block;animation:cgp-pulse 1.4s infinite}
+@keyframes cgp-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+@keyframes cgp-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes cgp-glow{0%,100%{box-shadow:0 0 30px rgba(129,140,248,.2)}50%{box-shadow:0 0 60px rgba(129,140,248,.45)}}
+
+/* ═══ HERO ═══ */
+#cgp .hero{padding:80px 0 64px;text-align:center;position:relative;overflow:hidden;background:#050507}
+#cgp .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(ellipse,rgba(129,140,248,.14) 0%,transparent 70%);pointer-events:none}
+#cgp .hero::after{content:'';position:absolute;top:60px;right:5%;width:400px;height:400px;background:radial-gradient(ellipse,rgba(192,132,252,.08) 0%,transparent 70%);pointer-events:none;animation:cgp-float 7s ease-in-out infinite}
+#cgp .hero .c{position:relative;z-index:1}
+#cgp .hero h1{font-size:clamp(38px,6vw,78px);font-weight:900;letter-spacing:-.05em;line-height:1.1;margin:16px 0 16px}
+#cgp .hero-sub{font-size:17px;color:#94A3B8;max-width:620px;margin:0 auto 32px;line-height:1.7}
+#cgp .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+#cgp .hstats{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+#cgp .hs-num{font-size:26px;font-weight:900;letter-spacing:-.03em;background:linear-gradient(135deg,#818CF8,#C084FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#cgp .hs-lbl{font-size:11px;color:#475569;font-weight:500;margin-top:2px;text-align:center}
+#cgp .lb{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);font-size:12px;font-weight:700;color:#10B981;margin-bottom:10px}
+
+/* ═══ APP WINDOW ═══ */
+#cgp .aw{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 40px 120px rgba(0,0,0,.8),0 0 60px rgba(129,140,248,.15);background:#0E0E1A}
+#cgp .atb{background:#1A1A2E;padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0}
+#cgp .atb-dots{display:flex;gap:5px}
+#cgp .atb-dot{width:10px;height:10px;border-radius:50%}
+#cgp .atb-t{color:#475569;font-size:11px;font-weight:500;margin-left:8px}
+#cgp .app-lay{display:grid;grid-template-columns:170px 1fr;min-height:420px}
+#cgp .app-sb{background:#0D0D1A;border-right:1px solid rgba(255,255,255,.05);padding:14px 0}
+#cgp .sb-logo{padding:0 14px 14px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:10px;font-size:12px;font-weight:900;background:linear-gradient(135deg,#818CF8,#C084FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#cgp .si{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:11px;font-weight:500;color:#64748B;cursor:pointer;transition:all .2s}
+#cgp .si:hover,#cgp .si.a{background:rgba(129,140,248,.08);color:#818CF8}
+#cgp .si.a{border-left:2px solid #818CF8;padding-left:12px}
+#cgp .si-ic{font-size:13px;width:15px;text-align:center}
+#cgp .app-con{padding:18px;overflow:hidden;background:#0E0E1A}
+
+/* ═══ METRICS ═══ */
+#cgp .mrow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px}
+#cgp .mc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:11px;padding:13px;position:relative;overflow:hidden}
+#cgp .mc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#818CF8,#C084FC)}
+#cgp .ml{font-size:9px;color:#475569;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+#cgp .mv{font-size:20px;font-weight:900;color:#F1F5F9;letter-spacing:-.03em;line-height:1}
+#cgp .mch{font-size:10px;font-weight:600;margin-top:3px}
+#cgp .up{color:#10B981}#cgp .dn{color:#EF4444}#cgp .nu{color:#64748B}
+#cgp .mchart{height:36px;display:flex;align-items:flex-end;gap:2px;margin-top:7px}
+#cgp .mb{flex:1;background:rgba(129,140,248,.2);border-radius:2px 2px 0 0}
+
+/* ═══ SECTION LAYOUT ═══ */
+#cgp .sec{padding:100px 0;background:#050507}
+#cgp .sec-alt{background:linear-gradient(180deg,rgba(129,140,248,.03) 0%,#050507 100%)}
+#cgp .sec-alt2{background:linear-gradient(180deg,rgba(192,132,252,.03) 0%,#050507 100%)}
+#cgp .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+#cgp .split.rev{direction:rtl}
+#cgp .split.rev>*{direction:ltr}
+#cgp .sh2{font-size:clamp(28px,4vw,46px);font-weight:900;letter-spacing:-.04em;line-height:1.15;margin-bottom:14px}
+#cgp .sd{font-size:15px;color:#94A3B8;line-height:1.7;margin-bottom:24px}
+#cgp .fbs{display:flex;flex-direction:column;gap:10px}
+#cgp .fb{display:flex;align-items:flex-start;gap:11px;padding:13px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:11px}
+#cgp .fb-ic{width:30px;height:30px;border-radius:8px;background:rgba(129,140,248,.12);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+#cgp .fb-tt{font-size:13px;font-weight:700;color:#F1F5F9;margin-bottom:2px}
+#cgp .fb-tx{font-size:12px;color:#94A3B8;line-height:1.5}
+
+/* ═══ PROOF BAR ═══ */
+#cgp .proof{padding:40px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.01)}
+#cgp .prow{display:flex;gap:44px;align-items:center;justify-content:center;flex-wrap:wrap}
+#cgp .pn{font-size:30px;font-weight:900;letter-spacing:-.04em;background:linear-gradient(135deg,#818CF8,#C084FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#cgp .pl{font-size:11px;color:#475569;font-weight:500;margin-top:2px;text-align:center}
+
+/* ═══ AGENT CARDS ═══ */
+#cgp .agrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+#cgp .acard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:11px;padding:13px}
+#cgp .ah{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+#cgp .an{font-size:12px;font-weight:700;color:#E2E8F0}
+#cgp .ascore{font-size:15px;font-weight:900;color:#818CF8;letter-spacing:-.03em}
+#cgp .ala{font-size:10px;color:#64748B;margin-top:5px;padding-top:5px;border-top:1px solid rgba(255,255,255,.05)}
+#cgp .asr{display:flex;align-items:center;justify-content:space-between;margin-top:7px}
+#cgp .adot{width:6px;height:6px;border-radius:50%;background:#10B981;animation:cgp-pulse 1.4s infinite;flex-shrink:0}
+#cgp .ast{font-size:9px;color:#475569}
+#cgp .atk{font-size:9px;color:#818CF8;font-weight:600}
+
+/* ═══ CHART ═══ */
+#cgp .ca{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:11px;padding:14px;margin-bottom:11px}
+#cgp .ct{font-size:10px;font-weight:600;color:#94A3B8;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+#cgp .lc{height:72px;position:relative;overflow:hidden}
+#cgp .lc svg{width:100%;height:100%}
+
+/* ═══ HASHTAG TABLE ═══ */
+#cgp .ht{width:100%;border-collapse:collapse;font-size:10px}
+#cgp .ht th{text-align:left;color:#475569;font-weight:600;padding:5px 7px;border-bottom:1px solid rgba(255,255,255,.05)}
+#cgp .ht td{padding:5px 7px;color:#94A3B8;border-bottom:1px solid rgba(255,255,255,.03)}
+#cgp .ht td:first-child{color:#818CF8;font-weight:600}
+#cgp .th{background:rgba(239,68,68,.12);color:#EF4444;border:1px solid rgba(239,68,68,.25);border-radius:4px;padding:1px 5px;font-size:8px;font-weight:700}
+#cgp .tm{background:rgba(245,158,11,.1);color:#F59E0B;border:1px solid rgba(245,158,11,.25);border-radius:4px;padding:1px 5px;font-size:8px;font-weight:700}
+#cgp .tl{background:rgba(16,185,129,.1);color:#10B981;border:1px solid rgba(16,185,129,.25);border-radius:4px;padding:1px 5px;font-size:8px;font-weight:700}
+
+/* ═══ COACH ═══ */
+#cgp .csc{width:64px;height:64px;border-radius:50%;border:3px solid #818CF8;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(129,140,248,.3);flex-shrink:0}
+#cgp .cmg{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:11px}
+#cgp .cm{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:9px;padding:9px;text-align:center}
+#cgp .cmv{font-size:15px;font-weight:900;color:#F1F5F9;line-height:1}
+#cgp .cmc{font-size:9px;font-weight:700;margin-top:2px}
+#cgp .cml{font-size:9px;color:#475569;margin-top:2px}
+
+/* ═══ CALENDAR ═══ */
+#cgp .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:7px}
+#cgp .ch{font-size:8px;color:#475569;text-align:center;padding:3px;font-weight:600}
+#cgp .cd{aspect-ratio:1;border-radius:5px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;font-size:9px;color:#64748B;position:relative;cursor:pointer;transition:all .2s}
+#cgp .cd:hover{background:rgba(129,140,248,.08);border-color:rgba(129,140,248,.3)}
+#cgp .cd.td{background:rgba(129,140,248,.15);border-color:rgba(129,140,248,.4);color:#818CF8;font-weight:700}
+#cgp .cd.hp::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:3px;height:3px;border-radius:50%;background:#818CF8}
+#cgp .cd.hpm::after{background:linear-gradient(135deg,#818CF8,#C084FC)}
+
+/* ═══ AUTOMATION ═══ */
+#cgp .ah3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:11px}
+#cgp .hc{border-radius:9px;padding:11px;text-align:center}
+#cgp .hc.hy{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2)}
+#cgp .hc.hup{background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.2)}
+#cgp .hc.hd{background:rgba(100,116,139,.05);border:1px solid rgba(100,116,139,.12)}
+#cgp .hn{font-size:24px;font-weight:900;line-height:1}
+#cgp .hc.hy .hn{color:#10B981}
+#cgp .hc.hup .hn{color:#F59E0B}
+#cgp .hc.hd .hn{color:#475569}
+#cgp .hcl{font-size:9px;color:#64748B;margin-top:3px;line-height:1.3}
+#cgp .tr{display:flex;align-items:center;gap:7px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:10px}
+#cgp .tr:last-child{border:none}
+#cgp .ti{width:18px;height:18px;border-radius:5px;background:rgba(16,185,129,.12);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
+#cgp .tn{color:#CBD5E1;font-weight:600;flex:1}
+#cgp .ta{background:rgba(129,140,248,.1);color:#818CF8;border-radius:4px;padding:1px 5px;font-size:8px;font-weight:700}
+#cgp .tt{color:#475569;font-size:8px}
+
+/* ═══ PRICING ═══ */
+#cgp .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:740px;margin:0 auto}
+#cgp .pc{border-radius:20px;padding:32px;position:relative;overflow:hidden}
+#cgp .pc.found{background:rgba(129,140,248,.06);border:2px solid rgba(129,140,248,.35)}
+#cgp .pc.reg{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
+#cgp .pb{position:absolute;top:14px;right:14px;background:#818CF8;color:#050507;padding:3px 9px;border-radius:20px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+#cgp .pp2{font-size:44px;font-weight:900;letter-spacing:-.05em;line-height:1;margin:14px 0 3px;background:linear-gradient(135deg,#818CF8,#C084FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#cgp .pp2 sub{font-size:14px;font-weight:500;-webkit-text-fill-color:#64748B;background:none}
+#cgp .pf{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:9px}
+#cgp .pf li{display:flex;align-items:center;gap:7px;font-size:13px;color:#CBD5E1}
+#cgp .pf li::before{content:'✓';color:#10B981;font-weight:900;font-size:11px;flex-shrink:0}
+
+/* ═══ TESTIMONIALS ═══ */
+#cgp .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+#cgp .tc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:15px;padding:22px;transition:border-color .2s;position:relative}
+#cgp .tc:hover{border-color:rgba(129,140,248,.25)}
+#cgp .ts{color:#F59E0B;font-size:13px;margin-bottom:12px}
+#cgp .tt2{color:#CBD5E1;font-size:13px;line-height:1.7;margin-bottom:18px}
+#cgp .tauth{display:flex;align-items:center;gap:9px}
+#cgp .tav{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#818CF8,#C084FC);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0}
+#cgp .tnm{font-size:12px;font-weight:700;color:#E2E8F0}
+#cgp .thdl{font-size:10px;color:#475569}
+#cgp .tgr{position:absolute;top:14px;right:14px;background:rgba(16,185,129,.12);color:#10B981;border:1px solid rgba(16,185,129,.25);border-radius:5px;padding:2px 7px;font-size:9px;font-weight:700}
+
+/* ═══ FAQ ═══ */
+#cgp .fi{border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
+#cgp .fq{padding:18px 0;font-size:14px;font-weight:600;color:#E2E8F0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none}
+#cgp .fq:hover{color:#818CF8}
+#cgp .fic{font-size:17px;color:#818CF8;flex-shrink:0;transition:transform .3s}
+#cgp .fa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+#cgp .fa.open{max-height:280px;padding-bottom:18px}
+#cgp .fa p{color:#94A3B8;font-size:13px;line-height:1.7}
+
+/* ═══ CTA FINAL ═══ */
+#cgp .cta-f{border-radius:22px;padding:72px 48px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(129,140,248,.1) 0%,rgba(192,132,252,.08) 100%);border:1px solid rgba(129,140,248,.2)}
+#cgp .cta-f::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(129,140,248,.15) 0%,transparent 70%);pointer-events:none}
+#cgp .cta-f h2{font-size:clamp(28px,4vw,50px);font-weight:900;letter-spacing:-.04em;margin-bottom:14px;position:relative}
+
+/* ═══ FOOTER ═══ */
+#cgp .ftr{border-top:1px solid rgba(255,255,255,.06);padding:52px 0 28px;background:#050507}
+#cgp .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+#cgp .fbt{color:#475569;font-size:13px;line-height:1.7;margin-top:10px;max-width:260px}
+#cgp .fc h4{font-size:11px;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+#cgp .fc a{display:block;color:#64748B;font-size:13px;margin-bottom:9px;transition:color .2s}
+#cgp .fc a:hover{color:#818CF8}
+#cgp .fb2{display:flex;align-items:center;justify-content:space-between;padding-top:22px;border-top:1px solid rgba(255,255,255,.04);font-size:12px;color:#334155}
+
+/* ═══ STICKY BAR ═══ */
+#cgp-sticky{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(5,5,7,.96);backdrop-filter:blur(16px);border-top:1px solid rgba(129,140,248,.2);padding:11px 22px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;font-family:'Inter',system-ui,sans-serif}
+#cgp-sticky .sl{display:flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:#10B981}
+#cgp-sticky .st{font-size:13px;color:#94A3B8;font-weight:500}
+#cgp-sticky .st strong{color:#F1F5F9}
+#cgp-sticky .sc{padding:8px 18px;border-radius:9px;background:#818CF8;color:#050507;font-weight:700;font-size:13px;text-decoration:none;transition:all .2s;font-family:inherit}
+#cgp-sticky .sc:hover{background:#9BA3FF;color:#050507}
+
+/* ═══ MULTI-ACCOUNT SECTION ═══ */
+#cgp .acc-tabs{display:flex;gap:7px;margin-bottom:14px;overflow-x:auto;padding-bottom:3px}
+#cgp .acc-tab{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:5px 11px;font-size:10px;color:#64748B;white-space:nowrap;flex-shrink:0}
+#cgp .acc-tab.active{background:rgba(129,140,248,.14);border-color:rgba(129,140,248,.4);color:#818CF8;font-weight:700}
+#cgp .acc-stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:13px}
+#cgp .acc-stat{border-radius:9px;padding:10px;text-align:center}
+#cgp .acc-num{font-size:17px;font-weight:900;color:#F1F5F9;line-height:1;margin:3px 0}
+#cgp .acc-chg{font-size:9px;color:#10B981;font-weight:600}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  #cgp .split,#cgp .split.rev{grid-template-columns:1fr!important;direction:ltr!important}
+  #cgp .app-lay{grid-template-columns:1fr}
+  #cgp .app-sb{display:none}
+  #cgp .tgrid{grid-template-columns:1fr}
+  #cgp .pgrid{grid-template-columns:1fr}
+  #cgp .fg{grid-template-columns:1fr 1fr}
+  #cgp .acc-stat-grid{grid-template-columns:repeat(3,1fr)}
+  #cgp .hstats{gap:20px}
+}
+@media(max-width:600px){
+  #cgp .mrow{grid-template-columns:1fr 1fr}
+  #cgp .fg{grid-template-columns:1fr}
+  #cgp .agrid{grid-template-columns:1fr}
+  #cgp .cmg{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ═══ GOOGLE TRANSLATE WIDGET ═══ */
+#cgp-tr-wrap{position:fixed;top:82px;right:14px;z-index:9997;font-family:'Inter',sans-serif}
+#cgp-tr-wrap .goog-te-gadget-simple{
+  background:rgba(14,14,26,.92)!important;
+  border:1px solid rgba(129,140,248,.35)!important;
+  border-radius:10px!important;
+  padding:5px 10px!important;
+  cursor:pointer!important;
+  backdrop-filter:blur(12px)!important;
+  transition:border-color .2s!important;
+}
+#cgp-tr-wrap .goog-te-gadget-simple:hover{border-color:#818CF8!important}
+#cgp-tr-wrap .goog-te-gadget-simple .goog-te-menu-value{color:#818CF8!important}
+#cgp-tr-wrap .goog-te-gadget-simple .goog-te-menu-value span{color:#818CF8!important;font-size:12px!important;font-family:'Inter',sans-serif!important;font-weight:600!important}
+#cgp-tr-wrap .goog-te-gadget-simple img{display:none!important}
+/* Hide the annoying Google Translate top banner */
+.goog-te-banner-frame.skiptranslate{display:none!important}
+iframe.goog-te-banner-frame{display:none!important}
+body.translated-ltr{margin-top:0!important;top:0!important}
+body.translated-rtl{margin-top:0!important;top:0!important}
+/* Globe icon label */
+#cgp-tr-wrap::before{
+  content:'🌐';
+  position:absolute;left:-22px;top:50%;transform:translateY(-50%);
+  font-size:14px;pointer-events:none;opacity:.7
+}
+
+/* === BUILT-IN AI POWER === */
+#cgp .bip{padding:80px 0;text-align:center}
+#cgp .bip-title{font-size:clamp(28px,4vw,48px);font-weight:900;color:#F1F5F9;margin-bottom:16px;letter-spacing:-.03em}
+#cgp .bip-sub{font-size:17px;color:#94A3B8;max-width:600px;margin:0 auto 48px;line-height:1.6}
+#cgp .bip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto 40px}
+@media(max-width:640px){#cgp .bip-grid{grid-template-columns:1fr}}
+#cgp .bip-card{background:rgba(129,140,248,.06);border:1px solid rgba(129,140,248,.15);border-radius:16px;padding:32px;text-align:left}
+#cgp .bip-card h3{font-size:20px;font-weight:700;color:#818CF8;margin-bottom:8px}
+#cgp .bip-card p{font-size:15px;color:#94A3B8;line-height:1.6}
+#cgp .bip-card img{width:100%;border-radius:12px;margin-bottom:16px;border:1px solid rgba(129,140,248,.1)}
+#cgp .bip-local{background:linear-gradient(135deg,rgba(129,140,248,.1),rgba(16,185,129,.1));border:1px solid rgba(16,185,129,.2);border-radius:16px;padding:24px 32px;max-width:900px;margin:0 auto;text-align:center}
+#cgp .bip-local p{font-size:17px;font-weight:600;color:#10B981;margin:0}
+/* === PRIVACY LOCAL === */
+#cgp .prv{padding:80px 0;text-align:center}
+#cgp .prv-title{font-size:clamp(28px,4vw,48px);font-weight:900;color:#F1F5F9;margin-bottom:16px;letter-spacing:-.03em}
+#cgp .prv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:32px auto 0}
+@media(max-width:640px){#cgp .prv-grid{grid-template-columns:1fr}}
+#cgp .prv-card{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:16px;padding:32px;text-align:left}
+#cgp .prv-card h3{font-size:18px;font-weight:700;color:#10B981;margin-bottom:8px}
+#cgp .prv-card p{font-size:15px;color:#94A3B8;line-height:1.6}
+
+</style>
+
+<div id="cgp">
+
+<!-- ─── TRANSLATE WIDGET ─────────────── -->
+<div id="cgp-tr-wrap">
+  <div id="google_translate_element"></div>
+</div>
+
+<!-- ─── HERO ─────────────────────────── -->
+<section class="hero">
+  <div class="c">
+    <div class="r">
+      <div class="lb"><span class="ldot"></span> LIVE — V9 Running</div>
+    </div>
+    <div class="r">
+      <h1><span class="gt">Your Complete AI Social Media Team</span><br><span style="color:#F1F5F9">Powered by <span class="gt">Claude AI.</span></span><br><span style="color:#F1F5F9">Built to Scale.</span></h1>
+      <p class="hero-sub">AI content generation, real-time intelligence, image creation, and 6-platform scheduling. All built-in. Cloud-powered. Zero setup required.</p>
+    </div>
+    <div class="hero-ctas r">
+      <a href="/pages/pricing" class="btn bp" style="font-size:15px;padding:15px 32px">Start Automating — From £17/mo →</a>
+      <a href="#cgp-agents" class="btn bgh" style="font-size:15px;padding:15px 32px">See AI Agents</a>
+    </div>
+    <div class="hstats r">
+      <div><div class="hs-num">100%</div><div class="hs-lbl">AI-Powered</div></div>
+      <div><div class="hs-num">6</div><div class="hs-lbl">Platforms</div></div>
+      <div><div class="hs-num">Built-In</div><div class="hs-lbl">AI Studio</div></div>
+      <div><div class="hs-num">0%</div><div class="hs-lbl">Manual Work</div></div>
+      <div><div class="hs-num">private</div><div class="hs-lbl">Your Data</div></div>
+    </div>
+    <!-- Hero Dashboard Preview -->
+    <div class="r" style="max-width:860px;margin:0 auto;animation:cgp-glow 4s ease-in-out infinite">
+      <div class="aw">
+        <div class="atb">
+          <div class="atb-dots"><div class="atb-dot" style="background:#FF5F56"></div><div class="atb-dot" style="background:#FFBD2E"></div><div class="atb-dot" style="background:#27C93F"></div></div>
+          <div class="atb-t">TaskNext.AI — Dashboard · 3 accounts · 12,847 followers</div>
+        </div>
+        <div class="app-lay">
+          <div class="app-sb">
+            <div class="sb-logo">TaskNext.AI</div>
+            <div class="si a"><span class="si-ic">⊞</span>Dashboard</div>
+            <div class="si"><span class="si-ic">✏️</span>Content Studio</div>
+            <div class="si"><span class="si-ic">📈</span>Growth Center</div>
+            <div class="si"><span class="si-ic">🤖</span>Agent Panel</div>
+            <div class="si"><span class="si-ic">🎯</span>Perf. Coach</div>
+            <div class="si"><span class="si-ic">⚡</span>Automation</div>
+            <div class="si"><span class="si-ic">📊</span>Analytics</div>
+          </div>
+          <div class="app-con">
+            <div style="font-size:10px;color:#475569;margin-bottom:11px;font-weight:600">ALL ACCOUNTS — COMBINED DASHBOARD</div>
+            <div class="mrow">
+              <div class="mc"><div class="ml">Combined Followers</div><div class="mv">12,847</div><div class="mch up">↑ +0.8% vs last week</div><div class="mchart"><div class="mb" style="height:40%"></div><div class="mb" style="height:50%"></div><div class="mb" style="height:55%"></div><div class="mb" style="height:65%"></div><div class="mb" style="height:70%"></div><div class="mb" style="height:78%"></div><div class="mb" style="height:82%"></div><div class="mb" style="height:88%"></div><div class="mb" style="height:94%"></div><div class="mb" style="height:100%;background:rgba(129,140,248,.5)"></div></div></div>
+              <div class="mc"><div class="ml">Engagement Rate</div><div class="mv">3.2%</div><div class="mch up">↑ +0.3% vs last week</div><div class="mchart"><div class="mb" style="height:45%"></div><div class="mb" style="height:50%"></div><div class="mb" style="height:55%"></div><div class="mb" style="height:62%"></div><div class="mb" style="height:65%"></div><div class="mb" style="height:74%"></div><div class="mb" style="height:78%"></div><div class="mb" style="height:84%"></div><div class="mb" style="height:90%"></div><div class="mb" style="height:100%;background:rgba(192,132,252,.5)"></div></div></div>
+              <div class="mc"><div class="ml">Health Score</div><div class="mv" style="color:#10B981">94</div><div class="mch up">↑ +2.3% vs last week</div><div class="mchart"><div class="mb" style="height:70%;background:rgba(16,185,129,.2)"></div><div class="mb" style="height:74%;background:rgba(16,185,129,.2)"></div><div class="mb" style="height:78%;background:rgba(16,185,129,.2)"></div><div class="mb" style="height:83%;background:rgba(16,185,129,.2)"></div><div class="mb" style="height:87%;background:rgba(16,185,129,.2)"></div><div class="mb" style="height:90%;background:rgba(16,185,129,.3)"></div><div class="mb" style="height:93%;background:rgba(16,185,129,.3)"></div><div class="mb" style="height:96%;background:rgba(16,185,129,.4)"></div><div class="mb" style="height:98%;background:rgba(16,185,129,.4)"></div><div class="mb" style="height:100%;background:rgba(16,185,129,.6)"></div></div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+              <div class="ca">
+                <div class="ct">FOLLOWER GROWTH (30 DAYS)</div>
+                <div class="lc"><svg viewBox="0 0 300 65" preserveAspectRatio="none"><defs><linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#818CF8" stop-opacity=".3"/><stop offset="100%" stop-color="#818CF8" stop-opacity="0"/></linearGradient></defs><path d="M0,50 C40,46 70,38 110,28 C140,20 170,14 200,9 C230,4 260,3 300,1 L300,65 L0,65 Z" fill="url(#cg1)"/><path d="M0,50 C40,46 70,38 110,28 C140,20 170,14 200,9 C230,4 260,3 300,1" fill="none" stroke="#818CF8" stroke-width="2"/><circle cx="300" cy="1" r="3" fill="#818CF8"/></svg></div>
+              </div>
+              <div style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:11px;padding:12px">
+                <div style="font-size:9px;color:#475569;font-weight:600;margin-bottom:9px;text-transform:uppercase;letter-spacing:.05em">⚡ AGENT STATUS</div>
+                <div style="display:flex;flex-direction:column;gap:5px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;font-size:9px"><span style="display:flex;align-items:center;gap:4px"><span style="color:#818CF8">●</span><span style="color:#CBD5E1">Caption Agent</span></span><span style="color:#475569;font-weight:600">IDLE</span></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;font-size:9px"><span style="display:flex;align-items:center;gap:4px"><span style="color:#10B981">●</span><span style="color:#CBD5E1">Safety Guardian</span></span><span style="color:#475569;font-weight:600">IDLE</span></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;font-size:9px"><span style="display:flex;align-items:center;gap:4px"><span style="color:#C084FC">●</span><span style="color:#CBD5E1">Imagine Agent</span></span><span style="color:#475569;font-weight:600">IDLE</span></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;font-size:9px"><span style="display:flex;align-items:center;gap:4px"><span style="color:#06B6D4">●</span><span style="color:#CBD5E1">Growth Engine</span></span><span style="color:#475569;font-weight:600">IDLE</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof">
+  <div class="c">
+    <div class="prow r">
+      <div><div class="pn">4K→35K</div><div class="pl">Growth in 8 weeks</div></div>
+      <div><div class="pn">£2,753</div><div class="pl">Avg saved vs agency</div></div>
+      <div><div class="pn">100%</div><div class="pl">Agent success rate</div></div>
+      <div><div class="pn">38</div><div class="pl">Live automations</div></div>
+      <div><div class="pn">35</div><div class="pl">Languages supported</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- BUILT-IN AI POWER -->
+<div class="c bip">
+  <div class="r">
+    <h2 class="bip-title">Everything <span class="gt">Built-In.</span> Nothing Bolted On.</h2>
+    <p class="bip-sub">No plugins. No add-ons. No third-party tools. Every AI feature runs inside TaskNext.AI, powered by Claude Sonnet AI.</p>
+    <div class="bip-grid">
+      <div class="bip-card">
+        <img src="https://placehold.co/800x500/1a0a2e/8b5cf6?text=AI+Content+Studio" alt="AI Content Studio" loading="lazy">
+        <h3>AI Content Studio</h3>
+        <p>Generate captions, carousels, and strategies powered by Claude Sonnet. Built into every screen. Token-aware.</p>
+      </div>
+      <div class="bip-card">
+        <img src="https://placehold.co/800x500/1a0a2e/8b5cf6?text=AI+Highlight" alt="AI Highlight" loading="lazy">
+        <h3>AI Highlight</h3>
+        <p>Select any text. Get instant analysis, summaries, expansions. Right inside the app.</p>
+      </div>
+      <div class="bip-card">
+        <img src="https://placehold.co/800x500/1a0a2e/818CF8?text=Real-Time+Search" alt="Real-Time Search" loading="lazy">
+        <h3>Real-Time Intelligence</h3>
+        <p>Live web search with citations. Know what is trending before you post. Sources verified.</p>
+      </div>
+      <div class="bip-card">
+        <img src="https://placehold.co/800x500/1a0a2e/C084FC?text=AI+Image+Gen" alt="AI Image Generation" loading="lazy">
+        <h3>AI Image Generation</h3>
+        <p>Create stunning visuals from text prompts. No Canva. No Midjourney. Just type.</p>
+      </div>
+    </div>
+    <div class="bip-local">
+      <p>AI-powered cloud engine. Zero setup required. Your credentials stay in your control.</p>
+    </div>
+  </div>
+</div>
+
+<!-- YOUR DATA YOUR MACHINE -->
+<div class="c prv">
+  <div class="r">
+    <h2 class="prv-title">Your Credentials. Our AI Engine. <span style="color:#10B981">Always.</span></h2>
+    <div class="prv-grid">
+      <div class="prv-card">
+        <h3>Fully Local Processing</h3>
+        <p>TaskNext.AI's AI engine runs in a secure cloud layer — your social content is processed by Claude Sonnet with no third-party storage. Fast, private, reliable.</p>
+      </div>
+      <div class="prv-card">
+        <h3>Your Keys Stay Yours</h3>
+        <p>Your API keys and social account credentials are yours alone. TaskNext.AI connects your accounts without storing your passwords. You stay in full control.</p>
+      </div>
+      <div class="prv-card">
+        <h3>Enterprise-Grade Privacy</h3>
+        <p>Enterprise-grade privacy without the enterprise price. One subscription. Everything included. All-in-one.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── AGENTS ──────────────────────── -->
+<section class="sec sec-alt" id="cgp-agents">
+  <div class="c">
+    <div class="split">
+      <div class="rl">
+        <span class="pill pi">AI Agents</span>
+        <h2 class="sh2">9 agents. Running 24/7. <span class="gt">Zero manual work.</span></h2>
+        <p class="sd">Every agent specialises in one job and executes it perfectly. Caption writing, image generation, audience growth, safety monitoring — all running simultaneously.</p>
+        <div class="fbs">
+          <div class="fb"><div class="fb-ic">✍️</div><div><div class="fb-tt">Caption Agent — Score 96</div><div class="fb-tx">Crafts scroll-stopping captions. CTAs that convert 2.4× better on average.</div></div></div>
+          <div class="fb"><div class="fb-ic">🛡️</div><div><div class="fb-tt">Safety Guardian — Score 100</div><div class="fb-tx">Monitors rate limits, detects suspicious patterns, auto-pauses before Instagram flags you.</div></div></div>
+          <div class="fb"><div class="fb-ic">🖼️</div><div><div class="fb-tt">Imagine Agent — Score 94</div><div class="fb-tx">Generates branded image variations and carousel covers with consistent visual identity.</div></div></div>
+          <div class="fb"><div class="fb-ic">📈</div><div><div class="fb-tt">Growth Engine — Score 88</div><div class="fb-tx">Smart follow cycles. 8× better retention than mass-follow. Zero spam risk.</div></div></div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="aw">
+          <div class="atb"><div class="atb-dots"><div class="atb-dot" style="background:#FF5F56"></div><div class="atb-dot" style="background:#FFBD2E"></div><div class="atb-dot" style="background:#27C93F"></div></div><div class="atb-t">Agent Panel</div></div>
+          <div style="padding:14px;background:#0E0E1A">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:12px">
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:9px;text-align:center"><div style="font-size:8px;color:#475569;font-weight:600;text-transform:uppercase">Actions</div><div style="font-size:20px;font-weight:900;color:#818CF8;margin-top:3px;line-height:1">9</div></div>
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:9px;text-align:center"><div style="font-size:8px;color:#475569;font-weight:600;text-transform:uppercase">Success</div><div style="font-size:20px;font-weight:900;color:#10B981;margin-top:3px;line-height:1">100%</div></div>
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:9px;text-align:center"><div style="font-size:8px;color:#475569;font-weight:600;text-transform:uppercase">Avg Score</div><div style="font-size:20px;font-weight:900;color:#C084FC;margin-top:3px;line-height:1">94</div></div>
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:9px;text-align:center"><div style="font-size:8px;color:#475569;font-weight:600;text-transform:uppercase">Agents</div><div style="font-size:20px;font-weight:900;color:#F1F5F9;margin-top:3px;line-height:1">9</div></div>
+            </div>
+            <div class="agrid">
+              <div class="acard"><div class="ah"><div><div class="an">Caption Agent</div><span style="background:rgba(16,185,129,.1);color:#10B981;border-radius:3px;padding:1px 5px;font-size:8px;font-weight:700">FREE</span></div><div style="text-align:right"><div class="ascore">96</div><div style="font-size:7px;color:#475569">/100</div></div></div><div class="ala">Generated 3 captions for luxury account</div><div class="asr"><div style="display:flex;align-items:center;gap:3px"><div class="adot"></div><span class="ast">IDLE · 10:30 AM</span></div><span class="atk">3.4K tokens</span></div></div>
+              <div class="acard"><div class="ah"><div><div class="an">Safety Guardian</div><span style="background:rgba(16,185,129,.1);color:#10B981;border-radius:3px;padding:1px 5px;font-size:8px;font-weight:700">FREE</span></div><div style="text-align:right"><div class="ascore">100</div><div style="font-size:7px;color:#475569">/100</div></div></div><div class="ala">Verified rate limits — all healthy</div><div class="asr"><div style="display:flex;align-items:center;gap:3px"><div class="adot"></div><span class="ast">IDLE · 12:00 PM</span></div><span class="atk">456 tokens</span></div></div>
+              <div class="acard"><div class="ah"><div><div class="an">Imagine Agent</div><span style="background:rgba(245,158,11,.1);color:#F59E0B;border-radius:3px;padding:1px 5px;font-size:8px;font-weight:700">TRIAL</span></div><div style="text-align:right"><div class="ascore">94</div><div style="font-size:7px;color:#475569">/100</div></div></div><div class="ala">Generated 5 image variations</div><div class="asr"><div style="display:flex;align-items:center;gap:3px"><div class="adot"></div><span class="ast">IDLE · 11:45 AM</span></div><span class="atk">2.8K tokens</span></div></div>
+              <div class="acard"><div class="ah"><div><div class="an">Growth Engine</div><span style="background:rgba(245,158,11,.1);color:#F59E0B;border-radius:3px;padding:1px 5px;font-size:8px;font-weight:700">TRIAL</span></div><div style="text-align:right"><div class="ascore">88</div><div style="font-size:7px;color:#475569">/100</div></div></div><div class="ala">Followed 45 users in target niche</div><div class="asr"><div style="display:flex;align-items:center;gap:3px"><div class="adot"></div><span class="ast">IDLE · 09:15 AM</span></div><span class="atk">1.2K tokens</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GROWTH CENTER ─────────────── -->
+<section class="sec">
+  <div class="c">
+    <div class="split rev">
+      <div class="rl">
+        <div class="aw">
+          <div class="atb"><div class="atb-dots"><div class="atb-dot" style="background:#FF5F56"></div><div class="atb-dot" style="background:#FFBD2E"></div><div class="atb-dot" style="background:#27C93F"></div></div><div class="atb-t">Growth Center</div></div>
+          <div style="padding:14px;background:#0E0E1A">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:12px">
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:11px;text-align:center"><div style="font-size:8px;color:#475569;font-weight:600;text-transform:uppercase">New Followers</div><div style="font-size:22px;font-weight:900;color:#10B981;margin-top:3px">+146</div><div style="font-size:8px;color:#475569">this week</div></div>
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:11px;text-align:center"><div style="font-size:8px;color:#475569;font-weight:600;text-transform:uppercase">Engagement</div><div style="font-size:22px;font-weight:900;color:#818CF8;margin-top:3px">1.3%</div><div style="font-size:8px;color:#475569">rate</div></div>
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:11px;text-align:center"><div style="font-size:8px;color:#475569;font-weight:600;text-transform:uppercase">Follow-Back</div><div style="font-size:22px;font-weight:900;color:#C084FC;margin-top:3px">34.2%</div><div style="font-size:8px;color:#475569">est. rate</div></div>
+            </div>
+            <div class="ca"><div class="ct">GROWTH TRAJECTORY (30 DAYS)</div><div class="lc"><svg viewBox="0 0 400 72" preserveAspectRatio="none"><defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#06B6D4" stop-opacity=".3"/><stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/></linearGradient></defs><path d="M0,58 C40,52 80,42 120,32 C160,22 200,14 250,8 C290,4 340,2 400,0 L400,72 L0,72 Z" fill="url(#cg2)"/><path d="M0,58 C40,52 80,42 120,32 C160,22 200,14 250,8 C290,4 340,2 400,0" fill="none" stroke="#06B6D4" stroke-width="2"/></svg></div></div>
+            <div style="font-size:9px;color:#475569;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px"># TOP HASHTAGS</div>
+            <table class="ht"><thead><tr><th>HASHTAG</th><th>VOLUME</th><th>ENG.</th><th>COMP.</th></tr></thead><tbody><tr><td>#luxurylifestyle</td><td style="color:#94A3B8">8.5M</td><td>3.2%</td><td><span class="th">HIGH</span></td></tr><tr><td>#aitools</td><td style="color:#94A3B8">2.1M</td><td style="color:#10B981;font-weight:700">5.8%</td><td><span class="tm">MED</span></td></tr><tr><td>#worldfacts</td><td style="color:#94A3B8">950K</td><td style="color:#10B981;font-weight:700">6.1%</td><td><span class="tl">LOW</span></td></tr><tr><td>#wealthmindset</td><td style="color:#94A3B8">1.2M</td><td>4.5%</td><td><span class="tm">MED</span></td></tr></tbody></table>
+          </div>
+        </div>
+      </div>
+      <div class="rr">
+        <span class="pill pg">Growth Center</span>
+        <h2 class="sh2">+146 new followers <span class="gt">this week alone.</span> Zero manual effort.</h2>
+        <p class="sd">The Growth Engine identifies high-value accounts in your niche, executes smart follow cycles, and analyses exactly which hashtags are driving your growth — with zero spam risk.</p>
+        <div class="fbs">
+          <div class="fb"><div class="fb-ic">🎯</div><div><div class="fb-tt">Smart Targeting</div><div class="fb-tx">8× better retention vs mass-following. Only genuine niche accounts.</div></div></div>
+          <div class="fb"><div class="fb-ic">#️⃣</div><div><div class="fb-tt">Hashtag ROI Tracker</div><div class="fb-tx">#aitools hits 5.8% engagement. See exactly what's driving reach.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PERFORMANCE COACH ──────────── -->
+<section class="sec sec-alt2" id="cgp-coach">
+  <div class="c">
+    <div class="split">
+      <div class="rl">
+        <span class="pill pp">Performance Coach</span>
+        <h2 class="sh2">Your personal <span class="gt">Instagram strategist</span> — always on.</h2>
+        <p class="sd">The Performance Coach analyses every metric that matters — save rate, DM share, watch time, content velocity — and tells you exactly what to fix.</p>
+        <div class="fbs">
+          <div class="fb"><div class="fb-ic">💾</div><div><div class="fb-tt">Save Rate +23% this week</div><div class="fb-tx">Add CTAs like "Save this for later" to 3 upcoming posts — boosts saves by 2.4×.</div></div></div>
+          <div class="fb"><div class="fb-ic">🎬</div><div><div class="fb-tt">Reel Watch Time Alert</div><div class="fb-tx">Watch time dropped 12%. Trim videos under 30s — completion rates jump immediately.</div></div></div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="aw">
+          <div class="atb"><div class="atb-dots"><div class="atb-dot" style="background:#FF5F56"></div><div class="atb-dot" style="background:#FFBD2E"></div><div class="atb-dot" style="background:#27C93F"></div></div><div class="atb-t">Performance Coach · Agent 14</div></div>
+          <div style="padding:14px;background:#0E0E1A">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:11px">
+              <div class="csc"><div style="font-size:20px;font-weight:900;color:#818CF8;line-height:1">8</div><div style="font-size:8px;color:#475569">/ 10</div></div>
+              <div><div style="font-size:12px;font-weight:700;color:#F1F5F9">This Week's Score</div><div style="font-size:9px;color:#10B981;font-weight:600">+1 from last week</div><div style="font-size:10px;color:#94A3B8;margin-top:3px">Saves up 23% · Reel watch time dropped → fix</div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:11px">
+              <div style="background:rgba(129,140,248,.06);border:1px solid rgba(129,140,248,.15);border-radius:9px;padding:9px"><div style="display:flex;gap:5px;align-items:center;margin-bottom:3px"><span style="font-size:8px;background:rgba(129,140,248,.2);color:#818CF8;border-radius:3px;padding:1px 5px;font-weight:700">CONTENT</span><span style="font-size:8px;color:#64748B">@dailyluxury6 · 2 hours ago</span></div><div style="font-size:10px;color:#CBD5E1">Strong save rate on top-performing content. Duplicate this format.</div></div>
+              <div style="background:rgba(6,182,212,.05);border:1px solid rgba(6,182,212,.15);border-radius:9px;padding:9px"><div style="display:flex;gap:5px;align-items:center;margin-bottom:3px"><span style="font-size:8px;background:rgba(6,182,212,.15);color:#06B6D4;border-radius:3px;padding:1px 5px;font-weight:700">TIMING</span><span style="font-size:8px;color:#64748B">4 hours ago</span></div><div style="font-size:10px;color:#CBD5E1">Tuesday posts performing best. Schedule high-priority content Tue/Thu.</div></div>
+            </div>
+            <div class="cmg">
+              <div class="cm"><div class="cmv">8.4%</div><div class="cmc up">↑ +23%</div><div class="cml">Save Rate</div></div>
+              <div class="cm"><div class="cmv">2.1%</div><div class="cmc up">↑ +8%</div><div class="cml">DM Share</div></div>
+              <div class="cm"><div class="cmv">14.2%</div><div class="cmc dn">↓ -5%</div><div class="cml">→Follow</div></div>
+              <div class="cm"><div class="cmv">18.3s</div><div class="cmc dn">↓ -12%</div><div class="cml">Watch Time</div></div>
+              <div class="cm"><div class="cmv">7.8</div><div class="cmc up">↑ +4%</div><div class="cml">Flw Quality</div></div>
+              <div class="cm"><div class="cmv">42m</div><div class="cmc up">↑ +15%</div><div class="cml">Velocity</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTENT STUDIO + AUTOMATION ── -->
+<section class="sec sec-alt">
+  <div class="c">
+    <div class="r" style="text-align:center;margin-bottom:56px">
+      <span class="pill pp">Two More Powerhouses</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-.04em;margin-bottom:10px">Create. Schedule. <span class="gt">Automate Everything.</span></h2>
+      <p style="color:#94A3B8;font-size:16px;max-width:520px;margin:0 auto">Content Studio handles your calendar. Automation runs 38 background tasks. Together — your account never sleeps.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+      <div class="rl">
+        <div class="aw">
+          <div class="atb"><div class="atb-dots"><div class="atb-dot" style="background:#FF5F56"></div><div class="atb-dot" style="background:#FFBD2E"></div><div class="atb-dot" style="background:#27C93F"></div></div><div class="atb-t">Content Studio — March 2026</div></div>
+          <div style="padding:14px;background:#0E0E1A">
+            <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">
+              <div style="background:rgba(225,48,108,.1);border:1px solid rgba(225,48,108,.2);border-radius:6px;padding:3px 9px;font-size:9px;color:#E1306C;font-weight:700">📷 Instagram</div>
+              <div style="border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:3px 9px;font-size:9px;color:#475569">TikTok</div>
+              <div style="border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:3px 9px;font-size:9px;color:#475569">YouTube</div>
+              <div style="border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:3px 9px;font-size:9px;color:#475569">LinkedIn</div>
+              <div style="border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:3px 9px;font-size:9px;color:#475569">+ X</div>
+            </div>
+            <div class="cal">
+              <div class="ch">SUN</div><div class="ch">MON</div><div class="ch">TUE</div><div class="ch">WED</div><div class="ch">THU</div><div class="ch">FRI</div><div class="ch">SAT</div>
+              <div class="cd"></div><div class="cd"></div><div class="cd"></div><div class="cd"></div><div class="cd"></div><div class="cd hp">6</div><div class="cd">7</div>
+              <div class="cd hp">8</div><div class="cd">9</div><div class="cd hpm">10</div><div class="cd">11</div><div class="cd hp">12</div><div class="cd hpm">13</div><div class="cd">14</div>
+              <div class="cd">15</div><div class="cd hp">16</div><div class="cd hpm">17</div><div class="cd">18</div><div class="cd hp">19</div><div class="cd">20</div><div class="cd">21</div>
+              <div class="cd">22</div><div class="cd">23</div><div class="cd">24</div><div class="cd">25</div><div class="cd td">26</div><div class="cd hp">27</div><div class="cd">28</div>
+            </div>
+            <div style="margin-top:10px;padding:9px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:9px">
+              <div style="font-size:9px;color:#475569;font-weight:600;margin-bottom:5px">CREATE POST</div>
+              <div style="display:flex;gap:5px;margin-bottom:7px"><div style="background:rgba(129,140,248,.15);color:#818CF8;border-radius:5px;padding:2px 8px;font-size:9px;font-weight:700;border:1px solid rgba(129,140,248,.3)">🖼️ Image</div><div style="color:#475569;border-radius:5px;padding:2px 8px;font-size:9px;border:1px solid rgba(255,255,255,.06)">Carousel</div><div style="color:#475569;border-radius:5px;padding:2px 8px;font-size:9px;border:1px solid rgba(255,255,255,.06)">Reel</div></div>
+              <div style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:7px;font-size:9px;color:#475569">Write caption here... <span style="color:#818CF8">✨ AI Generate</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="aw">
+          <div class="atb"><div class="atb-dots"><div class="atb-dot" style="background:#FF5F56"></div><div class="atb-dot" style="background:#FFBD2E"></div><div class="atb-dot" style="background:#27C93F"></div></div><div class="atb-t">Automation — 38 Active Tasks</div></div>
+          <div style="padding:14px;background:#0E0E1A">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:10px">
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:7px;text-align:center"><div style="font-size:15px;font-weight:900;color:#818CF8">38</div><div style="font-size:8px;color:#475569">Total Active</div></div>
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:7px;text-align:center"><div style="font-size:15px;font-weight:900;color:#F1F5F9">17</div><div style="font-size:8px;color:#475569">Acc. 1</div></div>
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:7px;text-align:center"><div style="font-size:15px;font-weight:900;color:#F1F5F9">16</div><div style="font-size:8px;color:#475569">Acc. 2</div></div>
+              <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:7px;text-align:center"><div style="font-size:15px;font-weight:900;color:#F1F5F9">5</div><div style="font-size:8px;color:#475569">Other</div></div>
+            </div>
+            <div class="ah3">
+              <div class="hc hy"><div class="hn">38</div><div style="font-size:8px;color:#10B981;font-weight:700;margin-top:2px">● HEALTHY</div><div class="hcl">No errors in 24h</div></div>
+              <div class="hc hup"><div class="hn">24</div><div style="font-size:8px;color:#F59E0B;font-weight:700;margin-top:2px">⏳ UPCOMING</div><div class="hcl">Within next hour</div></div>
+              <div class="hc hd"><div class="hn">0</div><div style="font-size:8px;color:#475569;font-weight:700;margin-top:2px">○ DISABLED</div><div class="hcl">All active</div></div>
+            </div>
+            <div style="font-size:9px;color:#475569;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px">RECENT EXECUTIONS</div>
+            <div class="tr"><div class="ti">✅</div><div class="tn">Story/Reel Engagement</div><span class="ta">acc_2</span><span class="tt">07:02</span></div>
+            <div class="tr"><div class="ti">✅</div><div class="tn">Content Production</div><span class="ta">acc_3</span><span class="tt">06:09</span></div>
+            <div class="tr"><div class="ti">✅</div><div class="tn">Weekly GCS Backup</div><span class="ta" style="background:rgba(192,132,252,.1);color:#C084FC">sys</span><span class="tt">02:08</span></div>
+            <div class="tr"><div class="ti">✅</div><div class="tn">Organic Growth</div><span class="ta">acc_1</span><span class="tt">Mar 21</span></div>
+            <div class="tr"><div class="ti">✅</div><div class="tn">Evening Recap</div><span class="ta">acc_2</span><span class="tt">Mar 21</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MULTI-ACCOUNT ──────────────── -->
+<section class="sec" id="cgp-accounts" style="background:linear-gradient(180deg,rgba(129,140,248,.05) 0%,rgba(192,132,252,.03) 50%,#050507 100%)">
+  <div class="c">
+    <div class="r" style="text-align:center;margin-bottom:52px">
+      <span class="pill pp">Built for Scale</span>
+      <h2 style="font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-.04em;margin-bottom:14px">Run <span class="gt">10+ accounts</span><br>like you're running one.</h2>
+      <p style="color:#94A3B8;font-size:16px;max-width:560px;margin:0 auto">One dashboard, unified analytics, separate automations per account. Agencies, creators and brands all use TaskNext.AI as their single operating brain.</p>
+    </div>
+    <div class="r" style="max-width:860px;margin:0 auto 44px">
+      <div class="aw">
+        <div class="atb"><div class="atb-dots"><div class="atb-dot" style="background:#FF5F56"></div><div class="atb-dot" style="background:#FFBD2E"></div><div class="atb-dot" style="background:#27C93F"></div></div><div class="atb-t">TaskNext.AI — All Accounts · 10 accounts · 184,200 total followers</div></div>
+        <div style="padding:16px;background:#0E0E1A">
+          <div class="acc-tabs"><div class="acc-tab active">All Accounts ▾</div><div class="acc-tab">@dailyluxury6</div><div class="acc-tab">@theaicode_</div><div class="acc-tab">@1000worldfacts</div><div class="acc-tab">@brandname4</div><div class="acc-tab">@client5</div><div class="acc-tab">+ 5 more →</div></div>
+          <div class="acc-stat-grid">
+            <div class="acc-stat" style="background:rgba(129,140,248,.06);border:1px solid rgba(129,140,248,.2);border-radius:9px"><div style="font-size:8px;color:#818CF8;font-weight:700">@dailyluxury6</div><div class="acc-num">47.2K</div><div class="acc-chg">↑ +312 wk</div></div>
+            <div class="acc-stat" style="background:rgba(6,182,212,.05);border:1px solid rgba(6,182,212,.15);border-radius:9px"><div style="font-size:8px;color:#06B6D4;font-weight:700">@theaicode_</div><div class="acc-num">38.9K</div><div class="acc-chg">↑ +218 wk</div></div>
+            <div class="acc-stat" style="background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.15);border-radius:9px"><div style="font-size:8px;color:#10B981;font-weight:700">@1000worldfacts</div><div class="acc-num">29.1K</div><div class="acc-chg">↑ +146 wk</div></div>
+            <div class="acc-stat" style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.12);border-radius:9px"><div style="font-size:8px;color:#F59E0B;font-weight:700">@brandname4</div><div class="acc-num">22.4K</div><div class="acc-chg">↑ +94 wk</div></div>
+            <div class="acc-stat" style="background:rgba(192,132,252,.05);border:1px solid rgba(192,132,252,.15);border-radius:9px"><div style="font-size:8px;color:#C084FC;font-weight:700">@client5</div><div class="acc-num">19.8K</div><div class="acc-chg">↑ +87 wk</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:9px">
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:11px;text-align:center"><div style="font-size:9px;color:#475569;font-weight:600;text-transform:uppercase;margin-bottom:3px">Total Followers</div><div style="font-size:22px;font-weight:900;background:linear-gradient(135deg,#818CF8,#C084FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2">184.2K</div><div style="font-size:9px;color:#10B981;font-weight:600;margin-top:2px">↑ +857 this week</div></div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:11px;text-align:center"><div style="font-size:9px;color:#475569;font-weight:600;text-transform:uppercase;margin-bottom:3px">Avg Engagement</div><div style="font-size:22px;font-weight:900;color:#818CF8;line-height:1.2">2.8%</div><div style="font-size:9px;color:#10B981;font-weight:600;margin-top:2px">↑ +0.2%</div></div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:11px;text-align:center"><div style="font-size:9px;color:#475569;font-weight:600;text-transform:uppercase;margin-bottom:3px">Active Automations</div><div style="font-size:22px;font-weight:900;color:#10B981;line-height:1.2">147</div><div style="font-size:9px;color:#475569;margin-top:2px">across all accounts</div></div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:11px;text-align:center"><div style="font-size:9px;color:#475569;font-weight:600;text-transform:uppercase;margin-bottom:3px">Combined Health</div><div style="font-size:22px;font-weight:900;color:#10B981;line-height:1.2">97</div><div style="font-size:9px;color:#10B981;font-weight:600;margin-top:2px">All healthy</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px" class="r">
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:15px;padding:26px"><div style="font-size:28px;margin-bottom:10px">🏢</div><div style="font-size:15px;font-weight:800;color:#F1F5F9;margin-bottom:7px">Agency Mode</div><div style="font-size:13px;color:#94A3B8;line-height:1.6">Manage 10+ client accounts from one dashboard. Separate automations, unified billing. Went from 3 clients to 11 in 6 months.</div></div>
+      <div style="background:rgba(129,140,248,.06);border:1px solid rgba(129,140,248,.2);border-radius:15px;padding:26px"><div style="font-size:28px;margin-bottom:10px">🎭</div><div style="font-size:15px;font-weight:800;color:#F1F5F9;margin-bottom:7px">Multiple Niches</div><div style="font-size:13px;color:#94A3B8;line-height:1.6">Run a luxury account, AI tips page, and facts account simultaneously. Each gets its own AI voice and growth strategy.</div></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:15px;padding:26px"><div style="font-size:28px;margin-bottom:10px">⚡</div><div style="font-size:15px;font-weight:800;color:#F1F5F9;margin-bottom:7px">One Subscription</div><div style="font-size:13px;color:#94A3B8;line-height:1.6">No per-account fees. £197/yr covers 1 account or 15. Competitors charge £30–50 per account.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ────────────────────── -->
+<section class="sec sec-alt2" id="cgp-pricing">
+  <div class="c">
+    <div class="r" style="text-align:center;margin-bottom:48px">
+      <span class="pill pi">Pricing</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-.04em;margin-bottom:10px">One brain. <span class="gt">One price.</span><br>All platforms.</h2>
+      <p style="color:#94A3B8;font-size:16px;max-width:480px;margin:0 auto">No per-channel fees. No seat limits. The founding rate is locked forever.</p>
+      <div id="cgp-fc" style="margin-top:14px;font-size:14px;color:#94A3B8"></div>
+    </div>
+    <div class="pgrid r">
+      <div class="pc found">
+        <div class="pb">Founding</div>
+        <div style="font-size:11px;font-weight:700;color:#818CF8;text-transform:uppercase;letter-spacing:.06em">ANNUAL</div>
+        <div class="pp2">£197<sub>/yr</sub></div>
+        <div style="font-size:12px;color:#64748B;margin-bottom:3px">£16.42/mo · locked for life</div>
+        <div style="font-size:11px;color:#10B981;font-weight:600;margin-bottom:18px">Save £150 vs monthly · never increases</div>
+        <ul class="pf">
+          <li>11 AI Agents included</li>
+          <li>8 platforms unlimited</li>
+          <li>38+ automations</li>
+          <li>Growth Engine + Performance Coach</li>
+          <li>35 languages</li>
+          <li>V2 desktop app free when released</li>
+          <li>30-day money-back guarantee</li>
+        </ul>
+        <a href="/pages/pricing" class="btn bp" style="width:100%;justify-content:center;margin-top:4px">Lock Founding Price For Life →</a>
+      </div>
+      <div class="pc reg">
+        <div style="font-size:11px;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:.06em">MONTHLY</div>
+        <div class="pp2" style="background:linear-gradient(135deg,#94A3B8,#64748B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">£47<sub>/mo</sub></div>
+        <div style="font-size:12px;color:#475569;margin-bottom:20px">or £297/yr · after founding window</div>
+        <ul class="pf" style="color:#64748B">
+          <li style="color:#64748B">All features included</li>
+          <li style="color:#64748B">8 platforms</li>
+          <li style="color:#64748B">All AI agents</li>
+          <li style="color:#64748B">V2 app included</li>
+        </ul>
+        <div style="padding:14px;background:rgba(129,140,248,.05);border-radius:11px;border:1px solid rgba(129,140,248,.1);text-align:center;margin-top:14px">
+          <div style="font-size:12px;color:#818CF8;font-weight:600">Founding window closing soon</div>
+          <div style="font-size:10px;color:#475569;margin-top:3px">After it closes, you pay this rate.</div>
+        </div>
+        <a href="/pages/pricing" class="btn bgh" style="width:100%;justify-content:center;margin-top:18px">Get Monthly Rate</a>
+      </div>
+    </div>
+    <p style="text-align:center;color:#334155;font-size:12px;margin-top:20px">💳 Global pricing: USD · EUR · AUD · CAD · INR · BRL · AED + 7 more</p>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ──────────────── -->
+<section class="sec" style="background:linear-gradient(180deg,rgba(129,140,248,.04) 0%,#050507 100%)">
+  <div class="c">
+    <div class="r" style="text-align:center;margin-bottom:40px">
+      <span class="pill pg">Real Results</span>
+      <h2 style="font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.04em">Creators who never look back.</h2>
+    </div>
+    <div class="tgrid r">
+      <div class="tc"><div class="tgr">+776%</div><div class="ts">★★★★★</div><div class="tt2">"I was spending 3 hours a day on Instagram alone. TaskNext.AI automated everything. My follower count went from 4K to 35K in 8 weeks. The AI writes in my voice."</div><div class="tauth"><div class="tav">S</div><div><div class="tnm">Sarah K.</div><div class="thdl">Lifestyle Creator · +776% growth</div></div></div></div>
+      <div class="tc" style="background:rgba(129,140,248,.05);border-color:rgba(129,140,248,.2)"><div class="tgr">£2,753 saved</div><div class="ts">★★★★★</div><div class="tt2">"I was paying a social media manager £2,500/month. Now I pay £47 for TaskNext.AI and the output is actually better. Saved £2,753 in the first month."</div><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#06B6D4,#3B82F6)">J</div><div><div class="tnm">James R.</div><div class="thdl">E-commerce Founder · 3 brands</div></div></div></div>
+      <div class="tc"><div class="tgr">11 clients</div><div class="ts">★★★★★</div><div class="tt2">"Managing 8 client accounts used to take my whole week. Now TaskNext.AI runs the automation, I handle the strategy. Went from 3 clients to 11 in 6 months."</div><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#10B981,#06B6D4)">M</div><div><div class="tnm">Maria L.</div><div class="thdl">Social Media Agency · 11 clients</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ───────────────────────── -->
+<section class="sec sec-alt" id="cgp-faq">
+  <div class="c" style="max-width:680px">
+    <div class="r" style="text-align:center;margin-bottom:40px">
+      <span class="pill pi">FAQ</span>
+      <h2 style="font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.04em">Every question, answered.</h2>
+    </div>
+    <div class="r">
+      <div class="fi"><div class="fq" onclick="cgpFaq(this)">Will it get my Instagram account banned? <span class="fic">+</span></div><div class="fa"><p>No. The Safety Guardian agent runs 24/7 monitoring rate limits and activity patterns. It auto-pauses any action before Instagram flags it. Zero shadow bans from beta users to date.</p></div></div>
+      <div class="fi"><div class="fq" onclick="cgpFaq(this)">What happens to my founding price when you raise rates? <span class="fic">+</span></div><div class="fa"><p>Nothing. It's locked forever. Founding members pay £197/yr in Year 1, Year 3, Year 10 — same price. Legally enforced in your subscription terms.</p></div></div>
+      <div class="fi"><div class="fq" onclick="cgpFaq(this)">How many Instagram accounts can I connect? <span class="fic">+</span></div><div class="fa"><p>Multiple accounts are supported. The dashboard shows combined stats across all accounts. Each gets its own agent panel, automation stack, and posting schedule.</p></div></div>
+      <div class="fi"><div class="fq" onclick="cgpFaq(this)">Does it auto-post or do I need to approve? <span class="fic">+</span></div><div class="fa"><p>Both modes available. Auto-publish posts on your schedule automatically. Review mode queues posts for approval first. You choose per-account.</p></div></div>
+      <div class="fi"><div class="fq" onclick="cgpFaq(this)">Is there a free trial? <span class="fic">+</span></div><div class="fa"><p>30-day money-back guarantee — better than a trial, you get full access from day one. Not right for you? Full refund, zero questions.</p></div></div>
+      <div class="fi"><div class="fq" onclick="cgpFaq(this)">What's V2? <span class="fic">+</span></div><div class="fa"><p>V2 is a standalone desktop + mobile app (no external API needed) launching Q3 2026. All current subscribers get it free. You're paying for the full organism — today and every future version.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GUARANTEE + FINAL CTA ──────── -->
+<section class="sec">
+  <div class="c">
+    <div class="cta-f r" style="max-width:680px;margin:0 auto 60px">
+      <div style="font-size:44px;margin-bottom:14px">🛡️</div>
+      <h2 style="font-size:28px">30-Day Money-Back<br><span class="gt">No-Questions Guarantee</span></h2>
+      <p style="color:#94A3B8;font-size:15px;max-width:420px;margin:10px auto 0;position:relative">Not satisfied for any reason? Full refund. We'd rather lose one month's revenue than keep a customer who isn't winning.</p>
+    </div>
+    <div class="cta-f r">
+      <h2>Stop posting manually.<br><span class="gt">Let the organism run.</span></h2>
+      <p style="color:#94A3B8;font-size:16px;max-width:480px;margin:0 auto 30px;position:relative">Join founders locking in £197/yr for life. After the window closes, it's £297/yr minimum.</p>
+      <div style="display:flex;gap:11px;justify-content:center;flex-wrap:wrap;position:relative">
+        <a href="/pages/pricing" class="btn bp" style="font-size:15px;padding:15px 34px">Lock Founding Price — £197/yr →</a>
+        <a href="#cgp-faq" class="btn bgh" style="font-size:15px;padding:15px 26px">Read FAQ first</a>
+      </div>
+      <p style="font-size:11px;color:#334155;margin-top:18px;position:relative">30-day refund · No contracts · V2 included · Limited founding seats</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────── -->
+<footer class="ftr">
+  <div class="c">
+    <div class="fg">
+      <div>
+        <div style="font-size:16px;font-weight:900;letter-spacing:-.04em;background:linear-gradient(135deg,#818CF8,#C084FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">ClaudeGram Pro</div>
+        <div class="fbt">The all-in-one social content machine. 11 AI agents, 8 platforms, 35 languages. One subscription that gets smarter every month.</div>
+      </div>
+      <div class="fc"><h4>Product</h4><a href="#cgp-agents">AI Agents</a><a href="#cgp-coach">Performance Coach</a><a href="#cgp-pricing">Pricing</a><a href="#cgp-accounts">Multi-Account</a></div>
+      <div class="fc"><h4>Company</h4><a href="/pages/about">About</a><a href="/pages/features">Roadmap</a><a href="/pages/about">Changelog</a></div>
+      <div class="fc"><h4>Legal</h4><a href="/pages/privacy-policy">Privacy</a><a href="/pages/terms-of-service">Terms</a><a href="/policies/refund-policy">Refund Policy</a></div>
+    </div>
+    <div class="fb2"><span>© 2026 TaskNext.AI. All rights reserved.</span><span style="color:#818CF8">Made with TaskNext.AI ↗</span></div>
+  </div>
+</footer>
+
+</div><!-- /#cgp -->
+
+<!-- STICKY BOTTOM BAR -->
+<div id="cgp-sticky">
+  <div class="sl"><span class="ldot"></span>LIVE</div>
+  <div class="st">🔒 Founding Rate Closes In: <strong id="cgp-sc">71:59:48</strong> — Lock £197/yr For Life</div>
+  <a href="/pages/pricing" class="sc">Claim yours →</a>
+</div>
+
+<script>
+(function(){
+  // Scroll reveal
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}});
+  },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('#cgp .r,#cgp .rl,#cgp .rr').forEach(function(el){io.observe(el)});
+
+  // FAQ
+  window.cgpFaq=function(el){
+    var a=el.nextElementSibling,ic=el.querySelector('.fic'),op=a.classList.toggle('open');
+    ic.textContent=op?'−':'+';ic.style.transform=op?'rotate(180deg)':'none';
+  };
+
+  // Countdown
+  var key='tna_founding_end';
+  var stored=localStorage.getItem(key);
+  if(!stored){stored=String(Date.now()+72*60*60*1000);localStorage.setItem(key,stored);}
+  var end=parseInt(stored,10);
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var d=end-Date.now();
+    if(d<=0){
+      ['cgp-sc','ann-countdown'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='CLOSED';});
+      var fc=document.getElementById('cgp-fc');if(fc)fc.textContent='Founding window has closed.';
+      return;
+    }
+    var h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+    var str=pad(h)+':'+pad(m)+':'+pad(s);
+    var sc=document.getElementById('cgp-sc');if(sc)sc.textContent=str;
+    var fc=document.getElementById('cgp-fc');
+    if(fc)fc.innerHTML='⏳ Founding window closes in <strong style="color:#818CF8">'+str+'</strong>';
+    setTimeout(tick,1000);
+  }
+  tick();
+})();
+</script>
+
+<!-- ─── GOOGLE TRANSLATE — 100+ LANGUAGES ─── -->
+<script type="text/javascript">
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'en',
+    includedLanguages:'af,sq,am,ar,hy,az,eu,be,bn,bs,bg,ca,ceb,ny,zh-CN,zh-TW,co,hr,cs,da,nl,eo,et,tl,fi,fr,fy,gl,ka,de,el,gu,ht,ha,haw,iw,hi,hmn,hu,is,ig,id,ga,it,ja,jw,kn,kk,km,ko,ku,ky,lo,la,lv,lt,lb,mk,mg,ms,ml,mt,mi,mr,mn,my,ne,no,ps,fa,pl,pt,pa,ro,ru,sm,gd,sr,st,sn,sd,si,sk,sl,so,es,su,sw,sv,tg,ta,te,th,tr,uk,ur,uz,vi,cy,xh,yi,yo,zu',
+    layout:google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay:false,
+    multilanguagePage:true
+  },'google_translate_element');
+}
+// Suppress banner on translate
+(function suppressBanner(){
+  var observer=new MutationObserver(function(){
+    var f=document.querySelector('.goog-te-banner-frame');
+    if(f){f.style.display='none';}
+    document.body.style.top='0px';
+    document.body.style.marginTop='0px';
+  });
+  observer.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']});
+})();
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+
+{% schema %}
+{
+  "name": "TaskNext.AI Landing",
+  "settings": [],
+  "presets": [{"name": "TaskNext.AI Landing"}]
+}
+{% endschema %}
+
+
+
