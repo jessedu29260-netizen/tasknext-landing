@@ -416,25 +416,41 @@
       <!-- ===== DOWNLOAD V1 — inline email gate ===== -->
       <div class="mb-6 flex flex-col items-center gap-3">
 
-        <!-- GET TASKNEXT.AI â€” TWO VERSIONS -->
+        <!-- GET TASKNEXT.AI — DESKTOP + MOBILE -->
         <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:24px 0 8px 0;">
-
-          <!-- Web App Card -->
-          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(139,92,246,0.3);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;">
-            <div style="font-size:32px;margin-bottom:12px;">ðŸŒ</div>
-            <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">Web App</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">No install &bull; Always up to date<br>Works on any device</div>
-            <a href="https://brave-wholeness-production.up.railway.app" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;">Launch Web App &rarr;</a>
-          </div>
 
           <!-- Desktop App Card -->
           <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(139,92,246,0.3);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;">
-            <div style="font-size:32px;margin-bottom:12px;">ðŸ–¥ï¸</div>
+            <div style="font-size:32px;margin-bottom:12px;">🖥️</div>
             <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">Desktop App</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">Windows &bull; Full experience<br>Works offline</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">Windows &bull; Full offline experience</div>
             <button id="dl-trigger" onclick="showDownloadForm()" style="background:transparent;border:2px solid #7c3aed;color:#a78bfa;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;">Download for Windows &darr;</button>
           </div>
 
+          <!-- Mobile App Card -->
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(139,92,246,0.3);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:12px;">📱</div>
+            <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">Mobile App</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">iOS &amp; Android &bull; Free via Expo Go</div>
+            <button onclick="toggleMobileInstructions()" style="background:transparent;border:2px solid #7c3aed;color:#a78bfa;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;">Get on Mobile &rarr;</button>
+          </div>
+
+        </div>
+
+        <!-- Mobile Instructions Panel (hidden by default) -->
+        <div id="mobile-instructions" style="display:none;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.25);border-radius:14px;padding:24px 28px;max-width:480px;width:100%;margin:8px auto 0;text-align:left;">
+          <div style="font-weight:700;font-size:15px;color:#c4b5fd;margin-bottom:16px;">📱 Get TaskNext.AI on Mobile</div>
+          <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:12px;color:rgba(255,255,255,0.75);font-size:14px;line-height:1.6;">
+            <li>Download <strong style="color:#a78bfa;">Expo Go</strong> from the
+              <a href="https://apps.apple.com/app/expo-go/id982107779" target="_blank" style="color:#818cf8;text-decoration:underline;">App Store</a>
+              or <a href="https://play.google.com/store/apps/details?id=host.exp.exponent" target="_blank" style="color:#818cf8;text-decoration:underline;">Play Store</a>
+            </li>
+            <li>Open Expo Go and scan the QR code, or open this link:<br>
+              <a href="exp://tasknextai.app" style="color:#818cf8;font-family:monospace;font-size:13px;word-break:break-all;">exp://tasknextai.app</a>
+            </li>
+            <li>App loads instantly &mdash; no separate account needed to preview</li>
+          </ol>
+          <div style="margin-top:14px;font-size:11px;color:rgba(255,255,255,0.35);">* Real Expo project URL to be updated before launch.</div>
         </div>
 
         <!-- Step 2: email form, hidden until trigger clicked -->
@@ -1501,6 +1517,10 @@
       form.classList.add('flex');
       document.getElementById('dl-email').focus();
     }
+    function toggleMobileInstructions() {
+      const panel = document.getElementById('mobile-instructions');
+      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    }
 
     async function submitDownload() {
       const emailEl = document.getElementById('dl-email');
@@ -1553,25 +1573,4 @@
   </script>
 
   <!-- ===== COOKIE CONSENT BANNER ===== -->
-  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:16px 24px;background:rgba(10,10,15,0.97);border-top:1px solid rgba(129,140,248,0.15);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);">
-    <div style="max-width:1152px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
-      <p style="font-size:13px;color:rgba(255,255,255,0.5);margin:0;flex:1;min-width:220px;">
-        🍪 We use essential cookies only — for authentication and session management. No tracking, no ads. <a href="/privacy.html" style="color:#818CF8;text-decoration:none;">Privacy policy →</a>
-      </p>
-      <button id="cookie-accept" style="background:linear-gradient(135deg,#818CF8,#C084FC);color:#fff;border:none;border-radius:20px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;">Got it</button>
-    </div>
-  </div>
-  <script>
-    (function() {
-      if (!localStorage.getItem('cookie_consent')) {
-        document.getElementById('cookie-banner').style.display = 'block';
-      }
-      document.getElementById('cookie-accept').addEventListener('click', function() {
-        localStorage.setItem('cookie_consent', '1');
-        document.getElementById('cookie-banner').style.display = 'none';
-      });
-    })();
-  </script>
-
-</body>
-</html>
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:16px 
