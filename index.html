@@ -413,6 +413,44 @@
         </a>
       </div>
 
+      <!-- ===== DOWNLOAD V1 — inline email gate ===== -->
+      <div class="mb-6 flex flex-col items-center gap-3">
+
+        <!-- Step 1: trigger, subtle text-link style -->
+        <button id="dl-trigger" onclick="showDownloadForm()"
+          class="flex items-center gap-1.5 text-white/35 hover:text-white/65 text-xs transition-colors">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download TaskNextAI V1 — free
+        </button>
+
+        <!-- Step 2: email form, hidden until trigger clicked -->
+        <div id="dl-form" class="hidden items-center gap-2 flex-wrap justify-center">
+          <input id="dl-email" type="email" placeholder="your@email.com" autocomplete="email"
+            onkeydown="if(event.key==='Enter')submitDownload()"
+            class="bg-white/5 border border-white/10 focus:border-indigo-400/50 outline-none rounded-xl px-4 py-2.5 text-sm text-white placeholder:text-white/25 transition-colors w-64" />
+          <button id="dl-submit-btn" onclick="submitDownload()"
+            class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap">
+            Get Download
+          </button>
+        </div>
+
+        <!-- Step 3: success state with auto-download + fallback link -->
+        <div id="dl-success" class="hidden flex-col items-center gap-1 text-center">
+          <p class="text-xs text-green-400 flex items-center gap-1.5">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Download starting…
+          </p>
+          <a id="dl-link" href="#" download="TaskNextAI-V1-Launch.zip"
+            class="text-xs text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">
+            Click here if it didn't start →
+          </a>
+        </div>
+
+      </div>
+      <!-- ===== END DOWNLOAD V1 ===== -->
+
       <div class="flex items-center justify-center gap-6 text-xs text-white/30 flex-wrap">
         <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>14-day money-back guarantee</span>
         <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>AI tokens included</span>
@@ -1437,6 +1475,62 @@
         closeModal('terms');
       }
     });
+
+    // === DOWNLOAD V1 EMAIL GATE ===
+    // TODO: Replace DOWNLOAD_URL with the real hosted path/URL for TaskNextAI-V1-Launch.zip
+    // Example: const DOWNLOAD_URL = 'https://tasknextai.one/files/TaskNextAI-V1-Launch.zip';
+    //          or a relative path if the zip is in the same repo: './TaskNextAI-V1-Launch.zip'
+    const DOWNLOAD_URL = 'https://github.com/jessedu29200/tasknext-cloud/releases/latest/download/TaskNextAI-V1-Launch.zip';
+
+    function showDownloadForm() {
+      document.getElementById('dl-trigger').classList.add('hidden');
+      const form = document.getElementById('dl-form');
+      form.classList.remove('hidden');
+      form.classList.add('flex');
+      document.getElementById('dl-email').focus();
+    }
+
+    async function submitDownload() {
+      const emailEl = document.getElementById('dl-email');
+      const email = emailEl.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailEl.style.borderColor = 'rgba(251,113,133,0.5)';
+        emailEl.focus();
+        setTimeout(() => { emailEl.style.borderColor = ''; }, 1500);
+        return;
+      }
+      const btn = document.getElementById('dl-submit-btn');
+      btn.textContent = 'One sec…';
+      btn.disabled = true;
+
+      // POST to waitlist — 5s timeout, never blocks the download
+      try {
+        await Promise.race([
+          fetch('https://brave-wholeness-production.up.railway.app/api/waitlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+          }),
+          new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
+        ]);
+      } catch (_) { /* silent fail — user still gets their download */ }
+
+      // Trigger browser download
+      const a = document.createElement('a');
+      a.href = DOWNLOAD_URL;
+      a.download = 'TaskNextAI-V1-Launch.zip';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      // Show success UI
+      document.getElementById('dl-form').classList.add('hidden');
+      document.getElementById('dl-form').classList.remove('flex');
+      const success = document.getElementById('dl-success');
+      success.classList.remove('hidden');
+      success.classList.add('flex');
+      document.getElementById('dl-link').href = DOWNLOAD_URL;
+    }
 
     // === SPOT COUNTER (simulated decay) ===
     const spotsBase = 187;
