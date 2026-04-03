@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -416,14 +416,26 @@
       <!-- ===== DOWNLOAD V1 — inline email gate ===== -->
       <div class="mb-6 flex flex-col items-center gap-3">
 
-        <!-- Step 1: trigger, subtle text-link style -->
-        <button id="dl-trigger" onclick="showDownloadForm()"
-          class="flex items-center gap-1.5 text-white/35 hover:text-white/65 text-xs transition-colors">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          Download TaskNextAI V1 — free
-        </button>
+        <!-- GET TASKNEXT.AI â€” TWO VERSIONS -->
+        <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:24px 0 8px 0;">
+
+          <!-- Web App Card -->
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(139,92,246,0.3);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:12px;">ðŸŒ</div>
+            <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">Web App</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">No install &bull; Always up to date<br>Works on any device</div>
+            <a href="https://brave-wholeness-production.up.railway.app" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;">Launch Web App &rarr;</a>
+          </div>
+
+          <!-- Desktop App Card -->
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(139,92,246,0.3);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:12px;">ðŸ–¥ï¸</div>
+            <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">Desktop App</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">Windows &bull; Full experience<br>Works offline</div>
+            <button id="dl-trigger" onclick="showDownloadForm()" style="background:transparent;border:2px solid #7c3aed;color:#a78bfa;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;">Download for Windows &darr;</button>
+          </div>
+
+        </div>
 
         <!-- Step 2: email form, hidden until trigger clicked -->
         <div id="dl-form" class="hidden items-center gap-2 flex-wrap justify-center">
