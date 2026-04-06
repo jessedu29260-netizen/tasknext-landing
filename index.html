@@ -416,64 +416,32 @@
       <!-- ===== DOWNLOAD V1 — inline email gate ===== -->
       <div class="mb-6 flex flex-col items-center gap-3">
 
-        <!-- GET TASKNEXT.AI — DESKTOP + MOBILE -->
+        <!-- GET TASKNEXT.AI — WEB APP + IPHONE -->
         <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:24px 0 8px 0;">
 
-          <!-- Desktop App Card -->
-          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(139,92,246,0.3);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;">
-            <div style="font-size:32px;margin-bottom:12px;">🖥️</div>
-            <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">Desktop App</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">Windows &bull; Full offline experience</div>
-            <button id="dl-trigger" onclick="showDownloadForm()" style="background:transparent;border:2px solid #7c3aed;color:#a78bfa;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;">Download for Windows &darr;</button>
+          <!-- Web App Card -->
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(129,140,248,0.35);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;position:relative;">
+            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#818CF8,#C084FC);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.07em;padding:3px 12px;border-radius:99px;white-space:nowrap;">LIVE NOW</div>
+            <div style="font-size:32px;margin-bottom:12px;">🌐</div>
+            <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">Web App</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">Any browser &bull; No install needed</div>
+            <a href="https://app.tasknextai.one/" target="_blank" rel="noopener"
+              style="display:inline-block;background:linear-gradient(135deg,#818CF8,#C084FC);color:#fff;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;transition:opacity 0.2s;"
+              onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+              Open Web App &rarr;
+            </a>
           </div>
 
-          <!-- Mobile App Card -->
-          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(139,92,246,0.3);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;">
-            <div style="font-size:32px;margin-bottom:12px;">📱</div>
-            <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">Mobile App</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:20px;">iOS &amp; Android &bull; Free via Expo Go</div>
-            <button onclick="toggleMobileInstructions()" style="background:transparent;border:2px solid #7c3aed;color:#a78bfa;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;">Get on Mobile &rarr;</button>
+          <!-- iPhone App Card — Coming Soon -->
+          <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 32px;min-width:240px;max-width:280px;text-align:center;opacity:0.7;">
+            <div style="font-size:32px;margin-bottom:12px;">🍎</div>
+            <div style="font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;">iPhone App</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:20px;">iOS &bull; Native experience</div>
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.35);padding:12px 24px;border-radius:10px;font-weight:600;font-size:13px;letter-spacing:0.04em;">
+              Coming Soon
+            </div>
           </div>
 
-        </div>
-
-        <!-- Mobile Instructions Panel (hidden by default) -->
-        <div id="mobile-instructions" style="display:none;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.25);border-radius:14px;padding:24px 28px;max-width:480px;width:100%;margin:8px auto 0;text-align:left;">
-          <div style="font-weight:700;font-size:15px;color:#c4b5fd;margin-bottom:16px;">📱 Get TaskNext.AI on Mobile</div>
-          <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:12px;color:rgba(255,255,255,0.75);font-size:14px;line-height:1.6;">
-            <li>Download <strong style="color:#a78bfa;">Expo Go</strong> from the
-              <a href="https://apps.apple.com/app/expo-go/id982107779" target="_blank" style="color:#818cf8;text-decoration:underline;">App Store</a>
-              or <a href="https://play.google.com/store/apps/details?id=host.exp.exponent" target="_blank" style="color:#818cf8;text-decoration:underline;">Play Store</a>
-            </li>
-            <li>Open Expo Go and scan the QR code, or open this link:<br>
-              <a href="exp://tasknextai.app" style="color:#818cf8;font-family:monospace;font-size:13px;word-break:break-all;">exp://tasknextai.app</a>
-            </li>
-            <li>App loads instantly &mdash; no separate account needed to preview</li>
-          </ol>
-          <div style="margin-top:14px;font-size:11px;color:rgba(255,255,255,0.35);">* Real Expo project URL to be updated before launch.</div>
-        </div>
-
-        <!-- Step 2: email form, hidden until trigger clicked -->
-        <div id="dl-form" class="hidden items-center gap-2 flex-wrap justify-center">
-          <input id="dl-email" type="email" placeholder="your@email.com" autocomplete="email"
-            onkeydown="if(event.key==='Enter')submitDownload()"
-            class="bg-white/5 border border-white/10 focus:border-indigo-400/50 outline-none rounded-xl px-4 py-2.5 text-sm text-white placeholder:text-white/25 transition-colors w-64" />
-          <button id="dl-submit-btn" onclick="submitDownload()"
-            class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap">
-            Get Download
-          </button>
-        </div>
-
-        <!-- Step 3: success state with auto-download + fallback link -->
-        <div id="dl-success" class="hidden flex-col items-center gap-1 text-center">
-          <p class="text-xs text-green-400 flex items-center gap-1.5">
-            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-            Download starting…
-          </p>
-          <a id="dl-link" href="#" download="TaskNextAI-V1-Launch.zip"
-            class="text-xs text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">
-            Click here if it didn't start →
-          </a>
         </div>
 
       </div>
@@ -654,6 +622,90 @@
       </div>
 
           </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- ===== NEW FEATURE — VIDEO GENERATION ===== -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section header -->
+      <div class="text-center mb-14 reveal">
+        <div class="flex items-center justify-center gap-3 mb-5">
+          <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.25);border-radius:99px;padding:4px 14px;font-size:11px;color:#818CF8;letter-spacing:0.06em;font-weight:600;animation:breathe 3s ease-in-out infinite;">
+            <span style="width:6px;height:6px;background:#818CF8;border-radius:50%;display:inline-block;animation:thinking 1.5s infinite;"></span>
+            Now live in the app
+          </span>
+        </div>
+        <h2 class="text-section font-bold font-display mb-4">Fresh out of <span class="gradient-text">Ory's lab</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto">A new feature just dropped for all plan members. No update needed — Ory already has it.</p>
+      </div>
+
+      <!-- Video Generation Card -->
+      <div class="max-w-2xl mx-auto">
+        <div class="liquid-glass p-8 md:p-10 reveal refract-edge">
+
+          <!-- Tag -->
+          <div class="flex items-center gap-2 mb-6">
+            <span style="background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.25);border-radius:99px;padding:3px 12px;font-size:11px;color:#C084FC;font-weight:600;letter-spacing:0.05em;">NEW</span>
+            <span class="text-xs text-white/30">Content Studio</span>
+          </div>
+
+          <div class="flex items-start gap-4 mb-7">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 animate-breathe" style="background:linear-gradient(135deg,rgba(192,132,252,0.12),rgba(129,140,248,0.08));">
+              <svg width="22" height="22" fill="none" stroke="#C084FC" stroke-width="1.8" viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="3"/>
+                <path d="M10 8l5 3-5 3V8z" fill="#C084FC" stroke="none"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold font-display mb-2">Image → Video, instantly</h3>
+              <p class="text-sm text-white/45 leading-relaxed">Generate a post image with Ory, then tap <strong class="text-white/60">Video</strong> to animate it into a short clip — ready to post on TikTok, Reels, or Stories.</p>
+            </div>
+          </div>
+
+          <!-- Animated video frame preview -->
+          <div class="mb-7 relative overflow-hidden" style="height:120px;background:rgba(0,0,0,0.35);border:1px solid rgba(129,140,248,0.12);border-radius:16px;">
+            <!-- Scan line -->
+            <div style="position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(129,140,248,0.6),transparent);animation:veinFlow 2.2s ease-in-out infinite alternate;"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-2">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,rgba(129,140,248,0.15),rgba(192,132,252,0.1));border-radius:50%;border:1px solid rgba(192,132,252,0.2);display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" fill="#C084FC" viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
+              </div>
+              <p class="text-[11px] text-white/25">Preview generating…</p>
+            </div>
+            <!-- Progress bar -->
+            <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,0.04);">
+              <div style="height:100%;width:68%;background:linear-gradient(90deg,#818CF8,#C084FC);border-radius:2px;"></div>
+            </div>
+          </div>
+
+          <!-- Bullets -->
+          <ul class="space-y-2.5 mb-7">
+            <li class="flex items-center gap-2.5 text-sm text-white/55">
+              <svg width="14" height="14" fill="none" stroke="#34D399" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Works from any image you generate or upload
+            </li>
+            <li class="flex items-center gap-2.5 text-sm text-white/55">
+              <svg width="14" height="14" fill="none" stroke="#34D399" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Video credits included on Growth, Pro &amp; Unlimited plans
+            </li>
+            <li class="flex items-center gap-2.5 text-sm text-white/55">
+              <svg width="14" height="14" fill="none" stroke="#34D399" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Credits auto-refunded if generation fails — always
+            </li>
+          </ul>
+
+          <a href="#pricing" class="inline-flex items-center gap-2 text-sm text-orchid-400 hover:text-white transition-colors font-medium">
+            Unlock video on your plan
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <div class="section-divider max-w-6xl mx-auto"></div>
@@ -995,7 +1047,7 @@
             <div class="founder-photo">
               <span>J</span>
             </div>
-            <p class="text-xs text-white/30 mt-3">Jesse · Founder</p>
+            <p class="text-xs text-white/30 mt-3">Founder</p>
             <div class="flex items-center justify-center gap-3 mt-3">
               <a href="https://x.com/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Follow on X">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -1012,7 +1064,7 @@
                 <span class="w-1 h-1 bg-mint-400 rounded-full animate-pulse"></span>Building in public
               </span>
             </div>
-            <h2 class="text-2xl font-bold font-display mb-4">Hi, I'm Jesse. I built this because I needed it.</h2>
+            <h2 class="text-2xl font-bold font-display mb-4">Built by a creator who needed it most.</h2>
             <p class="text-sm text-white/50 leading-relaxed mb-4">
               I was bad at keeping up with social media. Writing captions at midnight, copy-pasting the same thing across five apps — I hated every minute of it.
             </p>
@@ -1121,7 +1173,7 @@
             <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">TaskNext AI Ltd is a registered company in London, England, founded by Jesse. We're a small, independent team building Ory the honest way — no VC pressure, no growth-at-all-costs. Just a group of creators building the tool we always wished existed. You can reach us anytime at hello@tasknextai.one.</p>
+            <p class="text-sm text-white/50 pb-5">TaskNext AI Ltd is a registered company in London, England. We're a small, independent team building Ory the honest way — no VC pressure, no growth-at-all-costs. Just a group of creators building the tool we always wished existed. You can reach us anytime at hello@tasknextai.one.</p>
           </div>
         </div>
       </div>
@@ -1203,7 +1255,7 @@
             <li><a href="/terms.html" class="hover:text-white transition-colors">Terms & Conditions</a></li>
             <li><a href="mailto:hello@tasknextai.one" class="hover:text-white transition-colors">hello@tasknextai.one</a></li>
             <li><a href="mailto:support@tasknextai.one" class="hover:text-white transition-colors">support@tasknextai.one</a></li>
-            <li><a href="mailto:jesse@tasknextai.one" class="hover:text-white transition-colors">jesse@tasknextai.one <span class="text-white/20">(founder)</span></a></li>
+            <li><a href="mailto:jesse@tasknextai.one" class="hover:text-white transition-colors">jesse@tasknextai.one</a></li>
           </ul>
         </div>
       </div>
