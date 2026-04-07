@@ -53,29 +53,67 @@
     @keyframes glowLine { 0%,100% { opacity: 0.3; transform: scaleX(0.8); } 50% { opacity: 1; transform: scaleX(1); } }
     @keyframes typewriter { from { width: 0; } to { width: 100%; } }
     @keyframes counterPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    @keyframes liquidDrift { 0% { transform:translate(0,0) rotate(0deg); } 33% { transform:translate(10px,-14px) rotate(1.2deg); } 66% { transform:translate(-8px,7px) rotate(-0.8deg); } 100% { transform:translate(0,0) rotate(0deg); } }
+    @keyframes orbPulse { 0%,100% { opacity:0.7; transform:scale(1); } 50% { opacity:1; transform:scale(1.08); } }
 
     /* === BASE === */
-    body { background: #050507; }
-    ::selection { background: rgba(129,140,248,0.3); }
+    body { background: #080808; }
+    ::selection { background: rgba(129,140,248,0.35); color: #fff; }
+
+    /* === HERO CTA BUTTON GLOW === */
+    .hero-cta {
+      position: relative;
+      transition: opacity 0.2s ease, box-shadow 0.3s ease, transform 0.15s ease;
+    }
+    .hero-cta:hover {
+      opacity: 0.93;
+      box-shadow: 0 0 32px rgba(129,140,248,0.45), 0 8px 32px rgba(192,132,252,0.25);
+      transform: translateY(-1px);
+    }
+    .hero-cta:active { transform: scale(0.98); }
 
     /* === LIQUID GLASS === */
     .liquid-glass {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(40px) saturate(1.4);
-      -webkit-backdrop-filter: blur(40px) saturate(1.4);
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,255,255,0.032) 0%, rgba(255,255,255,0.055) 100%);
+      border: 1px solid rgba(255,255,255,0.09);
+      backdrop-filter: blur(40px) saturate(1.5);
+      -webkit-backdrop-filter: blur(40px) saturate(1.5);
       border-radius: 24px;
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    }
+    /* Top-edge shimmer — ampere.sh signature detail */
+    .liquid-glass::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.28) 40%, rgba(255,255,255,0.28) 60%, transparent 100%);
+      border-radius: 24px 24px 0 0;
+      pointer-events: none;
+      z-index: 1;
     }
     .liquid-glass:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 40px rgba(129,140,248,0.08);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 48px rgba(129,140,248,0.12), 0 2px 0 rgba(255,255,255,0.04) inset;
+      border-color: rgba(255,255,255,0.14);
     }
     .liquid-glass-sm {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid rgba(255,255,255,0.09);
       backdrop-filter: blur(20px);
       border-radius: 16px;
+      overflow: hidden;
+    }
+    .liquid-glass-sm::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+      pointer-events: none;
     }
 
     /* === REFRACTION EDGE === */
@@ -115,7 +153,7 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      opacity: 0.08;
+      opacity: 0.12;
     }
     .neural-vein {
       stroke-dasharray: 1000;
@@ -170,12 +208,15 @@
 
     /* === ORB (parallax) === */
     .orb {
-      position: absolute;
+      position: fixed;
       border-radius: 50%;
-      filter: blur(80px);
       pointer-events: none;
       will-change: transform;
+      animation: orbPulse 10s ease-in-out infinite;
     }
+    .orb:nth-child(2) { animation-delay: 2s; animation-duration: 13s; }
+    .orb:nth-child(3) { animation: liquidDrift 16s ease-in-out infinite, orbPulse 12s ease-in-out infinite; animation-delay: 4s; }
+    .orb:nth-child(4) { animation-delay: 6s; animation-duration: 9s; }
 
     /* === SECTION DIVIDER === */
     .section-divider {
@@ -349,12 +390,15 @@
   </svg>
 
   <!-- ===== PARALLAX ORBS ===== -->
-  <div class="orb" data-depth="0.3" style="width:500px;height:500px;background:rgba(129,140,248,0.06);top:10%;left:-10%;"></div>
-  <div class="orb" data-depth="0.5" style="width:400px;height:400px;background:rgba(192,132,252,0.05);top:50%;right:-8%;"></div>
-  <div class="orb" data-depth="0.2" style="width:350px;height:350px;background:rgba(129,140,248,0.04);bottom:20%;left:30%;"></div>
+  <!-- Primary hero glow — large dominant orb like ampere.sh -->
+  <div class="orb" data-depth="0.15" style="width:900px;height:900px;background:radial-gradient(circle,rgba(129,140,248,0.14) 0%,rgba(99,102,241,0.06) 50%,transparent 70%);top:-15%;left:-5%;filter:blur(60px);"></div>
+  <div class="orb" data-depth="0.3" style="width:600px;height:600px;background:rgba(192,132,252,0.07);top:40%;right:-12%;filter:blur(80px);"></div>
+  <div class="orb" data-depth="0.2" style="width:400px;height:400px;background:rgba(129,140,248,0.05);bottom:10%;left:20%;filter:blur(70px);"></div>
+  <!-- Accent warm orb bottom-right -->
+  <div class="orb" data-depth="0.1" style="width:300px;height:300px;background:rgba(192,132,252,0.06);bottom:5%;right:5%;filter:blur(60px);"></div>
 
   <!-- ===== NAVIGATION ===== -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-3" style="background:rgba(5,5,7,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-3" style="background:rgba(8,8,8,0.88);backdrop-filter:blur(32px) saturate(1.4);-webkit-backdrop-filter:blur(32px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,0.07);box-shadow:0 1px 0 rgba(129,140,248,0.06);">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
         <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center animate-breathe">
@@ -382,8 +426,11 @@
   <!-- ===== HERO SECTION ===== -->
   <section id="hero" class="min-h-screen flex items-center justify-center px-6 pt-20 pb-12 relative overflow-hidden">
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div class="w-[600px] h-[600px] bg-indigo-400/10 rounded-full blur-[120px] animate-breathe-slow"></div>
-      <div class="w-[400px] h-[400px] bg-orchid-400/8 rounded-full blur-[100px] animate-breathe absolute translate-x-32"></div>
+      <!-- Main hero glow — dominant purple radial, ampere.sh scale -->
+      <div class="w-[900px] h-[900px] rounded-full blur-[140px] animate-breathe-slow" style="background:radial-gradient(circle,rgba(129,140,248,0.18) 0%,rgba(99,102,241,0.08) 45%,transparent 70%);"></div>
+      <div class="w-[550px] h-[550px] rounded-full blur-[100px] animate-breathe absolute" style="background:rgba(192,132,252,0.10);transform:translateX(40px);animation-delay:2s;"></div>
+      <!-- Subtle bottom floor glow -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-32 blur-[60px]" style="background:radial-gradient(ellipse,rgba(129,140,248,0.06) 0%,transparent 70%);"></div>
     </div>
 
     <div class="text-center relative z-10 max-w-3xl">
@@ -409,7 +456,7 @@
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-        <a href="#pricing" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20">
+        <a href="#pricing" class="hero-cta bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg shadow-indigo-400/20">
           Claim your founding price — from £7/mo forever
         </a>
         <a href="#demo" class="text-white/50 hover:text-white text-sm transition-colors flex items-center gap-2">
