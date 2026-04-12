@@ -9,367 +9,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23818CF8'/%3E%3Cstop offset='100%25' style='stop-color:%23C084FC'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='34' r='20' stroke='url(%23g)' stroke-width='1.5' fill='rgba(129,140,248,0.1)'/%3E%3Cellipse cx='26' cy='31' rx='3.5' ry='4' fill='%23FFF'/%3E%3Ccircle cx='27' cy='30' r='1.8' fill='%23050507'/%3E%3Cellipse cx='38' cy='31' rx='3.5' ry='4' fill='%23FFF'/%3E%3Ccircle cx='39' cy='30' r='1.8' fill='%23050507'/%3E%3Cpath d='M28 38Q32 42 36 38' stroke='%23FFF' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            void: '#050507',
-            surface: '#0a0a0f',
-            glass: 'rgba(255,255,255,0.03)',
-            'glass-border': 'rgba(255,255,255,0.08)',
-            indigo: { 400: '#818CF8', 500: '#6366F1', 600: '#4F46E5' },
-            orchid: { 400: '#C084FC', 500: '#A855F7' },
-            mint: { 400: '#34D399' },
-            rose: { 400: '#FB7185' },
-            amber: { 400: '#FBBF24' },
-          },
-          fontFamily: {
-            display: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Inter', 'system-ui', 'sans-serif'],
-            body: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'Inter', 'system-ui', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-  <style>
-    /* === KEYFRAMES === */
-    @keyframes breathe { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.06); opacity: 0.9; } }
-    @keyframes breatheSlow { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: 0.85; } }
-    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-    @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 20px rgba(129,140,248,0.1); } 50% { box-shadow: 0 0 40px rgba(129,140,248,0.25); } }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes veinFlow { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
-    @keyframes thinking { 0%,80%,100% { opacity: 0.2; } 40% { opacity: 1; } }
-    @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(120px) rotate(720deg); opacity: 0; } }
-    @keyframes glowLine { 0%,100% { opacity: 0.3; transform: scaleX(0.8); } 50% { opacity: 1; transform: scaleX(1); } }
-    @keyframes typewriter { from { width: 0; } to { width: 100%; } }
-    @keyframes counterPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-    /* === BASE === */
-    body { background: #050507; }
-    ::selection { background: rgba(129,140,248,0.3); }
-
-    /* === LIQUID GLASS === */
-    .liquid-glass {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(40px) saturate(1.4);
-      -webkit-backdrop-filter: blur(40px) saturate(1.4);
-      border-radius: 24px;
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
-    }
-    .liquid-glass:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 40px rgba(129,140,248,0.08);
-    }
-    .liquid-glass-sm {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-    }
-
-    /* === REFRACTION EDGE === */
-    .refract-edge {
-      position: relative;
-    }
-    .refract-edge::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(129,140,248,0.25), transparent 40%, transparent 60%, rgba(192,132,252,0.2));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    /* === GRADIENT TEXT === */
-    .gradient-text {
-      background: linear-gradient(135deg, #818CF8, #C084FC);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* === ORY GLOW === */
-    .ory-glow {
-      box-shadow: 0 0 60px rgba(129,140,248,0.15), 0 0 120px rgba(192,132,252,0.08);
-    }
-
-    /* === NEURAL BACKGROUND === */
-    .neural-bg {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.08;
-    }
-    .neural-vein {
-      stroke-dasharray: 1000;
-      animation: veinFlow 8s linear infinite;
-    }
-
-    /* === ANIMATIONS === */
-    .animate-breathe { animation: breathe 4s ease-in-out infinite; }
-    .animate-breathe-slow { animation: breatheSlow 6s ease-in-out infinite; }
-    .animate-shimmer {
-      background-size: 200% 100%;
-      animation: shimmer 3s linear infinite;
-    }
-    .animate-float { animation: float 6s ease-in-out infinite; }
-    .animate-pulse-glow { animation: pulseGlow 3s ease-in-out infinite; }
-    .animate-glow-line { animation: glowLine 2s ease-in-out infinite; }
-
-    /* === SCORLL REVEAL === */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* === TYPOGRAPHY === */
-    .text-hero {
-      font-size: clamp(2.4rem, 5.2vw, 4.5rem);
-      letter-spacing: -0.035em;
-      line-height: 1.08;
-    }
-    .text-sub {
-      font-size: clamp(1rem, 1.8vw, 1.3rem);
-      line-height: 1.65;
-    }
-    .text-section {
-      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-      letter-spacing: -0.025em;
-      line-height: 1.15;
-    }
-
-    /* === ORY PULSE DOT === */
-    .ory-pulse {
-      width: 12px; height: 12px;
-      background: radial-gradient(circle, #818CF8 30%, transparent 70%);
-      border-radius: 50%;
-      animation: breathe 4s ease-in-out infinite;
-    }
-
-    /* === ORB (parallax) === */
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-      will-change: transform;
-    }
-
-    /* === SECTION DIVIDER === */
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(129,140,248,0.3), transparent);
-    }
-
-    /* === PRICING === */
-    .price-popular {
-      box-shadow: 0 0 60px rgba(129,140,248,0.15), 0 0 120px rgba(192,132,252,0.06);
-    }
-    .founding-badge {
-      animation: pulseGlow 3s ease-in-out infinite;
-    }
-    .guarantee-badge {
-      background: rgba(52,211,153,0.08);
-      border: 1px solid rgba(52,211,153,0.2);
-    }
-
-    /* === TESTIMONIAL === */
-    .testimonial-card {
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
-    }
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 48px rgba(129,140,248,0.12);
-    }
-
-    /* === IQ CARD === */
-    .iq-card-preview {
-      background: linear-gradient(135deg, rgba(129,140,248,0.08), rgba(192,132,252,0.06));
-      transition: box-shadow 0.4s ease;
-    }
-    .iq-card-preview:hover {
-      box-shadow: 0 0 48px rgba(129,140,248,0.15);
-    }
-
-    /* === WATERMARK DEMO === */
-    .watermark-demo {
-      position: relative;
-    }
-    .watermark-demo::after {
-      content: 'Made with Ory';
-      position: absolute;
-      bottom: 12px;
-      right: 14px;
-      font-size: 10px;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.05em;
-    }
-
-    /* === THINKING DOTS === */
-    .thinking-dots span {
-      display: inline-block;
-      width: 6px; height: 6px;
-      margin: 0 2px;
-      background: #818CF8;
-      border-radius: 50%;
-      animation: thinking 1.5s infinite;
-    }
-    .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-    /* === CONFETTI === */
-    .confetti-piece {
-      position: absolute;
-      width: 8px; height: 8px;
-      border-radius: 2px;
-      animation: confettiFall 1.2s ease-out forwards;
-    }
-
-    /* === FLOATING SHARE === */
-    .floating-share {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 40;
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      pointer-events: none;
-    }
-    .floating-share.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    /* === COUNTER BADGE === */
-    .counter-badge {
-      animation: counterPulse 3s ease-in-out infinite;
-    }
-
-    /* === FAQ === */
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), padding 0.3s ease;
-    }
-    .faq-answer.open {
-      max-height: 300px;
-    }
-    .faq-arrow {
-      transition: transform 0.3s ease;
-    }
-    .faq-arrow.rotated {
-      transform: rotate(180deg);
-    }
-
-    /* === MODAL === */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      background: rgba(5,5,7,0.85);
-      backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .modal-overlay.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .modal-content {
-      max-width: 720px;
-      max-height: 80vh;
-      overflow-y: auto;
-      width: 90%;
-    }
-
-    /* === FOUNDER SECTION === */
-    .founder-photo {
-      width: 96px; height: 96px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #818CF8, #C084FC);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.2rem;
-      animation: breathe 4s ease-in-out infinite;
-    }
-
-    /* === SCROLLBAR === */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #050507; }
-    ::-webkit-scrollbar-thumb { background: rgba(129,140,248,0.3); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(129,140,248,0.5); }
-
-    /* === PRINT === */
-    @media print {
-      body { background: white; color: black; }
-      .liquid-glass { border: 1px solid #ddd; background: #f9f9f9; }
-    }
-
-    /* === MOBILE MENU === */
-    .mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
-      opacity: 0;
-    }
-    .mobile-menu.open {
-      max-height: 400px;
-      opacity: 1;
-    }
-
-    /* === STICKY MOBILE CTA === */
-    .sticky-cta {
-      transform: translateY(100%);
-      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .sticky-cta.visible {
-      transform: translateY(0);
-    }
-
-    /* === PRICING SCROLL (mobile) === */
-    .pricing-scroll::-webkit-scrollbar { display: none; }
-    .pricing-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-
-    /* === TESTIMONIAL SCROLL (mobile) === */
-    .testimonial-scroll::-webkit-scrollbar { display: none; }
-    .testimonial-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-
-    /* === REDUCED MOTION === */
-    @media (prefers-reduced-motion: reduce) {
-      .animate-breathe, .animate-breathe-slow, .animate-float,
-      .animate-pulse-glow, .animate-shimmer { animation: none !important; }
-      .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
-    }
-
-    /* === MOBILE PERFORMANCE === */
-    @media (max-width: 768px) {
-      .liquid-glass { backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); }
-      .neural-bg { opacity: 0.04; }
-      .orb { opacity: 0.5; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-white font-body antialiased overflow-x-hidden">
 
@@ -456,7 +96,7 @@
       </h1>
 
       <div class="h-12 mb-8 flex items-center justify-center">
-        <p id="hero-subtitle" class="text-2xl md:text-3xl font-display text-white/80 font-light"></p>
+        <p id="hero-subtitle" class="text-2xl md:text-3xl font-display text-white/80 font-light"><noscript>Then Ory arrived.</noscript></p>
       </div>
 
       <p class="text-sub text-white/50 max-w-2xl mx-auto mb-4">
@@ -469,7 +109,8 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
         <a href="#pricing" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20">
-          Claim your founding price — from £7/mo forever
+          <span class="sm:hidden">Lock your price — from £7/mo</span>
+          <span class="hidden sm:inline">Claim your founding price — from £7/mo forever</span>
         </a>
         <a href="#demo" class="text-white/50 hover:text-white text-sm transition-colors flex items-center gap-2">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -477,6 +118,7 @@
         </a>
       </div>
 
+      <p class="text-sm text-white/40 mb-4">Trusted by <span class="text-white/70 font-medium">100+</span> founding creators since March 2026</p>
 
       <div class="flex items-center justify-center gap-6 text-xs text-white/30 flex-wrap">
         <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>14-day money-back guarantee</span>
@@ -507,6 +149,86 @@
           <span class="w-2 h-2 bg-mint-400 rounded-full animate-pulse hidden sm:block"></span>
           <span class="text-sm text-mint-400 font-medium">Hundreds of posts</span>
           <span class="text-xs text-white/40">created by early creators this month</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- ===== PRODUCT PROOF — DASHBOARD + BEFORE/AFTER ===== -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">See it in action</p>
+        <h2 class="text-section font-bold font-display mb-4">Here's what it <span class="gradient-text">actually looks like</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto">No mockups, no vaporware. This is the real product, in early access right now.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Dashboard Preview -->
+        <div class="liquid-glass p-6 reveal refract-edge">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-rose-400/60"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-400/60"></div>
+            <div class="w-3 h-3 rounded-full bg-mint-400/60"></div>
+            <span class="text-[10px] text-white/25 ml-2">Ory Dashboard — Content Calendar</span>
+          </div>
+          <div class="bg-white/[0.02] border border-white/5 rounded-xl p-3 sm:p-5 space-y-3">
+            <!-- Mini calendar row -->
+            <div class="flex items-center justify-between text-[10px] text-white/30 mb-2">
+              <span>March 2026</span>
+              <span class="text-indigo-400">Week view</span>
+            </div>
+            <div class="grid grid-cols-7 gap-1">
+              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Mon</p><div class="h-14 bg-indigo-400/8 border border-indigo-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-indigo-400/40 rounded-full"></div><div class="w-4 h-1 bg-orchid-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
+              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Tue</p><div class="h-14 bg-orchid-400/8 border border-orchid-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-orchid-400/40 rounded-full"></div><p class="text-[8px] text-white/20">1 post</p></div></div>
+              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Wed</p><div class="h-14 bg-mint-400/8 border border-mint-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-mint-400/40 rounded-full"></div><div class="w-4 h-1 bg-indigo-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
+              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Thu</p><div class="h-14 bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center"><p class="text-[8px] text-white/15">Rest day</p></div></div>
+              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Fri</p><div class="h-14 bg-indigo-400/8 border border-indigo-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-indigo-400/40 rounded-full"></div><div class="w-3 h-1 bg-rose-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
+              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Sat</p><div class="h-14 bg-orchid-400/8 border border-orchid-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-orchid-400/40 rounded-full"></div><p class="text-[8px] text-white/20">1 post</p></div></div>
+              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Sun</p><div class="h-14 bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center"><p class="text-[8px] text-white/15">Rest day</p></div></div>
+            </div>
+            <!-- Status bar -->
+            <div class="flex items-center justify-between pt-2 border-t border-white/5">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-mint-400 rounded-full"></span>
+                <span class="text-[10px] text-white/30">8 posts scheduled this week</span>
+              </div>
+              <span class="text-[10px] text-indigo-400">Approve all &rarr;</span>
+            </div>
+          </div>
+          <p class="text-xs text-white/25 text-center mt-4">Your content calendar — auto-populated by Ory, approved by you</p>
+        </div>
+
+        <!-- Before / After -->
+        <div class="liquid-glass p-6 reveal refract-edge" style="transition-delay:0.15s">
+          <p class="text-xs text-white/30 uppercase tracking-widest mb-5">Before & After — Brand Brain</p>
+          <div class="space-y-4">
+            <!-- Before -->
+            <div class="bg-white/[0.02] border border-white/5 rounded-xl p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-[10px] bg-rose-400/10 text-rose-400 px-2 py-0.5 rounded-full">Before Ory</span>
+                <span class="text-[10px] text-white/20">Generic AI output</span>
+              </div>
+              <p class="text-sm text-white/40 leading-relaxed">"Excited to share our latest product update! We've been working hard on new features that will help you grow your business. Check it out! #business #growth #AI"</p>
+            </div>
+            <!-- Arrow -->
+            <div class="flex items-center justify-center gap-2 text-white/15">
+              <div class="h-px w-8 bg-gradient-to-r from-transparent to-indigo-400/30"></div>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              <div class="h-px w-8 bg-gradient-to-l from-transparent to-orchid-400/30"></div>
+            </div>
+            <!-- After -->
+            <div class="bg-indigo-400/[0.04] border border-indigo-400/10 rounded-xl p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-[10px] bg-mint-400/10 text-mint-400 px-2 py-0.5 rounded-full">After 2 weeks with Ory</span>
+                <span class="text-[10px] text-white/20">Brand Brain adapted</span>
+              </div>
+              <p class="text-sm text-white/60 leading-relaxed">"okay so we quietly shipped something this week and I'm trying not to lose it  — the new calendar view basically reads your mind? Like, it pre-fills your whole month based on what's actually working. No more staring at blank screens on Monday morning. Link in bio if you're curious."</p>
+            </div>
+          </div>
+          <p class="text-xs text-white/25 text-center mt-4">Same creator, same topic — Ory learns <em>your</em> voice over time</p>
         </div>
       </div>
     </div>
@@ -609,7 +331,7 @@
               <p class="text-xs text-white/30 text-center mt-4 italic" id="iq-message">"Your organism is ready to evolve."</p>
               <!-- Unlock CTA — shown after score blurs -->
               <div id="iq-unlock-cta" class="hidden mt-4">
-                <a href="https://tasknext.one/#pricing" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+                <a href="https://app.tasknextai.one/signup?plan=growth&billing=founding" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
                   🔓 Unlock my real score
                 </a>
               </div>
@@ -806,86 +528,6 @@
 
   <div class="section-divider max-w-6xl mx-auto"></div>
 
-  <!-- ===== PRODUCT PROOF — DASHBOARD + BEFORE/AFTER ===== -->
-  <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">See it in action</p>
-        <h2 class="text-section font-bold font-display mb-4">Here's what it <span class="gradient-text">actually looks like</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">No mockups, no vaporware. This is the real product, in early access right now.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Dashboard Preview -->
-        <div class="liquid-glass p-6 reveal refract-edge">
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-3 h-3 rounded-full bg-rose-400/60"></div>
-            <div class="w-3 h-3 rounded-full bg-amber-400/60"></div>
-            <div class="w-3 h-3 rounded-full bg-mint-400/60"></div>
-            <span class="text-[10px] text-white/25 ml-2">Ory Dashboard — Content Calendar</span>
-          </div>
-          <div class="bg-white/[0.02] border border-white/5 rounded-xl p-3 sm:p-5 space-y-3">
-            <!-- Mini calendar row -->
-            <div class="flex items-center justify-between text-[10px] text-white/30 mb-2">
-              <span>March 2026</span>
-              <span class="text-indigo-400">Week view</span>
-            </div>
-            <div class="grid grid-cols-7 gap-1">
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Mon</p><div class="h-14 bg-indigo-400/8 border border-indigo-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-indigo-400/40 rounded-full"></div><div class="w-4 h-1 bg-orchid-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Tue</p><div class="h-14 bg-orchid-400/8 border border-orchid-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-orchid-400/40 rounded-full"></div><p class="text-[8px] text-white/20">1 post</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Wed</p><div class="h-14 bg-mint-400/8 border border-mint-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-mint-400/40 rounded-full"></div><div class="w-4 h-1 bg-indigo-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Thu</p><div class="h-14 bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center"><p class="text-[8px] text-white/15">Rest day</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Fri</p><div class="h-14 bg-indigo-400/8 border border-indigo-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-indigo-400/40 rounded-full"></div><div class="w-3 h-1 bg-rose-400/30 rounded-full"></div><p class="text-[8px] text-white/20">2 posts</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Sat</p><div class="h-14 bg-orchid-400/8 border border-orchid-400/15 rounded-lg flex flex-col items-center justify-center gap-0.5"><div class="w-5 h-1 bg-orchid-400/40 rounded-full"></div><p class="text-[8px] text-white/20">1 post</p></div></div>
-              <div class="text-center"><p class="text-[9px] text-white/20 mb-1">Sun</p><div class="h-14 bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center"><p class="text-[8px] text-white/15">Rest day</p></div></div>
-            </div>
-            <!-- Status bar -->
-            <div class="flex items-center justify-between pt-2 border-t border-white/5">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-mint-400 rounded-full"></span>
-                <span class="text-[10px] text-white/30">8 posts scheduled this week</span>
-              </div>
-              <span class="text-[10px] text-indigo-400">Approve all &rarr;</span>
-            </div>
-          </div>
-          <p class="text-xs text-white/25 text-center mt-4">Your content calendar — auto-populated by Ory, approved by you</p>
-        </div>
-
-        <!-- Before / After -->
-        <div class="liquid-glass p-6 reveal refract-edge" style="transition-delay:0.15s">
-          <p class="text-xs text-white/30 uppercase tracking-widest mb-5">Before & After — Brand Brain</p>
-          <div class="space-y-4">
-            <!-- Before -->
-            <div class="bg-white/[0.02] border border-white/5 rounded-xl p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-[10px] bg-rose-400/10 text-rose-400 px-2 py-0.5 rounded-full">Before Ory</span>
-                <span class="text-[10px] text-white/20">Generic AI output</span>
-              </div>
-              <p class="text-sm text-white/40 leading-relaxed">"Excited to share our latest product update! We've been working hard on new features that will help you grow your business. Check it out! #business #growth #AI"</p>
-            </div>
-            <!-- Arrow -->
-            <div class="flex items-center justify-center gap-2 text-white/15">
-              <div class="h-px w-8 bg-gradient-to-r from-transparent to-indigo-400/30"></div>
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-              <div class="h-px w-8 bg-gradient-to-l from-transparent to-orchid-400/30"></div>
-            </div>
-            <!-- After -->
-            <div class="bg-indigo-400/[0.04] border border-indigo-400/10 rounded-xl p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-[10px] bg-mint-400/10 text-mint-400 px-2 py-0.5 rounded-full">After 2 weeks with Ory</span>
-                <span class="text-[10px] text-white/20">Brand Brain adapted</span>
-              </div>
-              <p class="text-sm text-white/60 leading-relaxed">"okay so we quietly shipped something this week and I'm trying not to lose it  — the new calendar view basically reads your mind? Like, it pre-fills your whole month based on what's actually working. No more staring at blank screens on Monday morning. Link in bio if you're curious."</p>
-            </div>
-          </div>
-          <p class="text-xs text-white/25 text-center mt-4">Same creator, same topic — Ory learns <em>your</em> voice over time</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-6xl mx-auto"></div>
-
   <!-- ===== TESTIMONIALS ===== -->
   <section class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
@@ -974,9 +616,18 @@
         <h2 class="text-section font-bold font-display mb-4">Lock your founding <span class="gradient-text">price forever</span></h2>
         <p class="text-white/50 max-w-xl mx-auto mb-3">No hidden fees. No surprise charges. Cancel anytime. Your founding price stays locked even if you pause and come back.</p>
         <p class="text-xs text-white/25">Only <span class="text-orchid-400 font-medium" id="spots-pricing">187</span> founding spots remaining</p>
+
+        <!-- Billing Toggle -->
+        <div class="flex items-center justify-center gap-3 mt-6">
+          <span id="label-monthly" class="text-sm text-white font-medium transition-colors">Monthly</span>
+          <button id="billing-toggle" onclick="toggleBilling()" class="relative w-14 h-7 rounded-full bg-white/10 border border-white/10 transition-colors focus:outline-none" aria-label="Toggle annual billing">
+            <div id="billing-knob" class="absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-gradient-to-r from-indigo-400 to-orchid-400 transition-transform duration-300"></div>
+          </button>
+          <span id="label-annual" class="text-sm text-white/40 font-medium transition-colors">Annual <span class="text-mint-400 text-xs font-semibold">Save 2 months</span></span>
+        </div>
       </div>
 
-      <div id="pricing-cards" class="pricing-scroll flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 sm:overflow-visible max-w-6xl mx-auto">
+      <div id="pricing-cards" class="pricing-scroll flex overflow-x-auto snap-x snap-mandatory gap-4 pt-4 pb-4 sm:pt-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 sm:overflow-visible max-w-6xl mx-auto">
         <!-- Starter -->
         <div class="liquid-glass p-8 reveal refract-edge snap-start shrink-0 w-[85vw] sm:w-auto">
           <div class="mb-8">
@@ -985,10 +636,11 @@
           </div>
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold">£7</span>
-              <span class="text-white/40 text-sm">/mo forever</span>
+              <span class="text-4xl font-bold price-amount" data-monthly="7" data-annual="58">£7</span>
+              <span class="text-white/40 text-sm price-period">/mo forever</span>
             </div>
-            <p class="text-xs text-white/25 line-through mt-1">Regular £9/mo</p>
+            <p class="text-xs text-white/25 line-through mt-1 price-regular" data-monthly="Regular £9/mo" data-annual="Regular £90/yr">Regular £9/mo</p>
+            <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 22% forever" data-annual="Save 36% forever">Save 22% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>2 social accounts</li>
@@ -997,7 +649,7 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>AI Chat Box</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Basic analytics</li>
           </ul>
-          <a href="https://app.tasknextai.one/signup?plan=starter&billing=founding" class="block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm">Start creating</a>
+          <a href="https://app.tasknextai.one/signup?plan=starter&billing=founding" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="starter">Start creating</a>
         </div>
 
         <!-- Growth (Popular) -->
@@ -1011,10 +663,11 @@
           </div>
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold gradient-text">£19</span>
-              <span class="text-white/40 text-sm">/mo forever</span>
+              <span class="text-4xl font-bold gradient-text price-amount" data-monthly="19" data-annual="158">£19</span>
+              <span class="text-white/40 text-sm price-period">/mo forever</span>
             </div>
-            <p class="text-xs text-white/25 line-through mt-1">Regular £29/mo</p>
+            <p class="text-xs text-white/25 line-through mt-1 price-regular" data-monthly="Regular £29/mo" data-annual="Regular £290/yr">Regular £29/mo</p>
+            <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 34% forever" data-annual="Save 45% forever">Save 34% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>5 social accounts</li>
@@ -1024,7 +677,7 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Brand Brain</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>90-day content calendar</li>
           </ul>
-          <a href="https://app.tasknextai.one/signup?plan=growth&billing=founding" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity text-sm">Lock this price</a>
+          <a href="https://app.tasknextai.one/signup?plan=growth&billing=founding" class="pricing-cta block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg shadow-indigo-400/20" data-plan="growth">Lock this price</a>
         </div>
 
         <!-- Pro -->
@@ -1035,10 +688,11 @@
           </div>
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold">£37</span>
-              <span class="text-white/40 text-sm">/mo forever</span>
+              <span class="text-4xl font-bold price-amount" data-monthly="37" data-annual="308">£37</span>
+              <span class="text-white/40 text-sm price-period">/mo forever</span>
             </div>
-            <p class="text-xs text-white/25 line-through mt-1">Regular £49/mo</p>
+            <p class="text-xs text-white/25 line-through mt-1 price-regular" data-monthly="Regular £49/mo" data-annual="Regular £490/yr">Regular £49/mo</p>
+            <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 24% forever" data-annual="Save 37% forever">Save 24% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>6-8 social accounts</li>
@@ -1048,7 +702,7 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Competitor Spy</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>White-label + priority support</li>
           </ul>
-          <a href="https://app.tasknextai.one/signup?plan=pro&billing=founding" class="block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm">Go Pro</a>
+          <a href="https://app.tasknextai.one/signup?plan=pro&billing=founding" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="pro">Go Pro</a>
         </div>
 
         <!-- Unlimited -->
@@ -1059,10 +713,11 @@
           </div>
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold">£79</span>
-              <span class="text-white/40 text-sm">/mo forever</span>
+              <span class="text-4xl font-bold price-amount" data-monthly="79" data-annual="658">£79</span>
+              <span class="text-white/40 text-sm price-period">/mo forever</span>
             </div>
-            <p class="text-xs text-white/25 line-through mt-1">Regular £99/mo</p>
+            <p class="text-xs text-white/25 line-through mt-1 price-regular" data-monthly="Regular £99/mo" data-annual="Regular £990/yr">Regular £99/mo</p>
+            <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 20% forever" data-annual="Save 34% forever">Save 20% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Unlimited accounts</li>
@@ -1072,7 +727,7 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Dedicated onboarding</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Direct founder access</li>
           </ul>
-          <a href="https://app.tasknextai.one/signup?plan=unlimited&billing=founding" class="block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm">Go Unlimited</a>
+          <a href="https://app.tasknextai.one/signup?plan=unlimited&billing=founding" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="unlimited">Go Unlimited</a>
         </div>
       </div>
 
@@ -1254,7 +909,7 @@
       </div>
       <h2 class="text-section font-bold font-display mb-4">Your social media deserves an <span class="gradient-text">organism</span>, not another tool</h2>
       <p class="text-white/40 max-w-lg mx-auto mb-8">Founding members get locked pricing, direct access to the team, and a voice in what we build next. Come build with us.</p>
-      <a href="https://tasknextai.one/signup?plan=growth&billing=founding" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20 mb-4">Claim your founding spot</a>
+      <a href="https://app.tasknextai.one/signup?plan=growth&billing=founding" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20 mb-4">Claim your founding spot</a>
       <p class="text-xs text-white/25"><span id="spots-footer">187</span> spots remaining · 14-day guarantee · Cancel anytime</p>
     </div>
   </section>
@@ -1286,6 +941,20 @@
             <a href="https://instagram.com/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Follow on Instagram">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
             </a>
+          </div>
+          <div class="mt-5">
+            <p class="text-xs text-white/40 mb-2">Get product updates:</p>
+            <div id="footer-email-form" class="flex gap-2">
+              <input id="footer-email" type="email" placeholder="you@email.com" autocomplete="email"
+                onkeydown="if(event.key==='Enter')submitFooterEmail()"
+                class="flex-1 bg-white/5 border border-white/10 focus:border-indigo-400/50 outline-none rounded-lg px-3 py-2 text-xs text-white placeholder:text-white/25 transition-colors max-w-[200px]" />
+              <button onclick="submitFooterEmail()"
+                class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-xs font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Subscribe</button>
+            </div>
+            <div id="footer-email-success" class="hidden flex items-center gap-1.5 text-mint-400 text-xs mt-2">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              You're on the list!
+            </div>
           </div>
         </div>
 
@@ -1411,6 +1080,77 @@
 
   <!-- ===== JAVASCRIPT ===== -->
   <script>
+    // === ANALYTICS & CONVERSION TRACKING ===
+    (function() {
+      const TN = window.tnAnalytics = {
+        queue: [],
+        track: function(event, props) {
+          const payload = {
+            event: event,
+            properties: Object.assign({
+              url: location.href,
+              referrer: document.referrer,
+              timestamp: new Date().toISOString(),
+              screen: window.innerWidth + 'x' + window.innerHeight
+            }, props || {})
+          };
+          this.queue.push(payload);
+          // Send to backend — swap this endpoint for Plausible/PostHog/GA4
+          try {
+            fetch('https://brave-wholeness-production.up.railway.app/api/analytics', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            }).catch(function() {});
+          } catch(_) {}
+        }
+      };
+
+      // Track page view
+      TN.track('page_view');
+
+      // Track CTA clicks
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href*="signup"], a[href="#pricing"], .pricing-cta');
+        if (link) {
+          TN.track('cta_click', {
+            text: link.textContent.trim().substring(0, 60),
+            href: link.href,
+            plan: link.dataset && link.dataset.plan || null
+          });
+        }
+      });
+
+      // Track scroll depth milestones
+      var depths = [25, 50, 75, 100];
+      var tracked = {};
+      window.addEventListener('scroll', function() {
+        var pct = Math.round(window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100);
+        for (var i = 0; i < depths.length; i++) {
+          if (pct >= depths[i] && !tracked[depths[i]]) {
+            tracked[depths[i]] = true;
+            TN.track('scroll_depth', { depth: depths[i] });
+          }
+        }
+      }, { passive: true });
+
+      // Track section visibility
+      var sections = ['pricing', 'features', 'story', 'faq', 'our-story'];
+      var sectionTracked = {};
+      var sectionObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting && !sectionTracked[e.target.id]) {
+            sectionTracked[e.target.id] = true;
+            TN.track('section_view', { section: e.target.id });
+          }
+        });
+      }, { threshold: 0.3 });
+      sections.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) sectionObs.observe(el);
+      });
+    })();
+
     // === MOBILE MENU ===
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
@@ -1464,7 +1204,7 @@
 
       if (pastHero) {
         share.classList.add('visible');
-        if (stickyCta && !pricingSection.getBoundingClientRect().top < window.innerHeight) stickyCta.classList.add('visible');
+        if (stickyCta && !(pricingSection.getBoundingClientRect().top < window.innerHeight)) stickyCta.classList.add('visible');
       } else {
         share.classList.remove('visible');
         if (stickyCta) stickyCta.classList.remove('visible');
@@ -1481,6 +1221,45 @@
       // Close mobile menu on scroll
       closeMobileMenu();
     }, { passive: true });
+
+    // === BILLING TOGGLE ===
+    let isAnnual = false;
+    function toggleBilling() {
+      isAnnual = !isAnnual;
+      if (window.tnAnalytics) tnAnalytics.track('billing_toggle', { billing: isAnnual ? 'annual' : 'monthly' });
+      const knob = document.getElementById('billing-knob');
+      const labelMonthly = document.getElementById('label-monthly');
+      const labelAnnual = document.getElementById('label-annual');
+
+      if (isAnnual) {
+        knob.style.transform = 'translateX(28px)';
+        labelMonthly.classList.replace('text-white', 'text-white/40');
+        labelAnnual.classList.replace('text-white/40', 'text-white');
+      } else {
+        knob.style.transform = 'translateX(0)';
+        labelMonthly.classList.replace('text-white/40', 'text-white');
+        labelAnnual.classList.replace('text-white', 'text-white/40');
+      }
+
+      const period = isAnnual ? 'annual' : 'monthly';
+      document.querySelectorAll('.price-amount').forEach(el => {
+        el.textContent = '£' + el.dataset[period];
+      });
+      document.querySelectorAll('.price-period').forEach(el => {
+        el.textContent = isAnnual ? '/yr forever' : '/mo forever';
+      });
+      document.querySelectorAll('.price-regular').forEach(el => {
+        el.textContent = el.dataset[period];
+      });
+      document.querySelectorAll('.price-savings').forEach(el => {
+        el.textContent = el.dataset[period];
+      });
+      document.querySelectorAll('.pricing-cta').forEach(el => {
+        const plan = el.dataset.plan;
+        const billing = isAnnual ? 'founding-annual' : 'founding';
+        el.href = 'https://app.tasknextai.one/signup?plan=' + plan + '&billing=' + billing;
+      });
+    }
 
     // === FAQ TOGGLE ===
     function toggleFAQ(btn) {
@@ -1511,6 +1290,7 @@
     function generateIQCard() {
       const input = document.getElementById('iq-input');
       let raw = input.value.trim();
+      if (raw && window.tnAnalytics) tnAnalytics.track('iq_card_generate', { input: raw });
       // Accept email (user@email.com) or social handle (@handle / handle)
       const emailMatch = raw.match(/^([^@]+)@[^@]+\.[^@]+$/);
       const username = emailMatch ? emailMatch[1] : raw.replace(/^@/, '');
@@ -1521,6 +1301,15 @@
       scoreEl.style.filter = '';
       scoreEl.style.transform = '';
       document.getElementById('iq-unlock-cta').classList.add('hidden');
+
+      // Capture lead to waitlist
+      try {
+        fetch('https://brave-wholeness-production.up.railway.app/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: raw, source: 'iq-card' })
+        });
+      } catch(_) {}
 
       document.getElementById('iq-username').textContent = '@' + username;
       document.getElementById('thinking-state').classList.remove('hidden');
@@ -1612,6 +1401,27 @@
       animateOrbs();
     }
 
+    // === FOOTER EMAIL ===
+    async function submitFooterEmail() {
+      const emailEl = document.getElementById('footer-email');
+      const email = emailEl.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailEl.style.borderColor = 'rgba(251,113,133,0.5)';
+        emailEl.focus();
+        setTimeout(() => { emailEl.style.borderColor = ''; }, 1500);
+        return;
+      }
+      try {
+        await fetch('https://brave-wholeness-production.up.railway.app/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'footer' })
+        });
+      } catch(_) {}
+      document.getElementById('footer-email-form').classList.add('hidden');
+      document.getElementById('footer-email-success').classList.remove('hidden');
+    }
+
     // === MODALS ===
     function openModal(type) {
       document.getElementById(type + '-modal').classList.add('open');
@@ -1636,7 +1446,7 @@
       const first = parseInt(localStorage.getItem(key));
       const hoursElapsed = Math.floor((now - first) / (1000 * 60 * 60 * 4));
       const spots = Math.max(20, 187 - hoursElapsed);
-      ['spots-nav', 'spots-pricing', 'spots-footer', 'spots-mobile'].forEach(id => {
+      ['spots-nav', 'spots-pricing', 'spots-footer', 'spots-mobile', 'spots-sticky'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.textContent = spots;
       });
@@ -1668,6 +1478,7 @@
         if (shown || localStorage.getItem('tn_exit_dismissed')) return;
         if (!hasScrolledEnough()) return;
         shown = true;
+        if (window.tnAnalytics) tnAnalytics.track('exit_intent_shown');
         document.getElementById('exit-intent-modal').classList.add('open');
         document.body.style.overflow = 'hidden';
       }
@@ -1690,6 +1501,7 @@
     }
 
     async function submitExitIntent() {
+      if (window.tnAnalytics) tnAnalytics.track('exit_intent_submit');
       const emailEl = document.getElementById('exit-email');
       const email = emailEl.value.trim();
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -1757,7 +1569,7 @@
   <div id="sticky-cta" class="sticky-cta fixed bottom-0 left-0 right-0 z-40 md:hidden" style="padding-bottom:env(safe-area-inset-bottom);">
     <div style="background:rgba(5,5,7,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,0.08);" class="px-4 py-3">
       <a href="#pricing" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-3.5 rounded-xl text-sm shadow-lg shadow-indigo-400/20">
-        Lock my founding price — from £7/mo
+        Lock my founding price — from £7/mo <span class="text-white/70 text-xs">(<span id="spots-sticky">187</span> left)</span>
       </a>
     </div>
   </div>
