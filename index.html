@@ -456,7 +456,7 @@
       </h1>
 
       <div class="h-12 mb-8 flex items-center justify-center">
-        <p id="hero-subtitle" class="text-2xl md:text-3xl font-display text-white/80 font-light"></p>
+        <p id="hero-subtitle" class="text-2xl md:text-3xl font-display text-white/80 font-light"><noscript>Then Ory arrived.</noscript></p>
       </div>
 
       <p class="text-sub text-white/50 max-w-2xl mx-auto mb-4">
@@ -469,7 +469,8 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
         <a href="#pricing" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20">
-          Claim your founding price — from £7/mo forever
+          <span class="sm:hidden">Lock your price — from £7/mo</span>
+          <span class="hidden sm:inline">Claim your founding price — from £7/mo forever</span>
         </a>
         <a href="#demo" class="text-white/50 hover:text-white text-sm transition-colors flex items-center gap-2">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -477,6 +478,7 @@
         </a>
       </div>
 
+      <p class="text-sm text-white/40 mb-4">Trusted by <span class="text-white/70 font-medium">100+</span> founding creators since March 2026</p>
 
       <div class="flex items-center justify-center gap-6 text-xs text-white/30 flex-wrap">
         <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>14-day money-back guarantee</span>
@@ -609,7 +611,7 @@
               <p class="text-xs text-white/30 text-center mt-4 italic" id="iq-message">"Your organism is ready to evolve."</p>
               <!-- Unlock CTA — shown after score blurs -->
               <div id="iq-unlock-cta" class="hidden mt-4">
-                <a href="https://tasknext.one/#pricing" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+                <a href="https://app.tasknextai.one/signup?plan=growth&billing=founding" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
                   🔓 Unlock my real score
                 </a>
               </div>
@@ -976,7 +978,7 @@
         <p class="text-xs text-white/25">Only <span class="text-orchid-400 font-medium" id="spots-pricing">187</span> founding spots remaining</p>
       </div>
 
-      <div id="pricing-cards" class="pricing-scroll flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 sm:overflow-visible max-w-6xl mx-auto">
+      <div id="pricing-cards" class="pricing-scroll flex overflow-x-auto snap-x snap-mandatory gap-4 pt-4 pb-4 sm:pt-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 sm:overflow-visible max-w-6xl mx-auto">
         <!-- Starter -->
         <div class="liquid-glass p-8 reveal refract-edge snap-start shrink-0 w-[85vw] sm:w-auto">
           <div class="mb-8">
@@ -989,6 +991,7 @@
               <span class="text-white/40 text-sm">/mo forever</span>
             </div>
             <p class="text-xs text-white/25 line-through mt-1">Regular £9/mo</p>
+            <p class="text-xs text-mint-400 mt-1">Save 22% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>2 social accounts</li>
@@ -1015,6 +1018,7 @@
               <span class="text-white/40 text-sm">/mo forever</span>
             </div>
             <p class="text-xs text-white/25 line-through mt-1">Regular £29/mo</p>
+            <p class="text-xs text-mint-400 mt-1">Save 34% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>5 social accounts</li>
@@ -1024,7 +1028,7 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Brand Brain</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>90-day content calendar</li>
           </ul>
-          <a href="https://app.tasknextai.one/signup?plan=growth&billing=founding" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity text-sm">Lock this price</a>
+          <a href="https://app.tasknextai.one/signup?plan=growth&billing=founding" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg shadow-indigo-400/20">Lock this price</a>
         </div>
 
         <!-- Pro -->
@@ -1039,6 +1043,7 @@
               <span class="text-white/40 text-sm">/mo forever</span>
             </div>
             <p class="text-xs text-white/25 line-through mt-1">Regular £49/mo</p>
+            <p class="text-xs text-mint-400 mt-1">Save 24% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>6-8 social accounts</li>
@@ -1063,6 +1068,7 @@
               <span class="text-white/40 text-sm">/mo forever</span>
             </div>
             <p class="text-xs text-white/25 line-through mt-1">Regular £99/mo</p>
+            <p class="text-xs text-mint-400 mt-1">Save 20% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Unlimited accounts</li>
@@ -1254,7 +1260,7 @@
       </div>
       <h2 class="text-section font-bold font-display mb-4">Your social media deserves an <span class="gradient-text">organism</span>, not another tool</h2>
       <p class="text-white/40 max-w-lg mx-auto mb-8">Founding members get locked pricing, direct access to the team, and a voice in what we build next. Come build with us.</p>
-      <a href="https://tasknextai.one/signup?plan=growth&billing=founding" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20 mb-4">Claim your founding spot</a>
+      <a href="https://app.tasknextai.one/signup?plan=growth&billing=founding" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20 mb-4">Claim your founding spot</a>
       <p class="text-xs text-white/25"><span id="spots-footer">187</span> spots remaining · 14-day guarantee · Cancel anytime</p>
     </div>
   </section>
@@ -1286,6 +1292,20 @@
             <a href="https://instagram.com/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Follow on Instagram">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
             </a>
+          </div>
+          <div class="mt-5">
+            <p class="text-xs text-white/40 mb-2">Get product updates:</p>
+            <div id="footer-email-form" class="flex gap-2">
+              <input id="footer-email" type="email" placeholder="you@email.com" autocomplete="email"
+                onkeydown="if(event.key==='Enter')submitFooterEmail()"
+                class="flex-1 bg-white/5 border border-white/10 focus:border-indigo-400/50 outline-none rounded-lg px-3 py-2 text-xs text-white placeholder:text-white/25 transition-colors max-w-[200px]" />
+              <button onclick="submitFooterEmail()"
+                class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-xs font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Subscribe</button>
+            </div>
+            <div id="footer-email-success" class="hidden flex items-center gap-1.5 text-mint-400 text-xs mt-2">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              You're on the list!
+            </div>
           </div>
         </div>
 
@@ -1464,7 +1484,7 @@
 
       if (pastHero) {
         share.classList.add('visible');
-        if (stickyCta && !pricingSection.getBoundingClientRect().top < window.innerHeight) stickyCta.classList.add('visible');
+        if (stickyCta && !(pricingSection.getBoundingClientRect().top < window.innerHeight)) stickyCta.classList.add('visible');
       } else {
         share.classList.remove('visible');
         if (stickyCta) stickyCta.classList.remove('visible');
@@ -1521,6 +1541,15 @@
       scoreEl.style.filter = '';
       scoreEl.style.transform = '';
       document.getElementById('iq-unlock-cta').classList.add('hidden');
+
+      // Capture lead to waitlist
+      try {
+        fetch('https://brave-wholeness-production.up.railway.app/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: raw, source: 'iq-card' })
+        });
+      } catch(_) {}
 
       document.getElementById('iq-username').textContent = '@' + username;
       document.getElementById('thinking-state').classList.remove('hidden');
@@ -1612,6 +1641,27 @@
       animateOrbs();
     }
 
+    // === FOOTER EMAIL ===
+    async function submitFooterEmail() {
+      const emailEl = document.getElementById('footer-email');
+      const email = emailEl.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailEl.style.borderColor = 'rgba(251,113,133,0.5)';
+        emailEl.focus();
+        setTimeout(() => { emailEl.style.borderColor = ''; }, 1500);
+        return;
+      }
+      try {
+        await fetch('https://brave-wholeness-production.up.railway.app/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'footer' })
+        });
+      } catch(_) {}
+      document.getElementById('footer-email-form').classList.add('hidden');
+      document.getElementById('footer-email-success').classList.remove('hidden');
+    }
+
     // === MODALS ===
     function openModal(type) {
       document.getElementById(type + '-modal').classList.add('open');
@@ -1636,7 +1686,7 @@
       const first = parseInt(localStorage.getItem(key));
       const hoursElapsed = Math.floor((now - first) / (1000 * 60 * 60 * 4));
       const spots = Math.max(20, 187 - hoursElapsed);
-      ['spots-nav', 'spots-pricing', 'spots-footer', 'spots-mobile'].forEach(id => {
+      ['spots-nav', 'spots-pricing', 'spots-footer', 'spots-mobile', 'spots-sticky'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.textContent = spots;
       });
@@ -1757,7 +1807,7 @@
   <div id="sticky-cta" class="sticky-cta fixed bottom-0 left-0 right-0 z-40 md:hidden" style="padding-bottom:env(safe-area-inset-bottom);">
     <div style="background:rgba(5,5,7,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,0.08);" class="px-4 py-3">
       <a href="#pricing" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-3.5 rounded-xl text-sm shadow-lg shadow-indigo-400/20">
-        Lock my founding price — from £7/mo
+        Lock my founding price — from £7/mo <span class="text-white/70 text-xs">(<span id="spots-sticky">187</span> left)</span>
       </a>
     </div>
   </div>
