@@ -533,7 +533,8 @@
   // Starter
   T['price-starter-label'] = { fr: "Starter", es: "Starter" };
   T['price-starter-sub'] = { fr: "Createurs solo", es: "Creadores individuales" };
-  T['price-starter-period'] = { fr: "/mois pour toujours", es: "/mes para siempre" };
+  T['price-period-mo'] = { fr: "/mois pour toujours", es: "/mes para siempre" };
+  T['price-period-yr'] = { fr: "/an pour toujours", es: "/ano para siempre" };
   T['price-starter-f1'] = { fr: "2 comptes sociaux", es: "2 cuentas sociales" };
   T['price-starter-f2'] = { fr: "30 publications par mois", es: "30 publicaciones al mes" };
   T['price-starter-f3'] = { fr: "25 000 credits IA/mois", es: "25.000 creditos IA/mes" };
@@ -545,7 +546,6 @@
   T['price-growth-badge'] = { fr: "Le plus populaire", es: "Mas popular" };
   T['price-growth-label'] = { fr: "Growth", es: "Growth" };
   T['price-growth-sub'] = { fr: "Createurs serieux & entreprises", es: "Creadores serios y negocios" };
-  T['price-growth-period'] = { fr: "/mois pour toujours", es: "/mes para siempre" };
   T['price-growth-f1'] = { fr: "5 comptes sociaux", es: "5 cuentas sociales" };
   T['price-growth-f2'] = { fr: "90 publications par mois", es: "90 publicaciones al mes" };
   T['price-growth-f3'] = { fr: "100 000 credits IA/mois", es: "100.000 creditos IA/mes" };
@@ -557,7 +557,6 @@
   // Pro
   T['price-pro-label'] = { fr: "Pro", es: "Pro" };
   T['price-pro-sub'] = { fr: "Equipes & agences", es: "Equipos y agencias" };
-  T['price-pro-period'] = { fr: "/mois pour toujours", es: "/mes para siempre" };
   T['price-pro-f1'] = { fr: "8 comptes connectes", es: "8 cuentas conectadas" };
   T['price-pro-f2'] = { fr: "Publications illimitees", es: "Publicaciones ilimitadas" };
   T['price-pro-f3'] = { fr: "300 000 credits IA/mois", es: "300.000 creditos IA/mes" };
@@ -569,7 +568,6 @@
   // Unlimited
   T['price-unlimited-label'] = { fr: "Unlimited", es: "Unlimited" };
   T['price-unlimited-sub'] = { fr: "Power users & studios", es: "Power users y estudios" };
-  T['price-unlimited-period'] = { fr: "/mois pour toujours", es: "/mes para siempre" };
   T['price-unlimited-f1'] = { fr: "10 comptes connectes", es: "10 cuentas conectadas" };
   T['price-unlimited-f2'] = { fr: "Publications illimitees", es: "Publicaciones ilimitadas" };
   T['price-unlimited-f3'] = { fr: "Tokens IA illimites", es: "Tokens IA ilimitados" };
@@ -899,7 +897,7 @@
   T['f-tier-fprice'] = { fr: "Prix fondateur", es: "Precio fundador" };
   T['f-tier-regular'] = { fr: "Mensuel normal", es: "Mensual normal" };
   T['f-tier-yousave'] = { fr: "Economie", es: "Ahorro" };
-  T['f-tier-claim'] = { fr: "Reclamer \u2192", es: "Reclamar \u2192" };
+  T['f-tier-claim'] = { fr: 'Reclamer \u2192<span class="sr-only"> (ouvre dans une nouvelle fenetre)</span>', es: 'Reclamar \u2192<span class="sr-only"> (abre en nueva ventana)</span>' };
   T['f-tier-note-starter'] = { fr: "25k credits · 30 publications · 2 comptes", es: "25k creditos · 30 publicaciones · 2 cuentas" };
   T['f-tier-note-growth'] = { fr: "100k credits · 90 publications · 5 comptes", es: "100k creditos · 90 publicaciones · 5 cuentas" };
   T['f-tier-note-pro'] = { fr: "300k credits · publications illimitees · 8 comptes", es: "300k creditos · publicaciones ilimitadas · 8 cuentas" };
@@ -1108,6 +1106,9 @@
     }
     injectToggle(lang);
   }
+
+  /* ── expose translations for inline scripts (billing toggle etc.) ── */
+  window._I18N_T = T;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

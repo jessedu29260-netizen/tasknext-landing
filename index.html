@@ -615,7 +615,7 @@
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
               <span class="text-4xl font-bold price-amount" data-monthly="3.50" data-annual="84">£3.50</span>
-              <span class="text-white/40 text-sm price-period">/mo forever</span>
+              <span class="text-white/40 text-sm price-period" data-i18n="price-period-mo">/mo forever</span>
             </div>
             <p class="text-xs text-white/25 line-through mt-1 price-regular" data-monthly="Regular £9/mo" data-annual="Regular £108/yr">Regular £9/mo</p>
             <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 61% forever" data-annual="£7/mo billed annually">Save 61% forever</p>
@@ -642,7 +642,7 @@
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
               <span class="text-4xl font-bold gradient-text price-amount" data-monthly="19" data-annual="228">£19</span>
-              <span class="text-white/40 text-sm price-period">/mo forever</span>
+              <span class="text-white/40 text-sm price-period" data-i18n="price-period-mo">/mo forever</span>
             </div>
             <p class="text-xs text-white/25 line-through mt-1 price-regular" data-monthly="Regular £29/mo" data-annual="Regular £348/yr">Regular £29/mo</p>
             <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 34% forever" data-annual="£19/mo billed annually">Save 34% forever</p>
@@ -667,7 +667,7 @@
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
               <span class="text-4xl font-bold price-amount" data-monthly="37" data-annual="444">£37</span>
-              <span class="text-white/40 text-sm price-period">/mo forever</span>
+              <span class="text-white/40 text-sm price-period" data-i18n="price-period-mo">/mo forever</span>
             </div>
             <p class="text-xs text-white/25 line-through mt-1 price-regular" data-monthly="Regular £49/mo" data-annual="Regular £588/yr">Regular £49/mo</p>
             <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 24% forever" data-annual="£37/mo billed annually">Save 24% forever</p>
@@ -692,7 +692,7 @@
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
               <span class="text-4xl font-bold price-amount" data-monthly="79" data-annual="948">£79</span>
-              <span class="text-white/40 text-sm price-period">/mo forever</span>
+              <span class="text-white/40 text-sm price-period" data-i18n="price-period-mo">/mo forever</span>
             </div>
             <p class="text-xs text-white/25 line-through mt-1 price-regular" data-monthly="Regular £99/mo" data-annual="Regular £1,188/yr">Regular £99/mo</p>
             <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 20% forever" data-annual="£79/mo billed annually">Save 20% forever</p>
@@ -761,9 +761,9 @@
               Still early. But it works — and it works itself on getting better.
             </p>
             <div class="flex items-center gap-4 text-xs text-white/25 flex-wrap">
-              <span>TaskNext AI Ltd</span>
+              <span data-i18n="story-company">TaskNext AI Ltd</span>
               <span>·</span>
-              <span>London, England</span>
+              <span data-i18n="story-location">London, England</span>
               <span>·</span>
               <span data-i18n="story-launched">Launched March 2026</span>
               <span>·</span>
@@ -931,7 +931,7 @@
             </div>
             <div id="footer-email-success" class="hidden flex items-center gap-1.5 text-mint-400 text-xs mt-2">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-              You're on the list!
+              <span data-i18n="footer-subscribed">You're on the list!</span>
             </div>
           </div>
         </div>
@@ -1222,7 +1222,14 @@
         el.textContent = '£' + el.dataset[period];
       });
       document.querySelectorAll('.price-period').forEach(el => {
-        el.textContent = isAnnual ? '/yr forever' : '/mo forever';
+        var k = isAnnual ? 'price-period-yr' : 'price-period-mo';
+        el.setAttribute('data-i18n', k);
+        var lang = (document.cookie.match(/NEXT_LOCALE=([^;]+)/)||[])[1]||'en';
+        if (lang !== 'en' && window._I18N_T && window._I18N_T[k] && window._I18N_T[k][lang]) {
+          el.textContent = window._I18N_T[k][lang];
+        } else {
+          el.textContent = isAnnual ? '/yr forever' : '/mo forever';
+        }
       });
       document.querySelectorAll('.price-regular').forEach(el => {
         el.textContent = el.dataset[period];
@@ -1518,9 +1525,9 @@
       <div id="exit-success" class="hidden">
         <div class="flex items-center justify-center gap-2 text-mint-400 mb-3">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-          <span class="font-semibold">You're on the list!</span>
+          <span class="font-semibold" data-i18n="exit-success-msg">You're on the list!</span>
         </div>
-        <p class="text-sm text-white/50 mb-4">Your bonus credits are waiting. Sign up to claim them.</p>
+        <p class="text-sm text-white/50 mb-4" data-i18n="exit-success-desc">Your bonus credits are waiting. Sign up to claim them.</p>
         <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
           <span data-i18n="exit-success-cta">Claim my founding spot</span>
         </a>
