@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Founding Members — TaskNext.AI</title>
+<meta name="description" content="The people who believed first. Meet the founding members of TaskNext.AI.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#050507">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Founding Members — TaskNext.AI">
+<meta property="og:description" content="The people who believed first. Meet the founding members of TaskNext.AI.">
+<meta property="og:url" content="https://tasknextai.one/founders">
+<meta property="og:image" content="https://tasknextai.one/og-image.png">
+<style>
+  :root {
+    --bg:     #050507;
+    --surface:#0b0b12;
+    --border: #1d1d2a;
+    --indigo: #818CF8;
+    --orchid: #C084FC;
+    --mint:   #10b981;
+    --muted:  #9a9aa8;
+    --text:   #f0f0f5;
+    --soft:   #d0d0dc;
+    --grad:   linear-gradient(135deg, var(--indigo), var(--orchid));
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Accessibility ── */
+  .skip-link {
+    position: absolute; top: -50px; left: 1rem;
+    background: var(--mint); color: var(--bg);
+    padding: .5rem 1rem; border-radius: 6px;
+    font-weight: 700; text-decoration: none; z-index: 9999;
+    transition: top .15s;
+  }
+  .skip-link:focus { top: 1rem; }
+  :focus-visible {
+    outline: 2px solid var(--mint);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ── Nav ── */
+  .site-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(5,5,7,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: .6rem;
+    text-decoration: none; color: var(--text); font-weight: 700; font-size: 1rem;
+  }
+  .nav-logo svg { width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0; }
+  .nav-links { display: flex; align-items: center; gap: 1rem; }
+  .nav-link {
+    color: var(--muted); text-decoration: none; font-size: .875rem;
+    transition: color .15s;
+  }
+  .nav-link:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--grad); color: var(--bg); font-weight: 700;
+    font-size: .8rem; padding: .45rem 1rem; border-radius: 8px;
+    text-decoration: none; white-space: nowrap;
+    transition: opacity .15s;
+  }
+  .nav-cta:hover { opacity: .88; }
+
+  /* ── Layout ── */
+  .wrap { max-width: 700px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* ── Hero ── */
+  .hero { padding: 5rem 0 2rem; text-align: center; }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 800; line-height: 1.15; margin-bottom: 1rem;
+    background: var(--grad);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--indigo);
+  }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--muted); max-width: 520px;
+    margin: 0 auto 3rem;
+  }
+
+  /* ── Members Grid ── */
+  .members-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .empty-icon {
+    width: 48px; height: 48px; margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(129,140,248,.15), rgba(192,132,252,.15));
+    display: flex; align-items: center; justify-content: center;
+  }
+  .empty-icon svg { width: 24px; height: 24px; }
+  .empty-title {
+    font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: .5rem;
+  }
+  .empty-text {
+    font-size: .925rem; color: var(--muted); max-width: 400px;
+    margin: 0 auto 1.5rem; line-height: 1.55;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--grad); color: var(--bg); font-weight: 700;
+    font-size: .9rem; padding: .65rem 1.5rem; border-radius: 10px;
+    text-decoration: none; transition: opacity .15s;
+  }
+  .cta-btn:hover { opacity: .88; }
+
+  /* ── Footer ── */
+  .site-footer {
+    text-align: center; color: var(--muted); font-size: .8rem;
+    padding: 2.5rem 1.5rem 3rem; border-top: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+  .site-footer a { color: var(--indigo); text-decoration: none; }
+  .site-footer a:hover { text-decoration: underline; }
+  .footer-links {
+    display: flex; justify-content: center; gap: 1.5rem;
+    flex-wrap: wrap; margin-bottom: .75rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 520px) {
+    .hero { padding: 3rem 0 1.5rem; }
+    .members-section { padding: 2rem 1.25rem; }
+    .site-nav { padding: .875rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <a href="https://tasknextai.one" class="nav-logo" aria-label="TaskNext.AI — home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#818CF8"/>
+          <stop offset="100%" stop-color="#C084FC"/>
+        </linearGradient>
+      </defs>
+      <rect width="1024" height="1024" rx="225" ry="225" fill="url(#ng)"/>
+      <g transform="translate(153.6 153.6) scale(11.2)">
+        <circle cx="32" cy="34" r="20" stroke="white" stroke-width="2.2" fill="none"/>
+        <ellipse cx="26" cy="31" rx="3.8" ry="4.4" fill="white"/>
+        <circle cx="27" cy="30" r="2" fill="#050507"/>
+        <ellipse cx="38" cy="31" rx="3.8" ry="4.4" fill="white"/>
+        <circle cx="39" cy="30" r="2" fill="#050507"/>
+        <path d="M28 38 Q32 42 36 38" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      </g>
+    </svg>
+    TaskNext.AI
+  </a>
+  <div class="nav-links">
+    <a href="https://app.tasknextai.one/dashboard" class="nav-link">Sign in</a>
+    <a href="/founding/" class="nav-cta">Become a founder</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+  <section class="hero">
+    <h1>The people who believed first.</h1>
+    <p class="hero-sub">These founding members joined TaskNext.AI before anyone else. Their support, feedback, and trust made this possible.</p>
+  </section>
+
+  <section class="members-section" aria-label="Founding members">
+    <div class="empty-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#818CF8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>
+      </svg>
+    </div>
+    <p class="empty-title">The wall is waiting.</p>
+    <p class="empty-text">The first founding members will appear here as they join. Be one of the first — claim your founding spot.</p>
+    <a href="/founding/" class="cta-btn">Claim your founding spot</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <nav class="footer-links" aria-label="Footer links">
+    <a href="https://tasknextai.one">Home</a>
+    <a href="/founding/">Founding</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="mailto:hello@tasknextai.one">Contact</a>
+  </nav>
+  <p>TaskNext.AI &middot; London &middot; 2026 &middot; <a href="mailto:hello@tasknextai.one">hello@tasknextai.one</a></p>
+</footer>
+
+</body>
+</html>
