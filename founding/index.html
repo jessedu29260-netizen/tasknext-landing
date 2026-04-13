@@ -4,87 +4,147 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Founding Member — TaskNext.AI</title>
-<meta name="description" content="Founding Member access to TaskNext.AI. 50% off forever. Locked for life. 30-day refund. Direct DM access to the founder.">
+<meta name="description" content="Join the first 100 founding members of TaskNext.AI. AI social media manager built for ADHD brains. £3.50/mo forever, 7-day free trial, 30-day refund.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#7C3AED">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Founding Member — TaskNext.AI">
+<meta property="og:description" content="50% off forever. Locked for life. 7-day free trial. 30-day refund. Built for ADHD brains.">
+<meta property="og:url" content="https://tasknextai.one/founding">
+<meta property="og:image" content="https://tasknextai.one/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Founding Member — TaskNext.AI">
+<meta name="twitter:description" content="50% off forever. Locked for life. Built for ADHD brains.">
+<meta name="twitter:image" content="https://tasknextai.one/og-image.png">
 <style>
-  :root{--bg:#050507;--indigo:#818CF8;--orchid:#C084FC;--mint:#34D399;--muted:#9a9aa8;--card:#0b0b12}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:#f0f0f5;font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;line-height:1.55;min-height:100vh;padding:40px 20px}
-  .wrap{max-width:680px;margin:0 auto}
-  .badge{display:inline-block;padding:6px 14px;border:1px solid var(--orchid);border-radius:999px;color:var(--orchid);font-size:13px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px}
-  h1{font-size:42px;font-weight:800;line-height:1.15;margin-bottom:16px;background:linear-gradient(90deg,var(--indigo),var(--orchid));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{color:var(--muted);font-size:18px;margin-bottom:40px}
-  .price{display:flex;align-items:baseline;gap:14px;margin:32px 0 8px}
-  .price .now{font-size:56px;font-weight:800;color:var(--mint)}
-  .price .old{font-size:22px;color:var(--muted);text-decoration:line-through}
-  .price .per{color:var(--muted)}
-  .lock{color:var(--orchid);font-size:14px;margin-bottom:32px}
-  .cta{display:block;background:linear-gradient(90deg,var(--indigo),var(--orchid));color:#0a0a15;font-weight:700;font-size:18px;text-align:center;padding:18px 24px;border-radius:14px;text-decoration:none;margin-bottom:14px;transition:transform .15s}
-  .cta:hover{transform:translateY(-2px)}
-  .note{text-align:center;color:var(--muted);font-size:13px;margin-bottom:48px}
-  .stack{background:var(--card);border:1px solid #1d1d2a;border-radius:16px;padding:28px;margin-bottom:24px}
-  .stack h3{font-size:18px;margin-bottom:14px;color:var(--indigo)}
-  .stack ul{list-style:none}
-  .stack li{padding:10px 0;border-bottom:1px solid #18182a;display:flex;gap:12px;align-items:flex-start}
-  .stack li:last-child{border-bottom:none}
-  .stack .check{color:var(--mint);flex-shrink:0;font-weight:700}
-  .ory{background:var(--card);border:1px solid #1d1d2a;border-radius:16px;padding:24px;font-style:italic;color:#d0d0dc;margin-bottom:24px}
-  .ory .sig{display:block;margin-top:12px;font-style:normal;color:var(--orchid);font-weight:600}
-  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:48px}
-  footer a{color:var(--indigo)}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <span class="badge">founding member · limited to first 100</span>
-  <h1>for brains that don't run in straight lines.</h1>
-  <p class="sub">TaskNext.AI is productivity software built for ADHD, overwhelm, and the 47-tab kind of day. Ory lives here. Ory is kind.</p>
+  /* ── Reset + Root ── */
+  :root {
+    --bg:     #050507;
+    --surface:#0b0b12;
+    --border: #1d1d2a;
+    --indigo: #818CF8;
+    --orchid: #C084FC;
+    --mint:   #34D399;
+    --muted:  #9a9aa8;
+    --text:   #f0f0f5;
+    --soft:   #d0d0dc;
+    --grad:   linear-gradient(135deg, var(--indigo), var(--orchid));
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
 
-  <div class="ory">
-    you're not behind. you're just tired.<br>
-    that's a different problem.
-    <span class="sig">— ory</span>
-  </div>
+  /* ── Accessibility ── */
+  .skip-link {
+    position: absolute; top: -50px; left: 1rem;
+    background: var(--mint); color: var(--bg);
+    padding: .5rem 1rem; border-radius: 6px;
+    font-weight: 700; text-decoration: none; z-index: 9999;
+    transition: top .15s;
+  }
+  .skip-link:focus { top: 1rem; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  :focus-visible {
+    outline: 2px solid var(--mint);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
 
-  <div class="price">
-    <span class="now">£3.50</span>
-    <span class="old">£7</span>
-    <span class="per">/ month · forever</span>
-  </div>
-  <p class="lock">◆ locked for life. price never goes up. cancel anytime.</p>
+  /* ── Nav ── */
+  .site-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(5,5,7,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: .6rem;
+    text-decoration: none; color: var(--text); font-weight: 700; font-size: 1rem;
+  }
+  .nav-logo svg { width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0; }
+  .nav-links { display: flex; align-items: center; gap: 1rem; }
+  .nav-link {
+    color: var(--muted); text-decoration: none; font-size: .875rem;
+    transition: color .15s;
+  }
+  .nav-link:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--grad); color: var(--bg); font-weight: 700;
+    font-size: .8rem; padding: .45rem 1rem; border-radius: 8px;
+    text-decoration: none; white-space: nowrap;
+    transition: opacity .15s;
+  }
+  .nav-cta:hover { opacity: .88; }
 
-  <a class="cta" href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener">claim founding access →</a>
-  <p class="note">7-day free trial · 30-day refund · no sales pressure</p>
+  /* ── Layout ── */
+  .wrap { max-width: 700px; margin: 0 auto; padding: 0 1.25rem; }
 
-  <div class="stack">
-    <h3>what you get (the trust stack)</h3>
-    <ul>
-      <li><span class="check">✓</span><span><strong>50% off forever.</strong> £3.50/mo instead of £7. Locked to your account for life.</span></li>
-      <li><span class="check">✓</span><span><strong>30-day refund.</strong> Anything. Any reason. No questions.</span></li>
-      <li><span class="check">✓</span><span><strong>Founder DM access.</strong> Jesse replies within 24h. Seriously — try it.</span></li>
-      <li><span class="check">✓</span><span><strong>Lifetime price lock.</strong> Future pricing doesn't apply to you.</span></li>
-      <li><span class="check">✓</span><span><strong>Void Club.</strong> Private community of founding members. Early access to every feature.</span></li>
-      <li><span class="check">✓</span><span><strong>Your name in the credits.</strong> Founding members are listed on tasknextai.one/founders forever.</span></li>
-    </ul>
-  </div>
+  /* ── Hero ── */
+  .hero { padding: 4rem 0 2.5rem; }
+  .badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .35rem 1rem; border: 1px solid var(--orchid);
+    border-radius: 999px; color: var(--orchid); font-size: .75rem;
+    letter-spacing: .06em; text-transform: uppercase; margin-bottom: 1.75rem;
+  }
+  .badge-dot {
+    width: 6px; height: 6px; background: var(--mint);
+    border-radius: 50%; flex-shrink: 0;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: .4; }
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 800; line-height: 1.12; margin-bottom: .75rem;
+    background: var(--grad);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--indigo); /* fallback */
+  }
+  .hero-sub {
+    font-size: 1.125rem; color: var(--muted); margin-bottom: .5rem; max-width: 560px;
+  }
+  .hero-product-label {
+    font-size: .9rem; color: var(--soft); margin-bottom: 2.5rem;
+    font-weight: 500;
+  }
+  .hero-product-label strong { color: var(--text); }
 
-  <div class="stack">
-    <h3>what tasknext.ai does (plainly)</h3>
-    <ul>
-      <li><span class="check">—</span><span>writes captions, hashtags, carousels, threads in your voice</span></li>
-      <li><span class="check">—</span><span>generates images and short videos for IG, TikTok, X, LinkedIn</span></li>
-      <li><span class="check">—</span><span>schedules everything. reminds you. doesn't nag.</span></li>
-      <li><span class="check">—</span><span>learns your brand voice via brand brain</span></li>
-      <li><span class="check">—</span><span>built ADHD-first. tested on the worst tuesday afternoons.</span></li>
-    </ul>
-  </div>
+  /* ── Ory Quote ── */
+  .ory-quote {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--orchid);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    font-style: italic; color: var(--soft); margin-bottom: 2.25rem;
+    font-size: .975rem; line-height: 1.7;
+  }
+  .ory-sig {
+    display: block; margin-top: .625rem;
+    font-style: normal; color: var(--orchid); font-size: .825rem; font-weight: 600;
+  }
 
-  <a class="cta" href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener">become a founding member →</a>
-  <p class="note">you're the 100th or fewer. we'll remember.</p>
-
-  <footer>
-    tasknext.ai · london · 2026<br>
-    <a href="mailto:jessedu29200@gmail.com">jessedu29200@gmail.com</a> · replies within 24h
-  </footer>
-</div>
-</body>
-</html>
+  /* ── Price Block ── */
+  .price-block { margin-bottom: 1.5rem; }
+  .price-row {
+    display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+    margin-bottom: .5rem;
+  }
+  .price-now { font-size: 3.5rem; font-weight: 800; color: var(--mint); line-height: 1; }
+  .price-old { font-size: 1.4rem; color: var(--muted); }
+  .price-old del { text-
