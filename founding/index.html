@@ -184,7 +184,7 @@
   }
   .spots-fill {
     height: 100%; background: var(--grad); border-radius: 99px;
-    width: 12%; /* update this manually as spots fill */
+    width: 0%; /* UPDATE: change spots-count text, aria-valuenow, spots-fill width as spots fill */
     transition: width .5s;
   }
 
@@ -487,7 +487,7 @@
         <div class="cta-meta" role="list" aria-label="Guarantee details">
           <span role="listitem"><span aria-hidden="true">✓</span> 7-day free trial</span>
           <span role="listitem"><span aria-hidden="true">✓</span> 30-day refund</span>
-          <span role="listitem"><span aria-hidden="true">✓</span> No credit card to start</span>
+          <span role="listitem"><span aria-hidden="true">✓</span> Cancel anytime</span>
           <span role="listitem"><span aria-hidden="true">🔒</span> Secured by Stripe</span>
         </div>
       </div>
@@ -622,6 +622,15 @@
     <!-- ── All Founding Tiers ── -->
     <section aria-labelledby="tiers-heading">
       <h2 id="tiers-heading" class="section-label">All founding tiers</h2>
+
+      <!-- Billing Toggle -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:1.25rem;">
+        <span id="ftoggle-monthly" style="font-size:.875rem;font-weight:600;color:var(--text);transition:color .15s;">Monthly</span>
+        <button id="ftoggle-btn" onclick="toggleFoundingBilling()" style="position:relative;width:48px;height:26px;border-radius:13px;background:var(--surface);border:1px solid var(--border);cursor:pointer;padding:0;transition:background .2s;" aria-label="Toggle annual billing">
+          <span id="ftoggle-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:var(--grad);transition:transform .25s;display:block;"></span>
+        </button>
+        <span id="ftoggle-annual" style="font-size:.875rem;font-weight:600;color:var(--muted);transition:color .15s;">Annual <span style="color:var(--mint);font-size:.75rem;">save ~22%</span></span>
+      </div>
       <div class="stack-card" style="padding:0;overflow:hidden;">
         <table class="tier-table" aria-label="Founding member pricing tiers">
           <thead>
@@ -640,66 +649,77 @@
                 <span class="tier-name">Starter</span>
                 <p class="tier-note">25k credits · 30 posts · 2 accounts</p>
               </td>
-              <td><span class="tier-founding-price">£3.50<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
+              <td><span class="tier-founding-price" data-price-monthly="£3.50" data-price-annual="£7">£3.50<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
               <td class="tier-regular"><del aria-label="Regular price £9/month">£9/mo</del></td>
               <td><span class="tier-saving">61% off</span></td>
               <td>
                 <a class="tier-cta-sm"
                    href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808"
+                   data-href-monthly="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808"
+                   data-href-annual="https://buy.stripe.com/9B6bIU0hlfiWdLk6It4c804"
                    target="_blank" rel="noopener"
                    aria-label="Claim Starter founding at £3.50/mo (opens Stripe in new window)">
                   Claim →<span class="sr-only"> (opens in new window)</span>
                 </a>
               </td>
             </tr>
-            <!-- Growth — monthly_annual rate, no dedicated link yet -->
+            <!-- Growth — founding link live -->
             <tr>
               <td>
                 <span class="tier-name">Growth</span>
                 <p class="tier-note">100k credits · 90 posts · 5 accounts</p>
               </td>
-              <td><span class="tier-founding-price">£19<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
+              <td><span class="tier-founding-price" data-price-monthly="£19" data-price-annual="£19">£19<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
               <td class="tier-regular"><del aria-label="Regular price £29/month">£29/mo</del></td>
               <td><span class="tier-saving">34% off</span></td>
               <td>
-                <a class="tier-cta-sm secondary"
-                   href="mailto:jesse@tasknextai.one?subject=Founding%20Growth%20Access&body=Hi%20Jesse%2C%20I%27d%20like%20to%20claim%20the%20Growth%20founding%20rate%20at%20%C2%A319%2Fmo."
-                   aria-label="Email Jesse to claim Growth founding rate">
-                  Email Jesse →
+                <a class="tier-cta-sm"
+                   href="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g"
+                   data-href-monthly="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g"
+                   data-href-annual="https://buy.stripe.com/5kQbIU4xBfiW0YyfeZ4c805"
+                   target="_blank" rel="noopener"
+                   aria-label="Claim Growth founding at £19/mo (opens Stripe in new window)">
+                  Claim →<span class="sr-only"> (opens in new window)</span>
                 </a>
               </td>
             </tr>
-            <!-- Pro — monthly_annual rate, no dedicated link yet -->
+            <!-- Pro — founding link live -->
             <tr>
               <td>
                 <span class="tier-name">Pro</span>
                 <p class="tier-note">300k credits · unlimited posts · 8 accounts</p>
               </td>
-              <td><span class="tier-founding-price">£37<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
+              <td><span class="tier-founding-price" data-price-monthly="£37" data-price-annual="£37">£37<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
               <td class="tier-regular"><del aria-label="Regular price £49/month">£49/mo</del></td>
               <td><span class="tier-saving">24% off</span></td>
               <td>
-                <a class="tier-cta-sm secondary"
-                   href="mailto:jesse@tasknextai.one?subject=Founding%20Pro%20Access&body=Hi%20Jesse%2C%20I%27d%20like%20to%20claim%20the%20Pro%20founding%20rate%20at%20%C2%A337%2Fmo."
-                   aria-label="Email Jesse to claim Pro founding rate">
-                  Email Jesse →
+                <a class="tier-cta-sm"
+                   href="https://buy.stripe.com/aFa00cc031s66iSgj34c80h"
+                   data-href-monthly="https://buy.stripe.com/aFa00cc031s66iSgj34c80h"
+                   data-href-annual="https://buy.stripe.com/bJe3co5BF8Uy6iS5Ep4c806"
+                   target="_blank" rel="noopener"
+                   aria-label="Claim Pro founding at £37/mo (opens Stripe in new window)">
+                  Claim →<span class="sr-only"> (opens in new window)</span>
                 </a>
               </td>
             </tr>
-            <!-- Unlimited — monthly_annual rate, no dedicated link yet -->
+            <!-- Unlimited — founding link live -->
             <tr>
               <td>
                 <span class="tier-name">Unlimited</span>
                 <p class="tier-note">Unlimited credits · unlimited posts · unlimited accounts</p>
               </td>
-              <td><span class="tier-founding-price">£79<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
+              <td><span class="tier-founding-price" data-price-monthly="£79" data-price-annual="£79">£79<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
               <td class="tier-regular"><del aria-label="Regular price £99/month">£99/mo</del></td>
               <td><span class="tier-saving">20% off</span></td>
               <td>
-                <a class="tier-cta-sm secondary"
-                   href="mailto:jesse@tasknextai.one?subject=Founding%20Unlimited%20Access&body=Hi%20Jesse%2C%20I%27d%20like%20to%20claim%20the%20Unlimited%20founding%20rate%20at%20%C2%A379%2Fmo."
-                   aria-label="Email Jesse to claim Unlimited founding rate">
-                  Email Jesse →
+                <a class="tier-cta-sm"
+                   href="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i"
+                   data-href-monthly="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i"
+                   data-href-annual="https://buy.stripe.com/eVq14g7JNgn0ePo8QB4c807"
+                   target="_blank" rel="noopener"
+                   aria-label="Claim Unlimited founding at £79/mo (opens Stripe in new window)">
+                  Claim →<span class="sr-only"> (opens in new window)</span>
                 </a>
               </td>
             </tr>
@@ -731,28 +751,14 @@
 
     <hr class="divider" aria-hidden="true">
 
-    <!-- ── Testimonials ── -->
-    <section aria-labelledby="testimonials-heading">
-      <h2 id="testimonials-heading" class="section-label">What founding members say</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial">
-          <blockquote>
-            "I've tried Buffer, Later, and three other tools. None of them got that I can't batch-create 30 posts on a Sunday. TaskNext actually works with how my brain operates."
-          </blockquote>
-          <cite>
-            <span class="testimonial-avatar" aria-hidden="true">S</span>
-            <span>Sarah M. · Founding member #3 · ADHD coach</span>
-          </cite>
-        </div>
-        <div class="testimonial">
-          <blockquote>
-            "The caption quality is genuinely good. It sounds like me, not like a marketing bot. And the scheduling reminder is exactly subtle enough."
-          </blockquote>
-          <cite>
-            <span class="testimonial-avatar" aria-hidden="true">D</span>
-            <span>Dev K. · Founding member #7 · Freelance designer</span>
-          </cite>
-        </div>
+    <!-- ── Be One of the First ── -->
+    <section aria-labelledby="early-heading">
+      <h2 id="early-heading" class="section-label">Be one of the first</h2>
+      <div class="stack-card" style="text-align:center;">
+        <p style="color:var(--soft);font-size:.95rem;line-height:1.7;">
+          We're looking for our first 100 founding members to shape TaskNext.AI from day one.
+          Direct access to Jesse, input on the roadmap, and a price that never goes up.
+        </p>
       </div>
     </section>
 
@@ -794,14 +800,24 @@
         <details>
           <summary>What happens after the 100 founding spots are gone?</summary>
           <div class="faq-answer">
-            <p>The founding offer closes and the regular monthly price goes to £9/mo. Founding members keep their £3.50/mo rate forever — it's locked into your account, not a promotional period.</p>
+            <p>The founding offer closes and all plans go to regular monthly pricing: Starter £9/mo, Growth £29/mo, Pro £49/mo, Unlimited £99/mo. Founding members keep their discounted rates (£3.50/£19/£37/£79) forever — locked into your account, not a promotional period.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What's the difference between the tiers?</summary>
+          <div class="faq-answer">
+            <p><strong>Starter (£3.50/mo):</strong> 2 social accounts, 30 posts/month, 25k AI credits. Perfect for solo creators starting out.<br>
+            <strong>Growth (£19/mo):</strong> 5 accounts, 90 posts/month, 100k credits, Brand Brain, content calendar. For serious creators and small businesses.<br>
+            <strong>Pro (£37/mo):</strong> 8 accounts, unlimited posts, 300k credits, Competitor Spy, all 3 AI agents. For teams and agencies.<br>
+            <strong>Unlimited (£79/mo):</strong> Unlimited everything plus dedicated onboarding and direct founder access. For power users and studios.</p>
           </div>
         </details>
 
         <details>
           <summary>How does the price lock actually work?</summary>
           <div class="faq-answer">
-            <p>Your Stripe subscription is set to £3.50/mo with a permanent price override. Even when we raise prices for new users, your subscription price never changes. The only way it changes is if you cancel and resubscribe — so don't do that.</p>
+            <p>Your Stripe subscription is set at the founding rate with a permanent price override. Even when we raise prices for new users, your subscription price never changes. The only way it changes is if you cancel and resubscribe — so don't do that.</p>
           </div>
         </details>
 
@@ -840,6 +856,51 @@
   </nav>
   <p>TaskNext.AI · London · 2026 · <a href="mailto:hello@tasknextai.one">hello@tasknextai.one</a></p>
 </footer>
+
+<!-- Billing toggle + analytics scripts -->
+<script>
+// === BILLING TOGGLE ===
+var fAnnual = false;
+function toggleFoundingBilling() {
+  fAnnual = !fAnnual;
+  var knob = document.getElementById('ftoggle-knob');
+  var lm = document.getElementById('ftoggle-monthly');
+  var la = document.getElementById('ftoggle-annual');
+  if (fAnnual) {
+    knob.style.transform = 'translateX(22px)';
+    lm.style.color = 'var(--muted)';
+    la.style.color = 'var(--text)';
+  } else {
+    knob.style.transform = 'translateX(0)';
+    lm.style.color = 'var(--text)';
+    la.style.color = 'var(--muted)';
+  }
+  // Update prices
+  var period = fAnnual ? 'annual' : 'monthly';
+  document.querySelectorAll('.tier-founding-price[data-price-monthly]').forEach(function(el) {
+    var inner = el.querySelector('span');
+    var suffix = inner ? inner.outerHTML : '';
+    el.innerHTML = el.getAttribute('data-price-' + period) + suffix;
+  });
+  // Update CTA links
+  document.querySelectorAll('.tier-cta-sm[data-href-monthly]').forEach(function(el) {
+    el.href = el.getAttribute('data-href-' + period);
+  });
+  // Update primary CTA too
+  var primary = document.querySelector('.cta-primary[data-href-monthly]');
+  if (primary) primary.href = primary.getAttribute('data-href-' + period);
+  var secondary = document.querySelector('.cta-secondary[data-href-monthly]');
+  if (secondary) secondary.href = secondary.getAttribute('data-href-' + period);
+}
+
+// === MINIMAL ANALYTICS ===
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href*="buy.stripe.com"]');
+  if (link) {
+    console.log('[FOUNDING] CTA:', link.getAttribute('aria-label'), link.href);
+  }
+});
+</script>
 
 </body>
 </html>
