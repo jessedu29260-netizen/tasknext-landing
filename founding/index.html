@@ -388,6 +388,7 @@
     .site-nav { padding: .875rem 1rem; }
   }
 </style>
+<script src="/lang.js" defer></script>
 </head>
 <body>
 
@@ -417,8 +418,8 @@
     TaskNext.AI
   </a>
   <div class="nav-links">
-    <a href="https://app.tasknextai.one/dashboard" class="nav-link">Sign in</a>
-    <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="nav-cta" aria-label="Claim founding access (opens Stripe checkout)">
+    <a href="https://app.tasknextai.one/dashboard" class="nav-link" data-i18n="f-nav-signin">Sign in</a>
+    <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="nav-cta" aria-label="Claim founding access (opens Stripe checkout)" data-i18n="f-nav-cta">
       Claim founding →
     </a>
   </div>
@@ -432,36 +433,36 @@
     <header class="hero">
       <p class="badge" aria-label="Founding member offer — limited to first 100">
         <span class="badge-dot" aria-hidden="true"></span>
-        founding member · limited to first 100
+        <span data-i18n="f-badge">founding member · limited to first 100</span>
       </p>
 
-      <h1>AI social media for brains that work differently.</h1>
+      <h1 data-i18n="f-h1">AI social media for brains that work differently.</h1>
 
-      <p class="hero-sub">
+      <p class="hero-sub" data-i18n="f-hero-sub">
         Stop abandoning content calendars. TaskNext.AI writes in your voice, schedules posts, and never nags — built for overwhelm, chaos, and the 47-tab kind of day.
       </p>
 
-      <p class="hero-product-label">
+      <p class="hero-product-label" data-i18n="f-hero-platforms">
         <strong>Instagram · TikTok · LinkedIn · X</strong> — one place, your voice, zero burnout.<br>
-        <span style="color:var(--indigo);font-size:.8rem">↓ Starter founding price below · all 4 tiers available</span>
+        <span style="color:var(--indigo);font-size:.8rem" data-i18n="f-hero-tiers">↓ Starter founding price below · all 4 tiers available</span>
       </p>
 
       <!-- Ory quote -->
-      <blockquote class="ory-quote">
+      <blockquote class="ory-quote" data-i18n="f-ory-quote">
         you're not behind. you're just tired.<br>
         that's a different problem.
-        <span class="ory-sig">— Ory, your TaskNext.AI companion</span>
+        <span class="ory-sig" data-i18n="f-ory-sig">— Ory, your TaskNext.AI companion</span>
       </blockquote>
 
       <!-- Price -->
       <div class="price-block" aria-label="Starter founding pricing">
-        <p style="font-size:.75rem;color:var(--indigo);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.5rem">Starter plan · founding price</p>
+        <p style="font-size:.75rem;color:var(--indigo);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.5rem" data-i18n="f-price-label">Starter plan · founding price</p>
         <div class="price-row">
           <span class="price-now" aria-label="Founding price: £3.50 per month">£3.50</span>
           <span class="price-old"><del aria-label="Regular monthly price: £9">£9</del></span>
-          <span class="price-per">/ month · forever</span>
+          <span class="price-per" data-i18n="f-price-per">/ month · forever</span>
         </div>
-        <p class="price-lock">
+        <p class="price-lock" data-i18n="f-price-lock">
           <span aria-hidden="true">◆</span>
           Over 60% off · locked to your account for life · price never goes up · cancel anytime
         </p>
@@ -470,7 +471,7 @@
       <!-- Spots bar -->
       <!-- TODO: wire to live seat-count API when webhook seat-cap enforcement is built -->
       <div class="spots-bar" role="status" aria-label="Founding spots availability">
-        <span class="spots-label">Founding spots claimed</span>
+        <span class="spots-label" data-i18n="f-spots-label">Founding spots claimed</span>
         <span class="spots-count">3 / 100</span>
         <div class="spots-progress" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" aria-label="3 of 100 founding spots taken">
           <div class="spots-fill" style="width:3%"></div>
@@ -480,15 +481,15 @@
       <!-- Primary CTA -->
       <div class="cta-block">
         <a class="cta-primary" href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener"
-           aria-label="Claim founding member access (opens Stripe secure checkout in new window)">
+           aria-label="Claim founding member access (opens Stripe secure checkout in new window)" data-i18n="f-cta-primary">
           Claim founding access →
           <span class="sr-only">(opens in new window)</span>
         </a>
         <div class="cta-meta" role="list" aria-label="Guarantee details">
-          <span role="listitem"><span aria-hidden="true">✓</span> 7-day free trial</span>
-          <span role="listitem"><span aria-hidden="true">✓</span> 30-day refund</span>
-          <span role="listitem"><span aria-hidden="true">✓</span> Cancel anytime</span>
-          <span role="listitem"><span aria-hidden="true">🔒</span> Secured by Stripe</span>
+          <span role="listitem" data-i18n="f-trial"><span aria-hidden="true">✓</span> 7-day free trial</span>
+          <span role="listitem" data-i18n="f-refund"><span aria-hidden="true">✓</span> 30-day refund</span>
+          <span role="listitem" data-i18n="f-cancel"><span aria-hidden="true">✓</span> Cancel anytime</span>
+          <span role="listitem" data-i18n="f-stripe"><span aria-hidden="true">🔒</span> Secured by Stripe</span>
         </div>
       </div>
     </header>
@@ -497,18 +498,18 @@
 
     <!-- ── Product Preview ── -->
     <section aria-labelledby="preview-heading">
-      <h2 id="preview-heading" class="section-label">See it in action</h2>
+      <h2 id="preview-heading" class="section-label" data-i18n="f-preview-h">See it in action</h2>
       <div class="product-preview">
         <div class="product-preview-bar" aria-hidden="true">
           <span class="preview-dot r"></span>
           <span class="preview-dot y"></span>
           <span class="preview-dot g"></span>
-          <span class="preview-title">Ory — AI Caption Generator</span>
+          <span class="preview-title" data-i18n="f-preview-title">Ory — AI Caption Generator</span>
         </div>
         <div class="product-preview-body">
           <div class="preview-prompt">
-            <span class="preview-prompt-label">YOU</span>
-            <span>Write me a caption for a Monday motivation post about how being overwhelmed actually made me better at my job.</span>
+            <span class="preview-prompt-label" data-i18n="f-preview-you">YOU</span>
+            <span data-i18n="f-preview-prompt">Write me a caption for a Monday motivation post about how being overwhelmed actually made me better at my job.</span>
           </div>
           <div class="preview-output">
             <p class="preview-output-label">ORY</p>
@@ -523,8 +524,8 @@
             <div class="preview-platforms" role="list" aria-label="Platform adaptations">
               <span class="preview-pill active" role="listitem">✓ Instagram</span>
               <span class="preview-pill active" role="listitem">✓ TikTok</span>
-              <span class="preview-pill" role="listitem">LinkedIn version</span>
-              <span class="preview-pill" role="listitem">X thread</span>
+              <span class="preview-pill" role="listitem" data-i18n="f-preview-linkedin">LinkedIn version</span>
+              <span class="preview-pill" role="listitem" data-i18n="f-preview-xthread">X thread</span>
             </div>
           </div>
         </div>
@@ -538,15 +539,15 @@
       <div class="metric-bar" role="list">
         <div class="metric" role="listitem">
           <span class="metric-value">4h</span>
-          <p class="metric-label">saved per week on average</p>
+          <p class="metric-label" data-i18n="f-metric-saved">saved per week on average</p>
         </div>
         <div class="metric" role="listitem">
           <span class="metric-value">4</span>
-          <p class="metric-label">platforms, one place</p>
+          <p class="metric-label" data-i18n="f-metric-platforms">platforms, one place</p>
         </div>
         <div class="metric" role="listitem">
           <span class="metric-value">&lt;5min</span>
-          <p class="metric-label">to your first post</p>
+          <p class="metric-label" data-i18n="f-metric-first">to your first post</p>
         </div>
       </div>
     </section>
@@ -555,32 +556,32 @@
 
     <!-- ── What You Get ── -->
     <section aria-labelledby="trust-stack-heading">
-      <h2 id="trust-stack-heading" class="section-label">What founding members get</h2>
+      <h2 id="trust-stack-heading" class="section-label" data-i18n="f-trust-h">What founding members get</h2>
       <div class="stack-card">
         <ul class="feature-list" aria-label="Founding member benefits">
           <li>
             <span class="check" aria-hidden="true">✓</span>
-            <span><strong>Over 60% off forever.</strong> Starter at £3.50/mo instead of £9/mo. Growth/Pro/Unlimited locked at annual-equivalent rates. All founding prices are permanent.</span>
+            <span data-i18n="f-trust-1"><strong>Over 60% off forever.</strong> Starter at £3.50/mo instead of £9/mo. Growth/Pro/Unlimited locked at annual-equivalent rates. All founding prices are permanent.</span>
           </li>
           <li>
             <span class="check" aria-hidden="true">✓</span>
-            <span><strong>30-day full refund.</strong> Anything. Any reason. No questions. Email jesse@tasknextai.one and it's done.</span>
+            <span data-i18n="f-trust-2"><strong>30-day full refund.</strong> Anything. Any reason. No questions. Email jesse@tasknextai.one and it's done.</span>
           </li>
           <li>
             <span class="check" aria-hidden="true">✓</span>
-            <span><strong>Direct founder access.</strong> Jesse personally messages every founding member within 24h. Real conversation, not a template.</span>
+            <span data-i18n="f-trust-3"><strong>Direct founder access.</strong> Jesse personally messages every founding member within 24h. Real conversation, not a template.</span>
           </li>
           <li>
             <span class="check" aria-hidden="true">✓</span>
-            <span><strong>Lifetime price lock.</strong> Future plans and price increases don't touch you. Ever.</span>
+            <span data-i18n="f-trust-4"><strong>Lifetime price lock.</strong> Future plans and price increases don't touch you. Ever.</span>
           </li>
           <li>
             <span class="check" aria-hidden="true">✓</span>
-            <span><strong>Void Club.</strong> Private founding-member community. First access to every new feature. Direct input on what we build next.</span>
+            <span data-i18n="f-trust-5"><strong>Void Club.</strong> Private founding-member community. First access to every new feature. Direct input on what we build next.</span>
           </li>
           <li>
             <span class="check" aria-hidden="true">✓</span>
-            <span><strong>Your name in the credits.</strong> Founding members are listed at <a href="https://tasknextai.one/founders">tasknextai.one/founders</a> — permanently, unless you opt out.</span>
+            <span data-i18n="f-trust-6"><strong>Your name in the credits.</strong> Founding members are listed at <a href="https://tasknextai.one/founders">tasknextai.one/founders</a> — permanently, unless you opt out.</span>
           </li>
         </ul>
       </div>
@@ -590,28 +591,28 @@
 
     <!-- ── What TaskNext Does ── -->
     <section aria-labelledby="features-heading">
-      <h2 id="features-heading" class="section-label">What TaskNext.AI actually does</h2>
+      <h2 id="features-heading" class="section-label" data-i18n="f-features-h">What TaskNext.AI actually does</h2>
       <div class="stack-card">
         <ul class="feature-list" aria-label="Product features">
           <li>
             <span class="dash" aria-hidden="true">→</span>
-            <span><strong>Writes in your voice.</strong> Captions, hashtags, carousels, and threads — adapted automatically for each platform.</span>
+            <span data-i18n="f-feat-1"><strong>Writes in your voice.</strong> Captions, hashtags, carousels, and threads — adapted automatically for each platform.</span>
           </li>
           <li>
             <span class="dash" aria-hidden="true">→</span>
-            <span><strong>Generates images &amp; short videos</strong> for Instagram, TikTok, X, and LinkedIn.</span>
+            <span data-i18n="f-feat-2"><strong>Generates images &amp; short videos</strong> for Instagram, TikTok, X, and LinkedIn.</span>
           </li>
           <li>
             <span class="dash" aria-hidden="true">→</span>
-            <span><strong>Schedules everything.</strong> Reminds you. Doesn't nag. You decide when — Ory handles the rest.</span>
+            <span data-i18n="f-feat-3"><strong>Schedules everything.</strong> Reminds you. Doesn't nag. You decide when — Ory handles the rest.</span>
           </li>
           <li>
             <span class="dash" aria-hidden="true">→</span>
-            <span><strong>Brand Brain</strong> learns your tone, voice, and style. The longer you use it, the better it sounds like you.</span>
+            <span data-i18n="f-feat-4"><strong>Brand Brain</strong> learns your tone, voice, and style. The longer you use it, the better it sounds like you.</span>
           </li>
           <li>
             <span class="dash" aria-hidden="true">→</span>
-            <span><strong>Built for real life.</strong> No overwhelming dashboards. No 47-step workflows. Tested on the worst Tuesday afternoons.</span>
+            <span data-i18n="f-feat-5"><strong>Built for real life.</strong> No overwhelming dashboards. No 47-step workflows. Tested on the worst Tuesday afternoons.</span>
           </li>
         </ul>
       </div>
@@ -621,24 +622,24 @@
 
     <!-- ── All Founding Tiers ── -->
     <section aria-labelledby="tiers-heading">
-      <h2 id="tiers-heading" class="section-label">All founding tiers</h2>
+      <h2 id="tiers-heading" class="section-label" data-i18n="f-tiers-h">All founding tiers</h2>
 
       <!-- Billing Toggle -->
       <div style="display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:1.25rem;">
-        <span id="ftoggle-monthly" style="font-size:.875rem;font-weight:600;color:var(--text);transition:color .15s;">Monthly</span>
+        <span id="ftoggle-monthly" style="font-size:.875rem;font-weight:600;color:var(--text);transition:color .15s;" data-i18n="f-tier-monthly">Monthly</span>
         <button id="ftoggle-btn" onclick="toggleFoundingBilling()" style="position:relative;width:48px;height:26px;border-radius:13px;background:var(--surface);border:1px solid var(--border);cursor:pointer;padding:0;transition:background .2s;" aria-label="Toggle annual billing">
           <span id="ftoggle-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:var(--grad);transition:transform .25s;display:block;"></span>
         </button>
-        <span id="ftoggle-annual" style="font-size:.875rem;font-weight:600;color:var(--muted);transition:color .15s;">Annual <span style="color:var(--mint);font-size:.75rem;">save ~22%</span></span>
+        <span id="ftoggle-annual" style="font-size:.875rem;font-weight:600;color:var(--muted);transition:color .15s;" data-i18n="f-tier-annual">Annual <span style="color:var(--mint);font-size:.75rem;" data-i18n="f-tier-save">save ~22%</span></span>
       </div>
       <div class="stack-card" style="padding:0;overflow:hidden;">
         <table class="tier-table" aria-label="Founding member pricing tiers">
           <thead>
             <tr>
-              <th scope="col">Plan</th>
-              <th scope="col">Founding price</th>
-              <th scope="col">Regular monthly</th>
-              <th scope="col">You save</th>
+              <th scope="col" data-i18n="f-tier-plan">Plan</th>
+              <th scope="col" data-i18n="f-tier-fprice">Founding price</th>
+              <th scope="col" data-i18n="f-tier-regular">Regular monthly</th>
+              <th scope="col" data-i18n="f-tier-yousave">You save</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -647,7 +648,7 @@
             <tr class="highlight-row">
               <td>
                 <span class="tier-name">Starter</span>
-                <p class="tier-note">25k credits · 30 posts · 2 accounts</p>
+                <p class="tier-note" data-i18n="f-tier-note-starter">25k credits · 30 posts · 2 accounts</p>
               </td>
               <td><span class="tier-founding-price" data-price-monthly="£3.50" data-price-annual="£7">£3.50<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
               <td class="tier-regular"><del aria-label="Regular price £9/month">£9/mo</del></td>
@@ -667,7 +668,7 @@
             <tr>
               <td>
                 <span class="tier-name">Growth</span>
-                <p class="tier-note">100k credits · 90 posts · 5 accounts</p>
+                <p class="tier-note" data-i18n="f-tier-note-growth">100k credits · 90 posts · 5 accounts</p>
               </td>
               <td><span class="tier-founding-price" data-price-monthly="£19" data-price-annual="£19">£19<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
               <td class="tier-regular"><del aria-label="Regular price £29/month">£29/mo</del></td>
@@ -687,7 +688,7 @@
             <tr>
               <td>
                 <span class="tier-name">Pro</span>
-                <p class="tier-note">300k credits · unlimited posts · 8 accounts</p>
+                <p class="tier-note" data-i18n="f-tier-note-pro">300k credits · unlimited posts · 8 accounts</p>
               </td>
               <td><span class="tier-founding-price" data-price-monthly="£37" data-price-annual="£37">£37<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
               <td class="tier-regular"><del aria-label="Regular price £49/month">£49/mo</del></td>
@@ -707,7 +708,7 @@
             <tr>
               <td>
                 <span class="tier-name">Unlimited</span>
-                <p class="tier-note">Unlimited credits · unlimited posts · unlimited accounts</p>
+                <p class="tier-note" data-i18n="f-tier-note-unlimited">Unlimited credits · unlimited posts · unlimited accounts</p>
               </td>
               <td><span class="tier-founding-price" data-price-monthly="£79" data-price-annual="£79">£79<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
               <td class="tier-regular"><del aria-label="Regular price £99/month">£99/mo</del></td>
@@ -726,7 +727,7 @@
           </tbody>
         </table>
       </div>
-      <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:-.5rem;margin-bottom:0">
+      <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:-.5rem;margin-bottom:0" data-i18n="f-tier-footer">
         All founding prices locked for life · 7-day free trial · 30-day refund · 2× AI credits permanently
       </p>
     </section>
@@ -735,13 +736,13 @@
 
     <!-- ── Founder Story ── -->
     <section aria-labelledby="founder-heading">
-      <h2 id="founder-heading" class="section-label">Built by someone who needed it</h2>
+      <h2 id="founder-heading" class="section-label" data-i18n="f-founder-h">Built by someone who needed it</h2>
       <div class="founder-card">
         <div class="founder-avatar" aria-hidden="true">J</div>
         <div>
           <p class="founder-name">Jesse</p>
-          <p class="founder-handle">Founder, TaskNext.AI · London</p>
-          <p class="founder-bio">
+          <p class="founder-handle" data-i18n="f-founder-handle">Founder, TaskNext.AI · London</p>
+          <p class="founder-bio" data-i18n="f-founder-bio">
             I built TaskNext.AI because every other social media tool assumed you'd remember to post, had time to plan, and could sit still long enough to write a caption. I couldn't do any of those things reliably.<br><br>
             This is the tool I needed. I'm building it in public, shipping fast, and staying at 100 founding members before raising prices. If you're in — I want to hear from you.
           </p>
@@ -753,9 +754,9 @@
 
     <!-- ── Be One of the First ── -->
     <section aria-labelledby="early-heading">
-      <h2 id="early-heading" class="section-label">Be one of the first</h2>
+      <h2 id="early-heading" class="section-label" data-i18n="f-early-h">Be one of the first</h2>
       <div class="stack-card" style="text-align:center;">
-        <p style="color:var(--soft);font-size:.95rem;line-height:1.7;">
+        <p style="color:var(--soft);font-size:.95rem;line-height:1.7;" data-i18n="f-early-p">
           We're looking for our first 100 founding members to shape TaskNext.AI from day one.
           Direct access to Jesse, input on the roadmap, and a price that never goes up.
         </p>
@@ -766,48 +767,48 @@
 
     <!-- ── FAQ ── -->
     <section aria-labelledby="faq-heading">
-      <h2 id="faq-heading" class="section-label">Questions</h2>
+      <h2 id="faq-heading" class="section-label" data-i18n="f-faq-h">Questions</h2>
       <div class="faq-list">
 
         <details>
-          <summary>What happens during the 7-day trial?</summary>
+          <summary data-i18n="f-faq1-q">What happens during the 7-day trial?</summary>
           <div class="faq-answer">
-            <p>You get full access to TaskNext.AI — every feature, no limits. Your founding price of £3.50/mo only kicks in after the trial. If you cancel before day 7, you're charged nothing. No friction.</p>
+            <p data-i18n="f-faq1-a">You get full access to TaskNext.AI — every feature, no limits. Your founding price of £3.50/mo only kicks in after the trial. If you cancel before day 7, you're charged nothing. No friction.</p>
           </div>
         </details>
 
         <details>
-          <summary>What if I want a refund after the trial?</summary>
+          <summary data-i18n="f-faq2-q">What if I want a refund after the trial?</summary>
           <div class="faq-answer">
-            <p>You have 30 days from first charge, no questions asked. Email <a href="mailto:jesse@tasknextai.one">jesse@tasknextai.one</a> — Jesse handles all refunds personally and they're processed within 24 hours.</p>
+            <p data-i18n="f-faq2-a">You have 30 days from first charge, no questions asked. Email <a href="mailto:jesse@tasknextai.one">jesse@tasknextai.one</a> — Jesse handles all refunds personally and they're processed within 24 hours.</p>
           </div>
         </details>
 
         <details>
-          <summary>Is this really simpler than other tools?</summary>
+          <summary data-i18n="f-faq3-q">Is this really simpler than other tools?</summary>
           <div class="faq-answer">
-            <p>Yes. The product is designed around zero-friction workflows and the reality that you will not complete a 12-step content process. There are no bulk queues, no complex dashboards, no "content pillars" to define. You open it, you tell Ory what to post, it handles the rest.</p>
+            <p data-i18n="f-faq3-a">Yes. The product is designed around zero-friction workflows and the reality that you will not complete a 12-step content process. There are no bulk queues, no complex dashboards, no "content pillars" to define. You open it, you tell Ory what to post, it handles the rest.</p>
           </div>
         </details>
 
         <details>
-          <summary>Which social platforms does it support?</summary>
+          <summary data-i18n="f-faq4-q">Which social platforms does it support?</summary>
           <div class="faq-answer">
-            <p>Instagram, TikTok, LinkedIn, and X (Twitter). Caption generation, image creation, scheduling, and analytics for all four. You connect your accounts once and post from one place.</p>
+            <p data-i18n="f-faq4-a">Instagram, TikTok, LinkedIn, and X (Twitter). Caption generation, image creation, scheduling, and analytics for all four. You connect your accounts once and post from one place.</p>
           </div>
         </details>
 
         <details>
-          <summary>What happens after the 100 founding spots are gone?</summary>
+          <summary data-i18n="f-faq5-q">What happens after the 100 founding spots are gone?</summary>
           <div class="faq-answer">
-            <p>The founding offer closes and all plans go to regular monthly pricing: Starter £9/mo, Growth £29/mo, Pro £49/mo, Unlimited £99/mo. Founding members keep their discounted rates (£3.50/£19/£37/£79) forever — locked into your account, not a promotional period.</p>
+            <p data-i18n="f-faq5-a">The founding offer closes and all plans go to regular monthly pricing: Starter £9/mo, Growth £29/mo, Pro £49/mo, Unlimited £99/mo. Founding members keep their discounted rates (£3.50/£19/£37/£79) forever — locked into your account, not a promotional period.</p>
           </div>
         </details>
 
         <details>
-          <summary>What's the difference between the tiers?</summary>
+          <summary data-i18n="f-faq6-q">What's the difference between the tiers?</summary>
           <div class="faq-answer">
-            <p><strong>Starter (£3.50/mo):</strong> 2 social accounts, 30 posts/month, 25k AI credits. Perfect for solo creators starting out.<br>
+            <p data-i18n="f-faq6-a"><strong>Starter (£3.50/mo):</strong> 2 social accounts, 30 posts/month, 25k AI credits. Perfect for solo creators starting out.<br>
             <strong>Growth (£19/mo):</strong> 5 accounts, 90 posts/month, 100k credits, Brand Brain, content calendar. For serious creators and small businesses.<br>
             <strong>Pro (£37/mo):</strong> 8 accounts, unlimited posts, 300k credits, Competitor Spy, all 3 AI agents. For teams and agencies.<br>
             <strong>Unlimited (£79/mo):</strong> Unlimited everything plus dedicated onboarding and direct founder access. For power users and studios.</p>
@@ -815,9 +816,9 @@
         </details>
 
         <details>
-          <summary>How does the price lock actually work?</summary>
+          <summary data-i18n="f-faq7-q">How does the price lock actually work?</summary>
           <div class="faq-answer">
-            <p>Your Stripe subscription is set at the founding rate with a permanent price override. Even when we raise prices for new users, your subscription price never changes. The only way it changes is if you cancel and resubscribe — so don't do that.</p>
+            <p data-i18n="f-faq7-a">Your Stripe subscription is set at the founding rate with a permanent price override. Even when we raise prices for new users, your subscription price never changes. The only way it changes is if you cancel and resubscribe — so don't do that.</p>
           </div>
         </details>
 
@@ -826,11 +827,11 @@
 
     <!-- ── Final CTA ── -->
     <section aria-label="Final call to action" style="text-align:center; padding: 1rem 0 2rem;">
-      <p style="color:var(--muted); font-size:.85rem; margin-bottom:1.25rem;">
+      <p style="color:var(--muted); font-size:.85rem; margin-bottom:1.25rem;" data-i18n="f-final-spots">
         <span aria-hidden="true">◆</span> <strong style="color:var(--orchid)">100 spots total.</strong> Closes permanently when full.
       </p>
       <a class="cta-secondary" href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener"
-         aria-label="Become a founding member (opens Stripe secure checkout in new window)">
+         aria-label="Become a founding member (opens Stripe secure checkout in new window)" data-i18n="f-final-cta">
         Become a founding member →
         <span class="sr-only">(opens in new window)</span>
       </a>
@@ -847,12 +848,12 @@
 <!-- ── Footer ── -->
 <footer class="site-footer">
   <nav class="footer-links" aria-label="Footer links">
-    <a href="https://tasknextai.one">Home</a>
-    <a href="https://app.tasknextai.one/dashboard">Sign in</a>
-    <a href="https://tasknextai.one/founders">Founders</a>
-    <a href="mailto:hello@tasknextai.one">Contact</a>
-    <a href="https://app.tasknextai.one/privacy">Privacy</a>
-    <a href="https://app.tasknextai.one/terms">Terms</a>
+    <a href="https://tasknextai.one" data-i18n="f-footer-home">Home</a>
+    <a href="https://app.tasknextai.one/dashboard" data-i18n="f-footer-signin">Sign in</a>
+    <a href="https://tasknextai.one/founders" data-i18n="f-footer-founders">Founders</a>
+    <a href="mailto:hello@tasknextai.one" data-i18n="f-footer-contact">Contact</a>
+    <a href="https://app.tasknextai.one/privacy" data-i18n="f-footer-privacy">Privacy</a>
+    <a href="https://app.tasknextai.one/terms" data-i18n="f-footer-terms">Terms</a>
   </nav>
   <p>TaskNext.AI · London · 2026 · <a href="mailto:hello@tasknextai.one">hello@tasknextai.one</a></p>
 </footer>

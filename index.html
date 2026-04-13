@@ -11,6 +11,7 @@
   <link rel="shortcut icon" href="/favicon.ico" />
 
   <link rel="stylesheet" href="style.css">
+  <script src="/lang.js" defer></script>
 </head>
 <body class="text-white font-body antialiased overflow-x-hidden">
 
@@ -42,19 +43,24 @@
         <span class="text-lg font-semibold font-display">TaskNext<span class="gradient-text">.AI</span></span>
       </a>
       <div class="hidden md:flex items-center gap-7 text-sm text-white/50">
-        <a href="#story" class="hover:text-white transition-colors">Story</a>
-        <a href="#features" class="hover:text-white transition-colors">Features</a>
-        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
-        <a href="#our-story" class="hover:text-white transition-colors">About</a>
-        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
-        <a href="/founding" class="text-orchid-400 font-semibold hover:text-orchid-300 transition-colors flex items-center gap-1">✦ Founding</a>
+        <a href="#story" class="hover:text-white transition-colors" data-i18n="nav-story">Story</a>
+        <a href="#features" class="hover:text-white transition-colors" data-i18n="nav-features">Features</a>
+        <a href="#pricing" class="hover:text-white transition-colors" data-i18n="nav-pricing">Pricing</a>
+        <a href="#our-story" class="hover:text-white transition-colors" data-i18n="nav-about">About</a>
+        <a href="#faq" class="hover:text-white transition-colors" data-i18n="nav-faq">FAQ</a>
+        <a href="/founding" class="text-orchid-400 font-semibold hover:text-orchid-300 transition-colors flex items-center gap-1" data-i18n="nav-founding">✦ Founding</a>
+        <div class="lang-toggle" style="display:flex;gap:4px;align-items:center;">
+          <button onclick="switchLang('en')" class="lang-btn" data-lang="en" style="border:none;background:transparent;cursor:pointer;font-size:16px;padding:2px 4px;transition:all .2s;">&#x1F1EC;&#x1F1E7;</button>
+          <button onclick="switchLang('fr')" class="lang-btn" data-lang="fr" style="border:none;background:transparent;cursor:pointer;font-size:16px;padding:2px 4px;transition:all .2s;">&#x1F1EB;&#x1F1F7;</button>
+          <button onclick="switchLang('es')" class="lang-btn" data-lang="es" style="border:none;background:transparent;cursor:pointer;font-size:16px;padding:2px 4px;transition:all .2s;">&#x1F1EA;&#x1F1F8;</button>
+        </div>
       </div>
       <div class="flex items-center gap-4">
         <div class="hidden sm:flex items-center gap-2 text-xs text-orchid-400">
           <span class="w-1.5 h-1.5 bg-orchid-400 rounded-full animate-pulse"></span>
-          <span id="spots-nav">97</span> founding spots left
+          <span id="spots-nav">97</span> <span data-i18n="nav-spots">founding spots left</span>
         </div>
-        <a href="#pricing" class="hidden sm:inline-flex bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">Lock my price</a>
+        <a href="#pricing" class="hidden sm:inline-flex bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity" data-i18n="nav-lock">Lock my price</a>
         <!-- Hamburger button (mobile only) -->
         <button id="hamburger-btn" onclick="toggleMobileMenu()" class="md:hidden flex flex-col items-center justify-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
           <span class="hamburger-line w-5 h-0.5 bg-white/60 rounded-full transition-all duration-300"></span>
@@ -66,17 +72,22 @@
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu" class="mobile-menu md:hidden" style="background:rgba(5,5,7,0.95);border-top:1px solid rgba(255,255,255,0.05);">
       <div class="max-w-6xl mx-auto px-6 py-2">
-        <a href="#story" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5">Story</a>
-        <a href="#features" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5">Features</a>
-        <a href="#pricing" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5">Pricing</a>
-        <a href="#our-story" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5">About</a>
-        <a href="#faq" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5">FAQ</a>
-        <a href="/founding" onclick="closeMobileMenu()" class="block py-3 text-sm text-orchid-400 font-semibold hover:text-orchid-300 transition-colors border-b border-white/5">✦ Founding — lock your price</a>
+        <a href="#story" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5" data-i18n="mob-story">Story</a>
+        <a href="#features" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5" data-i18n="mob-features">Features</a>
+        <a href="#pricing" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5" data-i18n="mob-pricing">Pricing</a>
+        <a href="#our-story" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5" data-i18n="mob-about">About</a>
+        <a href="#faq" onclick="closeMobileMenu()" class="block py-3 text-sm text-white/60 hover:text-white transition-colors border-b border-white/5" data-i18n="mob-faq">FAQ</a>
+        <a href="/founding" onclick="closeMobileMenu()" class="block py-3 text-sm text-orchid-400 font-semibold hover:text-orchid-300 transition-colors border-b border-white/5" data-i18n="mob-founding">✦ Founding — lock your price</a>
         <div class="flex items-center gap-2 py-3 text-xs text-orchid-400">
           <span class="w-1.5 h-1.5 bg-orchid-400 rounded-full animate-pulse"></span>
-          <span id="spots-mobile">97</span> founding spots left
+          <span id="spots-mobile">97</span> <span data-i18n="nav-spots-mobile">founding spots left</span>
         </div>
-        <a href="#pricing" onclick="closeMobileMenu()" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity my-2">Lock my founding price</a>
+        <a href="#pricing" onclick="closeMobileMenu()" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity my-2" data-i18n="mob-lock">Lock my founding price</a>
+        <div class="lang-toggle" style="display:flex;gap:4px;align-items:center;justify-content:center;padding:8px 0;">
+          <button onclick="switchLang('en')" class="lang-btn" data-lang="en" style="border:none;background:transparent;cursor:pointer;font-size:18px;padding:4px 6px;transition:all .2s;">&#x1F1EC;&#x1F1E7;</button>
+          <button onclick="switchLang('fr')" class="lang-btn" data-lang="fr" style="border:none;background:transparent;cursor:pointer;font-size:18px;padding:4px 6px;transition:all .2s;">&#x1F1EB;&#x1F1F7;</button>
+          <button onclick="switchLang('es')" class="lang-btn" data-lang="es" style="border:none;background:transparent;cursor:pointer;font-size:18px;padding:4px 6px;transition:all .2s;">&#x1F1EA;&#x1F1F8;</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -91,10 +102,10 @@
     <div class="text-center relative z-10 max-w-3xl">
       <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-sm text-white/60 mb-8">
         <span class="w-2 h-2 bg-mint-400 rounded-full animate-pulse"></span>
-        Early access — founding member spots open
+        <span data-i18n="hero-badge">Early access — founding member spots open</span>
       </div>
 
-      <h1 class="text-hero font-bold font-display mb-6">
+      <h1 class="text-hero font-bold font-display mb-6" data-i18n="hero-h1">
         Once upon a time, your social media was <span class="gradient-text">chaos</span>
       </h1>
 
@@ -102,31 +113,31 @@
         <p id="hero-subtitle" class="text-2xl md:text-3xl font-display text-white/80 font-light"><noscript>Then Ory arrived.</noscript></p>
       </div>
 
-      <p class="text-sub text-white/50 max-w-2xl mx-auto mb-4">
+      <p class="text-sub text-white/50 max-w-2xl mx-auto mb-4" data-i18n="hero-desc">
         Ory is a living AI that learns your brand voice, creates content across 4 platforms, schedules everything while you sleep — and gets smarter every month you use it.
       </p>
 
-      <p class="text-sm text-white/30 mb-10 max-w-lg mx-auto">
+      <p class="text-sm text-white/30 mb-10 max-w-lg mx-auto" data-i18n="hero-launched">
         We launched in March 2026 and we're growing every week. Real creators are already using Ory daily. Join early and help shape what it becomes.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
         <a href="#pricing" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20">
-          <span class="sm:hidden">Lock your price — from £3.50/mo founding</span>
-          <span class="hidden sm:inline">Claim your founding price — from £3.50/mo founding forever</span>
+          <span class="sm:hidden" data-i18n="hero-cta-mobile">Lock your price — from £3.50/mo founding</span>
+          <span class="hidden sm:inline" data-i18n="hero-cta-desktop">Claim your founding price — from £3.50/mo founding forever</span>
         </a>
         <a href="#demo" class="text-white/50 hover:text-white text-sm transition-colors flex items-center gap-2">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          See Ory in action
+          <span data-i18n="hero-demo">See Ory in action</span>
         </a>
       </div>
 
-      <p class="text-sm text-white/40 mb-4">First <span class="text-white/70 font-medium">100</span> founding spots — join early and lock your price forever</p>
+      <p class="text-sm text-white/40 mb-4" data-i18n="hero-spots-line">First <span class="text-white/70 font-medium">100</span> founding spots — join early and lock your price forever</p>
 
       <div class="flex items-center justify-center gap-6 text-xs text-white/30 flex-wrap">
-        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>7-day free trial · 30-day refund</span>
-        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>AI tokens included</span>
-        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Ory writes in 35+ languages</span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-i18n="hero-trust-trial">7-day free trial · 30-day refund</span></span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-i18n="hero-trust-tokens">AI tokens included</span></span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-i18n="hero-trust-lang">Ory writes in 35+ languages</span></span>
       </div>
     </div>
   </section>
@@ -144,14 +155,14 @@
             <div class="w-9 h-9 rounded-full bg-white/10 border-2 border-void flex items-center justify-center text-[10px] text-white/60">+</div>
           </div>
           <div>
-            <p class="text-sm font-medium">Founding members joining every week</p>
-            <p class="text-xs text-white/40">Creators, agencies & indie brands — since March 2026</p>
+            <p class="text-sm font-medium" data-i18n="social-joining">Founding members joining every week</p>
+            <p class="text-xs text-white/40" data-i18n="social-since">Creators, agencies & indie brands — since March 2026</p>
           </div>
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 counter-badge text-center sm:text-left">
           <span class="w-2 h-2 bg-mint-400 rounded-full animate-pulse hidden sm:block"></span>
-          <span class="text-sm text-mint-400 font-medium">97 founding spots</span>
-          <span class="text-xs text-white/40">be one of the first to shape Ory</span>
+          <span class="text-sm text-mint-400 font-medium" data-i18n="social-spots">97 founding spots</span>
+          <span class="text-xs text-white/40" data-i18n="social-shape">be one of the first to shape Ory</span>
         </div>
       </div>
     </div>
@@ -163,9 +174,9 @@
   <section class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">See it in action</p>
-        <h2 class="text-section font-bold font-display mb-4">Here's what it <span class="gradient-text">actually looks like</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">No mockups, no vaporware. This is the real product, in early access right now.</p>
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4" data-i18n="proof-label">See it in action</p>
+        <h2 class="text-section font-bold font-display mb-4" data-i18n="proof-h2">Here's what it <span class="gradient-text">actually looks like</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto" data-i18n="proof-desc">No mockups, no vaporware. This is the real product, in early access right now.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
@@ -175,7 +186,7 @@
             <div class="w-3 h-3 rounded-full bg-rose-400/60"></div>
             <div class="w-3 h-3 rounded-full bg-amber-400/60"></div>
             <div class="w-3 h-3 rounded-full bg-mint-400/60"></div>
-            <span class="text-[10px] text-white/25 ml-2">Ory Dashboard — Content Calendar</span>
+            <span class="text-[10px] text-white/25 ml-2" data-i18n="proof-browser">Ory Dashboard — Content Calendar</span>
           </div>
           <div class="bg-white/[0.02] border border-white/5 rounded-xl p-3 sm:p-5 space-y-3">
             <!-- Mini calendar row -->
@@ -196,23 +207,23 @@
             <div class="flex items-center justify-between pt-2 border-t border-white/5">
               <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 bg-mint-400 rounded-full"></span>
-                <span class="text-[10px] text-white/30">8 posts scheduled this week</span>
+                <span class="text-[10px] text-white/30" data-i18n="proof-scheduled">8 posts scheduled this week</span>
               </div>
-              <span class="text-[10px] text-indigo-400">Approve all &rarr;</span>
+              <span class="text-[10px] text-indigo-400" data-i18n="proof-approve">Approve all &rarr;</span>
             </div>
           </div>
-          <p class="text-xs text-white/25 text-center mt-4">Your content calendar — auto-populated by Ory, approved by you</p>
+          <p class="text-xs text-white/25 text-center mt-4" data-i18n="proof-calendar-note">Your content calendar — auto-populated by Ory, approved by you</p>
         </div>
 
         <!-- Before / After -->
         <div class="liquid-glass p-6 reveal refract-edge" style="transition-delay:0.15s">
-          <p class="text-xs text-white/30 uppercase tracking-widest mb-5">Before & After — Brand Brain</p>
+          <p class="text-xs text-white/30 uppercase tracking-widest mb-5" data-i18n="proof-before-label">Before & After — Brand Brain</p>
           <div class="space-y-4">
             <!-- Before -->
             <div class="bg-white/[0.02] border border-white/5 rounded-xl p-4">
               <div class="flex items-center gap-2 mb-2">
-                <span class="text-[10px] bg-rose-400/10 text-rose-400 px-2 py-0.5 rounded-full">Before Ory</span>
-                <span class="text-[10px] text-white/20">Generic AI output</span>
+                <span class="text-[10px] bg-rose-400/10 text-rose-400 px-2 py-0.5 rounded-full" data-i18n="proof-before-tag">Before Ory</span>
+                <span class="text-[10px] text-white/20" data-i18n="proof-before-sub">Generic AI output</span>
               </div>
               <p class="text-sm text-white/40 leading-relaxed">"Excited to share our latest product update! We've been working hard on new features that will help you grow your business. Check it out! #business #growth #AI"</p>
             </div>
@@ -225,13 +236,13 @@
             <!-- After -->
             <div class="bg-indigo-400/[0.04] border border-indigo-400/10 rounded-xl p-4">
               <div class="flex items-center gap-2 mb-2">
-                <span class="text-[10px] bg-mint-400/10 text-mint-400 px-2 py-0.5 rounded-full">After 2 weeks with Ory</span>
-                <span class="text-[10px] text-white/20">Brand Brain adapted</span>
+                <span class="text-[10px] bg-mint-400/10 text-mint-400 px-2 py-0.5 rounded-full" data-i18n="proof-after-tag">After 2 weeks with Ory</span>
+                <span class="text-[10px] text-white/20" data-i18n="proof-after-sub">Brand Brain adapted</span>
               </div>
               <p class="text-sm text-white/60 leading-relaxed">"okay so we quietly shipped something this week and I'm trying not to lose it  — the new calendar view basically reads your mind? Like, it pre-fills your whole month based on what's actually working. No more staring at blank screens on Monday morning. Link in bio if you're curious."</p>
             </div>
           </div>
-          <p class="text-xs text-white/25 text-center mt-4">Same creator, same topic — Ory learns <em>your</em> voice over time</p>
+          <p class="text-xs text-white/25 text-center mt-4" data-i18n="proof-same">Same creator, same topic — Ory learns <em>your</em> voice over time</p>
         </div>
       </div>
     </div>
@@ -243,9 +254,9 @@
   <section id="story" class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-20 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Meet Ory</p>
-        <h2 class="text-section font-bold font-display mb-4">Not a tool. <span class="gradient-text">A living organism.</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto text-sub">Ory isn't another content scheduler with a fancy coat of paint. It's a living AI that grows with your brand — every day, every post, every insight.</p>
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4" data-i18n="org-label">Meet Ory</p>
+        <h2 class="text-section font-bold font-display mb-4" data-i18n="org-h2">Not a tool. <span class="gradient-text">A living organism.</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto text-sub" data-i18n="org-desc">Ory isn't another content scheduler with a fancy coat of paint. It's a living AI that grows with your brand — every day, every post, every insight.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -253,29 +264,29 @@
           <div class="w-12 h-12 rounded-2xl bg-indigo-400/10 flex items-center justify-center mb-5 animate-breathe">
             <svg width="24" height="24" fill="none" stroke="#818CF8" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.5-3 9-7.5 9-12a9 9 0 00-18 0c0 4.5 3.5 9 9 12z"/></svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Breathes</h3>
-          <p class="text-sm text-white/50">Auto-updates silently. New features roll out like magic — you just wake up to more power.</p>
+          <h3 class="text-lg font-semibold mb-2" data-i18n="org-breathes">Breathes</h3>
+          <p class="text-sm text-white/50" data-i18n="org-breathes-desc">Auto-updates silently. New features roll out like magic — you just wake up to more power.</p>
         </div>
         <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.1s">
           <div class="w-12 h-12 rounded-2xl bg-orchid-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-1s">
             <svg width="24" height="24" fill="none" stroke="#C084FC" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 11-7 11S5 14 5 9a7 7 0 017-7z"/><circle cx="12" cy="9" r="2"/></svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Learns</h3>
-          <p class="text-sm text-white/50">Brand Brain absorbs your tone. Every post sounds more like you — not a generic bot.</p>
+          <h3 class="text-lg font-semibold mb-2" data-i18n="org-learns">Learns</h3>
+          <p class="text-sm text-white/50" data-i18n="org-learns-desc">Brand Brain absorbs your tone. Every post sounds more like you — not a generic bot.</p>
         </div>
         <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.2s">
           <div class="w-12 h-12 rounded-2xl bg-mint-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-2s">
             <svg width="24" height="24" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.2.65.77 1.1 1.45 1.12H21a2 2 0 010 4h-.09c-.68.02-1.25.47-1.45 1.12z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Heals</h3>
-          <p class="text-sm text-white/50">Token expired? Connection dropped? Ory fixes it silently. You never see a broken post.</p>
+          <h3 class="text-lg font-semibold mb-2" data-i18n="org-heals">Heals</h3>
+          <p class="text-sm text-white/50" data-i18n="org-heals-desc">Token expired? Connection dropped? Ory fixes it silently. You never see a broken post.</p>
         </div>
         <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.3s">
           <div class="w-12 h-12 rounded-2xl bg-amber-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-3s">
             <svg width="24" height="24" fill="none" stroke="#FBBF24" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Grows</h3>
-          <p class="text-sm text-white/50">Monthly intelligence unlocks. Your Ory IQ rises — not because of updates, but because it learns <em>you</em>.</p>
+          <h3 class="text-lg font-semibold mb-2" data-i18n="org-grows">Grows</h3>
+          <p class="text-sm text-white/50" data-i18n="org-grows-desc">Monthly intelligence unlocks. Your Ory IQ rises — not because of updates, but because it learns <em>you</em>.</p>
         </div>
       </div>
     </div>
@@ -287,20 +298,20 @@
   <section id="features" class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-20 reveal">
-        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4">Built to spread</p>
-        <h2 class="text-section font-bold font-display mb-4">Made to be <span class="gradient-text">shared</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">Ory doesn't just create content — it helps you build a presence people actually notice.</p>
+        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4" data-i18n="feat-label">Built to spread</p>
+        <h2 class="text-section font-bold font-display mb-4" data-i18n="feat-h2">Made to be <span class="gradient-text">shared</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto" data-i18n="feat-desc">Ory doesn't just create content — it helps you build a presence people actually notice.</p>
       </div>
 
       <!-- IQ Card Generator -->
       <div class="liquid-glass p-8 md:p-12 mb-8 reveal refract-edge" id="demo">
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h3 class="text-2xl font-bold font-display mb-4">Your Organism IQ Card</h3>
-            <p class="text-white/50 mb-6">Drop your email or @handle to get your personalised Ory card. Your real IQ score is calculated and waiting — it unlocks the second you sign up. 👀</p>
+            <h3 class="text-2xl font-bold font-display mb-4" data-i18n="feat-iq-h3">Your Organism IQ Card</h3>
+            <p class="text-white/50 mb-6" data-i18n="feat-iq-desc">Drop your email or @handle to get your personalised Ory card. Your real IQ score is calculated and waiting — it unlocks the second you sign up.</p>
             <div class="flex flex-col sm:flex-row gap-3 mb-4">
               <input id="iq-input" type="text" placeholder="your@email.com or @handle" class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-indigo-400/50 transition-colors placeholder:text-white/25" />
-              <button onclick="generateIQCard()" class="w-full sm:w-auto bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-opacity text-sm" id="iq-btn">Generate</button>
+              <button onclick="generateIQCard()" class="w-full sm:w-auto bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-opacity text-sm" id="iq-btn" data-i18n="feat-iq-btn">Generate</button>
             </div>
           </div>
           <div>
@@ -311,7 +322,7 @@
                   <svg width="18" height="18" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="34" r="20" stroke="white" stroke-width="1.5" fill="none"/><ellipse cx="26" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="27" cy="30" r="1.8" fill="#050507"/><ellipse cx="38" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="39" cy="30" r="1.8" fill="#050507"/><path d="M28 38Q32 42 36 38" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
                 </div>
                 <div>
-                  <p class="text-xs text-white/40">Organism IQ Card</p>
+                  <p class="text-xs text-white/40" data-i18n="feat-iq-card-label">Organism IQ Card</p>
               <!-- iq-username updated by JS -->
                   <p class="text-sm font-semibold" id="iq-username">@yourbrand</p>
                 </div>
@@ -323,19 +334,19 @@
                 </div>
                 <div id="iq-result">
                   <p class="text-6xl font-bold font-display gradient-text mb-1 transition-transform" id="iq-score">—</p>
-                  <p class="text-xs text-white/40 uppercase tracking-widest">Organism IQ</p>
+                  <p class="text-xs text-white/40 uppercase tracking-widest" data-i18n="feat-iq-score-label">Organism IQ</p>
                 </div>
               </div>
               <div class="grid grid-cols-3 gap-3 text-center">
-                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold" id="iq-posts">—</p><p class="text-[10px] text-white/30">Posts</p></div>
-                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold text-mint-400" id="iq-growth">—</p><p class="text-[10px] text-white/30">Growth</p></div>
-                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold text-orchid-400" id="iq-streak">—</p><p class="text-[10px] text-white/30">Day Streak</p></div>
+                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold" id="iq-posts">—</p><p class="text-[10px] text-white/30" data-i18n="feat-iq-posts">Posts</p></div>
+                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold text-mint-400" id="iq-growth">—</p><p class="text-[10px] text-white/30" data-i18n="feat-iq-growth">Growth</p></div>
+                <div class="bg-white/5 rounded-xl p-3"><p class="text-lg font-bold text-orchid-400" id="iq-streak">—</p><p class="text-[10px] text-white/30" data-i18n="feat-iq-streak">Day Streak</p></div>
               </div>
-              <p class="text-xs text-white/30 text-center mt-4 italic" id="iq-message">"Your organism is ready to evolve."</p>
+              <p class="text-xs text-white/30 text-center mt-4 italic" id="iq-message" data-i18n="feat-iq-msg">"Your organism is ready to evolve."</p>
               <!-- Unlock CTA — shown after score blurs -->
               <div id="iq-unlock-cta" class="hidden mt-4">
                 <a href="/founding/" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
-                  🔓 Unlock my real score — become a founding member
+                  <span data-i18n="feat-iq-unlock">Unlock my real score — become a founding member</span>
                 </a>
               </div>
             </div>
@@ -353,7 +364,7 @@
             <span class="text-sm font-semibold">Instagram</span>
           </div>
           <div class="bg-white/5 rounded-xl p-4 flex flex-col justify-between" style="min-height:8rem;">
-              <p class="text-xs text-white/70 leading-relaxed">Stop doom-scrolling through 12 tools. Start creating with one organism. Slide --> to see how Ory changed my entire workflow. </p>
+              <p class="text-xs text-white/70 leading-relaxed" data-i18n="feat-ig-post">Stop doom-scrolling through 12 tools. Start creating with one organism. Slide --> to see how Ory changed my entire workflow. </p>
               <p class="text-xs text-white/25 mt-2">#MeetOry #AIMarketing #SocialMediaOS</p>
             </div>
         </div>
@@ -365,8 +376,8 @@
             <span class="text-sm font-semibold">X (Twitter)</span>
           </div>
           <div class="bg-white/5 rounded-xl p-4 flex flex-col justify-between" style="min-height:8rem;">
-              <p class="text-xs text-white/70 leading-relaxed">I replaced Buffer + Canva + ChatGPT + Later + Hootsuite with one £9/month AI organism. Here's what happened in 8 weeks: </p>
-              <p class="text-xs text-white/25 mt-2">Thread opener — auto-formatted</p>
+              <p class="text-xs text-white/70 leading-relaxed" data-i18n="feat-x-post">I replaced Buffer + Canva + ChatGPT + Later + Hootsuite with one £9/month AI organism. Here's what happened in 8 weeks: </p>
+              <p class="text-xs text-white/25 mt-2" data-i18n="feat-x-sub">Thread opener — auto-formatted</p>
             </div>
         </div>
         <div class="liquid-glass p-8 reveal watermark-demo" style="transition-delay:0.2s">
@@ -377,8 +388,8 @@
             <span class="text-sm font-semibold">LinkedIn</span>
           </div>
           <div class="bg-white/5 rounded-xl p-4 flex flex-col justify-between" style="min-height:8rem;">
-              <p class="text-xs text-white/70 leading-relaxed">The creator economy has a burnout problem. What if your social media could manage itself? Not with another tool — with a living AI organism that learns, adapts, and grows with your brand.</p>
-              <p class="text-xs text-white/25 mt-2">Thought leadership — professional tone</p>
+              <p class="text-xs text-white/70 leading-relaxed" data-i18n="feat-li-post">The creator economy has a burnout problem. What if your social media could manage itself? Not with another tool — with a living AI organism that learns, adapts, and grows with your brand.</p>
+              <p class="text-xs text-white/25 mt-2" data-i18n="feat-li-sub">Thought leadership — professional tone</p>
             </div>
         </div>
       </div>
@@ -391,39 +402,39 @@
   <section class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 reveal">
-        <p class="text-sm text-rose-400 uppercase tracking-widest mb-4">Honest comparison</p>
-        <h2 class="text-section font-bold font-display mb-4">Stop paying for <span class="gradient-text">5 tools</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">Ory replaces your content writer, scheduler, image generator, analytics dashboard, and brand guide — in one subscription.</p>
+        <p class="text-sm text-rose-400 uppercase tracking-widest mb-4" data-i18n="comp-label">Honest comparison</p>
+        <h2 class="text-section font-bold font-display mb-4" data-i18n="comp-h2">Stop paying for <span class="gradient-text">5 tools</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto" data-i18n="comp-desc">Ory replaces your content writer, scheduler, image generator, analytics dashboard, and brand guide — in one subscription.</p>
       </div>
 
       <div class="liquid-glass p-4 sm:p-6 md:p-8 reveal refract-edge">
         <table class="w-full text-xs sm:text-sm">
           <thead>
             <tr class="border-b border-white/10">
-              <th class="text-left py-2.5 px-1.5 sm:px-3 text-white/40 font-normal text-[10px] sm:text-xs">Feature</th>
+              <th class="text-left py-2.5 px-1.5 sm:px-3 text-white/40 font-normal text-[10px] sm:text-xs" data-i18n="comp-feature">Feature</th>
               <th class="py-2.5 px-1.5 sm:px-3 text-white/40 font-normal text-[10px] sm:text-xs text-center"><span class="hidden sm:inline">Buffer / </span>Later</th>
               <th class="py-2.5 px-1.5 sm:px-3 text-white/40 font-normal text-[10px] sm:text-xs text-center">Hootsuite</th>
-              <th class="py-2.5 px-1.5 sm:px-3 text-white/40 font-normal text-[10px] sm:text-xs text-center"><span class="hidden sm:inline">ChatGPT + </span>Manual</th>
+              <th class="py-2.5 px-1.5 sm:px-3 text-white/40 font-normal text-[10px] sm:text-xs text-center" data-i18n="comp-col-manual"><span class="hidden sm:inline">ChatGPT + </span>Manual</th>
               <th class="py-2.5 px-1.5 sm:px-3 text-center"><span class="gradient-text font-semibold">Ory</span></th>
             </tr>
           </thead>
           <tbody class="text-white/60">
             <tr class="border-b border-white/5">
-              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70">AI captions</td>
+              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70" data-i18n="comp-captions">AI captions</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
-              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400">Basic</td>
-              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400">Manual</td>
+              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400" data-i18n="comp-basic">Basic</td>
+              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400" data-i18n="comp-manual">Manual</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
             </tr>
             <tr class="border-b border-white/5">
-              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70"><span class="hidden sm:inline">AI </span>Image gen</td>
+              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70" data-i18n="comp-imagegen"><span class="hidden sm:inline">AI </span>Image gen</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
-              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400">Extra</td>
+              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400" data-i18n="comp-extra">Extra</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
             </tr>
             <tr class="border-b border-white/5">
-              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70"><span class="hidden sm:inline">AI </span>Video gen</td>
+              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70" data-i18n="comp-videogen"><span class="hidden sm:inline">AI </span>Video gen</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
@@ -437,14 +448,14 @@
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
             </tr>
             <tr class="border-b border-white/5">
-              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70">Scheduling</td>
+              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70" data-i18n="comp-scheduling">Scheduling</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
             </tr>
             <tr class="border-b border-white/5">
-              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70">Strategy<span class="hidden sm:inline"> &amp; campaigns</span></td>
+              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70" data-i18n="comp-strategy">Strategy<span class="hidden sm:inline"> &amp; campaigns</span></td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
@@ -453,26 +464,26 @@
             <tr class="border-b border-white/5">
               <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70">Competitor Spy</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
-              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400"><span class="hidden sm:inline">Enterprise</span><span class="sm:hidden">$$$</span></td>
+              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400" data-i18n="comp-enterprise"><span class="hidden sm:inline">Enterprise</span><span class="sm:hidden">$$$</span></td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
             </tr>
             <tr class="border-b border-white/5">
-              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70">Repurposing</td>
+              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70" data-i18n="comp-repurposing">Repurposing</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
-              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400">Manual</td>
+              <td class="py-2.5 px-1.5 sm:px-3 text-center text-amber-400" data-i18n="comp-manual">Manual</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
             </tr>
             <tr class="border-b border-white/5">
-              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70"><span class="hidden sm:inline">Gets </span>Smarter<span class="hidden sm:inline"> over time</span></td>
+              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70" data-i18n="comp-smarter"><span class="hidden sm:inline">Gets </span>Smarter<span class="hidden sm:inline"> over time</span></td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-rose-400">&mdash;</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center text-mint-400">&check;</td>
             </tr>
             <tr>
-              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70">Price</td>
+              <td class="py-2.5 px-1.5 sm:px-3 font-medium text-white/70" data-i18n="comp-price">Price</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center">$6/mo</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center">$99/mo</td>
               <td class="py-2.5 px-1.5 sm:px-3 text-center">$20+</td>
@@ -480,7 +491,7 @@
             </tr>
           </tbody>
         </table>
-        <p class="text-[10px] sm:text-xs text-white/25 mt-4 text-center">Pricing as of April 2026. Competitors' prices are for their lowest paid tier. Ory price shown is the Starter founding rate (£3.50/mo), locked forever.</p>
+        <p class="text-[10px] sm:text-xs text-white/25 mt-4 text-center" data-i18n="comp-footnote">Pricing as of April 2026. Competitors' prices are for their lowest paid tier. Ory price shown is the Starter founding rate (£3.50/mo), locked forever.</p>
       </div>
     </div>
   </section>
@@ -491,9 +502,9 @@
   <section class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 reveal">
-        <p class="text-sm text-mint-400 uppercase tracking-widest mb-4">Your content, your rules</p>
-        <h2 class="text-section font-bold font-display mb-4">Your content stays <span class="gradient-text">yours. Always.</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">We take this seriously. Here's exactly how we handle your data, your content, and your privacy.</p>
+        <p class="text-sm text-mint-400 uppercase tracking-widest mb-4" data-i18n="sec-label">Your content, your rules</p>
+        <h2 class="text-section font-bold font-display mb-4" data-i18n="sec-h2">Your content stays <span class="gradient-text">yours. Always.</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto" data-i18n="sec-desc">We take this seriously. Here's exactly how we handle your data, your content, and your privacy.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -501,29 +512,29 @@
           <div class="w-10 h-10 rounded-xl bg-mint-400/10 flex items-center justify-center mb-4">
             <svg width="20" height="20" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="text-sm font-semibold mb-2">We never train on your content</h3>
-          <p class="text-xs text-white/40">Your posts, your brand voice, your data — it's all yours. We don't use it to train models. Period.</p>
+          <h3 class="text-sm font-semibold mb-2" data-i18n="sec-train-h">We never train on your content</h3>
+          <p class="text-xs text-white/40" data-i18n="sec-train-p">Your posts, your brand voice, your data — it's all yours. We don't use it to train models. Period.</p>
         </div>
         <div class="liquid-glass p-7 reveal" style="transition-delay:0.1s">
           <div class="w-10 h-10 rounded-xl bg-indigo-400/10 flex items-center justify-center mb-4">
             <svg width="20" height="20" fill="none" stroke="#818CF8" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           </div>
-          <h3 class="text-sm font-semibold mb-2">You own 100% of everything</h3>
-          <p class="text-xs text-white/40">Every caption, image, and strategy Ory creates — it's all yours, forever. Full commercial rights, no strings.</p>
+          <h3 class="text-sm font-semibold mb-2" data-i18n="sec-own-h">You own 100% of everything</h3>
+          <p class="text-xs text-white/40" data-i18n="sec-own-p">Every caption, image, and strategy Ory creates — it's all yours, forever. Full commercial rights, no strings.</p>
         </div>
         <div class="liquid-glass p-7 reveal" style="transition-delay:0.2s">
           <div class="w-10 h-10 rounded-xl bg-orchid-400/10 flex items-center justify-center mb-4">
             <svg width="20" height="20" fill="none" stroke="#C084FC" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
           </div>
-          <h3 class="text-sm font-semibold mb-2">GDPR-aware</h3>
-          <p class="text-xs text-white/40">Built in London, GDPR-ready from day one. Data encryption at rest and in transit. SOC 2 certification in progress. <a href="/privacy" class="text-indigo-400/70 hover:text-indigo-400">Privacy policy &rarr;</a></p>
+          <h3 class="text-sm font-semibold mb-2" data-i18n="sec-gdpr-h">GDPR-aware</h3>
+          <p class="text-xs text-white/40" data-i18n="sec-gdpr-p">Built in London, GDPR-ready from day one. Data encryption at rest and in transit. SOC 2 certification in progress. <a href="/privacy" class="text-indigo-400/70 hover:text-indigo-400">Privacy policy &rarr;</a></p>
         </div>
         <div class="liquid-glass p-7 reveal" style="transition-delay:0.3s">
           <div class="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center mb-4">
             <svg width="20" height="20" fill="none" stroke="#FBBF24" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
           </div>
-          <h3 class="text-sm font-semibold mb-2">OAuth only — no passwords stored</h3>
-          <p class="text-xs text-white/40">Connect your social accounts via official OAuth. We never see or store your passwords.</p>
+          <h3 class="text-sm font-semibold mb-2" data-i18n="sec-oauth-h">OAuth only — no passwords stored</h3>
+          <p class="text-xs text-white/40" data-i18n="sec-oauth-p">Connect your social accounts via official OAuth. We never see or store your passwords.</p>
         </div>
       </div>
     </div>
@@ -535,9 +546,9 @@
   <section class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Be one of the first</p>
-        <h2 class="text-section font-bold font-display mb-4">Help shape what <span class="gradient-text">Ory becomes</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto">We're looking for our first 100 founding members. Direct access to Jesse, input on the roadmap, and a price that never goes up.</p>
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4" data-i18n="first-label">Be one of the first</p>
+        <h2 class="text-section font-bold font-display mb-4" data-i18n="first-h2">Help shape what <span class="gradient-text">Ory becomes</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto" data-i18n="first-desc">We're looking for our first 100 founding members. Direct access to Jesse, input on the roadmap, and a price that never goes up.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -545,29 +556,29 @@
           <div class="w-10 h-10 rounded-xl bg-indigo-400/10 flex items-center justify-center mb-4">
             <svg width="20" height="20" fill="none" stroke="#818CF8" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
-          <h3 class="text-sm font-semibold mb-2">Direct founder access</h3>
-          <p class="text-xs text-white/40">Every founding member gets a personal message from Jesse within 24 hours. Real conversation, not a template.</p>
+          <h3 class="text-sm font-semibold mb-2" data-i18n="first-access-h">Direct founder access</h3>
+          <p class="text-xs text-white/40" data-i18n="first-access-p">Every founding member gets a personal message from Jesse within 24 hours. Real conversation, not a template.</p>
         </div>
         <div class="liquid-glass p-7 reveal" style="transition-delay:0.1s">
           <div class="w-10 h-10 rounded-xl bg-orchid-400/10 flex items-center justify-center mb-4">
             <svg width="20" height="20" fill="none" stroke="#C084FC" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
           </div>
-          <h3 class="text-sm font-semibold mb-2">Shape the roadmap</h3>
-          <p class="text-xs text-white/40">Vote on features, request integrations, and see your ideas ship. Founding members get first access to every new release.</p>
+          <h3 class="text-sm font-semibold mb-2" data-i18n="first-roadmap-h">Shape the roadmap</h3>
+          <p class="text-xs text-white/40" data-i18n="first-roadmap-p">Vote on features, request integrations, and see your ideas ship. Founding members get first access to every new release.</p>
         </div>
         <div class="liquid-glass p-7 reveal" style="transition-delay:0.2s">
           <div class="w-10 h-10 rounded-xl bg-mint-400/10 flex items-center justify-center mb-4">
             <svg width="20" height="20" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="text-sm font-semibold mb-2">Price locked forever</h3>
-          <p class="text-xs text-white/40">Your founding rate never changes — even if we 3x our prices later. It's our thank-you for believing early.</p>
+          <h3 class="text-sm font-semibold mb-2" data-i18n="first-locked-h">Price locked forever</h3>
+          <p class="text-xs text-white/40" data-i18n="first-locked-p">Your founding rate never changes — even if we 3x our prices later. It's our thank-you for believing early.</p>
         </div>
         <div class="liquid-glass p-7 reveal" style="transition-delay:0.3s">
           <div class="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center mb-4">
             <svg width="20" height="20" fill="none" stroke="#FBBF24" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <h3 class="text-sm font-semibold mb-2">Name in the credits</h3>
-          <p class="text-xs text-white/40">Listed at <a href="/founders" class="text-indigo-400/70 hover:text-indigo-400">tasknextai.one/founders</a> permanently — unless you opt out.</p>
+          <h3 class="text-sm font-semibold mb-2" data-i18n="first-credits-h">Name in the credits</h3>
+          <p class="text-xs text-white/40" data-i18n="first-credits-p">Listed at <a href="/founders" class="text-indigo-400/70 hover:text-indigo-400">tasknextai.one/founders</a> permanently — unless you opt out.</p>
         </div>
       </div>
     </div>
@@ -579,18 +590,18 @@
   <section id="pricing" class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 reveal">
-        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Simple, honest pricing</p>
-        <h2 class="text-section font-bold font-display mb-4">Lock your founding <span class="gradient-text">price forever</span></h2>
-        <p class="text-white/50 max-w-xl mx-auto mb-3">No hidden fees. No surprise charges. Cancel anytime. Your founding price stays locked even if you pause and come back.</p>
-        <p class="text-xs text-white/25">Only <span class="text-orchid-400 font-medium" id="spots-pricing">100</span> founding spots remaining</p>
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4" data-i18n="price-label">Simple, honest pricing</p>
+        <h2 class="text-section font-bold font-display mb-4" data-i18n="price-h2">Lock your founding <span class="gradient-text">price forever</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto mb-3" data-i18n="price-desc">No hidden fees. No surprise charges. Cancel anytime. Your founding price stays locked even if you pause and come back.</p>
+        <p class="text-xs text-white/25">Only <span class="text-orchid-400 font-medium" id="spots-pricing">100</span> <span data-i18n="price-spots-remaining">founding spots remaining</span></p>
 
         <!-- Billing Toggle -->
         <div class="flex items-center justify-center gap-3 mt-6">
-          <span id="label-monthly" class="text-sm text-white font-medium transition-colors">Monthly</span>
+          <span id="label-monthly" class="text-sm text-white font-medium transition-colors" data-i18n="price-monthly">Monthly</span>
           <button id="billing-toggle" onclick="toggleBilling()" class="relative w-14 h-7 rounded-full bg-white/10 border border-white/10 transition-colors focus:outline-none" aria-label="Toggle annual billing">
             <div id="billing-knob" class="absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-gradient-to-r from-indigo-400 to-orchid-400 transition-transform duration-300"></div>
           </button>
-          <span id="label-annual" class="text-sm text-white/40 font-medium transition-colors">Annual <span class="text-mint-400 text-xs font-semibold">Save 2 months</span></span>
+          <span id="label-annual" class="text-sm text-white/40 font-medium transition-colors" data-i18n="price-annual">Annual <span class="text-mint-400 text-xs font-semibold" data-i18n="price-save-months">Save 2 months</span></span>
         </div>
       </div>
 
@@ -598,8 +609,8 @@
         <!-- Starter -->
         <div class="liquid-glass p-8 reveal refract-edge snap-start shrink-0 w-[85vw] sm:w-auto">
           <div class="mb-8">
-            <p class="text-sm text-white/40 mb-1">Starter</p>
-            <h3 class="text-xl font-bold font-display">Solo creators</h3>
+            <p class="text-sm text-white/40 mb-1" data-i18n="price-starter-label">Starter</p>
+            <h3 class="text-xl font-bold font-display" data-i18n="price-starter-sub">Solo creators</h3>
           </div>
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
@@ -610,23 +621,23 @@
             <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 61% forever" data-annual="£7/mo billed annually">Save 61% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>2 social accounts</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>30 posts per month</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>25,000 AI credits/month</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>AI Chat Box</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Basic analytics</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-starter-f1">2 social accounts</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-starter-f2">30 posts per month</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-starter-f3">25,000 AI credits/month</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-starter-f4">AI Chat Box</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-starter-f5">Basic analytics</span></li>
           </ul>
-          <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="starter" data-href-monthly="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" data-href-annual="https://buy.stripe.com/7sY00cd47c6K22C4Al4c80c">Start creating</a>
+          <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="starter" data-href-monthly="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" data-href-annual="https://buy.stripe.com/7sY00cd47c6K22C4Al4c80c" data-i18n="price-starter-cta">Start creating</a>
         </div>
 
         <!-- Growth (Popular) -->
         <div class="liquid-glass p-8 reveal price-popular refract-edge relative snap-start shrink-0 w-[85vw] sm:w-auto" style="transition-delay:0.1s">
           <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-            <span class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-xs font-semibold px-4 py-1.5 rounded-full founding-badge">Most popular</span>
+            <span class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-xs font-semibold px-4 py-1.5 rounded-full founding-badge" data-i18n="price-growth-badge">Most popular</span>
           </div>
           <div class="mb-8">
-            <p class="text-sm text-white/40 mb-1">Growth</p>
-            <h3 class="text-xl font-bold font-display">Serious creators & businesses</h3>
+            <p class="text-sm text-white/40 mb-1" data-i18n="price-growth-label">Growth</p>
+            <h3 class="text-xl font-bold font-display" data-i18n="price-growth-sub">Serious creators & businesses</h3>
           </div>
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
@@ -637,21 +648,21 @@
             <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 34% forever" data-annual="£19/mo billed annually">Save 34% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>5 social accounts</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>90 posts per month</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>100,000 AI credits/month</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Chat + Content agents</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Brand Brain</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>90-day content calendar</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-growth-f1">5 social accounts</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-growth-f2">90 posts per month</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-growth-f3">100,000 AI credits/month</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-growth-f4">Chat + Content agents</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-growth-f5">Brand Brain</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-growth-f6">90-day content calendar</span></li>
           </ul>
-          <a href="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g" target="_blank" rel="noopener" class="pricing-cta block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg shadow-indigo-400/20" data-plan="growth" data-href-monthly="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g" data-href-annual="https://buy.stripe.com/5kQbIU4xBfiW0YyfeZ4c805">Lock this price</a>
+          <a href="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g" target="_blank" rel="noopener" class="pricing-cta block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg shadow-indigo-400/20" data-plan="growth" data-href-monthly="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g" data-href-annual="https://buy.stripe.com/5kQbIU4xBfiW0YyfeZ4c805" data-i18n="price-growth-cta">Lock this price</a>
         </div>
 
         <!-- Pro -->
         <div class="liquid-glass p-8 reveal refract-edge snap-start shrink-0 w-[85vw] sm:w-auto" style="transition-delay:0.2s">
           <div class="mb-8">
-            <p class="text-sm text-white/40 mb-1">Pro</p>
-            <h3 class="text-xl font-bold font-display">Teams & agencies</h3>
+            <p class="text-sm text-white/40 mb-1" data-i18n="price-pro-label">Pro</p>
+            <h3 class="text-xl font-bold font-display" data-i18n="price-pro-sub">Teams & agencies</h3>
           </div>
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
@@ -662,21 +673,21 @@
             <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 24% forever" data-annual="£37/mo billed annually">Save 24% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>8 connected accounts</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Unlimited posts</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>300,000 AI credits/month</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>All 3 AI agents</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Competitor Spy</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>White-label + priority support</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-pro-f1">8 connected accounts</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-pro-f2">Unlimited posts</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-pro-f3">300,000 AI credits/month</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-pro-f4">All 3 AI agents</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-pro-f5">Competitor Spy</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-pro-f6">White-label + priority support</span></li>
           </ul>
-          <a href="https://buy.stripe.com/aFa00cc031s66iSgj34c80h" target="_blank" rel="noopener" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="pro" data-href-monthly="https://buy.stripe.com/aFa00cc031s66iSgj34c80h" data-href-annual="https://buy.stripe.com/bJe3co5BF8Uy6iS5Ep4c806">Go Pro</a>
+          <a href="https://buy.stripe.com/aFa00cc031s66iSgj34c80h" target="_blank" rel="noopener" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="pro" data-href-monthly="https://buy.stripe.com/aFa00cc031s66iSgj34c80h" data-href-annual="https://buy.stripe.com/bJe3co5BF8Uy6iS5Ep4c806" data-i18n="price-pro-cta">Go Pro</a>
         </div>
 
         <!-- Unlimited -->
         <div class="liquid-glass p-8 reveal refract-edge snap-start shrink-0 w-[85vw] sm:w-auto" style="transition-delay:0.3s">
           <div class="mb-8">
-            <p class="text-sm text-white/40 mb-1">Unlimited</p>
-            <h3 class="text-xl font-bold font-display">Power users & studios</h3>
+            <p class="text-sm text-white/40 mb-1" data-i18n="price-unlimited-label">Unlimited</p>
+            <h3 class="text-xl font-bold font-display" data-i18n="price-unlimited-sub">Power users & studios</h3>
           </div>
           <div class="mb-8">
             <div class="flex items-baseline gap-1">
@@ -687,14 +698,14 @@
             <p class="text-xs text-mint-400 mt-1 price-savings" data-monthly="Save 20% forever" data-annual="£79/mo billed annually">Save 20% forever</p>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-white/60">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>10 connected accounts</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Unlimited posts</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Unlimited AI tokens</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Everything in Pro</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Dedicated onboarding</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Direct founder access</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-unlimited-f1">10 connected accounts</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-unlimited-f2">Unlimited posts</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-unlimited-f3">Unlimited AI tokens</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-unlimited-f4">Everything in Pro</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-unlimited-f5">Dedicated onboarding</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-mint-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="price-unlimited-f6">Direct founder access</span></li>
           </ul>
-          <a href="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i" target="_blank" rel="noopener" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="unlimited" data-href-monthly="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i" data-href-annual="https://buy.stripe.com/eVq14g7JNgn0ePo8QB4c807">Go Unlimited</a>
+          <a href="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i" target="_blank" rel="noopener" class="pricing-cta block text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium py-3 rounded-xl transition-colors text-sm" data-plan="unlimited" data-href-monthly="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i" data-href-annual="https://buy.stripe.com/eVq14g7JNgn0ePo8QB4c807" data-i18n="price-unlimited-cta">Go Unlimited</a>
         </div>
       </div>
 
@@ -703,8 +714,8 @@
         <div class="guarantee-badge rounded-2xl px-8 py-5 flex items-center gap-4">
           <svg width="28" height="28" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           <div>
-            <p class="text-sm font-semibold text-mint-400">7-day free trial · 30-day money-back guarantee</p>
-            <p class="text-xs text-white/40">Try Ory free for 7 days. If it's not for you within 30 days of first charge, email us and we'll refund every penny. No questions, no drama.</p>
+            <p class="text-sm font-semibold text-mint-400" data-i18n="price-guarantee-h">7-day free trial · 30-day money-back guarantee</p>
+            <p class="text-xs text-white/40" data-i18n="price-guarantee-p">Try Ory free for 7 days. If it's not for you within 30 days of first charge, email us and we'll refund every penny. No questions, no drama.</p>
           </div>
         </div>
       </div>
@@ -722,7 +733,7 @@
             <div class="founder-photo">
               <span>J</span>
             </div>
-            <p class="text-xs text-white/30 mt-3">Jesse · Founder</p>
+            <p class="text-xs text-white/30 mt-3" data-i18n="story-founder">Jesse · Founder</p>
             <div class="flex items-center justify-center gap-3 mt-3">
               <a href="https://x.com/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Follow on X">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -734,19 +745,19 @@
           </div>
           <div>
             <div class="flex items-center gap-3 mb-3">
-              <p class="text-sm text-indigo-400 uppercase tracking-widest">Our story</p>
+              <p class="text-sm text-indigo-400 uppercase tracking-widest" data-i18n="story-label">Our story</p>
               <span class="inline-flex items-center gap-1.5 bg-mint-400/8 border border-mint-400/15 px-2.5 py-0.5 rounded-full text-[10px] text-mint-400">
-                <span class="w-1 h-1 bg-mint-400 rounded-full animate-pulse"></span>Building in public
+                <span class="w-1 h-1 bg-mint-400 rounded-full animate-pulse"></span><span data-i18n="story-building">Building in public</span>
               </span>
             </div>
-            <h2 class="text-2xl font-bold font-display mb-4">Hi, I'm Jesse. I built this because I needed it.</h2>
-            <p class="text-sm text-white/50 leading-relaxed mb-4">
+            <h2 class="text-2xl font-bold font-display mb-4" data-i18n="story-h2">Hi, I'm Jesse. I built this because I needed it.</h2>
+            <p class="text-sm text-white/50 leading-relaxed mb-4" data-i18n="story-p1">
               I was bad at keeping up with social media. Writing captions at midnight, copy-pasting the same thing across five apps — I hated every minute of it.
             </p>
-            <p class="text-sm text-white/50 leading-relaxed mb-4">
+            <p class="text-sm text-white/50 leading-relaxed mb-4" data-i18n="story-p2">
               So I built a tool to handle it. Gave it a personality. Thought other people might need the same thing.
             </p>
-            <p class="text-sm text-white/50 leading-relaxed mb-5">
+            <p class="text-sm text-white/50 leading-relaxed mb-5" data-i18n="story-p3">
               Still early. But it works — and it works itself on getting better.
             </p>
             <div class="flex items-center gap-4 text-xs text-white/25 flex-wrap">
@@ -754,7 +765,7 @@
               <span>·</span>
               <span>London, England</span>
               <span>·</span>
-              <span>Launched March 2026</span>
+              <span data-i18n="story-launched">Launched March 2026</span>
               <span>·</span>
               <a href="mailto:hello@tasknextai.one" class="text-indigo-400/50 hover:text-indigo-400 transition-colors">hello@tasknextai.one</a>
             </div>
@@ -770,85 +781,85 @@
   <section id="faq" class="py-24 px-6">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-16 reveal">
-        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4">Questions?</p>
-        <h2 class="text-section font-bold font-display mb-4">Ory has <span class="gradient-text">answers</span></h2>
+        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4" data-i18n="faq-label">Questions?</p>
+        <h2 class="text-section font-bold font-display mb-4" data-i18n="faq-h2">Ory has <span class="gradient-text">answers</span></h2>
       </div>
 
       <div class="space-y-3">
         <!-- FAQ 1 -->
         <div class="liquid-glass-sm reveal">
           <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">What exactly is Ory?</span>
+            <span class="text-sm font-medium" data-i18n="faq1-q">What exactly is Ory?</span>
             <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Ory is your AI social media companion — not a tool, not a scheduler, not a chatbot. It's a living AI organism that learns your brand voice, creates content across up to 4 platforms, schedules everything automatically, and gets smarter every month. Think of it as having a brilliant friend who also happens to be incredible at social media.</p>
+            <p class="text-sm text-white/50 pb-5" data-i18n="faq1-a">Ory is your AI social media companion — not a tool, not a scheduler, not a chatbot. It's a living AI organism that learns your brand voice, creates content across up to 4 platforms, schedules everything automatically, and gets smarter every month. Think of it as having a brilliant friend who also happens to be incredible at social media.</p>
           </div>
         </div>
 
         <!-- FAQ 2 -->
         <div class="liquid-glass-sm reveal" style="transition-delay:0.05s">
           <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">What does "founding price forever" actually mean?</span>
+            <span class="text-sm font-medium" data-i18n="faq2-q">What does "founding price forever" actually mean?</span>
             <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Exactly what it says. The price you lock in now (£3.50, £19, £37, or £79/mo) stays yours forever — even if we raise prices later. Even if you cancel and come back months later, your founding rate is waiting for you. It's our thank-you for believing in us early.</p>
+            <p class="text-sm text-white/50 pb-5" data-i18n="faq2-a">Exactly what it says. The price you lock in now (£3.50, £19, £37, or £79/mo) stays yours forever — even if we raise prices later. Even if you cancel and come back months later, your founding rate is waiting for you. It's our thank-you for believing in us early.</p>
           </div>
         </div>
 
         <!-- FAQ 3 -->
         <div class="liquid-glass-sm reveal" style="transition-delay:0.1s">
           <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Will Ory's content actually sound like me?</span>
+            <span class="text-sm font-medium" data-i18n="faq3-q">Will Ory's content actually sound like me?</span>
             <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Yes — and it gets better over time. Brand Brain analyses your existing content, your tone, your vocabulary, and your style. After about 10-15 posts, most creators say the content is nearly indistinguishable from what they'd write themselves. You always have final approval before anything goes live.</p>
+            <p class="text-sm text-white/50 pb-5" data-i18n="faq3-a">Yes — and it gets better over time. Brand Brain analyses your existing content, your tone, your vocabulary, and your style. After about 10-15 posts, most creators say the content is nearly indistinguishable from what they'd write themselves. You always have final approval before anything goes live.</p>
           </div>
         </div>
 
         <!-- FAQ 4 -->
         <div class="liquid-glass-sm reveal" style="transition-delay:0.15s">
           <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Is my data safe? Who owns what Ory creates?</span>
+            <span class="text-sm font-medium" data-i18n="faq4-q">Is my data safe? Who owns what Ory creates?</span>
             <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">You own 100% of everything Ory creates — full commercial rights, no strings. We never train our models on your content. We use OAuth for social connections (never storing your passwords), encrypt all data at rest and in transit, and we're GDPR-aware from day one. We're also pursuing SOC 2 certification.</p>
+            <p class="text-sm text-white/50 pb-5" data-i18n="faq4-a">You own 100% of everything Ory creates — full commercial rights, no strings. We never train our models on your content. We use OAuth for social connections (never storing your passwords), encrypt all data at rest and in transit, and we're GDPR-aware from day one. We're also pursuing SOC 2 certification.</p>
           </div>
         </div>
 
         <!-- FAQ 5 -->
         <div class="liquid-glass-sm reveal" style="transition-delay:0.2s">
           <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Can I cancel anytime?</span>
+            <span class="text-sm font-medium" data-i18n="faq5-q">Can I cancel anytime?</span>
             <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Absolutely. Cancel in one click from your dashboard — no phone calls, no guilt trips. You get a 7-day free trial plus a 30-day money-back guarantee after first charge. If Ory isn't right for you, just email us and we'll refund every penny.</p>
+            <p class="text-sm text-white/50 pb-5" data-i18n="faq5-a">Absolutely. Cancel in one click from your dashboard — no phone calls, no guilt trips. You get a 7-day free trial plus a 30-day money-back guarantee after first charge. If Ory isn't right for you, just email us and we'll refund every penny.</p>
           </div>
         </div>
 
         <!-- FAQ 6 -->
         <div class="liquid-glass-sm reveal" style="transition-delay:0.25s">
           <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Which platforms does Ory support?</span>
+            <span class="text-sm font-medium" data-i18n="faq6-q">Which platforms does Ory support?</span>
             <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">Instagram, X (Twitter), LinkedIn, and TikTok. Each platform gets content adapted to its unique format, tone, and audience expectations — not just copy-pasted across. Facebook, Threads, and more platforms are on our roadmap based on founding member requests.</p>
+            <p class="text-sm text-white/50 pb-5" data-i18n="faq6-a">Instagram, X (Twitter), LinkedIn, and TikTok. Each platform gets content adapted to its unique format, tone, and audience expectations — not just copy-pasted across. Facebook, Threads, and more platforms are on our roadmap based on founding member requests.</p>
           </div>
         </div>
 
         <!-- FAQ 7 -->
         <div class="liquid-glass-sm reveal" style="transition-delay:0.3s">
           <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-5 text-left">
-            <span class="text-sm font-medium">Who is behind TaskNext.AI?</span>
+            <span class="text-sm font-medium" data-i18n="faq7-q">Who is behind TaskNext.AI?</span>
             <svg class="faq-arrow w-4 h-4 text-white/40 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-answer px-5 pb-0">
-            <p class="text-sm text-white/50 pb-5">TaskNext AI Ltd is a registered company in London, England, founded by Jesse. We're a small, independent team building Ory the honest way — no VC pressure, no growth-at-all-costs. Just a group of creators building the tool we always wished existed. You can reach us anytime at hello@tasknextai.one.</p>
+            <p class="text-sm text-white/50 pb-5" data-i18n="faq7-a">TaskNext AI Ltd is a registered company in London, England, founded by Jesse. We're a small, independent team building Ory the honest way — no VC pressure, no growth-at-all-costs. Just a group of creators building the tool we always wished existed. You can reach us anytime at hello@tasknextai.one.</p>
           </div>
         </div>
       </div>
@@ -874,10 +885,10 @@
           <path d="M100 57 Q95 40 88 32" fill="none" stroke="url(#ctaG)" stroke-width="2" stroke-linecap="round" opacity="0.7"/><circle cx="88" cy="32" r="3" fill="url(#ctaG)" opacity="0.8"/>
         </svg>
       </div>
-      <h2 class="text-section font-bold font-display mb-4">Your social media deserves an <span class="gradient-text">organism</span>, not another tool</h2>
-      <p class="text-white/40 max-w-lg mx-auto mb-8">Founding members get locked pricing, direct access to the team, and a voice in what we build next. Come build with us.</p>
-      <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20 mb-4">Claim your founding spot</a>
-      <p class="text-xs text-white/25"><span id="spots-footer">100</span> spots remaining · 7-day free trial · 30-day refund · Cancel anytime</p>
+      <h2 class="text-section font-bold font-display mb-4" data-i18n="final-h2">Your social media deserves an <span class="gradient-text">organism</span>, not another tool</h2>
+      <p class="text-white/40 max-w-lg mx-auto mb-8" data-i18n="final-desc">Founding members get locked pricing, direct access to the team, and a voice in what we build next. Come build with us.</p>
+      <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20 mb-4" data-i18n="final-cta">Claim your founding spot</a>
+      <p class="text-xs text-white/25"><span id="spots-footer">100</span> <span data-i18n="final-spots">spots remaining · 7-day free trial · 30-day refund · Cancel anytime</span></p>
     </div>
   </section>
 
@@ -893,10 +904,10 @@
             </div>
             <span class="font-semibold font-display">TaskNext<span class="gradient-text">.AI</span></span>
           </div>
-          <p class="text-sm text-white/40 max-w-sm mb-4">The living AI organism for creators who'd rather create than schedule. Built with love in London.</p>
+          <p class="text-sm text-white/40 max-w-sm mb-4" data-i18n="footer-tagline">The living AI organism for creators who'd rather create than schedule. Built with love in London.</p>
           <div class="flex items-center gap-2 text-xs text-white/25 mb-4">
             <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>GDPR-aware · SOC 2 in progress · OAuth only</span>
+            <span data-i18n="footer-gdpr">GDPR-aware · SOC 2 in progress · OAuth only</span>
           </div>
           <div class="flex items-center gap-4">
             <a href="https://x.com/tasknextai" target="_blank" rel="noopener" class="text-white/20 hover:text-white/50 transition-colors" title="Follow on X">
@@ -910,13 +921,13 @@
             </a>
           </div>
           <div class="mt-5">
-            <p class="text-xs text-white/40 mb-2">Get product updates:</p>
+            <p class="text-xs text-white/40 mb-2" data-i18n="footer-updates">Get product updates:</p>
             <div id="footer-email-form" class="flex gap-2">
               <input id="footer-email" type="email" placeholder="you@email.com" autocomplete="email"
                 onkeydown="if(event.key==='Enter')submitFooterEmail()"
                 class="flex-1 bg-white/5 border border-white/10 focus:border-indigo-400/50 outline-none rounded-lg px-3 py-2 text-xs text-white placeholder:text-white/25 transition-colors max-w-[200px]" />
               <button onclick="submitFooterEmail()"
-                class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-xs font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Subscribe</button>
+                class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-xs font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity" data-i18n="footer-subscribe">Subscribe</button>
             </div>
             <div id="footer-email-success" class="hidden flex items-center gap-1.5 text-mint-400 text-xs mt-2">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
@@ -927,21 +938,21 @@
 
         <!-- Links -->
         <div>
-          <p class="text-sm font-semibold mb-4">Product</p>
+          <p class="text-sm font-semibold mb-4" data-i18n="footer-product">Product</p>
           <ul class="space-y-2 text-sm text-white/40">
-            <li><a href="#story" class="hover:text-white transition-colors">Features</a></li>
-            <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
-            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="#our-story" class="hover:text-white transition-colors">Our Story</a></li>
+            <li><a href="#story" class="hover:text-white transition-colors" data-i18n="footer-features">Features</a></li>
+            <li><a href="#pricing" class="hover:text-white transition-colors" data-i18n="footer-pricing">Pricing</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors" data-i18n="footer-faq">FAQ</a></li>
+            <li><a href="#our-story" class="hover:text-white transition-colors" data-i18n="footer-our-story">Our Story</a></li>
           </ul>
         </div>
 
         <!-- Legal & Contact -->
         <div>
-          <p class="text-sm font-semibold mb-4">Company</p>
+          <p class="text-sm font-semibold mb-4" data-i18n="footer-company">Company</p>
           <ul class="space-y-2 text-sm text-white/40">
-            <li><a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="/terms" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+            <li><a href="/privacy" class="hover:text-white transition-colors" data-i18n="footer-privacy">Privacy Policy</a></li>
+            <li><a href="/terms" class="hover:text-white transition-colors" data-i18n="footer-terms">Terms & Conditions</a></li>
             <li><a href="mailto:hello@tasknextai.one" class="hover:text-white transition-colors">hello@tasknextai.one</a></li>
           </ul>
         </div>
@@ -949,13 +960,13 @@
 
       <!-- Bottom bar -->
       <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-white/25">&copy; 2026 TaskNext AI Ltd. All rights reserved. Company registered in England.</p>
+        <p class="text-xs text-white/25" data-i18n="footer-copyright">&copy; 2026 TaskNext AI Ltd. All rights reserved. Company registered in England.</p>
         <div class="flex items-center gap-4 text-xs text-white/25">
           <span class="flex items-center gap-1.5">
             <span class="w-1.5 h-1.5 bg-mint-400 rounded-full"></span>
-            All systems operational
+            <span data-i18n="footer-systems">All systems operational</span>
           </span>
-          <span>Built with love in London</span>
+          <span data-i18n="footer-built">Built with love in London</span>
         </div>
       </div>
     </div>
@@ -973,7 +984,7 @@
   <div id="privacy-modal" class="modal-overlay" onclick="if(event.target===this)closeModal('privacy')">
     <div class="modal-content liquid-glass p-8 md:p-10">
       <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xl font-bold font-display">Privacy Policy</h2>
+        <h2 class="text-xl font-bold font-display" data-i18n="modal-privacy-h">Privacy Policy</h2>
         <button onclick="closeModal('privacy')" class="text-white/40 hover:text-white transition-colors">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
@@ -1005,7 +1016,7 @@
   <div id="terms-modal" class="modal-overlay" onclick="if(event.target===this)closeModal('terms')">
     <div class="modal-content liquid-glass p-8 md:p-10">
       <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xl font-bold font-display">Terms & Conditions</h2>
+        <h2 class="text-xl font-bold font-display" data-i18n="modal-terms-h">Terms & Conditions</h2>
         <button onclick="closeModal('terms')" class="text-white/40 hover:text-white transition-colors">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
@@ -1490,8 +1501,8 @@
       <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center mx-auto mb-6 animate-breathe">
         <svg width="28" height="28" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="34" r="20" stroke="white" stroke-width="1.5" fill="none"/><ellipse cx="26" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="27" cy="30" r="1.8" fill="#050507"/><ellipse cx="38" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="39" cy="30" r="1.8" fill="#050507"/><path d="M28 38Q32 42 36 38" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
       </div>
-      <h3 class="text-xl font-bold font-display mb-2">Wait — Ory calculated your score</h3>
-      <p class="text-sm text-white/50 mb-6">Drop your email to save your Organism IQ and get <span class="text-mint-400 font-semibold">500 bonus AI credits</span> when you sign up.</p>
+      <h3 class="text-xl font-bold font-display mb-2" data-i18n="exit-h3">Wait — Ory calculated your score</h3>
+      <p class="text-sm text-white/50 mb-6" data-i18n="exit-desc">Drop your email to save your Organism IQ and get <span class="text-mint-400 font-semibold">500 bonus AI credits</span> when you sign up.</p>
       <div id="exit-form">
         <div class="flex flex-col gap-3 mb-3">
           <input id="exit-email" type="email" placeholder="your@email.com" autocomplete="email"
@@ -1499,10 +1510,10 @@
             class="bg-white/5 border border-white/10 focus:border-indigo-400/50 outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/25 transition-colors" />
           <button id="exit-submit-btn" onclick="submitExitIntent()"
             class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
-            Save my score + get 500 credits
+            <span data-i18n="exit-btn">Save my score + get 500 credits</span>
           </button>
         </div>
-        <p class="text-xs text-white/25">No spam. Unsubscribe anytime.</p>
+        <p class="text-xs text-white/25" data-i18n="exit-nospam">No spam. Unsubscribe anytime.</p>
       </div>
       <div id="exit-success" class="hidden">
         <div class="flex items-center justify-center gap-2 text-mint-400 mb-3">
@@ -1511,7 +1522,7 @@
         </div>
         <p class="text-sm text-white/50 mb-4">Your bonus credits are waiting. Sign up to claim them.</p>
         <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="inline-block bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
-          Claim my founding spot
+          <span data-i18n="exit-success-cta">Claim my founding spot</span>
         </a>
       </div>
     </div>
@@ -1521,7 +1532,7 @@
   <div id="sticky-cta" class="sticky-cta fixed bottom-0 left-0 right-0 z-40 md:hidden" style="padding-bottom:env(safe-area-inset-bottom);">
     <div style="background:rgba(5,5,7,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,0.08);" class="px-4 py-3">
       <a href="#pricing" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold py-3.5 rounded-xl text-sm shadow-lg shadow-indigo-400/20">
-        Lock my founding price — from £3.50/mo <span class="text-white/70 text-xs">(97 founding spots)</span>
+        <span data-i18n="sticky-cta-text">Lock my founding price — from £3.50/mo</span> <span class="text-white/70 text-xs" data-i18n="sticky-cta-spots">(97 founding spots)</span>
       </a>
     </div>
   </div>
@@ -1529,10 +1540,10 @@
   <!-- ===== COOKIE CONSENT BANNER ===== -->
   <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:16px 24px max(16px, env(safe-area-inset-bottom));background:rgba(10,10,15,0.97);border-top:1px solid rgba(129,140,248,0.15);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);">
     <div style="max-width:1152px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
-      <p style="font-size:13px;color:rgba(255,255,255,0.5);margin:0;flex:1;min-width:220px;">
+      <p style="font-size:13px;color:rgba(255,255,255,0.5);margin:0;flex:1;min-width:220px;" data-i18n="cookie-text">
         &#127850; We use essential cookies only — for authentication and session management. No tracking, no ads. <a href="/privacy" style="color:#818CF8;text-decoration:none;">Privacy policy &rarr;</a>
       </p>
-      <button id="cookie-accept" style="background:linear-gradient(135deg,#818CF8,#C084FC);color:#fff;border:none;border-radius:20px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;">Got it</button>
+      <button id="cookie-accept" style="background:linear-gradient(135deg,#818CF8,#C084FC);color:#fff;border:none;border-radius:20px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;" data-i18n="cookie-btn">Got it</button>
     </div>
   </div>
   <script>
@@ -1546,6 +1557,7 @@
       });
     })();
   </script>
+
 
 </body>
 </html>
