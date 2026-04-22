@@ -1,911 +1,579 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Founding Member — TaskNext.AI</title>
-<meta name="description" content="Join the first 100 founding members of TaskNext.AI. AI social media manager that actually works. £3.50/mo forever, 7-day free trial, 30-day refund.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="theme-color" content="#7C3AED">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Founding Member — TaskNext.AI">
-<meta property="og:description" content="50% off forever. Locked for life. 7-day free trial. 30-day refund. Built for busy creators.">
-<meta property="og:url" content="https://tasknextai.one/founding">
-<meta property="og:image" content="https://tasknextai.one/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Founding Member — TaskNext.AI">
-<meta name="twitter:description" content="50% off forever. Locked for life. Built for busy creators.">
-<meta name="twitter:image" content="https://tasknextai.one/og-image.png">
-<style>
-  /* ── Reset + Root ── */
-  :root {
-    --bg:     #050507;
-    --surface:#0b0b12;
-    --border: #1d1d2a;
-    --indigo: #818CF8;
-    --orchid: #C084FC;
-    --mint:   #34D399;
-    --muted:  #9a9aa8;
-    --text:   #f0f0f5;
-    --soft:   #d0d0dc;
-    --grad:   linear-gradient(135deg, var(--indigo), var(--orchid));
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Selected Founding Access — TaskNext.AI</title>
+  <meta name="description" content="Private invite. £3.50/month locked for life. Ory is a living AI that breathes inside your brand, creates content across 4 platforms, schedules everything while you sleep. 7-day trial, 30-day refund." />
+  <meta name="theme-color" content="#050507" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
 
-  /* ── Accessibility ── */
-  .skip-link {
-    position: absolute; top: -50px; left: 1rem;
-    background: var(--mint); color: var(--bg);
-    padding: .5rem 1rem; border-radius: 6px;
-    font-weight: 700; text-decoration: none; z-index: 9999;
-    transition: top .15s;
-  }
-  .skip-link:focus { top: 1rem; }
-  .sr-only {
-    position: absolute; width: 1px; height: 1px;
-    padding: 0; margin: -1px; overflow: hidden;
-    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-  }
-  :focus-visible {
-    outline: 2px solid var(--mint);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  /* ── Nav ── */
-  .site-nav {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--border);
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(5,5,7,.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-  .nav-logo {
-    display: flex; align-items: center; gap: .6rem;
-    text-decoration: none; color: var(--text); font-weight: 700; font-size: 1rem;
-  }
-  .nav-logo svg { width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0; }
-  .nav-links { display: flex; align-items: center; gap: 1rem; }
-  .nav-link {
-    color: var(--muted); text-decoration: none; font-size: .875rem;
-    transition: color .15s;
-  }
-  .nav-link:hover { color: var(--text); }
-  .nav-cta {
-    background: var(--grad); color: var(--bg); font-weight: 700;
-    font-size: .8rem; padding: .45rem 1rem; border-radius: 8px;
-    text-decoration: none; white-space: nowrap;
-    transition: opacity .15s;
-  }
-  .nav-cta:hover { opacity: .88; }
-
-  /* ── Layout ── */
-  .wrap { max-width: 700px; margin: 0 auto; padding: 0 1.25rem; }
-
-  /* ── Hero ── */
-  .hero { padding: 4rem 0 2.5rem; }
-  .badge {
-    display: inline-flex; align-items: center; gap: .5rem;
-    padding: .35rem 1rem; border: 1px solid var(--orchid);
-    border-radius: 999px; color: var(--orchid); font-size: .75rem;
-    letter-spacing: .06em; text-transform: uppercase; margin-bottom: 1.75rem;
-  }
-  .badge-dot {
-    width: 6px; height: 6px; background: var(--mint);
-    border-radius: 50%; flex-shrink: 0;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: .4; }
-  }
-  h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: 800; line-height: 1.12; margin-bottom: .75rem;
-    background: var(--grad);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: var(--indigo); /* fallback */
-  }
-  .hero-sub {
-    font-size: 1.125rem; color: var(--muted); margin-bottom: .5rem; max-width: 560px;
-  }
-  .hero-product-label {
-    font-size: .9rem; color: var(--soft); margin-bottom: 2.5rem;
-    font-weight: 500;
-  }
-  .hero-product-label strong { color: var(--text); }
-
-  /* ── Ory Quote ── */
-  .ory-quote {
-    background: var(--surface); border: 1px solid var(--border);
-    border-left: 3px solid var(--orchid);
-    border-radius: 12px; padding: 1.25rem 1.5rem;
-    font-style: italic; color: var(--soft); margin-bottom: 2.25rem;
-    font-size: .975rem; line-height: 1.7;
-  }
-  .ory-sig {
-    display: block; margin-top: .625rem;
-    font-style: normal; color: var(--orchid); font-size: .825rem; font-weight: 600;
-  }
-
-  /* ── Price Block ── */
-  .price-block { margin-bottom: 1.5rem; }
-  .price-row {
-    display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
-    margin-bottom: .5rem;
-  }
-  .price-now { font-size: 3.5rem; font-weight: 800; color: var(--mint); line-height: 1; }
-  .price-old { font-size: 1.4rem; color: var(--muted); }
-  .price-old del { text-decoration: line-through; }
-  .price-per { color: var(--muted); font-size: 1rem; }
-  .price-lock {
-    color: var(--orchid); font-size: .875rem; display: flex; align-items: center; gap: .4rem;
-  }
-
-  /* ── Primary CTA ── */
-  .cta-block { margin-bottom: 2.5rem; }
-  .cta-primary {
-    display: flex; align-items: center; justify-content: center;
-    background: var(--grad); color: var(--bg); font-weight: 700;
-    font-size: 1.1rem; text-align: center; padding: 1.1rem 2rem;
-    border-radius: 14px; text-decoration: none; margin-bottom: .75rem;
-    transition: transform .15s, opacity .15s;
-    min-height: 56px;
-  }
-  .cta-primary:hover { transform: translateY(-2px); }
-  .cta-primary:active { transform: translateY(0); opacity: .9; }
-  .cta-meta {
-    display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;
-    color: var(--muted); font-size: .8rem;
-  }
-  .cta-meta span { display: flex; align-items: center; gap: .3rem; }
-  .spots-bar {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: .75rem 1rem;
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: .75rem; font-size: .85rem;
-  }
-  .spots-label { color: var(--muted); }
-  .spots-count { color: var(--orchid); font-weight: 700; }
-  .spots-progress {
-    width: 100%; height: 4px; background: var(--border);
-    border-radius: 99px; margin-top: .5rem; overflow: hidden;
-  }
-  .spots-fill {
-    height: 100%; background: var(--grad); border-radius: 99px;
-    width: 3%; /* UPDATE: change spots-count text, aria-valuenow, spots-fill width as spots fill */
-    transition: width .5s;
-  }
-
-  /* ── Divider ── */
-  .divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-
-  /* ── Trust Stack ── */
-  .section-label {
-    font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--indigo); margin-bottom: 1.25rem; font-weight: 600;
-  }
-  .stack-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 16px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem;
-  }
-  .stack-card h2 {
-    font-size: 1.05rem; margin-bottom: 1rem; color: var(--text); font-weight: 700;
-  }
-  .feature-list { list-style: none; }
-  .feature-list li {
-    padding: .7rem 0; border-bottom: 1px solid var(--border);
-    display: flex; gap: .875rem; align-items: flex-start; font-size: .95rem;
-  }
-  .feature-list li:last-child { border-bottom: none; padding-bottom: 0; }
-  .check { color: var(--mint); flex-shrink: 0; font-weight: 700; margin-top: .1rem; }
-  .dash { color: var(--indigo); flex-shrink: 0; font-weight: 700; margin-top: .1rem; }
-
-  /* ── Product Visual ── */
-  .product-preview {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 16px; overflow: hidden; margin-bottom: 1.25rem;
-  }
-  .product-preview-bar {
-    background: #0f0f1a; border-bottom: 1px solid var(--border);
-    padding: .6rem 1rem; display: flex; align-items: center; gap: .5rem;
-  }
-  .preview-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .preview-dot.r { background: #ef4444; }
-  .preview-dot.y { background: #f59e0b; }
-  .preview-dot.g { background: #22c55e; }
-  .preview-title { color: var(--muted); font-size: .75rem; margin-left: .5rem; }
-  .product-preview-body { padding: 1.5rem; }
-  .preview-prompt {
-    background: #0f0f1a; border: 1px solid var(--border); border-radius: 10px;
-    padding: .875rem 1rem; margin-bottom: 1rem; font-size: .875rem;
-    color: var(--muted); display: flex; gap: .75rem; align-items: flex-start;
-  }
-  .preview-prompt-label { color: var(--indigo); font-weight: 600; flex-shrink: 0; font-size: .75rem; margin-top: .1rem; }
-  .preview-output {
-    border: 1px solid var(--border); border-radius: 10px;
-    padding: 1rem; font-size: .875rem; line-height: 1.65;
-  }
-  .preview-output-label {
-    font-size: .7rem; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--mint); margin-bottom: .5rem; font-weight: 600;
-  }
-  .preview-platforms {
-    display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .875rem;
-  }
-  .preview-pill {
-    border: 1px solid var(--border); border-radius: 999px;
-    padding: .2rem .75rem; font-size: .75rem; color: var(--muted);
-    display: flex; align-items: center; gap: .3rem;
-  }
-  .preview-pill.active { border-color: var(--indigo); color: var(--indigo); }
-
-  /* ── Pricing Tiers ── */
-  .tier-table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; font-size: .875rem; }
-  .tier-table th {
-    padding: .6rem .875rem; text-align: left;
-    color: var(--muted); font-weight: 600; font-size: .7rem;
-    text-transform: uppercase; letter-spacing: .06em;
-    border-bottom: 1px solid var(--border);
-  }
-  .tier-table td {
-    padding: .75rem .875rem; border-bottom: 1px solid var(--border);
-    vertical-align: middle;
-  }
-  .tier-table tr:last-child td { border-bottom: none; }
-  .tier-table tr.highlight-row td { background: rgba(129,140,248,.07); }
-  .tier-name { font-weight: 700; color: var(--text); }
-  .tier-founding-price { font-weight: 800; color: var(--mint); font-size: 1rem; }
-  .tier-regular { color: var(--muted); }
-  .tier-regular del { text-decoration: line-through; }
-  .tier-saving { color: var(--orchid); font-weight: 700; font-size: .75rem; }
-  .tier-cta-sm {
-    display: inline-flex; align-items: center;
-    background: var(--grad); color: var(--bg); font-weight: 700;
-    font-size: .75rem; padding: .35rem .9rem; border-radius: 8px;
-    text-decoration: none; white-space: nowrap;
-    transition: opacity .15s; min-height: 32px;
-  }
-  .tier-cta-sm:hover { opacity: .85; }
-  .tier-cta-sm.secondary {
-    background: transparent; color: var(--indigo);
-    border: 1px solid var(--indigo);
-  }
-  .tier-note { font-size: .75rem; color: var(--muted); margin-top: .3rem; }
-  @media(max-width: 600px) {
-    .tier-table th:nth-child(4),
-    .tier-table td:nth-child(4) { display: none; }
-  }
-
-  /* ── Founder Story ── */
-  .founder-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 16px; padding: 1.5rem 1.75rem;
-    display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 1.25rem;
-  }
-  .founder-avatar {
-    width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
-    background: var(--grad); display: flex; align-items: center;
-    justify-content: center; font-size: 1.5rem; font-weight: 800; color: var(--bg);
-  }
-  .founder-name { font-weight: 700; font-size: .95rem; margin-bottom: .2rem; }
-  .founder-handle { font-size: .8rem; color: var(--indigo); margin-bottom: .75rem; }
-  .founder-bio { font-size: .9rem; color: var(--soft); line-height: 1.65; }
-
-  /* ── Testimonials ── */
-  .testimonial-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; margin-bottom: 1.25rem; }
-  @media(min-width: 560px) { .testimonial-grid { grid-template-columns: 1fr 1fr; } }
-  .testimonial {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 14px; padding: 1.25rem;
-  }
-  .testimonial blockquote { font-style: italic; color: var(--soft); font-size: .9rem; line-height: 1.65; margin-bottom: .875rem; }
-  .testimonial cite {
-    font-style: normal; font-size: .8rem;
-    color: var(--muted); display: flex; align-items: center; gap: .5rem;
-  }
-  .testimonial-avatar {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--grad); flex-shrink: 0; display: inline-flex;
-    align-items: center; justify-content: center; font-size: .75rem;
-    font-weight: 700; color: var(--bg);
-  }
-
-  /* ── Metric Bar ── */
-  .metric-bar {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: var(--border);
-    border: 1px solid var(--border); border-radius: 14px;
-    overflow: hidden; margin-bottom: 1.25rem;
-  }
-  .metric {
-    background: var(--surface); padding: 1.25rem 1rem;
-    text-align: center;
-  }
-  .metric-value { font-size: 1.75rem; font-weight: 800; color: var(--mint); display: block; }
-  .metric-label { font-size: .75rem; color: var(--muted); margin-top: .2rem; }
-
-  /* ── FAQ ── */
-  .faq-list { margin-bottom: 2rem; }
-  details {
-    border-bottom: 1px solid var(--border);
-    padding: .1rem 0;
-  }
-  details:first-child { border-top: 1px solid var(--border); }
-  summary {
-    padding: 1.1rem 0; cursor: pointer;
-    font-weight: 600; font-size: .95rem; list-style: none;
-    display: flex; justify-content: space-between; align-items: center;
-    color: var(--text); gap: 1rem;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary::after {
-    content: '+'; color: var(--indigo); font-size: 1.25rem;
-    flex-shrink: 0; transition: transform .2s;
-  }
-  details[open] summary::after { transform: rotate(45deg); }
-  .faq-answer {
-    padding: 0 0 1.25rem; color: var(--muted);
-    font-size: .9rem; line-height: 1.7;
-  }
-  .faq-answer a { color: var(--indigo); }
-
-  /* ── Secondary CTA ── */
-  .cta-secondary {
-    display: flex; align-items: center; justify-content: center;
-    background: var(--grad); color: var(--bg); font-weight: 700;
-    font-size: 1.05rem; text-align: center; padding: 1rem 2rem;
-    border-radius: 14px; text-decoration: none; margin-bottom: .75rem;
-    transition: transform .15s, opacity .15s; min-height: 52px;
-  }
-  .cta-secondary:hover { transform: translateY(-2px); }
-
-  /* ── Footer ── */
-  .site-footer {
-    text-align: center; color: var(--muted); font-size: .8rem;
-    padding: 2.5rem 1.5rem 3rem; border-top: 1px solid var(--border);
-    margin-top: 3rem;
-  }
-  .site-footer a { color: var(--indigo); }
-  .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: .75rem; }
-
-  /* ── Responsive ── */
-  @media(max-width: 520px) {
-    .hero { padding: 2.5rem 0 2rem; }
-    .metric-value { font-size: 1.4rem; }
-    .price-now { font-size: 2.75rem; }
-    .site-nav { padding: .875rem 1rem; }
-  }
-</style>
-<script src="/lang.js" defer></script>
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body class="text-white font-body antialiased overflow-x-hidden">
 
-<!-- Skip link for keyboard users -->
-<a href="#main" class="skip-link">Skip to main content</a>
+  <!-- ===== NEURAL VEINS BG ===== -->
+  <svg class="neural-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="vg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#818CF8"/>
+        <stop offset="100%" style="stop-color:#C084FC"/>
+      </linearGradient>
+    </defs>
+    <path class="neural-vein" d="M0 450Q360 320 720 450T1440 380" fill="none" stroke="url(#vg)" stroke-width="1.5"/>
+    <path class="neural-vein" d="M0 300Q400 420 800 280T1440 450" fill="none" stroke="url(#vg)" stroke-width="1" style="animation-delay:-3s"/>
+    <path class="neural-vein" d="M0 600Q320 500 700 620T1440 540" fill="none" stroke="url(#vg)" stroke-width="0.8" style="animation-delay:-5s"/>
+  </svg>
 
-<!-- ── Site Nav ── -->
-<nav class="site-nav" aria-label="Site navigation">
-  <a href="https://tasknextai.one" class="nav-logo" aria-label="TaskNext.AI — home">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-hidden="true">
-      <defs>
-        <linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#818CF8"/>
-          <stop offset="100%" stop-color="#C084FC"/>
-        </linearGradient>
-      </defs>
-      <rect width="1024" height="1024" rx="225" ry="225" fill="url(#ng)"/>
-      <g transform="translate(153.6 153.6) scale(11.2)">
-        <circle cx="32" cy="34" r="20" stroke="white" stroke-width="2.2" fill="none"/>
-        <ellipse cx="26" cy="31" rx="3.8" ry="4.4" fill="white"/>
-        <circle cx="27" cy="30" r="2" fill="#050507"/>
-        <ellipse cx="38" cy="31" rx="3.8" ry="4.4" fill="white"/>
-        <circle cx="39" cy="30" r="2" fill="#050507"/>
-        <path d="M28 38 Q32 42 36 38" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-      </g>
-    </svg>
-    TaskNext.AI
-  </a>
-  <div class="nav-links">
-    <a href="https://app.tasknextai.one/dashboard" class="nav-link" data-i18n="f-nav-signin">Sign in</a>
-    <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="nav-cta" aria-label="Claim founding access (opens Stripe checkout)" data-i18n="f-nav-cta">
-      Claim founding →
-    </a>
-  </div>
-</nav>
+  <!-- ===== PARALLAX ORBS ===== -->
+  <div class="orb hidden sm:block" style="width:500px;height:500px;background:rgba(129,140,248,0.06);top:10%;left:-10%;"></div>
+  <div class="orb hidden sm:block" style="width:400px;height:400px;background:rgba(192,132,252,0.05);top:50%;right:-8%;"></div>
+  <div class="orb hidden sm:block" style="width:350px;height:350px;background:rgba(129,140,248,0.04);bottom:20%;left:30%;"></div>
 
-<!-- ── Main Content ── -->
-<main id="main">
-  <div class="wrap">
-
-    <!-- ── Hero ── -->
-    <header class="hero">
-      <p class="badge" aria-label="Founding member offer — limited to first 100">
-        <span class="badge-dot" aria-hidden="true"></span>
-        <span data-i18n="f-badge">founding member · limited to first 100</span>
-      </p>
-
-      <h1 data-i18n="f-h1">AI social media for brains that work differently.</h1>
-
-      <p class="hero-sub" data-i18n="f-hero-sub">
-        Stop abandoning content calendars. TaskNext.AI writes in your voice, schedules posts, and never nags — built for overwhelm, chaos, and the 47-tab kind of day.
-      </p>
-
-      <p class="hero-product-label" data-i18n="f-hero-platforms">
-        <strong>Instagram · TikTok · LinkedIn · X</strong> — one place, your voice, zero burnout.<br>
-        <span style="color:var(--indigo);font-size:.8rem" data-i18n="f-hero-tiers">↓ Starter founding price below · all 4 tiers available</span>
-      </p>
-
-      <!-- Ory quote -->
-      <blockquote class="ory-quote" data-i18n="f-ory-quote">
-        you're not behind. you're just tired.<br>
-        that's a different problem.
-        <span class="ory-sig" data-i18n="f-ory-sig">— Ory, your TaskNext.AI companion</span>
-      </blockquote>
-
-      <!-- Price -->
-      <div class="price-block" aria-label="Starter founding pricing">
-        <p style="font-size:.75rem;color:var(--indigo);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.5rem" data-i18n="f-price-label">Starter plan · founding price</p>
-        <div class="price-row">
-          <span class="price-now" aria-label="Founding price: £3.50 per month">£3.50</span>
-          <span class="price-old"><del aria-label="Regular monthly price: £9">£9</del></span>
-          <span class="price-per" data-i18n="f-price-per">/ month · forever</span>
+  <!-- ===== NAVIGATION (minimal · private page) ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-3" style="background:rgba(5,5,7,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-400 to-orchid-400 flex items-center justify-center animate-breathe">
+          <svg width="20" height="20" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="34" r="20" stroke="white" stroke-width="1.5" fill="none"/><ellipse cx="26" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="27" cy="30" r="1.8" fill="#050507"/><ellipse cx="38" cy="31" rx="3.5" ry="4" fill="white"/><circle cx="39" cy="30" r="1.8" fill="#050507"/><path d="M28 38Q32 42 36 38" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><path d="M32 14Q30 8 26 5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="26" cy="5" r="1.5" fill="white"/></svg>
         </div>
-        <p class="price-lock" data-i18n="f-price-lock">
-          <span aria-hidden="true">◆</span>
-          Over 60% off · locked to your account for life · price never goes up · cancel anytime
+        <span class="text-lg font-semibold font-display">TaskNext<span class="gradient-text">.AI</span></span>
+      </a>
+      <div class="flex items-center gap-4">
+        <div class="hidden sm:flex items-center gap-2 text-xs text-orchid-400">
+          <span class="w-1.5 h-1.5 bg-orchid-400 rounded-full animate-pulse"></span>
+          <span>97 seats remaining</span>
+        </div>
+        <a href="https://app.tasknextai.one/dashboard" class="hidden sm:inline-flex text-sm text-white/60 hover:text-white transition-colors">Sign in</a>
+        <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="inline-flex bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">Claim founding</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="top" class="min-h-screen flex items-center justify-center px-6 pt-20 pb-12 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class="w-[600px] h-[600px] bg-indigo-400/10 rounded-full blur-[120px] animate-breathe-slow"></div>
+      <div class="w-[400px] h-[400px] bg-orchid-400/8 rounded-full blur-[100px] animate-breathe absolute translate-x-32"></div>
+    </div>
+
+    <div class="text-center relative z-10 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-semibold tracking-widest uppercase mb-8" style="background:rgba(192,132,252,0.08);border:1px solid rgba(192,132,252,0.4);color:#C084FC;">
+        <span class="w-2 h-2 bg-mint-400 rounded-full animate-pulse"></span>
+        <span>Private invite &middot; selected founding access</span>
+      </div>
+
+      <h1 class="text-hero font-bold font-display mb-6">
+        Your voice. Every platform. <span class="gradient-text">Your price forever.</span>
+      </h1>
+
+      <div class="h-12 mb-8 flex items-center justify-center">
+        <p id="hero-subtitle" class="text-2xl md:text-3xl font-display text-white/80 font-light">&nbsp;</p>
+      </div>
+
+      <p class="text-sub text-white/50 max-w-2xl mx-auto mb-4">
+        Ory is a living AI that learns your voice, creates content across 4 platforms, schedules everything while you sleep &mdash; and gets smarter every month you use it.
+      </p>
+
+      <p class="text-sm text-white/30 mb-10 max-w-lg mx-auto">
+        You have been personally selected. Your rate is locked to your account for life, even when we raise prices for everyone else.
+      </p>
+
+      <!-- Hero Video -->
+      <div class="mb-10 w-full flex flex-col items-center">
+        <div class="mb-3 text-center">
+          <p class="text-xs text-indigo-400 uppercase tracking-widest flex items-center justify-center gap-2">
+            <span class="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></span>
+            <span>Watch the organism in action</span>
+          </p>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden" style="width: min(360px, 85vw); aspect-ratio: 9 / 16; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 60px rgba(129,140,248,0.15);">
+          <video class="absolute inset-0 w-full h-full object-contain bg-black/60" autoplay muted loop playsinline poster="/demo/carousel-42s-poster.jpg" preload="metadata">
+            <source src="/demo/carousel-42s.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p class="text-xs text-white/40 text-center mt-3">42 seconds of pure organism intelligence</p>
+      </div>
+
+      <!-- Price Block -->
+      <div class="liquid-glass refract-edge inline-block px-8 py-6 mb-8" style="max-width:100%;">
+        <p class="text-xs text-indigo-400 uppercase tracking-widest mb-3 font-semibold">Your selected founding price</p>
+        <div class="flex items-baseline gap-3 justify-center flex-wrap">
+          <span class="text-6xl font-bold text-mint-400 font-display" style="line-height:1;">&pound;3.50</span>
+          <span class="text-2xl text-white/30 line-through">&pound;9</span>
+          <span class="text-white/60">/ month &middot; forever</span>
+        </div>
+        <p class="text-orchid-400 text-sm mt-3">
+          Over 60% off &middot; locked to your account for life &middot; price never goes up
         </p>
       </div>
 
-      <!-- Spots bar -->
-      <!-- TODO: wire to live seat-count API when webhook seat-cap enforcement is built -->
-      <div class="spots-bar" role="status" aria-label="Founding spots availability">
-        <span class="spots-label" data-i18n="f-spots-label">Founding spots claimed</span>
-        <span class="spots-count">3 / 100</span>
-        <div class="spots-progress" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" aria-label="3 of 100 founding spots taken">
-          <div class="spots-fill" style="width:3%"></div>
-        </div>
-      </div>
-
-      <!-- Primary CTA -->
-      <div class="cta-block">
-        <a class="cta-primary" href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener"
-           aria-label="Claim founding member access (opens Stripe secure checkout in new window)" data-i18n="f-cta-primary">
-          Claim founding access →
-          <span class="sr-only">(opens in new window)</span>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+        <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20">
+          Claim founding access &rarr;
         </a>
-        <div class="cta-meta" role="list" aria-label="Guarantee details">
-          <span role="listitem" data-i18n="f-trial"><span aria-hidden="true">✓</span> 7-day free trial</span>
-          <span role="listitem" data-i18n="f-refund"><span aria-hidden="true">✓</span> 30-day refund</span>
-          <span role="listitem" data-i18n="f-cancel"><span aria-hidden="true">✓</span> Cancel anytime</span>
-          <span role="listitem" data-i18n="f-stripe"><span aria-hidden="true">🔒</span> Secured by Stripe</span>
+        <a href="#what-you-get" class="text-white/50 hover:text-white text-sm transition-colors flex items-center gap-2">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>See what you get</span>
+        </a>
+      </div>
+
+      <!-- Spots bar -->
+      <div class="max-w-md mx-auto mb-6">
+        <div class="flex items-center justify-between text-xs text-white/50 mb-2">
+          <span>Founding seats claimed</span>
+          <span class="text-orchid-400 font-semibold">3 / 100</span>
+        </div>
+        <div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-indigo-400 to-orchid-400 rounded-full" style="width:3%;"></div>
         </div>
       </div>
-    </header>
 
-    <hr class="divider" aria-hidden="true">
+      <div class="flex items-center justify-center gap-6 text-xs text-white/30 flex-wrap">
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>7-day free trial</span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>30-day refund</span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Cancel anytime</span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Stripe checkout</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- ── Product Preview ── -->
-    <section aria-labelledby="preview-heading">
-      <h2 id="preview-heading" class="section-label" data-i18n="f-preview-h">See it in action</h2>
-      <div class="product-preview">
-        <div class="product-preview-bar" aria-hidden="true">
-          <span class="preview-dot r"></span>
-          <span class="preview-dot y"></span>
-          <span class="preview-dot g"></span>
-          <span class="preview-title" data-i18n="f-preview-title">Ory — AI Caption Generator</span>
-        </div>
-        <div class="product-preview-body">
-          <div class="preview-prompt">
-            <span class="preview-prompt-label" data-i18n="f-preview-you">YOU</span>
-            <span data-i18n="f-preview-prompt">Write me a caption for a Monday motivation post about how being overwhelmed actually made me better at my job.</span>
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- ===== ORY QUOTE ===== -->
+  <section class="py-16 px-6">
+    <div class="max-w-2xl mx-auto reveal">
+      <div class="liquid-glass refract-edge p-8" style="border-left:3px solid #C084FC;">
+        <p class="text-lg md:text-xl text-white/80 italic leading-relaxed">
+          you&rsquo;re not behind. you&rsquo;re just stretched thin.<br/>
+          that&rsquo;s a different problem.
+        </p>
+        <p class="text-orchid-400 text-sm font-semibold mt-4">&mdash; Ory, your TaskNext.AI companion</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- ===== WHAT FOUNDING MEMBERS GET ===== -->
+  <section id="what-you-get" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4">What founding members get</p>
+        <h2 class="text-section font-bold font-display mb-4">Six things <span class="gradient-text">only you</span> get</h2>
+        <p class="text-white/50 max-w-xl mx-auto">Founding membership is capped at 100 seats. These benefits close when the last seat is claimed.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="liquid-glass p-8 reveal refract-edge">
+          <div class="w-12 h-12 rounded-2xl bg-mint-400/10 flex items-center justify-center mb-5 animate-breathe">
+            <svg width="24" height="24" fill="none" stroke="#34D399" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v13M12 8l-4-4M12 8l4-4M5 21h14"/></svg>
           </div>
-          <div class="preview-output">
-            <p class="preview-output-label">ORY</p>
-            <p style="color:var(--soft)">
-              everyone said I had too many tabs open.<br><br>
-              turns out that was the superpower.<br><br>
-              multitasking built my portfolio. pattern recognition closed my deals.
-              the 3am rabbit holes? that's where the ideas live.<br><br>
-              being overwhelmed didn't slow me down. it just made me take a different route.<br><br>
-              (one with fewer road signs and more discovery.)
-            </p>
-            <div class="preview-platforms" role="list" aria-label="Platform adaptations">
-              <span class="preview-pill active" role="listitem">✓ Instagram</span>
-              <span class="preview-pill active" role="listitem">✓ TikTok</span>
-              <span class="preview-pill" role="listitem" data-i18n="f-preview-linkedin">LinkedIn version</span>
-              <span class="preview-pill" role="listitem" data-i18n="f-preview-xthread">X thread</span>
+          <h3 class="text-lg font-semibold mb-2">Over 60% off forever</h3>
+          <p class="text-sm text-white/50">Your rate of &pound;3.50/mo is locked to your account for life. Every price increase passes you by.</p>
+        </div>
+
+        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.1s">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-1s">
+            <svg width="24" height="24" fill="none" stroke="#818CF8" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">30-day full refund</h3>
+          <p class="text-sm text-white/50">Anything. Any reason. No questions. Email jesse@tasknextai.one and it is done within 24 hours.</p>
+        </div>
+
+        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.15s">
+          <div class="w-12 h-12 rounded-2xl bg-orchid-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-2s">
+            <svg width="24" height="24" fill="none" stroke="#C084FC" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Direct founder access</h3>
+          <p class="text-sm text-white/50">Jesse personally messages every founding member within 24h of signup. Real conversation, not a template.</p>
+        </div>
+
+        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.2s">
+          <div class="w-12 h-12 rounded-2xl bg-amber-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-3s">
+            <svg width="24" height="24" fill="none" stroke="#FBBF24" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Lifetime price lock</h3>
+          <p class="text-sm text-white/50">Future plans and price increases never touch your account. The only way it changes is if you cancel and resubscribe, so do not do that.</p>
+        </div>
+
+        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.25s">
+          <div class="w-12 h-12 rounded-2xl bg-rose-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-1.5s">
+            <svg width="24" height="24" fill="none" stroke="#FB7185" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Void Club</h3>
+          <p class="text-sm text-white/50">Private founding-member community. First access to every new feature. Direct input on what we build next.</p>
+        </div>
+
+        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.3s">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-400/10 flex items-center justify-center mb-5 animate-breathe" style="animation-delay:-2.5s">
+            <svg width="24" height="24" fill="none" stroke="#818CF8" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Your name in the credits</h3>
+          <p class="text-sm text-white/50">Founding members listed at tasknextai.one/founders permanently, unless you opt out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- ===== PRODUCT PREVIEW ===== -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">See it in action</p>
+        <h2 class="text-section font-bold font-display mb-4">Here&rsquo;s what it <span class="gradient-text">actually looks like</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Ory chat demo -->
+        <div class="liquid-glass p-6 reveal refract-edge">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-rose-400/60"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-400/60"></div>
+            <div class="w-3 h-3 rounded-full bg-mint-400/60"></div>
+            <span class="text-[10px] text-white/25 ml-2">Ory &mdash; caption studio</span>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white/[0.02] border border-white/5 rounded-xl p-4 flex gap-3">
+              <span class="text-xs font-bold text-indigo-400 mt-0.5 shrink-0">YOU</span>
+              <span class="text-sm text-white/60">Write a Monday post about how being stretched thin made me better at my work.</span>
+            </div>
+            <div class="bg-indigo-400/[0.04] border border-indigo-400/10 rounded-xl p-4">
+              <p class="text-[10px] uppercase tracking-widest text-mint-400 font-semibold mb-2">ORY</p>
+              <p class="text-sm text-white/70 leading-relaxed">
+                everyone said I had too many tabs open.<br/><br/>
+                turns out that was the edge.<br/><br/>
+                multitasking built the portfolio. pattern recognition closed the deals. the 3am rabbit holes are where the ideas live.<br/><br/>
+                being stretched thin didn&rsquo;t slow me down. it made me take a different route.
+              </p>
+              <div class="flex gap-2 flex-wrap mt-4">
+                <span class="text-xs px-3 py-1 rounded-full border border-indigo-400/40 text-indigo-400">&check; Instagram</span>
+                <span class="text-xs px-3 py-1 rounded-full border border-indigo-400/40 text-indigo-400">&check; TikTok</span>
+                <span class="text-xs px-3 py-1 rounded-full border border-white/10 text-white/30">LinkedIn version</span>
+                <span class="text-xs px-3 py-1 rounded-full border border-white/10 text-white/30">X thread</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics -->
+        <div class="liquid-glass p-6 reveal refract-edge" style="transition-delay:0.15s">
+          <p class="text-xs text-white/30 uppercase tracking-widest mb-5">What changes in week one</p>
+          <div class="space-y-4">
+            <div class="flex items-baseline justify-between border-b border-white/5 pb-4">
+              <div>
+                <p class="text-3xl font-bold font-display text-mint-400">4h</p>
+                <p class="text-xs text-white/40 mt-1">saved per week</p>
+              </div>
+              <p class="text-xs text-white/30 text-right max-w-[150px]">versus managing 4 platforms by hand</p>
+            </div>
+            <div class="flex items-baseline justify-between border-b border-white/5 pb-4">
+              <div>
+                <p class="text-3xl font-bold font-display text-indigo-400">4</p>
+                <p class="text-xs text-white/40 mt-1">platforms, one place</p>
+              </div>
+              <p class="text-xs text-white/30 text-right max-w-[150px]">Instagram, TikTok, LinkedIn, X</p>
+            </div>
+            <div class="flex items-baseline justify-between border-b border-white/5 pb-4">
+              <div>
+                <p class="text-3xl font-bold font-display text-orchid-400">&lt;5min</p>
+                <p class="text-xs text-white/40 mt-1">to your first post</p>
+              </div>
+              <p class="text-xs text-white/30 text-right max-w-[150px]">onboarding clocked, averaged across founders</p>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <div>
+                <p class="text-3xl font-bold font-display gradient-text">35+</p>
+                <p class="text-xs text-white/40 mt-1">languages Ory writes in</p>
+              </div>
+              <p class="text-xs text-white/30 text-right max-w-[150px]">your voice, translated, not mangled</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="divider" aria-hidden="true">
+  <div class="section-divider max-w-6xl mx-auto"></div>
 
-    <!-- ── Metrics ── -->
-    <section aria-label="Impact metrics">
-      <div class="metric-bar" role="list">
-        <div class="metric" role="listitem">
-          <span class="metric-value">4h</span>
-          <p class="metric-label" data-i18n="f-metric-saved">saved per week on average</p>
+  <!-- ===== FOUNDING TIERS ===== -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4">All founding tiers</p>
+        <h2 class="text-section font-bold font-display mb-4">Pick your seat &mdash; <span class="gradient-text">upgrade anytime</span></h2>
+        <p class="text-white/50 max-w-xl mx-auto">Every tier locks at its founding rate for life. Move up later, your new tier also locks at its founding rate.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Solo (highlighted) -->
+        <div class="liquid-glass p-8 reveal refract-edge price-popular" style="position:relative;">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-indigo-400 to-orchid-400 text-white">Your seat</div>
+          <p class="text-xs text-orchid-400 uppercase tracking-widest mb-2 font-semibold">Solo</p>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-4xl font-bold text-mint-400 font-display">&pound;3.50</span>
+            <span class="text-sm text-white/40 line-through">&pound;9</span>
+          </div>
+          <p class="text-xs text-white/40 mb-5">/mo &middot; 61% off forever</p>
+          <ul class="space-y-2 text-sm text-white/60 mb-6">
+            <li>&check; 25k AI credits / month</li>
+            <li>&check; 30 posts / month</li>
+            <li>&check; 2 social accounts</li>
+            <li>&check; Brand Brain lite</li>
+          </ul>
+          <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="block text-center bg-gradient-to-r from-indigo-400 to-orchid-400 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity">Claim &rarr;</a>
         </div>
-        <div class="metric" role="listitem">
-          <span class="metric-value">4</span>
-          <p class="metric-label" data-i18n="f-metric-platforms">platforms, one place</p>
+
+        <!-- Growth -->
+        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.1s">
+          <p class="text-xs text-indigo-400 uppercase tracking-widest mb-2 font-semibold">Growth</p>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-4xl font-bold text-mint-400 font-display">&pound;19</span>
+            <span class="text-sm text-white/40 line-through">&pound;29</span>
+          </div>
+          <p class="text-xs text-white/40 mb-5">/mo &middot; 34% off forever</p>
+          <ul class="space-y-2 text-sm text-white/60 mb-6">
+            <li>&check; 100k AI credits / month</li>
+            <li>&check; 90 posts / month</li>
+            <li>&check; 5 social accounts</li>
+            <li>&check; Full Brand Brain</li>
+          </ul>
+          <a href="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g" target="_blank" rel="noopener" class="block text-center bg-white/5 border border-white/10 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-white/10 transition-all">Claim &rarr;</a>
         </div>
-        <div class="metric" role="listitem">
-          <span class="metric-value">&lt;5min</span>
-          <p class="metric-label" data-i18n="f-metric-first">to your first post</p>
+
+        <!-- Pro -->
+        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.2s">
+          <p class="text-xs text-indigo-400 uppercase tracking-widest mb-2 font-semibold">Pro</p>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-4xl font-bold text-mint-400 font-display">&pound;37</span>
+            <span class="text-sm text-white/40 line-through">&pound;49</span>
+          </div>
+          <p class="text-xs text-white/40 mb-5">/mo &middot; 24% off forever</p>
+          <ul class="space-y-2 text-sm text-white/60 mb-6">
+            <li>&check; 300k AI credits / month</li>
+            <li>&check; Unlimited posts</li>
+            <li>&check; 8 social accounts</li>
+            <li>&check; Competitor Spy</li>
+          </ul>
+          <a href="https://buy.stripe.com/aFa00cc031s66iSgj34c80h" target="_blank" rel="noopener" class="block text-center bg-white/5 border border-white/10 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-white/10 transition-all">Claim &rarr;</a>
+        </div>
+
+        <!-- Unlimited -->
+        <div class="liquid-glass p-8 reveal refract-edge" style="transition-delay:0.3s">
+          <p class="text-xs text-indigo-400 uppercase tracking-widest mb-2 font-semibold">Unlimited</p>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-4xl font-bold text-mint-400 font-display">&pound;79</span>
+            <span class="text-sm text-white/40 line-through">&pound;99</span>
+          </div>
+          <p class="text-xs text-white/40 mb-5">/mo &middot; 20% off forever</p>
+          <ul class="space-y-2 text-sm text-white/60 mb-6">
+            <li>&check; Unlimited everything</li>
+            <li>&check; Dedicated onboarding</li>
+            <li>&check; Priority support</li>
+            <li>&check; Custom integrations</li>
+          </ul>
+          <a href="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i" target="_blank" rel="noopener" class="block text-center bg-white/5 border border-white/10 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-white/10 transition-all">Claim &rarr;</a>
         </div>
       </div>
-    </section>
 
-    <hr class="divider" aria-hidden="true">
+      <p class="text-xs text-white/25 text-center mt-10">All founding prices locked for life &middot; 7-day free trial &middot; 30-day refund &middot; cancel anytime</p>
+    </div>
+  </section>
 
-    <!-- ── What You Get ── -->
-    <section aria-labelledby="trust-stack-heading">
-      <h2 id="trust-stack-heading" class="section-label" data-i18n="f-trust-h">What founding members get</h2>
-      <div class="stack-card">
-        <ul class="feature-list" aria-label="Founding member benefits">
-          <li>
-            <span class="check" aria-hidden="true">✓</span>
-            <span data-i18n="f-trust-1"><strong>Over 60% off forever.</strong> Starter at £3.50/mo instead of £9/mo. Growth/Pro/Unlimited locked at annual-equivalent rates. All founding prices are permanent.</span>
-          </li>
-          <li>
-            <span class="check" aria-hidden="true">✓</span>
-            <span data-i18n="f-trust-2"><strong>30-day full refund.</strong> Anything. Any reason. No questions. Email jesse@tasknextai.one and it's done.</span>
-          </li>
-          <li>
-            <span class="check" aria-hidden="true">✓</span>
-            <span data-i18n="f-trust-3"><strong>Direct founder access.</strong> Jesse personally messages every founding member within 24h. Real conversation, not a template.</span>
-          </li>
-          <li>
-            <span class="check" aria-hidden="true">✓</span>
-            <span data-i18n="f-trust-4"><strong>Lifetime price lock.</strong> Future plans and price increases don't touch you. Ever.</span>
-          </li>
-          <li>
-            <span class="check" aria-hidden="true">✓</span>
-            <span data-i18n="f-trust-5"><strong>Void Club.</strong> Private founding-member community. First access to every new feature. Direct input on what we build next.</span>
-          </li>
-          <li>
-            <span class="check" aria-hidden="true">✓</span>
-            <span data-i18n="f-trust-6"><strong>Your name in the credits.</strong> Founding members are listed at <a href="https://tasknextai.one/founders">tasknextai.one/founders</a> — permanently, unless you opt out.</span>
-          </li>
-        </ul>
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- ===== FOUNDER STORY ===== -->
+  <section class="py-24 px-6">
+    <div class="max-w-3xl mx-auto reveal">
+      <div class="text-center mb-10">
+        <p class="text-sm text-orchid-400 uppercase tracking-widest mb-4">Built by someone who needed it</p>
+        <h2 class="text-section font-bold font-display mb-4">The founder, <span class="gradient-text">on why this exists</span></h2>
       </div>
-    </section>
-
-    <hr class="divider" aria-hidden="true">
-
-    <!-- ── What TaskNext Does ── -->
-    <section aria-labelledby="features-heading">
-      <h2 id="features-heading" class="section-label" data-i18n="f-features-h">What TaskNext.AI actually does</h2>
-      <div class="stack-card">
-        <ul class="feature-list" aria-label="Product features">
-          <li>
-            <span class="dash" aria-hidden="true">→</span>
-            <span data-i18n="f-feat-1"><strong>Writes in your voice.</strong> Captions, hashtags, carousels, and threads — adapted automatically for each platform.</span>
-          </li>
-          <li>
-            <span class="dash" aria-hidden="true">→</span>
-            <span data-i18n="f-feat-2"><strong>Generates images &amp; short videos</strong> for Instagram, TikTok, X, and LinkedIn.</span>
-          </li>
-          <li>
-            <span class="dash" aria-hidden="true">→</span>
-            <span data-i18n="f-feat-3"><strong>Schedules everything.</strong> Reminds you. Doesn't nag. You decide when — Ory handles the rest.</span>
-          </li>
-          <li>
-            <span class="dash" aria-hidden="true">→</span>
-            <span data-i18n="f-feat-4"><strong>Brand Brain</strong> learns your tone, voice, and style. The longer you use it, the better it sounds like you.</span>
-          </li>
-          <li>
-            <span class="dash" aria-hidden="true">→</span>
-            <span data-i18n="f-feat-5"><strong>Built for real life.</strong> No overwhelming dashboards. No 47-step workflows. Tested on the worst Tuesday afternoons.</span>
-          </li>
-        </ul>
+      <div class="liquid-glass refract-edge p-8 md:p-10">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+          <div class="founder-photo">J</div>
+          <div>
+            <p class="font-semibold font-display text-lg">Jesse</p>
+            <p class="text-orchid-400 text-xs uppercase tracking-widest mb-4">Founder, TaskNext.AI &middot; London</p>
+            <p class="text-white/60 leading-relaxed">
+              I built TaskNext.AI because every other social media tool assumed you would remember to post, had time to plan, and could sit still long enough to write a caption. I could not do any of those things reliably.
+            </p>
+            <p class="text-white/60 leading-relaxed mt-4">
+              This is the tool I needed. I am building it in public, shipping fast, and holding founding membership at 100 seats before raising prices. If you are in, I want to hear from you.
+            </p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="divider" aria-hidden="true">
+  <div class="section-divider max-w-6xl mx-auto"></div>
 
-    <!-- ── All Founding Tiers ── -->
-    <section aria-labelledby="tiers-heading">
-      <h2 id="tiers-heading" class="section-label" data-i18n="f-tiers-h">All founding tiers</h2>
-
-      <!-- Billing Toggle -->
-      <div style="display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:1.25rem;">
-        <span id="ftoggle-monthly" style="font-size:.875rem;font-weight:600;color:var(--text);transition:color .15s;" data-i18n="f-tier-monthly">Monthly</span>
-        <button id="ftoggle-btn" onclick="toggleFoundingBilling()" style="position:relative;width:48px;height:26px;border-radius:13px;background:var(--surface);border:1px solid var(--border);cursor:pointer;padding:0;transition:background .2s;" aria-label="Toggle annual billing">
-          <span id="ftoggle-knob" style="position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:var(--grad);transition:transform .25s;display:block;"></span>
-        </button>
-        <span id="ftoggle-annual" style="font-size:.875rem;font-weight:600;color:var(--muted);transition:color .15s;" data-i18n="f-tier-annual">Annual <span style="color:var(--mint);font-size:.75rem;" data-i18n="f-tier-save">save ~22%</span></span>
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p class="text-sm text-indigo-400 uppercase tracking-widest mb-4">Questions</p>
+        <h2 class="text-section font-bold font-display">The <span class="gradient-text">common ones</span></h2>
       </div>
-      <div class="stack-card" style="padding:0;overflow:hidden;">
-        <table class="tier-table" aria-label="Founding member pricing tiers">
-          <thead>
-            <tr>
-              <th scope="col" data-i18n="f-tier-plan">Plan</th>
-              <th scope="col" data-i18n="f-tier-fprice">Founding price</th>
-              <th scope="col" data-i18n="f-tier-regular">Regular monthly</th>
-              <th scope="col" data-i18n="f-tier-yousave">You save</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Starter — dedicated founding link exists -->
-            <tr class="highlight-row">
-              <td>
-                <span class="tier-name">Starter</span>
-                <p class="tier-note" data-i18n="f-tier-note-starter">25k credits · 30 posts · 2 accounts</p>
-              </td>
-              <td><span class="tier-founding-price" data-price-monthly="£3.50" data-price-annual="£7">£3.50<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
-              <td class="tier-regular"><del aria-label="Regular price £9/month">£9/mo</del></td>
-              <td><span class="tier-saving">61% off</span></td>
-              <td>
-                <a class="tier-cta-sm"
-                   href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808"
-                   data-href-monthly="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808"
-                   data-href-annual="https://buy.stripe.com/9B6bIU0hlfiWdLk6It4c804"
-                   target="_blank" rel="noopener"
-                   aria-label="Claim Starter founding at £3.50/mo (opens Stripe in new window)"
-                   data-i18n="f-tier-claim">
-                  Claim →<span class="sr-only"> (opens in new window)</span>
-                </a>
-              </td>
-            </tr>
-            <!-- Growth — founding link live -->
-            <tr>
-              <td>
-                <span class="tier-name">Growth</span>
-                <p class="tier-note" data-i18n="f-tier-note-growth">100k credits · 90 posts · 5 accounts</p>
-              </td>
-              <td><span class="tier-founding-price" data-price-monthly="£19" data-price-annual="£19">£19<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
-              <td class="tier-regular"><del aria-label="Regular price £29/month">£29/mo</del></td>
-              <td><span class="tier-saving">34% off</span></td>
-              <td>
-                <a class="tier-cta-sm"
-                   href="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g"
-                   data-href-monthly="https://buy.stripe.com/bJe6oA5BF0o24aKd6R4c80g"
-                   data-href-annual="https://buy.stripe.com/5kQbIU4xBfiW0YyfeZ4c805"
-                   target="_blank" rel="noopener"
-                   aria-label="Claim Growth founding at £19/mo (opens Stripe in new window)"
-                   data-i18n="f-tier-claim">
-                  Claim →<span class="sr-only"> (opens in new window)</span>
-                </a>
-              </td>
-            </tr>
-            <!-- Pro — founding link live -->
-            <tr>
-              <td>
-                <span class="tier-name">Pro</span>
-                <p class="tier-note" data-i18n="f-tier-note-pro">300k credits · unlimited posts · 8 accounts</p>
-              </td>
-              <td><span class="tier-founding-price" data-price-monthly="£37" data-price-annual="£37">£37<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
-              <td class="tier-regular"><del aria-label="Regular price £49/month">£49/mo</del></td>
-              <td><span class="tier-saving">24% off</span></td>
-              <td>
-                <a class="tier-cta-sm"
-                   href="https://buy.stripe.com/aFa00cc031s66iSgj34c80h"
-                   data-href-monthly="https://buy.stripe.com/aFa00cc031s66iSgj34c80h"
-                   data-href-annual="https://buy.stripe.com/bJe3co5BF8Uy6iS5Ep4c806"
-                   target="_blank" rel="noopener"
-                   aria-label="Claim Pro founding at £37/mo (opens Stripe in new window)"
-                   data-i18n="f-tier-claim">
-                  Claim →<span class="sr-only"> (opens in new window)</span>
-                </a>
-              </td>
-            </tr>
-            <!-- Unlimited — founding link live -->
-            <tr>
-              <td>
-                <span class="tier-name">Unlimited</span>
-                <p class="tier-note" data-i18n="f-tier-note-unlimited">Unlimited credits · unlimited posts · unlimited accounts</p>
-              </td>
-              <td><span class="tier-founding-price" data-price-monthly="£79" data-price-annual="£79">£79<span style="font-size:.75rem;font-weight:400;color:var(--muted)">/mo</span></span></td>
-              <td class="tier-regular"><del aria-label="Regular price £99/month">£99/mo</del></td>
-              <td><span class="tier-saving">20% off</span></td>
-              <td>
-                <a class="tier-cta-sm"
-                   href="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i"
-                   data-href-monthly="https://buy.stripe.com/3cI8wI8NR7Qu8r0eaV4c80i"
-                   data-href-annual="https://buy.stripe.com/eVq14g7JNgn0ePo8QB4c807"
-                   target="_blank" rel="noopener"
-                   aria-label="Claim Unlimited founding at £79/mo (opens Stripe in new window)"
-                   data-i18n="f-tier-claim">
-                  Claim →<span class="sr-only"> (opens in new window)</span>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+
+      <div class="space-y-3">
+        <div class="liquid-glass refract-edge overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-3 px-6 py-5 text-left">
+            <span class="text-base font-semibold">What happens during the 7-day trial?</span>
+            <svg class="faq-arrow w-5 h-5 text-orchid-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer px-6 text-sm text-white/60 leading-relaxed">
+            <div class="pb-5">You get full access to TaskNext.AI &mdash; every feature, no limits. Your founding price only kicks in after the trial. Cancel before day 7 and you are charged nothing.</div>
+          </div>
+        </div>
+
+        <div class="liquid-glass refract-edge overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-3 px-6 py-5 text-left">
+            <span class="text-base font-semibold">What if I want a refund after the trial?</span>
+            <svg class="faq-arrow w-5 h-5 text-orchid-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer px-6 text-sm text-white/60 leading-relaxed">
+            <div class="pb-5">You have 30 days from first charge, no questions asked. Email jesse@tasknextai.one &mdash; Jesse handles every refund personally within 24 hours.</div>
+          </div>
+        </div>
+
+        <div class="liquid-glass refract-edge overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-3 px-6 py-5 text-left">
+            <span class="text-base font-semibold">How does the price lock actually work?</span>
+            <svg class="faq-arrow w-5 h-5 text-orchid-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer px-6 text-sm text-white/60 leading-relaxed">
+            <div class="pb-5">Your Stripe subscription is set at the founding rate permanently. Even when we raise prices for new users, your subscription price never changes. The only way it changes is if you cancel and resubscribe, so do not do that.</div>
+          </div>
+        </div>
+
+        <div class="liquid-glass refract-edge overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-3 px-6 py-5 text-left">
+            <span class="text-base font-semibold">Which platforms does Ory support?</span>
+            <svg class="faq-arrow w-5 h-5 text-orchid-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer px-6 text-sm text-white/60 leading-relaxed">
+            <div class="pb-5">Instagram, TikTok, LinkedIn, and X. Caption generation, image creation, scheduling, and analytics for all four. Connect your accounts once and post from one place.</div>
+          </div>
+        </div>
+
+        <div class="liquid-glass refract-edge overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-3 px-6 py-5 text-left">
+            <span class="text-base font-semibold">What happens after the 100 founding seats are gone?</span>
+            <svg class="faq-arrow w-5 h-5 text-orchid-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer px-6 text-sm text-white/60 leading-relaxed">
+            <div class="pb-5">The founding offer closes and all plans return to regular monthly pricing: Solo &pound;9/mo, Growth &pound;29/mo, Pro &pound;49/mo, Unlimited &pound;99/mo. Founding members keep their locked rates forever.</div>
+          </div>
+        </div>
+
+        <div class="liquid-glass refract-edge overflow-hidden">
+          <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-3 px-6 py-5 text-left">
+            <span class="text-base font-semibold">Why am I getting this private invite?</span>
+            <svg class="faq-arrow w-5 h-5 text-orchid-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer px-6 text-sm text-white/60 leading-relaxed">
+            <div class="pb-5">Because Jesse personally picked you. The &pound;3.50/mo Solo rate is not on the public site &mdash; it is shared one-to-one with people he wants shaping the early product. No public link, no paid ad, no mass email.</div>
+          </div>
+        </div>
       </div>
-      <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:-.5rem;margin-bottom:0" data-i18n="f-tier-footer">
-        All founding prices locked for life · 7-day free trial · 30-day refund · 2× AI credits permanently
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <p class="text-orchid-400 text-sm mb-4">
+        <span class="inline-block w-2 h-2 bg-orchid-400 rounded-full animate-pulse align-middle mr-2"></span>
+        <strong>100 seats total.</strong> Closes permanently when full.
       </p>
-    </section>
-
-    <hr class="divider" aria-hidden="true">
-
-    <!-- ── Founder Story ── -->
-    <section aria-labelledby="founder-heading">
-      <h2 id="founder-heading" class="section-label" data-i18n="f-founder-h">Built by someone who needed it</h2>
-      <div class="founder-card">
-        <div class="founder-avatar" aria-hidden="true">J</div>
-        <div>
-          <p class="founder-name">Jesse</p>
-          <p class="founder-handle" data-i18n="f-founder-handle">Founder, TaskNext.AI · London</p>
-          <p class="founder-bio" data-i18n="f-founder-bio">
-            I built TaskNext.AI because every other social media tool assumed you'd remember to post, had time to plan, and could sit still long enough to write a caption. I couldn't do any of those things reliably.<br><br>
-            This is the tool I needed. I'm building it in public, shipping fast, and staying at 100 founding members before raising prices. If you're in — I want to hear from you.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="divider" aria-hidden="true">
-
-    <!-- ── Be One of the First ── -->
-    <section aria-labelledby="early-heading">
-      <h2 id="early-heading" class="section-label" data-i18n="f-early-h">Be one of the first</h2>
-      <div class="stack-card" style="text-align:center;">
-        <p style="color:var(--soft);font-size:.95rem;line-height:1.7;" data-i18n="f-early-p">
-          We're looking for our first 100 founding members to shape TaskNext.AI from day one.
-          Direct access to Jesse, input on the roadmap, and a price that never goes up.
-        </p>
-      </div>
-    </section>
-
-    <hr class="divider" aria-hidden="true">
-
-    <!-- ── FAQ ── -->
-    <section aria-labelledby="faq-heading">
-      <h2 id="faq-heading" class="section-label" data-i18n="f-faq-h">Questions</h2>
-      <div class="faq-list">
-
-        <details>
-          <summary data-i18n="f-faq1-q">What happens during the 7-day trial?</summary>
-          <div class="faq-answer">
-            <p data-i18n="f-faq1-a">You get full access to TaskNext.AI — every feature, no limits. Your founding price of £3.50/mo only kicks in after the trial. If you cancel before day 7, you're charged nothing. No friction.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary data-i18n="f-faq2-q">What if I want a refund after the trial?</summary>
-          <div class="faq-answer">
-            <p data-i18n="f-faq2-a">You have 30 days from first charge, no questions asked. Email <a href="mailto:jesse@tasknextai.one">jesse@tasknextai.one</a> — Jesse handles all refunds personally and they're processed within 24 hours.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary data-i18n="f-faq3-q">Is this really simpler than other tools?</summary>
-          <div class="faq-answer">
-            <p data-i18n="f-faq3-a">Yes. The product is designed around zero-friction workflows and the reality that you will not complete a 12-step content process. There are no bulk queues, no complex dashboards, no "content pillars" to define. You open it, you tell Ory what to post, it handles the rest.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary data-i18n="f-faq4-q">Which social platforms does it support?</summary>
-          <div class="faq-answer">
-            <p data-i18n="f-faq4-a">Instagram, TikTok, LinkedIn, and X (Twitter). Caption generation, image creation, scheduling, and analytics for all four. You connect your accounts once and post from one place.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary data-i18n="f-faq5-q">What happens after the 100 founding spots are gone?</summary>
-          <div class="faq-answer">
-            <p data-i18n="f-faq5-a">The founding offer closes and all plans go to regular monthly pricing: Starter £9/mo, Growth £29/mo, Pro £49/mo, Unlimited £99/mo. Founding members keep their discounted rates (£3.50/£19/£37/£79) forever — locked into your account, not a promotional period.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary data-i18n="f-faq6-q">What's the difference between the tiers?</summary>
-          <div class="faq-answer">
-            <p data-i18n="f-faq6-a"><strong>Starter (£3.50/mo):</strong> 2 social accounts, 30 posts/month, 25k AI credits. Perfect for solo creators starting out.<br>
-            <strong>Growth (£19/mo):</strong> 5 accounts, 90 posts/month, 100k credits, Brand Brain, content calendar. For serious creators and small businesses.<br>
-            <strong>Pro (£37/mo):</strong> 8 accounts, unlimited posts, 300k credits, Competitor Spy, all 3 AI agents. For teams and agencies.<br>
-            <strong>Unlimited (£79/mo):</strong> Unlimited everything plus dedicated onboarding and direct founder access. For power users and studios.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary data-i18n="f-faq7-q">How does the price lock actually work?</summary>
-          <div class="faq-answer">
-            <p data-i18n="f-faq7-a">Your Stripe subscription is set at the founding rate with a permanent price override. Even when we raise prices for new users, your subscription price never changes. The only way it changes is if you cancel and resubscribe — so don't do that.</p>
-          </div>
-        </details>
-
-      </div>
-    </section>
-
-    <!-- ── Final CTA ── -->
-    <section aria-label="Final call to action" style="text-align:center; padding: 1rem 0 2rem;">
-      <p style="color:var(--muted); font-size:.85rem; margin-bottom:1.25rem;" data-i18n="f-final-spots">
-        <span aria-hidden="true">◆</span> <strong style="color:var(--orchid)">100 spots total.</strong> Closes permanently when full.
-      </p>
-      <a class="cta-secondary" href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener"
-         aria-label="Become a founding member (opens Stripe secure checkout in new window)" data-i18n="f-final-cta">
-        Become a founding member →
-        <span class="sr-only">(opens in new window)</span>
+      <h2 class="text-section font-bold font-display mb-6">Lock your <span class="gradient-text">&pound;3.50/month</span> seat</h2>
+      <p class="text-white/50 mb-10 max-w-xl mx-auto">7-day free trial. 30-day refund. Cancel anytime. Your price never changes.</p>
+      <a href="https://buy.stripe.com/aFa14gggjgn0bDcfeZ4c808" target="_blank" rel="noopener" class="inline-flex bg-gradient-to-r from-indigo-400 to-orchid-400 text-white font-semibold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-lg shadow-indigo-400/20 mb-6">
+        Become a founding member &rarr;
       </a>
-      <div class="cta-meta" style="margin-top:.75rem">
-        <span><span aria-hidden="true">✓</span> 7-day free trial</span>
-        <span><span aria-hidden="true">✓</span> 30-day refund</span>
-        <span><span aria-hidden="true">✓</span> Cancel anytime</span>
+      <div class="flex items-center justify-center gap-6 text-xs text-white/30 flex-wrap">
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>7-day free trial</span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>30-day refund</span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Cancel anytime</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div><!-- /wrap -->
-</main>
+  <!-- ===== FOOTER (minimal) ===== -->
+  <footer class="border-t border-white/5 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
+      <p>TaskNext.AI &middot; London &middot; 2026</p>
+      <div class="flex items-center gap-6">
+        <a href="https://app.tasknextai.one/dashboard" class="hover:text-white/60 transition-colors">Sign in</a>
+        <a href="mailto:jesse@tasknextai.one" class="hover:text-white/60 transition-colors">Contact Jesse</a>
+        <a href="/privacy" class="hover:text-white/60 transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-white/60 transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
 
-<!-- ── Footer ── -->
-<footer class="site-footer">
-  <nav class="footer-links" aria-label="Footer links">
-    <a href="https://tasknextai.one" data-i18n="f-footer-home">Home</a>
-    <a href="https://app.tasknextai.one/dashboard" data-i18n="f-footer-signin">Sign in</a>
-    <a href="https://tasknextai.one/founders" data-i18n="f-footer-founders">Founders</a>
-    <a href="mailto:hello@tasknextai.one" data-i18n="f-footer-contact">Contact</a>
-    <a href="https://app.tasknextai.one/privacy" data-i18n="f-footer-privacy">Privacy</a>
-    <a href="https://app.tasknextai.one/terms" data-i18n="f-footer-terms">Terms</a>
-  </nav>
-  <p>TaskNext.AI · London · 2026 · <a href="mailto:hello@tasknextai.one">hello@tasknextai.one</a></p>
-</footer>
+  <script>
+    // Typewriter on hero subtitle
+    (function() {
+      var phrases = [
+        "Posts that sound exactly like you.",
+        "One of one hundred founding seats.",
+        "\u00A33.50 a month. Locked for life.",
+        "Ory breathes inside your brand."
+      ];
+      var el = document.getElementById('hero-subtitle');
+      if (!el) return;
+      var p = 0, c = 0, deleting = false;
+      function tick() {
+        var phrase = phrases[p];
+        if (!deleting) {
+          c++;
+          el.textContent = phrase.slice(0, c);
+          if (c === phrase.length) { deleting = true; return setTimeout(tick, 2200); }
+        } else {
+          c--;
+          el.textContent = phrase.slice(0, c);
+          if (c === 0) { deleting = false; p = (p + 1) % phrases.length; }
+        }
+        setTimeout(tick, deleting ? 28 : 55);
+      }
+      setTimeout(tick, 600);
+    })();
 
-<!-- Billing toggle + analytics scripts -->
-<script>
-// === BILLING TOGGLE ===
-var fAnnual = false;
-function toggleFoundingBilling() {
-  fAnnual = !fAnnual;
-  var knob = document.getElementById('ftoggle-knob');
-  var lm = document.getElementById('ftoggle-monthly');
-  var la = document.getElementById('ftoggle-annual');
-  if (fAnnual) {
-    knob.style.transform = 'translateX(22px)';
-    lm.style.color = 'var(--muted)';
-    la.style.color = 'var(--text)';
-  } else {
-    knob.style.transform = 'translateX(0)';
-    lm.style.color = 'var(--text)';
-    la.style.color = 'var(--muted)';
-  }
-  // Update prices
-  var period = fAnnual ? 'annual' : 'monthly';
-  document.querySelectorAll('.tier-founding-price[data-price-monthly]').forEach(function(el) {
-    var inner = el.querySelector('span');
-    var suffix = inner ? inner.outerHTML : '';
-    el.innerHTML = el.getAttribute('data-price-' + period) + suffix;
-  });
-  // Update CTA links
-  document.querySelectorAll('.tier-cta-sm[data-href-monthly]').forEach(function(el) {
-    el.href = el.getAttribute('data-href-' + period);
-  });
-  // Update primary CTA too
-  var primary = document.querySelector('.cta-primary[data-href-monthly]');
-  if (primary) primary.href = primary.getAttribute('data-href-' + period);
-  var secondary = document.querySelector('.cta-secondary[data-href-monthly]');
-  if (secondary) secondary.href = secondary.getAttribute('data-href-' + period);
-}
+    // Scroll-reveal
+    (function() {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+    })();
 
-// === MINIMAL ANALYTICS ===
-document.addEventListener('click', function(e) {
-  var link = e.target.closest('a[href*="buy.stripe.com"]');
-  if (link) {
-    console.log('[FOUNDING] CTA:', link.getAttribute('aria-label'), link.href);
-  }
-});
-</script>
+    // FAQ toggle
+    function toggleFAQ(btn) {
+      var answer = btn.nextElementSibling;
+      var arrow = btn.querySelector('.faq-arrow');
+      answer.classList.toggle('open');
+      arrow.classList.toggle('rotated');
+    }
 
+    // Parallax orbs
+    (function() {
+      var orbs = document.querySelectorAll('.orb');
+      window.addEventListener('scroll', function() {
+        var y = window.scrollY;
+        orbs.forEach(function(orb, i) {
+          orb.style.transform = 'translateY(' + (y * (0.1 + i * 0.05)) + 'px)';
+        });
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
