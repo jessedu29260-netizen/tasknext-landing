@@ -116,9 +116,10 @@
   }
 
   .logo img {
-    width: 32px;
-    height: 32px;
+    height: 28px;
+    width: auto;
     object-fit: contain;
+    display: block;
   }
 
   .nav-links {
@@ -832,12 +833,14 @@
 
   .price-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: var(--line);
     border: 1px solid var(--line);
     border-radius: 4px;
     overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto;
   }
 
   .price-card {
@@ -1098,8 +1101,7 @@
 <!-- ========== NAV ========== -->
 <nav>
   <a href="/" class="logo">
-    <img src="ory_64_nobg.png" alt="Ory" />
-    tasknext<span style="color: var(--teal-soft); font-style: italic;">.ai</span>
+    <img src="brand/tasknext_wordmark.png" alt="TaskNext.AI" />
   </a>
   <div class="nav-links">
     <a href="#verbs">manifesto</a>
@@ -1142,7 +1144,6 @@
     <div class="pricing-snapshot">
       <div class="snapshot-label">
         <span>founding pricing · locked forever</span>
-        <span class="seats">97 seats left</span>
       </div>
       <div class="snapshot-tiers">
         <a href="#pricing" class="snap-tier featured">
@@ -1276,7 +1277,7 @@
     <div class="section-label">04 · three tiers · founding rate · locked forever</div>
     <h2 class="section-title">Pricing that <em>breathes</em>.</h2>
     <p class="verbs-intro" style="margin: 24px auto 0;">
-      The first 100 founding members lock their rate forever. After that, prices breathe upward.
+      Founding members lock their rate forever. After the cohort closes, prices breathe upward.
     </p>
   </div>
 
@@ -1336,7 +1337,7 @@
   </div>
   <h2 class="final-title">Begin the<br><em>quiet</em> chapter.</h2>
   <p class="hero-subtitle" style="margin: 0 auto 40px; text-align: center;">
-    There are 97 founding seats left. After 100, pricing breathes upward and Ory's intake slows by design.
+    The founding cohort closes quietly when Ory's intake is full. After that, pricing breathes upward by design.
   </p>
   <a href="/founding" class="btn-primary">
     <span>
@@ -1351,8 +1352,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="/" class="logo">
-        <img src="ory_64_nobg.png" alt="Ory" />
-        tasknext<span style="color: var(--teal-soft); font-style: italic;">.ai</span>
+        <img src="brand/tasknext_wordmark.png" alt="TaskNext.AI" />
       </a>
       <p class="footer-tagline">slow software for restless people. handmade in Oxford.</p>
     </div>

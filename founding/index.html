@@ -99,7 +99,7 @@
     color: var(--ink);
   }
 
-  .logo img { width: 28px; height: 28px; object-fit: contain; }
+  .logo img { height: 26px; width: auto; object-fit: contain; display: block; }
 
   .topbar-right { display: flex; align-items: center; gap: 20px; }
 
@@ -887,8 +887,7 @@
 
 <div class="topbar">
   <a href="/" class="logo">
-    <img src="ory_64_nobg.png" alt="Ory" />
-    tasknext<span style="color: var(--teal-soft); font-style: italic;">.ai</span>
+    <img src="../brand/tasknext_wordmark.png" alt="TaskNext.AI" />
   </a>
   <div class="topbar-right">
     <div class="status-pill">ory · tending</div>
@@ -917,7 +916,7 @@
     </p>
 
     <p class="invite-body">
-      This is a closed cohort. One hundred seats, total. Your rate locks the day you claim it and never breathes upward again, even as the public price does.
+      This is a closed cohort. Your rate locks the day you claim it and never breathes upward again, even as the public price does.
     </p>
 
     <div class="provenance">
@@ -928,10 +927,6 @@
       <div class="provenance-row">
         <span class="label">referred by</span>
         <span class="value sage">ory · v0.1</span>
-      </div>
-      <div class="provenance-row">
-        <span class="label">seat reserved</span>
-        <span class="value accent">#004</span>
       </div>
     </div>
 
@@ -973,10 +968,6 @@
         <div>
           <div class="offer-tier-label featured" id="tier-label">growth · founding rate</div>
           <div class="offer-name" id="tier-name">Growth</div>
-        </div>
-        <div class="offer-seats">
-          seats left
-          <span class="num" id="seat-num">97</span>
         </div>
       </div>
 
@@ -1024,28 +1015,18 @@
         <li>
           <span class="check"></span>
           <span>Founder Slack · direct line</span>
-          <span class="value">100 members</span>
+          <span class="value">included</span>
         </li>
       </ul>
 
       <button class="cta-primary" id="cta-btn">
         <span>
-          claim seat #004 · £<span id="cta-price">14.99</span>
+          lock founding rate · £<span id="cta-price">14.99</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L7 1m6 6l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </span>
       </button>
       <div class="cta-meta">
         stripe checkout <span class="divider">/</span> 7-day free trial
-      </div>
-
-      <div class="seat-viz">
-        <div class="seat-viz-header">
-          <span class="label">cohort filled</span>
-          <span class="count">3 / 100</span>
-        </div>
-        <div class="seat-bar">
-          <div class="seat-bar-fill"></div>
-        </div>
       </div>
 
       <div class="trust-row">
@@ -1102,7 +1083,7 @@
 
   <div class="faq-item open">
     <div class="faq-q">
-      <span>What happens after the 100 seats fill?</span>
+      <span>What happens after the founding cohort closes?</span>
       <span class="plus">+</span>
     </div>
     <div class="faq-a">
@@ -1200,7 +1181,7 @@
         { text: 'Brand Brain · voice memory', value: 'included' },
         { text: 'Reputation guardrails · heal', value: 'always on' },
         { text: 'Analytics mirror · weekly digest', value: 'no urgency' },
-        { text: 'Founder Slack · direct line', value: '100 members' }
+        { text: 'Founder Slack · direct line', value: 'included' }
       ]
     },
     pro: {
@@ -1216,7 +1197,7 @@
         { text: 'Token credits per month', value: '300,000', accent: true },
         { text: 'Brand Brain · multi-voice', value: 'included' },
         { text: 'Imagen 4 carousels · Grok fallback', value: 'included' },
-        { text: 'Founder Slack · direct line', value: '100 members' },
+        { text: 'Founder Slack · direct line', value: 'included' },
         { text: 'Priority model routing · Opus', value: 'strategy calls' }
       ]
     },
