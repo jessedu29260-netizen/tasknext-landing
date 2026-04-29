@@ -1136,7 +1136,7 @@
     <div class="hero-cta-row">
       <a href="/founding" class="btn-primary">
         <span>
-          begin with Ory
+          lock founding rate · £14.99
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L7 1m6 6l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </span>
       </a>
@@ -1307,8 +1307,8 @@
       <div class="price-amount"><span class="currency">£</span>29<span class="period">/mo</span></div>
       <div class="price-was">founding · <span class="old">£49 public</span></div>
       <ul class="price-features">
-        <li>10 connected accounts</li>
-        <li>240 posts / mo</li>
+        <li>8 connected accounts</li>
+        <li>Unlimited posts / mo</li>
         <li>300K token credits</li>
         <li>Imagen 4 carousels</li>
         <li>Priority Opus routing</li>
@@ -1322,8 +1322,9 @@
       <div class="price-amount"><span class="currency">£</span>79<span class="period">/mo</span></div>
       <div class="price-was">founding · <span class="old">£99 public</span></div>
       <ul class="price-features">
-        <li>Unlimited accounts + posts</li>
-        <li>1M token credits</li>
+        <li>10 connected accounts</li>
+        <li>Unlimited posts</li>
+        <li>Unlimited AI tokens</li>
         <li>Brand Brain · agency-mode</li>
         <li>White-label reports</li>
         <li>60-min onboarding · founder</li>
@@ -1385,7 +1386,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2026 tasknext.ai · tending from GMT+0</div>
+    <div>© 2026 tasknext.ai · Oxford, UK · last edited 2026-04-29</div>
     <div>build · 0.1.∞ · status: breathing</div>
   </div>
 </footer>
@@ -1400,6 +1401,83 @@
       aura.style.transform = `translate(${x}px, ${y}px)`;
     });
   }
+</script>
+
+<!-- Meta Pixel — GDPR-gated, fires only after marketing consent -->
+<script>
+(function() {
+  var PIXEL_ID = '1639057304055627';
+  var HYPHEN_KEY = 'cookie-consent';
+  var UNDERSCORE_KEY = 'cookie_consent';
+
+  function hasConsent() {
+    var v = localStorage.getItem(HYPHEN_KEY);
+    if (v === 'accepted') return true;
+    if (!v && localStorage.getItem(UNDERSCORE_KEY) === '1') return true;
+    return false;
+  }
+
+  function loadPixel() {
+    if (window.__tnPixelLoaded) return;
+    window.__tnPixelLoaded = true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+
+  if (hasConsent()) {
+    loadPixel();
+  } else {
+    window.addEventListener('storage', function(e) {
+      if (e.key === HYPHEN_KEY && e.newValue === 'accepted') loadPixel();
+      if (e.key === UNDERSCORE_KEY && e.newValue === '1') loadPixel();
+    });
+  }
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1639057304055627&ev=PageView&noscript=1"/></noscript>
+
+<!-- Cookie consent banner -->
+<div id="tn-cookie-banner" role="region" aria-label="Cookie consent" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(17,17,19,0.96);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.08);padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+  <p style="font-size:12.5px;color:#c8c2b6;max-width:520px;line-height:1.5;margin:0;">
+    We use essential cookies to make TaskNext.AI work. Optional cookies help us improve the service.
+    <a href="/cookies" style="color:#d4a853;text-decoration:underline;">Cookie Policy</a>.
+  </p>
+  <div style="display:flex;gap:8px;flex-shrink:0;">
+    <button id="tn-cookie-decline" type="button" style="min-height:40px;padding:0 16px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:#7a7468;font-size:12.5px;font-weight:500;cursor:pointer;">Essential only</button>
+    <button id="tn-cookie-accept" type="button" style="min-height:40px;padding:0 20px;border-radius:10px;background:#d4a853;border:none;color:#0a0a0b;font-size:12.5px;font-weight:600;cursor:pointer;">Accept all</button>
+  </div>
+</div>
+<script>
+(function() {
+  var HYPHEN_KEY = 'cookie-consent';
+  var UNDERSCORE_KEY = 'cookie_consent';
+  var banner = document.getElementById('tn-cookie-banner');
+
+  // Migrate old key
+  var oldVal = localStorage.getItem(UNDERSCORE_KEY);
+  if (oldVal && !localStorage.getItem(HYPHEN_KEY)) {
+    localStorage.setItem(HYPHEN_KEY, 'accepted');
+    localStorage.removeItem(UNDERSCORE_KEY);
+  }
+
+  if (!localStorage.getItem(HYPHEN_KEY)) {
+    banner.style.display = 'flex';
+  }
+
+  document.getElementById('tn-cookie-accept').addEventListener('click', function() {
+    localStorage.setItem(HYPHEN_KEY, 'accepted');
+    banner.style.display = 'none';
+    // Fire pixel immediately after consent
+    if (typeof loadPixel === 'function') loadPixel();
+    window.dispatchEvent(new StorageEvent('storage', { key: HYPHEN_KEY, newValue: 'accepted' }));
+  });
+
+  document.getElementById('tn-cookie-decline').addEventListener('click', function() {
+    localStorage.setItem(HYPHEN_KEY, 'essential-only');
+    banner.style.display = 'none';
+  });
+})();
 </script>
 
 </body>
